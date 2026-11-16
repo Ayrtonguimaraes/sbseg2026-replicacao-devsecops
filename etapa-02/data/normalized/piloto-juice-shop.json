@@ -1,0 +1,531 @@
+{
+  "aplicacao": "juice-shop",
+  "versao": "19.0.0",
+  "scores_ausentes": 0,
+  "unidades": [
+    {
+      "id": "juice-shop-sast-000",
+      "ferramenta": "Semgrep",
+      "camada": "APP",
+      "estagio": "commit",
+      "classe": "sem_matriz",
+      "score": 7.5,
+      "origem_score": "semgrep_error",
+      "severidade_original": "ERROR",
+      "identificador_scanner": "insecure-document-method",
+      "cwes": [
+        "CWE-79"
+      ],
+      "vinculos": {},
+      "referencia": "semgrep/juice-shop.json#/results/0",
+      "granularidade": "individual"
+    },
+    {
+      "id": "juice-shop-sast-001",
+      "ferramenta": "Semgrep",
+      "camada": "APP",
+      "estagio": "commit",
+      "classe": "sem_matriz",
+      "score": 7.5,
+      "origem_score": "semgrep_error",
+      "severidade_original": "ERROR",
+      "identificador_scanner": "insecure-innerhtml",
+      "cwes": [
+        "CWE-79"
+      ],
+      "vinculos": {},
+      "referencia": "semgrep/juice-shop.json#/results/1",
+      "granularidade": "individual"
+    },
+    {
+      "id": "juice-shop-sast-002",
+      "ferramenta": "Semgrep",
+      "camada": "APP",
+      "estagio": "commit",
+      "classe": "sem_matriz",
+      "score": 7.5,
+      "origem_score": "semgrep_error",
+      "severidade_original": "ERROR",
+      "identificador_scanner": "insecure-document-method",
+      "cwes": [
+        "CWE-79"
+      ],
+      "vinculos": {},
+      "referencia": "semgrep/juice-shop.json#/results/2",
+      "granularidade": "individual"
+    },
+    {
+      "id": "juice-shop-sast-003",
+      "ferramenta": "Semgrep",
+      "camada": "APP",
+      "estagio": "commit",
+      "classe": "sem_matriz",
+      "score": 7.5,
+      "origem_score": "semgrep_error",
+      "severidade_original": "ERROR",
+      "identificador_scanner": "insecure-innerhtml",
+      "cwes": [
+        "CWE-79"
+      ],
+      "vinculos": {},
+      "referencia": "semgrep/juice-shop.json#/results/3",
+      "granularidade": "individual"
+    },
+    {
+      "id": "juice-shop-sast-004",
+      "ferramenta": "Semgrep",
+      "camada": "APP",
+      "estagio": "commit",
+      "classe": "sem_matriz",
+      "score": 5.0,
+      "origem_score": "semgrep_warning",
+      "severidade_original": "WARNING",
+      "identificador_scanner": "eval-detected",
+      "cwes": [
+        "CWE-95"
+      ],
+      "vinculos": {},
+      "referencia": "semgrep/juice-shop.json#/results/4",
+      "granularidade": "individual"
+    },
+    {
+      "id": "juice-shop-sast-005",
+      "ferramenta": "Semgrep",
+      "camada": "APP",
+      "estagio": "commit",
+      "classe": "sem_matriz",
+      "score": 5.0,
+      "origem_score": "semgrep_warning",
+      "severidade_original": "WARNING",
+      "identificador_scanner": "raw-html-format",
+      "cwes": [
+        "CWE-79"
+      ],
+      "vinculos": {},
+      "referencia": "semgrep/juice-shop.json#/results/5",
+      "granularidade": "individual"
+    },
+    {
+      "id": "juice-shop-sast-006",
+      "ferramenta": "Semgrep",
+      "camada": "APP",
+      "estagio": "commit",
+      "classe": "sem_matriz",
+      "score": 5.0,
+      "origem_score": "semgrep_warning",
+      "severidade_original": "WARNING",
+      "identificador_scanner": "express-res-sendfile",
+      "cwes": [
+        "CWE-73"
+      ],
+      "vinculos": {},
+      "referencia": "semgrep/juice-shop.json#/results/6",
+      "granularidade": "individual"
+    },
+    {
+      "id": "juice-shop-sast-007",
+      "ferramenta": "Semgrep",
+      "camada": "APP",
+      "estagio": "commit",
+      "classe": "sem_matriz",
+      "score": 5.0,
+      "origem_score": "semgrep_warning",
+      "severidade_original": "WARNING",
+      "identificador_scanner": "express-libxml-vm-noent",
+      "cwes": [
+        "CWE-611"
+      ],
+      "vinculos": {},
+      "referencia": "semgrep/juice-shop.json#/results/7",
+      "granularidade": "individual"
+    },
+    {
+      "id": "juice-shop-sast-008",
+      "ferramenta": "Semgrep",
+      "camada": "APP",
+      "estagio": "commit",
+      "classe": "sem_matriz",
+      "score": 5.0,
+      "origem_score": "semgrep_warning",
+      "severidade_original": "WARNING",
+      "identificador_scanner": "express-res-sendfile",
+      "cwes": [
+        "CWE-73"
+      ],
+      "vinculos": {},
+      "referencia": "semgrep/juice-shop.json#/results/8",
+      "granularidade": "individual"
+    },
+    {
+      "id": "juice-shop-sast-009",
+      "ferramenta": "Semgrep",
+      "camada": "APP",
+      "estagio": "commit",
+      "classe": "sem_matriz",
+      "score": 5.0,
+      "origem_score": "semgrep_warning",
+      "severidade_original": "WARNING",
+      "identificador_scanner": "express-res-sendfile",
+      "cwes": [
+        "CWE-73"
+      ],
+      "vinculos": {},
+      "referencia": "semgrep/juice-shop.json#/results/9",
+      "granularidade": "individual"
+    },
+    {
+      "id": "juice-shop-sast-010",
+      "ferramenta": "Semgrep",
+      "camada": "APP",
+      "estagio": "commit",
+      "classe": "sem_matriz",
+      "score": 7.5,
+      "origem_score": "semgrep_error",
+      "severidade_original": "ERROR",
+      "identificador_scanner": "tainted-sql-string",
+      "cwes": [
+        "CWE-89"
+      ],
+      "vinculos": {},
+      "referencia": "semgrep/juice-shop.json#/results/10",
+      "granularidade": "individual"
+    },
+    {
+      "id": "juice-shop-sast-011",
+      "ferramenta": "Semgrep",
+      "camada": "APP",
+      "estagio": "commit",
+      "classe": "sem_matriz",
+      "score": 5.0,
+      "origem_score": "semgrep_warning",
+      "severidade_original": "WARNING",
+      "identificador_scanner": "express-res-sendfile",
+      "cwes": [
+        "CWE-73"
+      ],
+      "vinculos": {},
+      "referencia": "semgrep/juice-shop.json#/results/11",
+      "granularidade": "individual"
+    },
+    {
+      "id": "juice-shop-sast-012",
+      "ferramenta": "Semgrep",
+      "camada": "APP",
+      "estagio": "commit",
+      "classe": "direta",
+      "score": 5.0,
+      "origem_score": "semgrep_warning",
+      "severidade_original": "WARNING",
+      "identificador_scanner": "unknown-value-in-redirect",
+      "cwes": [
+        "CWE-601"
+      ],
+      "vinculos": {
+        "js-redirect-outdated": "direta"
+      },
+      "referencia": "semgrep/juice-shop.json#/results/12",
+      "granularidade": "individual"
+    },
+    {
+      "id": "juice-shop-sast-013",
+      "ferramenta": "Semgrep",
+      "camada": "APP",
+      "estagio": "commit",
+      "classe": "direta",
+      "score": 5.0,
+      "origem_score": "semgrep_warning",
+      "severidade_original": "WARNING",
+      "identificador_scanner": "express-open-redirect",
+      "cwes": [
+        "CWE-601"
+      ],
+      "vinculos": {
+        "js-redirect-outdated": "direta"
+      },
+      "referencia": "semgrep/juice-shop.json#/results/13",
+      "granularidade": "individual"
+    },
+    {
+      "id": "juice-shop-sast-014",
+      "ferramenta": "Semgrep",
+      "camada": "APP",
+      "estagio": "commit",
+      "classe": "direta",
+      "score": 7.5,
+      "origem_score": "semgrep_error",
+      "severidade_original": "ERROR",
+      "identificador_scanner": "tainted-sql-string",
+      "cwes": [
+        "CWE-89"
+      ],
+      "vinculos": {
+        "js-sqli-search": "direta"
+      },
+      "referencia": "semgrep/juice-shop.json#/results/14",
+      "granularidade": "individual"
+    },
+    {
+      "id": "juice-shop-sast-015",
+      "ferramenta": "Semgrep",
+      "camada": "APP",
+      "estagio": "commit",
+      "classe": "sem_matriz",
+      "score": 5.0,
+      "origem_score": "semgrep_warning",
+      "severidade_original": "WARNING",
+      "identificador_scanner": "eval-detected",
+      "cwes": [
+        "CWE-95"
+      ],
+      "vinculos": {},
+      "referencia": "semgrep/juice-shop.json#/results/15",
+      "granularidade": "individual"
+    },
+    {
+      "id": "juice-shop-imagem-01-0116",
+      "ferramenta": "Trivy Container",
+      "camada": "INFRA",
+      "estagio": "build",
+      "classe": "indireta",
+      "score": 8.2,
+      "origem_score": "cvss_v3",
+      "severidade_original": "HIGH",
+      "identificador_scanner": "CVE-2026-33941",
+      "cwes": [
+        "CWE-79",
+        "CWE-94",
+        "CWE-116"
+      ],
+      "vinculos": {
+        "js-reflected-xss": "indireta"
+      },
+      "referencia": "trivy/juice-shop-image.json#/Results/1/Vulnerabilities/116",
+      "granularidade": "individual"
+    },
+    {
+      "id": "juice-shop-imagem-01-0118",
+      "ferramenta": "Trivy Container",
+      "camada": "INFRA",
+      "estagio": "build",
+      "classe": "indireta",
+      "score": 4.7,
+      "origem_score": "cvss_v3",
+      "severidade_original": "MEDIUM",
+      "identificador_scanner": "CVE-2026-33916",
+      "cwes": [
+        "CWE-79",
+        "CWE-1321"
+      ],
+      "vinculos": {
+        "js-reflected-xss": "indireta"
+      },
+      "referencia": "trivy/juice-shop-image.json#/Results/1/Vulnerabilities/118",
+      "granularidade": "individual"
+    },
+    {
+      "id": "juice-shop-imagem-01-0129",
+      "ferramenta": "Trivy Container",
+      "camada": "INFRA",
+      "estagio": "build",
+      "classe": "indireta",
+      "score": 6.1,
+      "origem_score": "cvss_v3",
+      "severidade_original": "MEDIUM",
+      "identificador_scanner": "CVE-2026-42338",
+      "cwes": [
+        "CWE-79"
+      ],
+      "vinculos": {
+        "js-reflected-xss": "indireta"
+      },
+      "referencia": "trivy/juice-shop-image.json#/Results/1/Vulnerabilities/129",
+      "granularidade": "individual"
+    },
+    {
+      "id": "juice-shop-imagem-01-0228",
+      "ferramenta": "Trivy Container",
+      "camada": "INFRA",
+      "estagio": "build",
+      "classe": "indireta",
+      "score": 6.1,
+      "origem_score": "cvss_v3",
+      "severidade_original": "MEDIUM",
+      "identificador_scanner": "CVE-2016-1000237",
+      "cwes": [
+        "CWE-79"
+      ],
+      "vinculos": {
+        "js-reflected-xss": "indireta"
+      },
+      "referencia": "trivy/juice-shop-image.json#/Results/1/Vulnerabilities/228",
+      "granularidade": "individual"
+    },
+    {
+      "id": "juice-shop-imagem-01-0229",
+      "ferramenta": "Trivy Container",
+      "camada": "INFRA",
+      "estagio": "build",
+      "classe": "indireta",
+      "score": 6.1,
+      "origem_score": "cvss_v3",
+      "severidade_original": "MEDIUM",
+      "identificador_scanner": "CVE-2017-16016",
+      "cwes": [
+        "CWE-79"
+      ],
+      "vinculos": {
+        "js-reflected-xss": "indireta"
+      },
+      "referencia": "trivy/juice-shop-image.json#/Results/1/Vulnerabilities/229",
+      "granularidade": "individual"
+    },
+    {
+      "id": "juice-shop-imagem-01-0230",
+      "ferramenta": "Trivy Container",
+      "camada": "INFRA",
+      "estagio": "build",
+      "classe": "indireta",
+      "score": 6.1,
+      "origem_score": "cvss_v3",
+      "severidade_original": "MEDIUM",
+      "identificador_scanner": "CVE-2019-25225",
+      "cwes": [
+        "CWE-79"
+      ],
+      "vinculos": {
+        "js-reflected-xss": "indireta"
+      },
+      "referencia": "trivy/juice-shop-image.json#/Results/1/Vulnerabilities/230",
+      "granularidade": "individual"
+    },
+    {
+      "id": "juice-shop-imagem-01-0234",
+      "ferramenta": "Trivy Container",
+      "camada": "INFRA",
+      "estagio": "build",
+      "classe": "indireta",
+      "score": 4.7,
+      "origem_score": "cvss_v3",
+      "severidade_original": "MEDIUM",
+      "identificador_scanner": "CVE-2026-113654",
+      "cwes": [
+        "CWE-79"
+      ],
+      "vinculos": {
+        "js-reflected-xss": "indireta"
+      },
+      "referencia": "trivy/juice-shop-image.json#/Results/1/Vulnerabilities/234",
+      "granularidade": "individual"
+    },
+    {
+      "id": "juice-shop-imagem-01-0235",
+      "ferramenta": "Trivy Container",
+      "camada": "INFRA",
+      "estagio": "build",
+      "classe": "indireta",
+      "score": 5.4,
+      "origem_score": "cvss_v3",
+      "severidade_original": "MEDIUM",
+      "identificador_scanner": "CVE-2026-113661",
+      "cwes": [
+        "CWE-79"
+      ],
+      "vinculos": {
+        "js-reflected-xss": "indireta"
+      },
+      "referencia": "trivy/juice-shop-image.json#/Results/1/Vulnerabilities/235",
+      "granularidade": "individual"
+    },
+    {
+      "id": "juice-shop-imagem-01-0236",
+      "ferramenta": "Trivy Container",
+      "camada": "INFRA",
+      "estagio": "build",
+      "classe": "indireta",
+      "score": 6.1,
+      "origem_score": "cvss_v3",
+      "severidade_original": "MEDIUM",
+      "identificador_scanner": "CVE-2026-63670",
+      "cwes": [
+        "CWE-79"
+      ],
+      "vinculos": {
+        "js-reflected-xss": "indireta"
+      },
+      "referencia": "trivy/juice-shop-image.json#/Results/1/Vulnerabilities/236",
+      "granularidade": "individual"
+    },
+    {
+      "id": "juice-shop-imagem-01-0238",
+      "ferramenta": "Trivy Container",
+      "camada": "INFRA",
+      "estagio": "build",
+      "classe": "indireta",
+      "score": 7.5,
+      "origem_score": "cvss_v3",
+      "severidade_original": "HIGH",
+      "identificador_scanner": "CVE-2026-30951",
+      "cwes": [
+        "CWE-89"
+      ],
+      "vinculos": {
+        "js-sqli-search": "indireta"
+      },
+      "referencia": "trivy/juice-shop-image.json#/Results/1/Vulnerabilities/238",
+      "granularidade": "individual"
+    },
+    {
+      "id": "juice-shop-imagem-01-0283",
+      "ferramenta": "Trivy Container",
+      "camada": "INFRA",
+      "estagio": "build",
+      "classe": "indireta",
+      "score": 6.1,
+      "origem_score": "cvss_v3",
+      "severidade_original": "MEDIUM",
+      "identificador_scanner": "CVE-2025-56200",
+      "cwes": [
+        "CWE-79"
+      ],
+      "vinculos": {
+        "js-reflected-xss": "indireta"
+      },
+      "referencia": "trivy/juice-shop-image.json#/Results/1/Vulnerabilities/283",
+      "granularidade": "individual"
+    },
+    {
+      "id": "juice-shop-imagem-agregado",
+      "ferramenta": "Trivy Container",
+      "camada": "INFRA",
+      "estagio": "build",
+      "classe": "sem_matriz",
+      "score": 10.0,
+      "origem_score": "trivy_max",
+      "severidade_original": null,
+      "identificador_scanner": "demais-ocorrencias:437",
+      "cwes": [],
+      "vinculos": {},
+      "referencia": "trivy/juice-shop-image.json",
+      "granularidade": "aggregate_other"
+    },
+    {
+      "id": "juice-shop-zap-000",
+      "ferramenta": "OWASP ZAP (Active)",
+      "camada": "APP",
+      "estagio": "deploy",
+      "classe": "direta",
+      "score": 7.5,
+      "origem_score": "proxy_zap_active",
+      "severidade_original": "High",
+      "identificador_scanner": "40018",
+      "cwes": [
+        "CWE-89"
+      ],
+      "vinculos": {
+        "js-sqli-search": "direta"
+      },
+      "referencia": "zap/juice-shop-ativo.json#/alerts/0",
+      "granularidade": "individual"
+    }
+  ]
+}

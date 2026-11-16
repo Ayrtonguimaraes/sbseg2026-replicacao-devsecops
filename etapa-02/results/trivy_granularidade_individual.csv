@@ -1,0 +1,4 @@
+﻿granularidade,politica,limiar,unidades,bloqueios,diretos,indiretos,sem_matriz,commit,build,deploy,vulnerabilidades_matriz,detectadas,detectadas_diretas,cobertura_bloqueante,cobertura_bloqueante_pct,ids_bloqueados
+todas_ocorrencias_trivy_sem_agregados,P1,9,1750,272,0,2,270,0,272,0,13,11,8,1,7.69,dvwa-sql-injection
+todas_ocorrencias_trivy_sem_agregados,P2,7,1750,891,27,24,840,51,838,2,13,11,8,9,69.23,dvwa-brute-force|dvwa-command-injection|dvwa-csrf|dvwa-default-credentials|dvwa-exposed-mysql|dvwa-javascript-attacks|dvwa-sql-injection|dvwa-weak-session-ids|dvwa-xss
+todas_ocorrencias_trivy_sem_agregados,P3,7,1750,867,27,0,840,51,814,2,13,11,8,6,46.15,dvwa-brute-force|dvwa-command-injection|dvwa-default-credentials|dvwa-javascript-attacks|dvwa-sql-injection|dvwa-xss

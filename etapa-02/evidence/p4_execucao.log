@@ -1,0 +1,32 @@
+[
+  {
+    "politica": "P3",
+    "base_bloqueios": 56,
+    "bloqueios_adicionais_no_deploy": 0,
+    "decisoes_simuladas": 56,
+    "cobertura_bloqueante": 8,
+    "vulnerabilidades_matriz": 13,
+    "novos_ids_bloqueados": "",
+    "fonte_validacoes": "nao_aplicavel"
+  },
+  {
+    "politica": "P4-A",
+    "base_bloqueios": 56,
+    "bloqueios_adicionais_no_deploy": 2,
+    "decisoes_simuladas": 58,
+    "cobertura_bloqueante": 10,
+    "vulnerabilidades_matriz": 13,
+    "novos_ids_bloqueados": "dvwa-csrf|dvwa-weak-session-ids",
+    "fonte_validacoes": "evidencias_informadas"
+  },
+  {
+    "politica": "P4-B",
+    "base_bloqueios": 56,
+    "bloqueios_adicionais_no_deploy": 0,
+    "decisoes_simuladas": 56,
+    "cobertura_bloqueante": 8,
+    "vulnerabilidades_matriz": 13,
+    "novos_ids_bloqueados": "",
+    "fonte_validacoes": "evidencias_informadas"
+  }
+]

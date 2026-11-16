@@ -1,0 +1,10 @@
+{
+  "data_local": "2026-11-15",
+  "analise_python": "3.12.14",
+  "grupo_commit_de_origem": "690431c3ffcfd4ef5d328f2f4e044f45213a0eac",
+  "autores_commit": "5b18244126350d1a6a4bf39e7a34701af9190563",
+  "semgrep": "1.185.0",
+  "checkov": "3.4.5",
+  "trivy": "0.69.3",
+  "zap": "2.17.0"
+}

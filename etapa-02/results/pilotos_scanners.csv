@@ -1,0 +1,3 @@
+﻿aplicacao,versao,semgrep_achados,semgrep_erros_execucao,checkov_reprovacoes_dockerfile,checkov_verificacoes_dockerfile,trivy_fs_artefatos,trivy_fs_ocorrencias,trivy_imagem_ocorrencias,trivy_imagem_ocorrencias_os,zap_urls_passivo,zap_instancias_passivo,zap_tipos_passivo,zap_instancias_ativo,zap_tipos_ativo
+juice-shop,19.0.0,16,0,2,279,0,,448,104,103,432,6,1,1
+webgoat,2025.3,53,0,0,31,1,41,825,674,19,33,8,0,0

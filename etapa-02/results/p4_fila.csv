@@ -1,0 +1,4 @@
+﻿vulnerability_id,nome,sinais_indiretos,finding_ids,status,evidencia,configuracao,score_confirmacao,adiciona_bloqueio_p4_a,adiciona_bloqueio_p4_b
+dvwa-csrf,CSRF,1,dvwa-188,confirmada,dvwa-http.json,"vulnerables/web-dvwa@sha256:dae203fe11646a86937bf04db0079adef295f426da68a92b40e3b181f337daa7, PHP 7.0 servidor local, MariaDB da imagem, low",,1,0
+dvwa-weak-session-ids,Weak Session IDs,2,dvwa-200|dvwa-202,confirmada,dvwa-http.json,"vulnerables/web-dvwa@sha256:dae203fe11646a86937bf04db0079adef295f426da68a92b40e3b181f337daa7, PHP 7.0 servidor local, MariaDB da imagem, low",,1,0
+dvwa-open-http-redirect,Open HTTP Redirect,8,dvwa-177|dvwa-178|dvwa-180|dvwa-181|dvwa-183|dvwa-184|dvwa-186|dvwa-187,inconclusiva,dvwa-http.json,"vulnerables/web-dvwa@sha256:dae203fe11646a86937bf04db0079adef295f426da68a92b40e3b181f337daa7, PHP 7.0 servidor local, MariaDB da imagem, low",,0,0

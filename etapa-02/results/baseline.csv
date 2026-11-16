@@ -1,0 +1,4 @@
+﻿politica,limiar,unidades,bloqueios,diretos,indiretos,sem_matriz,commit,build,deploy,vulnerabilidades_matriz,detectadas,detectadas_diretas,cobertura_bloqueante,cobertura_bloqueante_pct,ids_bloqueados
+P1,9,226,5,2,2,1,0,5,0,13,13,10,3,23.08,dvwa-outdated-os|dvwa-outdated-packages|dvwa-sql-injection
+P2,7,226,80,29,24,27,51,27,2,13,13,10,11,84.62,dvwa-brute-force|dvwa-command-injection|dvwa-csrf|dvwa-default-credentials|dvwa-exposed-mysql|dvwa-javascript-attacks|dvwa-outdated-os|dvwa-outdated-packages|dvwa-sql-injection|dvwa-weak-session-ids|dvwa-xss
+P3,7,226,56,29,0,27,51,3,2,13,13,10,8,61.54,dvwa-brute-force|dvwa-command-injection|dvwa-default-credentials|dvwa-javascript-attacks|dvwa-outdated-os|dvwa-outdated-packages|dvwa-sql-injection|dvwa-xss

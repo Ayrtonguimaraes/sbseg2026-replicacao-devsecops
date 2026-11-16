@@ -1,0 +1,3939 @@
+{
+  "aplicacao": "DVWA (coleta SBSeg 2026)",
+  "upstream_commit": "5b18244126350d1a6a4bf39e7a34701af9190563",
+  "unidades": [
+    {
+      "id": "dvwa-001",
+      "ferramenta": "Semgrep",
+      "camada": "APP",
+      "estagio": "commit",
+      "classe": "sem_matriz",
+      "score": 5.0,
+      "origem_score": "semgrep_warning",
+      "severidade_original": "WARNING",
+      "identificador_scanner": "php.lang.security.injection.tainted-filename.tainted-filename",
+      "cwes": [
+        "CWE-918"
+      ],
+      "vinculos": {},
+      "referencia": "reports-0a8e877_semgrep-report.json#/results/0",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-002",
+      "ferramenta": "Semgrep",
+      "camada": "APP",
+      "estagio": "commit",
+      "classe": "sem_matriz",
+      "score": 7.5,
+      "origem_score": "semgrep_error",
+      "severidade_original": "ERROR",
+      "identificador_scanner": "php.lang.security.md5-loose-equality.md5-loose-equality",
+      "cwes": [
+        "CWE-697"
+      ],
+      "vinculos": {},
+      "referencia": "reports-0a8e877_semgrep-report.json#/results/1",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-003",
+      "ferramenta": "Semgrep",
+      "camada": "APP",
+      "estagio": "commit",
+      "classe": "sem_matriz",
+      "score": 7.5,
+      "origem_score": "semgrep_error",
+      "severidade_original": "ERROR",
+      "identificador_scanner": "php.lang.security.phpinfo-use.phpinfo-use",
+      "cwes": [
+        "CWE-200"
+      ],
+      "vinculos": {},
+      "referencia": "reports-0a8e877_semgrep-report.json#/results/2",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-004",
+      "ferramenta": "Semgrep",
+      "camada": "APP",
+      "estagio": "commit",
+      "classe": "sem_matriz",
+      "score": 5.0,
+      "origem_score": "semgrep_warning",
+      "severidade_original": "WARNING",
+      "identificador_scanner": "php.lang.security.php-permissive-cors.php-permissive-cors",
+      "cwes": [
+        "CWE-346"
+      ],
+      "vinculos": {},
+      "referencia": "reports-0a8e877_semgrep-report.json#/results/3",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-005",
+      "ferramenta": "Semgrep",
+      "camada": "APP",
+      "estagio": "commit",
+      "classe": "sem_matriz",
+      "score": 5.0,
+      "origem_score": "semgrep_warning",
+      "severidade_original": "WARNING",
+      "identificador_scanner": "php.lang.security.php-permissive-cors.php-permissive-cors",
+      "cwes": [
+        "CWE-346"
+      ],
+      "vinculos": {},
+      "referencia": "reports-0a8e877_semgrep-report.json#/results/4",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-006",
+      "ferramenta": "Semgrep",
+      "camada": "APP",
+      "estagio": "commit",
+      "classe": "direta",
+      "score": 5.0,
+      "origem_score": "semgrep_warning",
+      "severidade_original": "WARNING",
+      "identificador_scanner": "php.lang.security.injection.tainted-exec.tainted-exec",
+      "cwes": [
+        "CWE-78"
+      ],
+      "vinculos": {
+        "dvwa-command-injection": "direta"
+      },
+      "referencia": "reports-0a8e877_semgrep-report.json#/results/5",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-007",
+      "ferramenta": "Semgrep",
+      "camada": "APP",
+      "estagio": "commit",
+      "classe": "sem_matriz",
+      "score": 7.5,
+      "origem_score": "semgrep_error",
+      "severidade_original": "ERROR",
+      "identificador_scanner": "php.lang.security.exec-use.exec-use",
+      "cwes": [
+        "CWE-94"
+      ],
+      "vinculos": {},
+      "referencia": "reports-0a8e877_semgrep-report.json#/results/6",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-008",
+      "ferramenta": "Semgrep",
+      "camada": "APP",
+      "estagio": "commit",
+      "classe": "sem_matriz",
+      "score": 5.0,
+      "origem_score": "semgrep_warning",
+      "severidade_original": "WARNING",
+      "identificador_scanner": "php.lang.security.audit.openssl-decrypt-validate.openssl-decrypt-validate",
+      "cwes": [
+        "CWE-252"
+      ],
+      "vinculos": {},
+      "referencia": "reports-0a8e877_semgrep-report.json#/results/7",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-009",
+      "ferramenta": "Semgrep",
+      "camada": "APP",
+      "estagio": "commit",
+      "classe": "direta",
+      "score": 7.5,
+      "origem_score": "semgrep_error",
+      "severidade_original": "ERROR",
+      "identificador_scanner": "javascript.browser.security.insecure-document-method.insecure-document-method",
+      "cwes": [
+        "CWE-79"
+      ],
+      "vinculos": {
+        "dvwa-xss": "direta"
+      },
+      "referencia": "reports-0a8e877_semgrep-report.json#/results/8",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-010",
+      "ferramenta": "Semgrep",
+      "camada": "APP",
+      "estagio": "commit",
+      "classe": "direta",
+      "score": 7.5,
+      "origem_score": "semgrep_error",
+      "severidade_original": "ERROR",
+      "identificador_scanner": "javascript.browser.security.insecure-document-method.insecure-document-method",
+      "cwes": [
+        "CWE-79"
+      ],
+      "vinculos": {
+        "dvwa-xss": "direta"
+      },
+      "referencia": "reports-0a8e877_semgrep-report.json#/results/9",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-011",
+      "ferramenta": "Semgrep",
+      "camada": "APP",
+      "estagio": "commit",
+      "classe": "direta",
+      "score": 7.5,
+      "origem_score": "semgrep_error",
+      "severidade_original": "ERROR",
+      "identificador_scanner": "javascript.browser.security.insecure-document-method.insecure-document-method",
+      "cwes": [
+        "CWE-79"
+      ],
+      "vinculos": {
+        "dvwa-xss": "direta"
+      },
+      "referencia": "reports-0a8e877_semgrep-report.json#/results/10",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-012",
+      "ferramenta": "Semgrep",
+      "camada": "APP",
+      "estagio": "commit",
+      "classe": "direta",
+      "score": 7.5,
+      "origem_score": "semgrep_error",
+      "severidade_original": "ERROR",
+      "identificador_scanner": "javascript.browser.security.insecure-document-method.insecure-document-method",
+      "cwes": [
+        "CWE-79"
+      ],
+      "vinculos": {
+        "dvwa-xss": "direta"
+      },
+      "referencia": "reports-0a8e877_semgrep-report.json#/results/11",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-013",
+      "ferramenta": "Semgrep",
+      "camada": "APP",
+      "estagio": "commit",
+      "classe": "direta",
+      "score": 7.5,
+      "origem_score": "semgrep_error",
+      "severidade_original": "ERROR",
+      "identificador_scanner": "php.lang.security.injection.tainted-sql-string.tainted-sql-string",
+      "cwes": [
+        "CWE-89"
+      ],
+      "vinculos": {
+        "dvwa-sql-injection": "direta"
+      },
+      "referencia": "reports-0a8e877_semgrep-report.json#/results/12",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-014",
+      "ferramenta": "Semgrep",
+      "camada": "APP",
+      "estagio": "commit",
+      "classe": "direta",
+      "score": 7.5,
+      "origem_score": "semgrep_error",
+      "severidade_original": "ERROR",
+      "identificador_scanner": "php.lang.security.injection.tainted-sql-string.tainted-sql-string",
+      "cwes": [
+        "CWE-89"
+      ],
+      "vinculos": {
+        "dvwa-sql-injection": "direta"
+      },
+      "referencia": "reports-0a8e877_semgrep-report.json#/results/13",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-015",
+      "ferramenta": "Semgrep",
+      "camada": "APP",
+      "estagio": "commit",
+      "classe": "direta",
+      "score": 7.5,
+      "origem_score": "semgrep_error",
+      "severidade_original": "ERROR",
+      "identificador_scanner": "php.lang.security.injection.tainted-sql-string.tainted-sql-string",
+      "cwes": [
+        "CWE-89"
+      ],
+      "vinculos": {
+        "dvwa-sql-injection": "direta"
+      },
+      "referencia": "reports-0a8e877_semgrep-report.json#/results/14",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-016",
+      "ferramenta": "Semgrep",
+      "camada": "APP",
+      "estagio": "commit",
+      "classe": "direta",
+      "score": 7.5,
+      "origem_score": "semgrep_error",
+      "severidade_original": "ERROR",
+      "identificador_scanner": "php.lang.security.injection.tainted-sql-string.tainted-sql-string",
+      "cwes": [
+        "CWE-89"
+      ],
+      "vinculos": {
+        "dvwa-sql-injection": "direta"
+      },
+      "referencia": "reports-0a8e877_semgrep-report.json#/results/15",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-017",
+      "ferramenta": "Semgrep",
+      "camada": "APP",
+      "estagio": "commit",
+      "classe": "direta",
+      "score": 7.5,
+      "origem_score": "semgrep_error",
+      "severidade_original": "ERROR",
+      "identificador_scanner": "php.lang.security.injection.tainted-sql-string.tainted-sql-string",
+      "cwes": [
+        "CWE-89"
+      ],
+      "vinculos": {
+        "dvwa-sql-injection": "direta"
+      },
+      "referencia": "reports-0a8e877_semgrep-report.json#/results/16",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-018",
+      "ferramenta": "Semgrep",
+      "camada": "APP",
+      "estagio": "commit",
+      "classe": "direta",
+      "score": 7.5,
+      "origem_score": "semgrep_error",
+      "severidade_original": "ERROR",
+      "identificador_scanner": "php.lang.security.injection.tainted-sql-string.tainted-sql-string",
+      "cwes": [
+        "CWE-89"
+      ],
+      "vinculos": {
+        "dvwa-sql-injection": "direta"
+      },
+      "referencia": "reports-0a8e877_semgrep-report.json#/results/17",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-019",
+      "ferramenta": "Semgrep",
+      "camada": "APP",
+      "estagio": "commit",
+      "classe": "sem_matriz",
+      "score": 7.5,
+      "origem_score": "semgrep_error",
+      "severidade_original": "ERROR",
+      "identificador_scanner": "php.lang.security.md5-loose-equality.md5-loose-equality",
+      "cwes": [
+        "CWE-697"
+      ],
+      "vinculos": {},
+      "referencia": "reports-0a8e877_semgrep-report.json#/results/18",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-020",
+      "ferramenta": "Semgrep",
+      "camada": "APP",
+      "estagio": "commit",
+      "classe": "direta",
+      "score": 7.5,
+      "origem_score": "semgrep_error",
+      "severidade_original": "ERROR",
+      "identificador_scanner": "php.lang.security.injection.tainted-sql-string.tainted-sql-string",
+      "cwes": [
+        "CWE-89"
+      ],
+      "vinculos": {
+        "dvwa-sql-injection": "direta"
+      },
+      "referencia": "reports-0a8e877_semgrep-report.json#/results/19",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-021",
+      "ferramenta": "Semgrep",
+      "camada": "APP",
+      "estagio": "commit",
+      "classe": "sem_matriz",
+      "score": 7.5,
+      "origem_score": "semgrep_error",
+      "severidade_original": "ERROR",
+      "identificador_scanner": "php.lang.security.md5-loose-equality.md5-loose-equality",
+      "cwes": [
+        "CWE-697"
+      ],
+      "vinculos": {},
+      "referencia": "reports-0a8e877_semgrep-report.json#/results/20",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-022",
+      "ferramenta": "Semgrep",
+      "camada": "APP",
+      "estagio": "commit",
+      "classe": "sem_matriz",
+      "score": 7.5,
+      "origem_score": "semgrep_error",
+      "severidade_original": "ERROR",
+      "identificador_scanner": "php.lang.security.md5-loose-equality.md5-loose-equality",
+      "cwes": [
+        "CWE-697"
+      ],
+      "vinculos": {},
+      "referencia": "reports-0a8e877_semgrep-report.json#/results/21",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-023",
+      "ferramenta": "Semgrep",
+      "camada": "APP",
+      "estagio": "commit",
+      "classe": "sem_matriz",
+      "score": 7.5,
+      "origem_score": "semgrep_error",
+      "severidade_original": "ERROR",
+      "identificador_scanner": "php.lang.security.md5-loose-equality.md5-loose-equality",
+      "cwes": [
+        "CWE-697"
+      ],
+      "vinculos": {},
+      "referencia": "reports-0a8e877_semgrep-report.json#/results/22",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-024",
+      "ferramenta": "Semgrep",
+      "camada": "APP",
+      "estagio": "commit",
+      "classe": "sem_matriz",
+      "score": 7.5,
+      "origem_score": "semgrep_error",
+      "severidade_original": "ERROR",
+      "identificador_scanner": "php.lang.security.md5-loose-equality.md5-loose-equality",
+      "cwes": [
+        "CWE-697"
+      ],
+      "vinculos": {},
+      "referencia": "reports-0a8e877_semgrep-report.json#/results/23",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-025",
+      "ferramenta": "Semgrep",
+      "camada": "APP",
+      "estagio": "commit",
+      "classe": "sem_matriz",
+      "score": 7.5,
+      "origem_score": "semgrep_error",
+      "severidade_original": "ERROR",
+      "identificador_scanner": "php.lang.security.md5-loose-equality.md5-loose-equality",
+      "cwes": [
+        "CWE-697"
+      ],
+      "vinculos": {},
+      "referencia": "reports-0a8e877_semgrep-report.json#/results/24",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-026",
+      "ferramenta": "Semgrep",
+      "camada": "APP",
+      "estagio": "commit",
+      "classe": "direta",
+      "score": 7.5,
+      "origem_score": "semgrep_error",
+      "severidade_original": "ERROR",
+      "identificador_scanner": "javascript.browser.security.insecure-document-method.insecure-document-method",
+      "cwes": [
+        "CWE-79"
+      ],
+      "vinculos": {
+        "dvwa-xss": "direta"
+      },
+      "referencia": "reports-0a8e877_semgrep-report.json#/results/25",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-027",
+      "ferramenta": "Semgrep",
+      "camada": "APP",
+      "estagio": "commit",
+      "classe": "direta",
+      "score": 7.5,
+      "origem_score": "semgrep_error",
+      "severidade_original": "ERROR",
+      "identificador_scanner": "javascript.browser.security.insecure-document-method.insecure-document-method",
+      "cwes": [
+        "CWE-79"
+      ],
+      "vinculos": {
+        "dvwa-xss": "direta"
+      },
+      "referencia": "reports-0a8e877_semgrep-report.json#/results/26",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-028",
+      "ferramenta": "Semgrep",
+      "camada": "APP",
+      "estagio": "commit",
+      "classe": "direta",
+      "score": 7.5,
+      "origem_score": "semgrep_error",
+      "severidade_original": "ERROR",
+      "identificador_scanner": "php.lang.security.injection.echoed-request.echoed-request",
+      "cwes": [
+        "CWE-79"
+      ],
+      "vinculos": {
+        "dvwa-xss": "direta"
+      },
+      "referencia": "reports-0a8e877_semgrep-report.json#/results/27",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-029",
+      "ferramenta": "Semgrep",
+      "camada": "APP",
+      "estagio": "commit",
+      "classe": "sem_matriz",
+      "score": 7.5,
+      "origem_score": "semgrep_error",
+      "severidade_original": "ERROR",
+      "identificador_scanner": "php.lang.security.md5-loose-equality.md5-loose-equality",
+      "cwes": [
+        "CWE-697"
+      ],
+      "vinculos": {},
+      "referencia": "reports-0a8e877_semgrep-report.json#/results/28",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-030",
+      "ferramenta": "Semgrep",
+      "camada": "APP",
+      "estagio": "commit",
+      "classe": "sem_matriz",
+      "score": 7.5,
+      "origem_score": "semgrep_error",
+      "severidade_original": "ERROR",
+      "identificador_scanner": "php.lang.security.exec-use.exec-use",
+      "cwes": [
+        "CWE-94"
+      ],
+      "vinculos": {},
+      "referencia": "reports-0a8e877_semgrep-report.json#/results/29",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-031",
+      "ferramenta": "Semgrep",
+      "camada": "APP",
+      "estagio": "commit",
+      "classe": "direta",
+      "score": 5.0,
+      "origem_score": "semgrep_warning",
+      "severidade_original": "WARNING",
+      "identificador_scanner": "php.lang.security.injection.tainted-exec.tainted-exec",
+      "cwes": [
+        "CWE-78"
+      ],
+      "vinculos": {
+        "dvwa-command-injection": "direta"
+      },
+      "referencia": "reports-0a8e877_semgrep-report.json#/results/30",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-032",
+      "ferramenta": "Semgrep",
+      "camada": "APP",
+      "estagio": "commit",
+      "classe": "sem_matriz",
+      "score": 7.5,
+      "origem_score": "semgrep_error",
+      "severidade_original": "ERROR",
+      "identificador_scanner": "php.lang.security.tainted-exec.tainted-exec",
+      "cwes": [
+        "CWE-94"
+      ],
+      "vinculos": {},
+      "referencia": "reports-0a8e877_semgrep-report.json#/results/31",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-033",
+      "ferramenta": "Semgrep",
+      "camada": "APP",
+      "estagio": "commit",
+      "classe": "sem_matriz",
+      "score": 7.5,
+      "origem_score": "semgrep_error",
+      "severidade_original": "ERROR",
+      "identificador_scanner": "php.lang.security.exec-use.exec-use",
+      "cwes": [
+        "CWE-94"
+      ],
+      "vinculos": {},
+      "referencia": "reports-0a8e877_semgrep-report.json#/results/32",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-034",
+      "ferramenta": "Semgrep",
+      "camada": "APP",
+      "estagio": "commit",
+      "classe": "direta",
+      "score": 5.0,
+      "origem_score": "semgrep_warning",
+      "severidade_original": "WARNING",
+      "identificador_scanner": "php.lang.security.injection.tainted-exec.tainted-exec",
+      "cwes": [
+        "CWE-78"
+      ],
+      "vinculos": {
+        "dvwa-command-injection": "direta"
+      },
+      "referencia": "reports-0a8e877_semgrep-report.json#/results/33",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-035",
+      "ferramenta": "Semgrep",
+      "camada": "APP",
+      "estagio": "commit",
+      "classe": "sem_matriz",
+      "score": 7.5,
+      "origem_score": "semgrep_error",
+      "severidade_original": "ERROR",
+      "identificador_scanner": "php.lang.security.tainted-exec.tainted-exec",
+      "cwes": [
+        "CWE-94"
+      ],
+      "vinculos": {},
+      "referencia": "reports-0a8e877_semgrep-report.json#/results/34",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-036",
+      "ferramenta": "Semgrep",
+      "camada": "APP",
+      "estagio": "commit",
+      "classe": "sem_matriz",
+      "score": 7.5,
+      "origem_score": "semgrep_error",
+      "severidade_original": "ERROR",
+      "identificador_scanner": "php.lang.security.exec-use.exec-use",
+      "cwes": [
+        "CWE-94"
+      ],
+      "vinculos": {},
+      "referencia": "reports-0a8e877_semgrep-report.json#/results/35",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-037",
+      "ferramenta": "Semgrep",
+      "camada": "APP",
+      "estagio": "commit",
+      "classe": "direta",
+      "score": 5.0,
+      "origem_score": "semgrep_warning",
+      "severidade_original": "WARNING",
+      "identificador_scanner": "php.lang.security.injection.tainted-exec.tainted-exec",
+      "cwes": [
+        "CWE-78"
+      ],
+      "vinculos": {
+        "dvwa-command-injection": "direta"
+      },
+      "referencia": "reports-0a8e877_semgrep-report.json#/results/36",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-038",
+      "ferramenta": "Semgrep",
+      "camada": "APP",
+      "estagio": "commit",
+      "classe": "sem_matriz",
+      "score": 7.5,
+      "origem_score": "semgrep_error",
+      "severidade_original": "ERROR",
+      "identificador_scanner": "php.lang.security.tainted-exec.tainted-exec",
+      "cwes": [
+        "CWE-94"
+      ],
+      "vinculos": {},
+      "referencia": "reports-0a8e877_semgrep-report.json#/results/37",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-039",
+      "ferramenta": "Semgrep",
+      "camada": "APP",
+      "estagio": "commit",
+      "classe": "sem_matriz",
+      "score": 7.5,
+      "origem_score": "semgrep_error",
+      "severidade_original": "ERROR",
+      "identificador_scanner": "php.lang.security.exec-use.exec-use",
+      "cwes": [
+        "CWE-94"
+      ],
+      "vinculos": {},
+      "referencia": "reports-0a8e877_semgrep-report.json#/results/38",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-040",
+      "ferramenta": "Semgrep",
+      "camada": "APP",
+      "estagio": "commit",
+      "classe": "direta",
+      "score": 5.0,
+      "origem_score": "semgrep_warning",
+      "severidade_original": "WARNING",
+      "identificador_scanner": "php.lang.security.injection.tainted-exec.tainted-exec",
+      "cwes": [
+        "CWE-78"
+      ],
+      "vinculos": {
+        "dvwa-command-injection": "direta"
+      },
+      "referencia": "reports-0a8e877_semgrep-report.json#/results/39",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-041",
+      "ferramenta": "Semgrep",
+      "camada": "APP",
+      "estagio": "commit",
+      "classe": "sem_matriz",
+      "score": 7.5,
+      "origem_score": "semgrep_error",
+      "severidade_original": "ERROR",
+      "identificador_scanner": "php.lang.security.tainted-exec.tainted-exec",
+      "cwes": [
+        "CWE-94"
+      ],
+      "vinculos": {},
+      "referencia": "reports-0a8e877_semgrep-report.json#/results/40",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-042",
+      "ferramenta": "Semgrep",
+      "camada": "APP",
+      "estagio": "commit",
+      "classe": "sem_matriz",
+      "score": 7.5,
+      "origem_score": "semgrep_error",
+      "severidade_original": "ERROR",
+      "identificador_scanner": "php.lang.security.exec-use.exec-use",
+      "cwes": [
+        "CWE-94"
+      ],
+      "vinculos": {},
+      "referencia": "reports-0a8e877_semgrep-report.json#/results/41",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-043",
+      "ferramenta": "Semgrep",
+      "camada": "APP",
+      "estagio": "commit",
+      "classe": "direta",
+      "score": 5.0,
+      "origem_score": "semgrep_warning",
+      "severidade_original": "WARNING",
+      "identificador_scanner": "php.lang.security.injection.tainted-exec.tainted-exec",
+      "cwes": [
+        "CWE-78"
+      ],
+      "vinculos": {
+        "dvwa-command-injection": "direta"
+      },
+      "referencia": "reports-0a8e877_semgrep-report.json#/results/42",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-044",
+      "ferramenta": "Semgrep",
+      "camada": "APP",
+      "estagio": "commit",
+      "classe": "sem_matriz",
+      "score": 7.5,
+      "origem_score": "semgrep_error",
+      "severidade_original": "ERROR",
+      "identificador_scanner": "php.lang.security.tainted-exec.tainted-exec",
+      "cwes": [
+        "CWE-94"
+      ],
+      "vinculos": {},
+      "referencia": "reports-0a8e877_semgrep-report.json#/results/43",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-045",
+      "ferramenta": "Semgrep",
+      "camada": "APP",
+      "estagio": "commit",
+      "classe": "sem_matriz",
+      "score": 7.5,
+      "origem_score": "semgrep_error",
+      "severidade_original": "ERROR",
+      "identificador_scanner": "php.lang.security.exec-use.exec-use",
+      "cwes": [
+        "CWE-94"
+      ],
+      "vinculos": {},
+      "referencia": "reports-0a8e877_semgrep-report.json#/results/44",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-046",
+      "ferramenta": "Semgrep",
+      "camada": "APP",
+      "estagio": "commit",
+      "classe": "direta",
+      "score": 5.0,
+      "origem_score": "semgrep_warning",
+      "severidade_original": "WARNING",
+      "identificador_scanner": "php.lang.security.injection.tainted-exec.tainted-exec",
+      "cwes": [
+        "CWE-78"
+      ],
+      "vinculos": {
+        "dvwa-command-injection": "direta"
+      },
+      "referencia": "reports-0a8e877_semgrep-report.json#/results/45",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-047",
+      "ferramenta": "Semgrep",
+      "camada": "APP",
+      "estagio": "commit",
+      "classe": "sem_matriz",
+      "score": 7.5,
+      "origem_score": "semgrep_error",
+      "severidade_original": "ERROR",
+      "identificador_scanner": "php.lang.security.tainted-exec.tainted-exec",
+      "cwes": [
+        "CWE-94"
+      ],
+      "vinculos": {},
+      "referencia": "reports-0a8e877_semgrep-report.json#/results/46",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-048",
+      "ferramenta": "Semgrep",
+      "camada": "APP",
+      "estagio": "commit",
+      "classe": "sem_matriz",
+      "score": 7.5,
+      "origem_score": "semgrep_error",
+      "severidade_original": "ERROR",
+      "identificador_scanner": "php.lang.security.exec-use.exec-use",
+      "cwes": [
+        "CWE-94"
+      ],
+      "vinculos": {},
+      "referencia": "reports-0a8e877_semgrep-report.json#/results/47",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-049",
+      "ferramenta": "Semgrep",
+      "camada": "APP",
+      "estagio": "commit",
+      "classe": "direta",
+      "score": 5.0,
+      "origem_score": "semgrep_warning",
+      "severidade_original": "WARNING",
+      "identificador_scanner": "php.lang.security.injection.tainted-exec.tainted-exec",
+      "cwes": [
+        "CWE-78"
+      ],
+      "vinculos": {
+        "dvwa-command-injection": "direta"
+      },
+      "referencia": "reports-0a8e877_semgrep-report.json#/results/48",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-050",
+      "ferramenta": "Semgrep",
+      "camada": "APP",
+      "estagio": "commit",
+      "classe": "sem_matriz",
+      "score": 7.5,
+      "origem_score": "semgrep_error",
+      "severidade_original": "ERROR",
+      "identificador_scanner": "php.lang.security.tainted-exec.tainted-exec",
+      "cwes": [
+        "CWE-94"
+      ],
+      "vinculos": {},
+      "referencia": "reports-0a8e877_semgrep-report.json#/results/49",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-051",
+      "ferramenta": "Semgrep",
+      "camada": "APP",
+      "estagio": "commit",
+      "classe": "sem_matriz",
+      "score": 7.5,
+      "origem_score": "semgrep_error",
+      "severidade_original": "ERROR",
+      "identificador_scanner": "php.lang.security.exec-use.exec-use",
+      "cwes": [
+        "CWE-94"
+      ],
+      "vinculos": {},
+      "referencia": "reports-0a8e877_semgrep-report.json#/results/50",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-052",
+      "ferramenta": "Semgrep",
+      "camada": "APP",
+      "estagio": "commit",
+      "classe": "direta",
+      "score": 5.0,
+      "origem_score": "semgrep_warning",
+      "severidade_original": "WARNING",
+      "identificador_scanner": "php.lang.security.injection.tainted-exec.tainted-exec",
+      "cwes": [
+        "CWE-78"
+      ],
+      "vinculos": {
+        "dvwa-command-injection": "direta"
+      },
+      "referencia": "reports-0a8e877_semgrep-report.json#/results/51",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-053",
+      "ferramenta": "Semgrep",
+      "camada": "APP",
+      "estagio": "commit",
+      "classe": "sem_matriz",
+      "score": 7.5,
+      "origem_score": "semgrep_error",
+      "severidade_original": "ERROR",
+      "identificador_scanner": "php.lang.security.tainted-exec.tainted-exec",
+      "cwes": [
+        "CWE-94"
+      ],
+      "vinculos": {},
+      "referencia": "reports-0a8e877_semgrep-report.json#/results/52",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-054",
+      "ferramenta": "Semgrep",
+      "camada": "APP",
+      "estagio": "commit",
+      "classe": "sem_matriz",
+      "score": 5.0,
+      "origem_score": "semgrep_warning",
+      "severidade_original": "WARNING",
+      "identificador_scanner": "php.lang.security.injection.tainted-filename.tainted-filename",
+      "cwes": [
+        "CWE-918"
+      ],
+      "vinculos": {},
+      "referencia": "reports-0a8e877_semgrep-report.json#/results/53",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-055",
+      "ferramenta": "Semgrep",
+      "camada": "APP",
+      "estagio": "commit",
+      "classe": "direta",
+      "score": 7.5,
+      "origem_score": "semgrep_error",
+      "severidade_original": "ERROR",
+      "identificador_scanner": "php.lang.security.md5-loose-equality.md5-loose-equality",
+      "cwes": [
+        "CWE-697"
+      ],
+      "vinculos": {
+        "dvwa-javascript-attacks": "direta"
+      },
+      "referencia": "reports-0a8e877_semgrep-report.json#/results/54",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-056",
+      "ferramenta": "Semgrep",
+      "camada": "APP",
+      "estagio": "commit",
+      "classe": "direta",
+      "score": 7.5,
+      "origem_score": "semgrep_error",
+      "severidade_original": "ERROR",
+      "identificador_scanner": "php.lang.security.md5-loose-equality.md5-loose-equality",
+      "cwes": [
+        "CWE-697"
+      ],
+      "vinculos": {
+        "dvwa-javascript-attacks": "direta"
+      },
+      "referencia": "reports-0a8e877_semgrep-report.json#/results/55",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-057",
+      "ferramenta": "Semgrep",
+      "camada": "APP",
+      "estagio": "commit",
+      "classe": "direta",
+      "score": 5.0,
+      "origem_score": "semgrep_warning",
+      "severidade_original": "WARNING",
+      "identificador_scanner": "javascript.browser.security.eval-detected.eval-detected",
+      "cwes": [
+        "CWE-95"
+      ],
+      "vinculos": {
+        "dvwa-javascript-attacks": "direta"
+      },
+      "referencia": "reports-0a8e877_semgrep-report.json#/results/56",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-058",
+      "ferramenta": "Semgrep",
+      "camada": "APP",
+      "estagio": "commit",
+      "classe": "direta",
+      "score": 5.0,
+      "origem_score": "semgrep_warning",
+      "severidade_original": "WARNING",
+      "identificador_scanner": "javascript.lang.security.audit.detect-non-literal-regexp.detect-non-literal-regexp",
+      "cwes": [
+        "CWE-1333"
+      ],
+      "vinculos": {
+        "dvwa-javascript-attacks": "direta"
+      },
+      "referencia": "reports-0a8e877_semgrep-report.json#/results/57",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-059",
+      "ferramenta": "Semgrep",
+      "camada": "APP",
+      "estagio": "commit",
+      "classe": "direta",
+      "score": 7.5,
+      "origem_score": "semgrep_error",
+      "severidade_original": "ERROR",
+      "identificador_scanner": "php.lang.security.injection.tainted-sql-string.tainted-sql-string",
+      "cwes": [
+        "CWE-89"
+      ],
+      "vinculos": {
+        "dvwa-sql-injection": "direta"
+      },
+      "referencia": "reports-0a8e877_semgrep-report.json#/results/58",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-060",
+      "ferramenta": "Semgrep",
+      "camada": "APP",
+      "estagio": "commit",
+      "classe": "direta",
+      "score": 7.5,
+      "origem_score": "semgrep_error",
+      "severidade_original": "ERROR",
+      "identificador_scanner": "php.lang.security.injection.tainted-sql-string.tainted-sql-string",
+      "cwes": [
+        "CWE-89"
+      ],
+      "vinculos": {
+        "dvwa-sql-injection": "direta"
+      },
+      "referencia": "reports-0a8e877_semgrep-report.json#/results/59",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-061",
+      "ferramenta": "Semgrep",
+      "camada": "APP",
+      "estagio": "commit",
+      "classe": "direta",
+      "score": 7.5,
+      "origem_score": "semgrep_error",
+      "severidade_original": "ERROR",
+      "identificador_scanner": "php.lang.security.injection.tainted-sql-string.tainted-sql-string",
+      "cwes": [
+        "CWE-89"
+      ],
+      "vinculos": {
+        "dvwa-sql-injection": "direta"
+      },
+      "referencia": "reports-0a8e877_semgrep-report.json#/results/60",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-062",
+      "ferramenta": "Semgrep",
+      "camada": "APP",
+      "estagio": "commit",
+      "classe": "direta",
+      "score": 7.5,
+      "origem_score": "semgrep_error",
+      "severidade_original": "ERROR",
+      "identificador_scanner": "php.lang.security.injection.tainted-sql-string.tainted-sql-string",
+      "cwes": [
+        "CWE-89"
+      ],
+      "vinculos": {
+        "dvwa-sql-injection": "direta"
+      },
+      "referencia": "reports-0a8e877_semgrep-report.json#/results/61",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-063",
+      "ferramenta": "Semgrep",
+      "camada": "APP",
+      "estagio": "commit",
+      "classe": "direta",
+      "score": 7.5,
+      "origem_score": "semgrep_error",
+      "severidade_original": "ERROR",
+      "identificador_scanner": "php.lang.security.injection.tainted-sql-string.tainted-sql-string",
+      "cwes": [
+        "CWE-89"
+      ],
+      "vinculos": {
+        "dvwa-sql-injection": "direta"
+      },
+      "referencia": "reports-0a8e877_semgrep-report.json#/results/62",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-064",
+      "ferramenta": "Semgrep",
+      "camada": "APP",
+      "estagio": "commit",
+      "classe": "direta",
+      "score": 7.5,
+      "origem_score": "semgrep_error",
+      "severidade_original": "ERROR",
+      "identificador_scanner": "php.lang.security.injection.tainted-sql-string.tainted-sql-string",
+      "cwes": [
+        "CWE-89"
+      ],
+      "vinculos": {
+        "dvwa-sql-injection": "direta"
+      },
+      "referencia": "reports-0a8e877_semgrep-report.json#/results/63",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-065",
+      "ferramenta": "Semgrep",
+      "camada": "APP",
+      "estagio": "commit",
+      "classe": "direta",
+      "score": 7.5,
+      "origem_score": "semgrep_error",
+      "severidade_original": "ERROR",
+      "identificador_scanner": "php.lang.security.injection.tainted-sql-string.tainted-sql-string",
+      "cwes": [
+        "CWE-89"
+      ],
+      "vinculos": {
+        "dvwa-sql-injection": "direta"
+      },
+      "referencia": "reports-0a8e877_semgrep-report.json#/results/64",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-066",
+      "ferramenta": "Semgrep",
+      "camada": "APP",
+      "estagio": "commit",
+      "classe": "sem_matriz",
+      "score": 5.0,
+      "origem_score": "semgrep_warning",
+      "severidade_original": "WARNING",
+      "identificador_scanner": "php.lang.security.unlink-use.unlink-use",
+      "cwes": [
+        "CWE-22"
+      ],
+      "vinculos": {},
+      "referencia": "reports-0a8e877_semgrep-report.json#/results/65",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-067",
+      "ferramenta": "Semgrep",
+      "camada": "APP",
+      "estagio": "commit",
+      "classe": "direta",
+      "score": 7.5,
+      "origem_score": "semgrep_error",
+      "severidade_original": "ERROR",
+      "identificador_scanner": "php.lang.security.eval-use.eval-use",
+      "cwes": [
+        "CWE-78"
+      ],
+      "vinculos": {
+        "dvwa-command-injection": "direta"
+      },
+      "referencia": "reports-0a8e877_semgrep-report.json#/results/66",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-068",
+      "ferramenta": "Semgrep",
+      "camada": "APP",
+      "estagio": "commit",
+      "classe": "sem_matriz",
+      "score": 5.0,
+      "origem_score": "semgrep_warning",
+      "severidade_original": "WARNING",
+      "identificador_scanner": "php.lang.security.injection.tainted-filename.tainted-filename",
+      "cwes": [
+        "CWE-918"
+      ],
+      "vinculos": {},
+      "referencia": "reports-0a8e877_semgrep-report.json#/results/67",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-069",
+      "ferramenta": "Semgrep",
+      "camada": "APP",
+      "estagio": "commit",
+      "classe": "direta",
+      "score": 7.5,
+      "origem_score": "semgrep_error",
+      "severidade_original": "ERROR",
+      "identificador_scanner": "php.lang.security.eval-use.eval-use",
+      "cwes": [
+        "CWE-78"
+      ],
+      "vinculos": {
+        "dvwa-command-injection": "direta"
+      },
+      "referencia": "reports-0a8e877_semgrep-report.json#/results/68",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-070",
+      "ferramenta": "Semgrep",
+      "camada": "APP",
+      "estagio": "commit",
+      "classe": "sem_matriz",
+      "score": 5.0,
+      "origem_score": "semgrep_warning",
+      "severidade_original": "WARNING",
+      "identificador_scanner": "php.lang.security.injection.tainted-filename.tainted-filename",
+      "cwes": [
+        "CWE-918"
+      ],
+      "vinculos": {},
+      "referencia": "reports-0a8e877_semgrep-report.json#/results/69",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-071",
+      "ferramenta": "Semgrep",
+      "camada": "APP",
+      "estagio": "commit",
+      "classe": "sem_matriz",
+      "score": 5.0,
+      "origem_score": "semgrep_warning",
+      "severidade_original": "WARNING",
+      "identificador_scanner": "php.lang.security.injection.tainted-filename.tainted-filename",
+      "cwes": [
+        "CWE-918"
+      ],
+      "vinculos": {},
+      "referencia": "reports-0a8e877_semgrep-report.json#/results/70",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-072",
+      "ferramenta": "Semgrep",
+      "camada": "APP",
+      "estagio": "commit",
+      "classe": "sem_matriz",
+      "score": 5.0,
+      "origem_score": "semgrep_warning",
+      "severidade_original": "WARNING",
+      "identificador_scanner": "php.lang.security.injection.tainted-filename.tainted-filename",
+      "cwes": [
+        "CWE-918"
+      ],
+      "vinculos": {},
+      "referencia": "reports-0a8e877_semgrep-report.json#/results/71",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-073",
+      "ferramenta": "Semgrep",
+      "camada": "APP",
+      "estagio": "commit",
+      "classe": "sem_matriz",
+      "score": 5.0,
+      "origem_score": "semgrep_warning",
+      "severidade_original": "WARNING",
+      "identificador_scanner": "php.lang.security.injection.tainted-filename.tainted-filename",
+      "cwes": [
+        "CWE-918"
+      ],
+      "vinculos": {},
+      "referencia": "reports-0a8e877_semgrep-report.json#/results/72",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-074",
+      "ferramenta": "Semgrep",
+      "camada": "APP",
+      "estagio": "commit",
+      "classe": "sem_matriz",
+      "score": 5.0,
+      "origem_score": "semgrep_warning",
+      "severidade_original": "WARNING",
+      "identificador_scanner": "php.lang.security.injection.tainted-filename.tainted-filename",
+      "cwes": [
+        "CWE-918"
+      ],
+      "vinculos": {},
+      "referencia": "reports-0a8e877_semgrep-report.json#/results/73",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-075",
+      "ferramenta": "Semgrep",
+      "camada": "APP",
+      "estagio": "commit",
+      "classe": "sem_matriz",
+      "score": 5.0,
+      "origem_score": "semgrep_warning",
+      "severidade_original": "WARNING",
+      "identificador_scanner": "php.lang.security.injection.tainted-filename.tainted-filename",
+      "cwes": [
+        "CWE-918"
+      ],
+      "vinculos": {},
+      "referencia": "reports-0a8e877_semgrep-report.json#/results/74",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-076",
+      "ferramenta": "Semgrep",
+      "camada": "APP",
+      "estagio": "commit",
+      "classe": "sem_matriz",
+      "score": 5.0,
+      "origem_score": "semgrep_warning",
+      "severidade_original": "WARNING",
+      "identificador_scanner": "php.lang.security.injection.tainted-filename.tainted-filename",
+      "cwes": [
+        "CWE-918"
+      ],
+      "vinculos": {},
+      "referencia": "reports-0a8e877_semgrep-report.json#/results/75",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-077",
+      "ferramenta": "Semgrep",
+      "camada": "APP",
+      "estagio": "commit",
+      "classe": "sem_matriz",
+      "score": 5.0,
+      "origem_score": "semgrep_warning",
+      "severidade_original": "WARNING",
+      "identificador_scanner": "php.lang.security.injection.tainted-filename.tainted-filename",
+      "cwes": [
+        "CWE-918"
+      ],
+      "vinculos": {},
+      "referencia": "reports-0a8e877_semgrep-report.json#/results/76",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-078",
+      "ferramenta": "Checkov",
+      "camada": "INFRA",
+      "estagio": "build",
+      "classe": "sem_matriz",
+      "score": 5.0,
+      "origem_score": "proxy_checkov",
+      "severidade_original": "MEDIUM",
+      "identificador_scanner": "CKV_GCP_84",
+      "cwes": [],
+      "vinculos": {},
+      "referencia": "reports-0a8e877_checkov-terraform.json#/results/failed_checks/0",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-079",
+      "ferramenta": "Checkov",
+      "camada": "INFRA",
+      "estagio": "build",
+      "classe": "sem_matriz",
+      "score": 5.0,
+      "origem_score": "proxy_checkov",
+      "severidade_original": "MEDIUM",
+      "identificador_scanner": "CKV_GCP_70",
+      "cwes": [],
+      "vinculos": {},
+      "referencia": "reports-0a8e877_checkov-terraform.json#/results/failed_checks/1",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-080",
+      "ferramenta": "Checkov",
+      "camada": "INFRA",
+      "estagio": "build",
+      "classe": "sem_matriz",
+      "score": 5.0,
+      "origem_score": "proxy_checkov",
+      "severidade_original": "MEDIUM",
+      "identificador_scanner": "CKV_GCP_65",
+      "cwes": [],
+      "vinculos": {},
+      "referencia": "reports-0a8e877_checkov-terraform.json#/results/failed_checks/2",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-081",
+      "ferramenta": "Checkov",
+      "camada": "INFRA",
+      "estagio": "build",
+      "classe": "sem_matriz",
+      "score": 5.0,
+      "origem_score": "proxy_checkov",
+      "severidade_original": "MEDIUM",
+      "identificador_scanner": "CKV_GCP_13",
+      "cwes": [],
+      "vinculos": {},
+      "referencia": "reports-0a8e877_checkov-terraform.json#/results/failed_checks/3",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-082",
+      "ferramenta": "Checkov",
+      "camada": "INFRA",
+      "estagio": "build",
+      "classe": "sem_matriz",
+      "score": 5.0,
+      "origem_score": "proxy_checkov",
+      "severidade_original": "MEDIUM",
+      "identificador_scanner": "CKV_GCP_20",
+      "cwes": [],
+      "vinculos": {},
+      "referencia": "reports-0a8e877_checkov-terraform.json#/results/failed_checks/4",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-083",
+      "ferramenta": "Checkov",
+      "camada": "INFRA",
+      "estagio": "build",
+      "classe": "sem_matriz",
+      "score": 5.0,
+      "origem_score": "proxy_checkov",
+      "severidade_original": "MEDIUM",
+      "identificador_scanner": "CKV_GCP_25",
+      "cwes": [],
+      "vinculos": {},
+      "referencia": "reports-0a8e877_checkov-terraform.json#/results/failed_checks/5",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-084",
+      "ferramenta": "Checkov",
+      "camada": "INFRA",
+      "estagio": "build",
+      "classe": "sem_matriz",
+      "score": 5.0,
+      "origem_score": "proxy_checkov",
+      "severidade_original": "MEDIUM",
+      "identificador_scanner": "CKV_GCP_66",
+      "cwes": [],
+      "vinculos": {},
+      "referencia": "reports-0a8e877_checkov-terraform.json#/results/failed_checks/6",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-085",
+      "ferramenta": "Checkov",
+      "camada": "INFRA",
+      "estagio": "build",
+      "classe": "direta",
+      "score": 5.0,
+      "origem_score": "proxy_checkov",
+      "severidade_original": "MEDIUM",
+      "identificador_scanner": "CKV_GCP_21",
+      "cwes": [],
+      "vinculos": {
+        "dvwa-exposed-mysql": "direta"
+      },
+      "referencia": "reports-0a8e877_checkov-terraform.json#/results/failed_checks/7",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-086",
+      "ferramenta": "Checkov",
+      "camada": "INFRA",
+      "estagio": "build",
+      "classe": "sem_matriz",
+      "score": 5.0,
+      "origem_score": "proxy_checkov",
+      "severidade_original": "MEDIUM",
+      "identificador_scanner": "CKV_GCP_12",
+      "cwes": [],
+      "vinculos": {},
+      "referencia": "reports-0a8e877_checkov-terraform.json#/results/failed_checks/8",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-087",
+      "ferramenta": "Checkov",
+      "camada": "INFRA",
+      "estagio": "build",
+      "classe": "sem_matriz",
+      "score": 5.0,
+      "origem_score": "proxy_checkov",
+      "severidade_original": "MEDIUM",
+      "identificador_scanner": "CKV_GCP_64",
+      "cwes": [],
+      "vinculos": {},
+      "referencia": "reports-0a8e877_checkov-terraform.json#/results/failed_checks/9",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-088",
+      "ferramenta": "Checkov",
+      "camada": "INFRA",
+      "estagio": "build",
+      "classe": "sem_matriz",
+      "score": 5.0,
+      "origem_score": "proxy_checkov",
+      "severidade_original": "MEDIUM",
+      "identificador_scanner": "CKV_GCP_69",
+      "cwes": [],
+      "vinculos": {},
+      "referencia": "reports-0a8e877_checkov-terraform.json#/results/failed_checks/10",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-089",
+      "ferramenta": "Checkov",
+      "camada": "INFRA",
+      "estagio": "build",
+      "classe": "sem_matriz",
+      "score": 5.0,
+      "origem_score": "proxy_checkov",
+      "severidade_original": "MEDIUM",
+      "identificador_scanner": "CKV_GCP_61",
+      "cwes": [],
+      "vinculos": {},
+      "referencia": "reports-0a8e877_checkov-terraform.json#/results/failed_checks/11",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-090",
+      "ferramenta": "Checkov",
+      "camada": "INFRA",
+      "estagio": "build",
+      "classe": "sem_matriz",
+      "score": 5.0,
+      "origem_score": "proxy_checkov",
+      "severidade_original": "MEDIUM",
+      "identificador_scanner": "CKV_GCP_68",
+      "cwes": [],
+      "vinculos": {},
+      "referencia": "reports-0a8e877_checkov-terraform.json#/results/failed_checks/12",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-091",
+      "ferramenta": "Checkov",
+      "camada": "INFRA",
+      "estagio": "build",
+      "classe": "sem_matriz",
+      "score": 5.0,
+      "origem_score": "proxy_checkov",
+      "severidade_original": "MEDIUM",
+      "identificador_scanner": "CKV_GCP_9",
+      "cwes": [],
+      "vinculos": {},
+      "referencia": "reports-0a8e877_checkov-terraform.json#/results/failed_checks/13",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-092",
+      "ferramenta": "Checkov",
+      "camada": "INFRA",
+      "estagio": "build",
+      "classe": "sem_matriz",
+      "score": 5.0,
+      "origem_score": "proxy_checkov",
+      "severidade_original": "MEDIUM",
+      "identificador_scanner": "CKV_GCP_10",
+      "cwes": [],
+      "vinculos": {},
+      "referencia": "reports-0a8e877_checkov-terraform.json#/results/failed_checks/14",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-093",
+      "ferramenta": "Checkov",
+      "camada": "INFRA",
+      "estagio": "build",
+      "classe": "sem_matriz",
+      "score": 5.0,
+      "origem_score": "proxy_checkov",
+      "severidade_original": "MEDIUM",
+      "identificador_scanner": "CKV_GCP_69",
+      "cwes": [],
+      "vinculos": {},
+      "referencia": "reports-0a8e877_checkov-terraform.json#/results/failed_checks/15",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-094",
+      "ferramenta": "Checkov",
+      "camada": "INFRA",
+      "estagio": "build",
+      "classe": "sem_matriz",
+      "score": 5.0,
+      "origem_score": "proxy_checkov",
+      "severidade_original": "MEDIUM",
+      "identificador_scanner": "CKV_GCP_49",
+      "cwes": [],
+      "vinculos": {},
+      "referencia": "reports-0a8e877_checkov-terraform.json#/results/failed_checks/16",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-095",
+      "ferramenta": "Checkov",
+      "camada": "INFRA",
+      "estagio": "build",
+      "classe": "sem_matriz",
+      "score": 5.0,
+      "origem_score": "proxy_checkov",
+      "severidade_original": "MEDIUM",
+      "identificador_scanner": "CKV_GCP_114",
+      "cwes": [],
+      "vinculos": {},
+      "referencia": "reports-0a8e877_checkov-terraform.json#/results/failed_checks/17",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-096",
+      "ferramenta": "Checkov",
+      "camada": "INFRA",
+      "estagio": "build",
+      "classe": "sem_matriz",
+      "score": 5.0,
+      "origem_score": "proxy_checkov",
+      "severidade_original": "MEDIUM",
+      "identificador_scanner": "CKV_GCP_78",
+      "cwes": [],
+      "vinculos": {},
+      "referencia": "reports-0a8e877_checkov-terraform.json#/results/failed_checks/18",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-097",
+      "ferramenta": "Checkov",
+      "camada": "INFRA",
+      "estagio": "build",
+      "classe": "direta",
+      "score": 5.0,
+      "origem_score": "proxy_checkov",
+      "severidade_original": "MEDIUM",
+      "identificador_scanner": "CKV_GCP_62",
+      "cwes": [],
+      "vinculos": {
+        "dvwa-exposed-mysql": "direta"
+      },
+      "referencia": "reports-0a8e877_checkov-terraform.json#/results/failed_checks/19",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-098",
+      "ferramenta": "Checkov",
+      "camada": "INFRA",
+      "estagio": "build",
+      "classe": "sem_matriz",
+      "score": 5.0,
+      "origem_score": "proxy_checkov",
+      "severidade_original": "MEDIUM",
+      "identificador_scanner": "CKV_GCP_114",
+      "cwes": [],
+      "vinculos": {},
+      "referencia": "reports-0a8e877_checkov-terraform.json#/results/failed_checks/20",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-099",
+      "ferramenta": "Checkov",
+      "camada": "INFRA",
+      "estagio": "build",
+      "classe": "sem_matriz",
+      "score": 5.0,
+      "origem_score": "proxy_checkov",
+      "severidade_original": "MEDIUM",
+      "identificador_scanner": "CKV_GCP_78",
+      "cwes": [],
+      "vinculos": {},
+      "referencia": "reports-0a8e877_checkov-terraform.json#/results/failed_checks/21",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-100",
+      "ferramenta": "Checkov",
+      "camada": "INFRA",
+      "estagio": "build",
+      "classe": "direta",
+      "score": 5.0,
+      "origem_score": "proxy_checkov",
+      "severidade_original": "MEDIUM",
+      "identificador_scanner": "CKV_GCP_62",
+      "cwes": [],
+      "vinculos": {
+        "dvwa-exposed-mysql": "direta"
+      },
+      "referencia": "reports-0a8e877_checkov-terraform.json#/results/failed_checks/22",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-101",
+      "ferramenta": "Checkov",
+      "camada": "INFRA",
+      "estagio": "build",
+      "classe": "sem_matriz",
+      "score": 5.0,
+      "origem_score": "proxy_checkov",
+      "severidade_original": "MEDIUM",
+      "identificador_scanner": "CKV_GCP_26",
+      "cwes": [],
+      "vinculos": {},
+      "referencia": "reports-0a8e877_checkov-terraform.json#/results/failed_checks/23",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-102",
+      "ferramenta": "Checkov",
+      "camada": "INFRA",
+      "estagio": "build",
+      "classe": "sem_matriz",
+      "score": 5.0,
+      "origem_score": "proxy_checkov",
+      "severidade_original": "MEDIUM",
+      "identificador_scanner": "CKV2_GCP_18",
+      "cwes": [],
+      "vinculos": {},
+      "referencia": "reports-0a8e877_checkov-terraform.json#/results/failed_checks/24",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-103",
+      "ferramenta": "Checkov",
+      "camada": "INFRA",
+      "estagio": "build",
+      "classe": "sem_matriz",
+      "score": 5.0,
+      "origem_score": "proxy_checkov",
+      "severidade_original": "MEDIUM",
+      "identificador_scanner": "CKV_K8S_9",
+      "cwes": [],
+      "vinculos": {},
+      "referencia": "reports-0a8e877_checkov-k8s.json#/results/failed_checks/0",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-104",
+      "ferramenta": "Checkov",
+      "camada": "INFRA",
+      "estagio": "build",
+      "classe": "direta",
+      "score": 5.0,
+      "origem_score": "proxy_checkov",
+      "severidade_original": "MEDIUM",
+      "identificador_scanner": "CKV_K8S_38",
+      "cwes": [],
+      "vinculos": {
+        "dvwa-exposed-mysql": "direta"
+      },
+      "referencia": "reports-0a8e877_checkov-k8s.json#/results/failed_checks/1",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-105",
+      "ferramenta": "Checkov",
+      "camada": "INFRA",
+      "estagio": "build",
+      "classe": "sem_matriz",
+      "score": 5.0,
+      "origem_score": "proxy_checkov",
+      "severidade_original": "MEDIUM",
+      "identificador_scanner": "CKV_K8S_13",
+      "cwes": [],
+      "vinculos": {},
+      "referencia": "reports-0a8e877_checkov-k8s.json#/results/failed_checks/2",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-106",
+      "ferramenta": "Checkov",
+      "camada": "INFRA",
+      "estagio": "build",
+      "classe": "sem_matriz",
+      "score": 5.0,
+      "origem_score": "proxy_checkov",
+      "severidade_original": "MEDIUM",
+      "identificador_scanner": "CKV_K8S_21",
+      "cwes": [],
+      "vinculos": {},
+      "referencia": "reports-0a8e877_checkov-k8s.json#/results/failed_checks/3",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-107",
+      "ferramenta": "Checkov",
+      "camada": "INFRA",
+      "estagio": "build",
+      "classe": "sem_matriz",
+      "score": 5.0,
+      "origem_score": "proxy_checkov",
+      "severidade_original": "MEDIUM",
+      "identificador_scanner": "CKV_K8S_43",
+      "cwes": [],
+      "vinculos": {},
+      "referencia": "reports-0a8e877_checkov-k8s.json#/results/failed_checks/4",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-108",
+      "ferramenta": "Checkov",
+      "camada": "INFRA",
+      "estagio": "build",
+      "classe": "sem_matriz",
+      "score": 5.0,
+      "origem_score": "proxy_checkov",
+      "severidade_original": "MEDIUM",
+      "identificador_scanner": "CKV_K8S_20",
+      "cwes": [],
+      "vinculos": {},
+      "referencia": "reports-0a8e877_checkov-k8s.json#/results/failed_checks/5",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-109",
+      "ferramenta": "Checkov",
+      "camada": "INFRA",
+      "estagio": "build",
+      "classe": "sem_matriz",
+      "score": 5.0,
+      "origem_score": "proxy_checkov",
+      "severidade_original": "MEDIUM",
+      "identificador_scanner": "CKV_K8S_22",
+      "cwes": [],
+      "vinculos": {},
+      "referencia": "reports-0a8e877_checkov-k8s.json#/results/failed_checks/6",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-110",
+      "ferramenta": "Checkov",
+      "camada": "INFRA",
+      "estagio": "build",
+      "classe": "direta",
+      "score": 5.0,
+      "origem_score": "proxy_checkov",
+      "severidade_original": "MEDIUM",
+      "identificador_scanner": "CKV_K8S_31",
+      "cwes": [],
+      "vinculos": {
+        "dvwa-exposed-mysql": "direta"
+      },
+      "referencia": "reports-0a8e877_checkov-k8s.json#/results/failed_checks/7",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-111",
+      "ferramenta": "Checkov",
+      "camada": "INFRA",
+      "estagio": "build",
+      "classe": "sem_matriz",
+      "score": 5.0,
+      "origem_score": "proxy_checkov",
+      "severidade_original": "MEDIUM",
+      "identificador_scanner": "CKV_K8S_11",
+      "cwes": [],
+      "vinculos": {},
+      "referencia": "reports-0a8e877_checkov-k8s.json#/results/failed_checks/8",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-112",
+      "ferramenta": "Checkov",
+      "camada": "INFRA",
+      "estagio": "build",
+      "classe": "direta",
+      "score": 5.0,
+      "origem_score": "proxy_checkov",
+      "severidade_original": "MEDIUM",
+      "identificador_scanner": "CKV_K8S_30",
+      "cwes": [],
+      "vinculos": {
+        "dvwa-exposed-mysql": "direta"
+      },
+      "referencia": "reports-0a8e877_checkov-k8s.json#/results/failed_checks/9",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-113",
+      "ferramenta": "Checkov",
+      "camada": "INFRA",
+      "estagio": "build",
+      "classe": "sem_matriz",
+      "score": 5.0,
+      "origem_score": "proxy_checkov",
+      "severidade_original": "MEDIUM",
+      "identificador_scanner": "CKV_K8S_40",
+      "cwes": [],
+      "vinculos": {},
+      "referencia": "reports-0a8e877_checkov-k8s.json#/results/failed_checks/10",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-114",
+      "ferramenta": "Checkov",
+      "camada": "INFRA",
+      "estagio": "build",
+      "classe": "sem_matriz",
+      "score": 5.0,
+      "origem_score": "proxy_checkov",
+      "severidade_original": "MEDIUM",
+      "identificador_scanner": "CKV_K8S_10",
+      "cwes": [],
+      "vinculos": {},
+      "referencia": "reports-0a8e877_checkov-k8s.json#/results/failed_checks/11",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-115",
+      "ferramenta": "Checkov",
+      "camada": "INFRA",
+      "estagio": "build",
+      "classe": "sem_matriz",
+      "score": 5.0,
+      "origem_score": "proxy_checkov",
+      "severidade_original": "MEDIUM",
+      "identificador_scanner": "CKV_K8S_8",
+      "cwes": [],
+      "vinculos": {},
+      "referencia": "reports-0a8e877_checkov-k8s.json#/results/failed_checks/12",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-116",
+      "ferramenta": "Checkov",
+      "camada": "INFRA",
+      "estagio": "build",
+      "classe": "sem_matriz",
+      "score": 5.0,
+      "origem_score": "proxy_checkov",
+      "severidade_original": "MEDIUM",
+      "identificador_scanner": "CKV_K8S_15",
+      "cwes": [],
+      "vinculos": {},
+      "referencia": "reports-0a8e877_checkov-k8s.json#/results/failed_checks/13",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-117",
+      "ferramenta": "Checkov",
+      "camada": "INFRA",
+      "estagio": "build",
+      "classe": "sem_matriz",
+      "score": 5.0,
+      "origem_score": "proxy_checkov",
+      "severidade_original": "MEDIUM",
+      "identificador_scanner": "CKV_K8S_28",
+      "cwes": [],
+      "vinculos": {},
+      "referencia": "reports-0a8e877_checkov-k8s.json#/results/failed_checks/14",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-118",
+      "ferramenta": "Checkov",
+      "camada": "INFRA",
+      "estagio": "build",
+      "classe": "sem_matriz",
+      "score": 5.0,
+      "origem_score": "proxy_checkov",
+      "severidade_original": "MEDIUM",
+      "identificador_scanner": "CKV_K8S_23",
+      "cwes": [],
+      "vinculos": {},
+      "referencia": "reports-0a8e877_checkov-k8s.json#/results/failed_checks/15",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-119",
+      "ferramenta": "Checkov",
+      "camada": "INFRA",
+      "estagio": "build",
+      "classe": "direta",
+      "score": 5.0,
+      "origem_score": "proxy_checkov",
+      "severidade_original": "MEDIUM",
+      "identificador_scanner": "CKV_K8S_29",
+      "cwes": [],
+      "vinculos": {
+        "dvwa-exposed-mysql": "direta"
+      },
+      "referencia": "reports-0a8e877_checkov-k8s.json#/results/failed_checks/16",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-120",
+      "ferramenta": "Checkov",
+      "camada": "INFRA",
+      "estagio": "build",
+      "classe": "sem_matriz",
+      "score": 5.0,
+      "origem_score": "proxy_checkov",
+      "severidade_original": "MEDIUM",
+      "identificador_scanner": "CKV_K8S_37",
+      "cwes": [],
+      "vinculos": {},
+      "referencia": "reports-0a8e877_checkov-k8s.json#/results/failed_checks/17",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-121",
+      "ferramenta": "Checkov",
+      "camada": "INFRA",
+      "estagio": "build",
+      "classe": "sem_matriz",
+      "score": 5.0,
+      "origem_score": "proxy_checkov",
+      "severidade_original": "MEDIUM",
+      "identificador_scanner": "CKV_K8S_12",
+      "cwes": [],
+      "vinculos": {},
+      "referencia": "reports-0a8e877_checkov-k8s.json#/results/failed_checks/18",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-122",
+      "ferramenta": "Checkov",
+      "camada": "INFRA",
+      "estagio": "build",
+      "classe": "sem_matriz",
+      "score": 5.0,
+      "origem_score": "proxy_checkov",
+      "severidade_original": "MEDIUM",
+      "identificador_scanner": "CKV_K8S_21",
+      "cwes": [],
+      "vinculos": {},
+      "referencia": "reports-0a8e877_checkov-k8s.json#/results/failed_checks/19",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-123",
+      "ferramenta": "Checkov",
+      "camada": "INFRA",
+      "estagio": "build",
+      "classe": "sem_matriz",
+      "score": 5.0,
+      "origem_score": "proxy_checkov",
+      "severidade_original": "MEDIUM",
+      "identificador_scanner": "CKV_K8S_9",
+      "cwes": [],
+      "vinculos": {},
+      "referencia": "reports-0a8e877_checkov-k8s.json#/results/failed_checks/20",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-124",
+      "ferramenta": "Checkov",
+      "camada": "INFRA",
+      "estagio": "build",
+      "classe": "direta",
+      "score": 5.0,
+      "origem_score": "proxy_checkov",
+      "severidade_original": "MEDIUM",
+      "identificador_scanner": "CKV_K8S_38",
+      "cwes": [],
+      "vinculos": {
+        "dvwa-exposed-mysql": "direta"
+      },
+      "referencia": "reports-0a8e877_checkov-k8s.json#/results/failed_checks/21",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-125",
+      "ferramenta": "Checkov",
+      "camada": "INFRA",
+      "estagio": "build",
+      "classe": "sem_matriz",
+      "score": 5.0,
+      "origem_score": "proxy_checkov",
+      "severidade_original": "MEDIUM",
+      "identificador_scanner": "CKV_K8S_21",
+      "cwes": [],
+      "vinculos": {},
+      "referencia": "reports-0a8e877_checkov-k8s.json#/results/failed_checks/22",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-126",
+      "ferramenta": "Checkov",
+      "camada": "INFRA",
+      "estagio": "build",
+      "classe": "sem_matriz",
+      "score": 5.0,
+      "origem_score": "proxy_checkov",
+      "severidade_original": "MEDIUM",
+      "identificador_scanner": "CKV_K8S_43",
+      "cwes": [],
+      "vinculos": {},
+      "referencia": "reports-0a8e877_checkov-k8s.json#/results/failed_checks/23",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-127",
+      "ferramenta": "Checkov",
+      "camada": "INFRA",
+      "estagio": "build",
+      "classe": "sem_matriz",
+      "score": 5.0,
+      "origem_score": "proxy_checkov",
+      "severidade_original": "MEDIUM",
+      "identificador_scanner": "CKV_K8S_20",
+      "cwes": [],
+      "vinculos": {},
+      "referencia": "reports-0a8e877_checkov-k8s.json#/results/failed_checks/24",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-128",
+      "ferramenta": "Checkov",
+      "camada": "INFRA",
+      "estagio": "build",
+      "classe": "sem_matriz",
+      "score": 5.0,
+      "origem_score": "proxy_checkov",
+      "severidade_original": "MEDIUM",
+      "identificador_scanner": "CKV_K8S_22",
+      "cwes": [],
+      "vinculos": {},
+      "referencia": "reports-0a8e877_checkov-k8s.json#/results/failed_checks/25",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-129",
+      "ferramenta": "Checkov",
+      "camada": "INFRA",
+      "estagio": "build",
+      "classe": "direta",
+      "score": 5.0,
+      "origem_score": "proxy_checkov",
+      "severidade_original": "MEDIUM",
+      "identificador_scanner": "CKV_K8S_31",
+      "cwes": [],
+      "vinculos": {
+        "dvwa-exposed-mysql": "direta"
+      },
+      "referencia": "reports-0a8e877_checkov-k8s.json#/results/failed_checks/26",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-130",
+      "ferramenta": "Checkov",
+      "camada": "INFRA",
+      "estagio": "build",
+      "classe": "direta",
+      "score": 5.0,
+      "origem_score": "proxy_checkov",
+      "severidade_original": "MEDIUM",
+      "identificador_scanner": "CKV_K8S_30",
+      "cwes": [],
+      "vinculos": {
+        "dvwa-exposed-mysql": "direta"
+      },
+      "referencia": "reports-0a8e877_checkov-k8s.json#/results/failed_checks/27",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-131",
+      "ferramenta": "Checkov",
+      "camada": "INFRA",
+      "estagio": "build",
+      "classe": "sem_matriz",
+      "score": 5.0,
+      "origem_score": "proxy_checkov",
+      "severidade_original": "MEDIUM",
+      "identificador_scanner": "CKV_K8S_40",
+      "cwes": [],
+      "vinculos": {},
+      "referencia": "reports-0a8e877_checkov-k8s.json#/results/failed_checks/28",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-132",
+      "ferramenta": "Checkov",
+      "camada": "INFRA",
+      "estagio": "build",
+      "classe": "sem_matriz",
+      "score": 5.0,
+      "origem_score": "proxy_checkov",
+      "severidade_original": "MEDIUM",
+      "identificador_scanner": "CKV_K8S_8",
+      "cwes": [],
+      "vinculos": {},
+      "referencia": "reports-0a8e877_checkov-k8s.json#/results/failed_checks/29",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-133",
+      "ferramenta": "Checkov",
+      "camada": "INFRA",
+      "estagio": "build",
+      "classe": "sem_matriz",
+      "score": 5.0,
+      "origem_score": "proxy_checkov",
+      "severidade_original": "MEDIUM",
+      "identificador_scanner": "CKV_K8S_14",
+      "cwes": [],
+      "vinculos": {},
+      "referencia": "reports-0a8e877_checkov-k8s.json#/results/failed_checks/30",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-134",
+      "ferramenta": "Checkov",
+      "camada": "INFRA",
+      "estagio": "build",
+      "classe": "sem_matriz",
+      "score": 5.0,
+      "origem_score": "proxy_checkov",
+      "severidade_original": "MEDIUM",
+      "identificador_scanner": "CKV_K8S_28",
+      "cwes": [],
+      "vinculos": {},
+      "referencia": "reports-0a8e877_checkov-k8s.json#/results/failed_checks/31",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-135",
+      "ferramenta": "Checkov",
+      "camada": "INFRA",
+      "estagio": "build",
+      "classe": "sem_matriz",
+      "score": 5.0,
+      "origem_score": "proxy_checkov",
+      "severidade_original": "MEDIUM",
+      "identificador_scanner": "CKV_K8S_23",
+      "cwes": [],
+      "vinculos": {},
+      "referencia": "reports-0a8e877_checkov-k8s.json#/results/failed_checks/32",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-136",
+      "ferramenta": "Checkov",
+      "camada": "INFRA",
+      "estagio": "build",
+      "classe": "direta",
+      "score": 5.0,
+      "origem_score": "proxy_checkov",
+      "severidade_original": "MEDIUM",
+      "identificador_scanner": "CKV_K8S_29",
+      "cwes": [],
+      "vinculos": {
+        "dvwa-exposed-mysql": "direta"
+      },
+      "referencia": "reports-0a8e877_checkov-k8s.json#/results/failed_checks/33",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-137",
+      "ferramenta": "Checkov",
+      "camada": "INFRA",
+      "estagio": "build",
+      "classe": "sem_matriz",
+      "score": 5.0,
+      "origem_score": "proxy_checkov",
+      "severidade_original": "MEDIUM",
+      "identificador_scanner": "CKV_K8S_37",
+      "cwes": [],
+      "vinculos": {},
+      "referencia": "reports-0a8e877_checkov-k8s.json#/results/failed_checks/34",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-138",
+      "ferramenta": "Checkov",
+      "camada": "INFRA",
+      "estagio": "build",
+      "classe": "sem_matriz",
+      "score": 5.0,
+      "origem_score": "proxy_checkov",
+      "severidade_original": "MEDIUM",
+      "identificador_scanner": "CKV_K8S_21",
+      "cwes": [],
+      "vinculos": {},
+      "referencia": "reports-0a8e877_checkov-k8s.json#/results/failed_checks/35",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-139",
+      "ferramenta": "Checkov",
+      "camada": "INFRA",
+      "estagio": "build",
+      "classe": "sem_matriz",
+      "score": 5.0,
+      "origem_score": "proxy_checkov",
+      "severidade_original": "MEDIUM",
+      "identificador_scanner": "CKV2_K8S_6",
+      "cwes": [],
+      "vinculos": {},
+      "referencia": "reports-0a8e877_checkov-k8s.json#/results/failed_checks/36",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-140",
+      "ferramenta": "Checkov",
+      "camada": "INFRA",
+      "estagio": "build",
+      "classe": "sem_matriz",
+      "score": 5.0,
+      "origem_score": "proxy_checkov",
+      "severidade_original": "MEDIUM",
+      "identificador_scanner": "CKV2_K8S_6",
+      "cwes": [],
+      "vinculos": {},
+      "referencia": "reports-0a8e877_checkov-k8s.json#/results/failed_checks/37",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-141",
+      "ferramenta": "OWASP ZAP (Baseline)",
+      "camada": "APP",
+      "estagio": "deploy",
+      "classe": "direta",
+      "score": 5.0,
+      "origem_score": "proxy_zap_baseline",
+      "severidade_original": "Medium (High)",
+      "identificador_scanner": "10038",
+      "cwes": [
+        "CWE-693"
+      ],
+      "vinculos": {
+        "dvwa-csp-bypass": "direta"
+      },
+      "referencia": "reports-0a8e877_zap-report.json#/site/1/alerts/0",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-142",
+      "ferramenta": "OWASP ZAP (Baseline)",
+      "camada": "APP",
+      "estagio": "deploy",
+      "classe": "sem_matriz",
+      "score": 5.0,
+      "origem_score": "proxy_zap_baseline",
+      "severidade_original": "Medium (Medium)",
+      "identificador_scanner": "0",
+      "cwes": [
+        "CWE-548"
+      ],
+      "vinculos": {},
+      "referencia": "reports-0a8e877_zap-report.json#/site/1/alerts/1",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-143",
+      "ferramenta": "OWASP ZAP (Baseline)",
+      "camada": "APP",
+      "estagio": "deploy",
+      "classe": "sem_matriz",
+      "score": 5.0,
+      "origem_score": "proxy_zap_baseline",
+      "severidade_original": "Medium (Medium)",
+      "identificador_scanner": "10106",
+      "cwes": [
+        "CWE-311"
+      ],
+      "vinculos": {},
+      "referencia": "reports-0a8e877_zap-report.json#/site/1/alerts/2",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-144",
+      "ferramenta": "OWASP ZAP (Baseline)",
+      "camada": "APP",
+      "estagio": "deploy",
+      "classe": "sem_matriz",
+      "score": 5.0,
+      "origem_score": "proxy_zap_baseline",
+      "severidade_original": "Medium (Medium)",
+      "identificador_scanner": "10020",
+      "cwes": [
+        "CWE-1021"
+      ],
+      "vinculos": {},
+      "referencia": "reports-0a8e877_zap-report.json#/site/1/alerts/3",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-145",
+      "ferramenta": "OWASP ZAP (Baseline)",
+      "camada": "APP",
+      "estagio": "deploy",
+      "classe": "sem_matriz",
+      "score": 5.0,
+      "origem_score": "proxy_zap_baseline",
+      "severidade_original": "Medium (Medium)",
+      "identificador_scanner": "10051",
+      "cwes": [
+        "CWE-20"
+      ],
+      "vinculos": {},
+      "referencia": "reports-0a8e877_zap-report.json#/site/1/alerts/4",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-146",
+      "ferramenta": "OWASP ZAP (Baseline)",
+      "camada": "APP",
+      "estagio": "deploy",
+      "classe": "sem_matriz",
+      "score": 3.0,
+      "origem_score": "proxy_zap_baseline",
+      "severidade_original": "Low (Medium)",
+      "identificador_scanner": "10010",
+      "cwes": [
+        "CWE-1004"
+      ],
+      "vinculos": {},
+      "referencia": "reports-0a8e877_zap-report.json#/site/1/alerts/5",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-147",
+      "ferramenta": "OWASP ZAP (Baseline)",
+      "camada": "APP",
+      "estagio": "deploy",
+      "classe": "sem_matriz",
+      "score": 3.0,
+      "origem_score": "proxy_zap_baseline",
+      "severidade_original": "Low (Medium)",
+      "identificador_scanner": "10054",
+      "cwes": [
+        "CWE-1275"
+      ],
+      "vinculos": {},
+      "referencia": "reports-0a8e877_zap-report.json#/site/1/alerts/6",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-148",
+      "ferramenta": "OWASP ZAP (Baseline)",
+      "camada": "APP",
+      "estagio": "deploy",
+      "classe": "sem_matriz",
+      "score": 3.0,
+      "origem_score": "proxy_zap_baseline",
+      "severidade_original": "Low (High)",
+      "identificador_scanner": "10009",
+      "cwes": [
+        "CWE-497"
+      ],
+      "vinculos": {},
+      "referencia": "reports-0a8e877_zap-report.json#/site/1/alerts/7",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-149",
+      "ferramenta": "OWASP ZAP (Baseline)",
+      "camada": "APP",
+      "estagio": "deploy",
+      "classe": "direta",
+      "score": 3.0,
+      "origem_score": "proxy_zap_baseline",
+      "severidade_original": "Low (Medium)",
+      "identificador_scanner": "90004",
+      "cwes": [
+        "CWE-693"
+      ],
+      "vinculos": {
+        "dvwa-csp-bypass": "direta"
+      },
+      "referencia": "reports-0a8e877_zap-report.json#/site/1/alerts/8",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-150",
+      "ferramenta": "OWASP ZAP (Baseline)",
+      "camada": "APP",
+      "estagio": "deploy",
+      "classe": "direta",
+      "score": 3.0,
+      "origem_score": "proxy_zap_baseline",
+      "severidade_original": "Low (Medium)",
+      "identificador_scanner": "10063",
+      "cwes": [
+        "CWE-693"
+      ],
+      "vinculos": {
+        "dvwa-csp-bypass": "direta"
+      },
+      "referencia": "reports-0a8e877_zap-report.json#/site/1/alerts/9",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-151",
+      "ferramenta": "OWASP ZAP (Baseline)",
+      "camada": "APP",
+      "estagio": "deploy",
+      "classe": "sem_matriz",
+      "score": 3.0,
+      "origem_score": "proxy_zap_baseline",
+      "severidade_original": "Low (High)",
+      "identificador_scanner": "10036",
+      "cwes": [
+        "CWE-497"
+      ],
+      "vinculos": {},
+      "referencia": "reports-0a8e877_zap-report.json#/site/1/alerts/10",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-152",
+      "ferramenta": "OWASP ZAP (Baseline)",
+      "camada": "APP",
+      "estagio": "deploy",
+      "classe": "direta",
+      "score": 3.0,
+      "origem_score": "proxy_zap_baseline",
+      "severidade_original": "Low (Medium)",
+      "identificador_scanner": "10021",
+      "cwes": [
+        "CWE-693"
+      ],
+      "vinculos": {
+        "dvwa-csp-bypass": "direta"
+      },
+      "referencia": "reports-0a8e877_zap-report.json#/site/1/alerts/11",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-153",
+      "ferramenta": "OWASP ZAP (Baseline)",
+      "camada": "APP",
+      "estagio": "deploy",
+      "classe": "sem_matriz",
+      "score": 0.0,
+      "origem_score": "proxy_zap_baseline",
+      "severidade_original": "Informational (High)",
+      "identificador_scanner": "10111",
+      "cwes": [],
+      "vinculos": {},
+      "referencia": "reports-0a8e877_zap-report.json#/site/1/alerts/12",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-154",
+      "ferramenta": "OWASP ZAP (Baseline)",
+      "camada": "APP",
+      "estagio": "deploy",
+      "classe": "sem_matriz",
+      "score": 0.0,
+      "origem_score": "proxy_zap_baseline",
+      "severidade_original": "Informational (Low)",
+      "identificador_scanner": "90027",
+      "cwes": [
+        "CWE-205"
+      ],
+      "vinculos": {},
+      "referencia": "reports-0a8e877_zap-report.json#/site/1/alerts/13",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-155",
+      "ferramenta": "OWASP ZAP (Baseline)",
+      "camada": "APP",
+      "estagio": "deploy",
+      "classe": "sem_matriz",
+      "score": 0.0,
+      "origem_score": "proxy_zap_baseline",
+      "severidade_original": "Informational (Medium)",
+      "identificador_scanner": "10049",
+      "cwes": [
+        "CWE-524"
+      ],
+      "vinculos": {},
+      "referencia": "reports-0a8e877_zap-report.json#/site/1/alerts/14",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-156",
+      "ferramenta": "OWASP ZAP (Baseline)",
+      "camada": "APP",
+      "estagio": "deploy",
+      "classe": "sem_matriz",
+      "score": 0.0,
+      "origem_score": "proxy_zap_baseline",
+      "severidade_original": "Informational (Medium)",
+      "identificador_scanner": "10112",
+      "cwes": [],
+      "vinculos": {},
+      "referencia": "reports-0a8e877_zap-report.json#/site/1/alerts/15",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-157",
+      "ferramenta": "OWASP ZAP (Baseline)",
+      "camada": "APP",
+      "estagio": "deploy",
+      "classe": "sem_matriz",
+      "score": 0.0,
+      "origem_score": "proxy_zap_baseline",
+      "severidade_original": "Informational (Medium)",
+      "identificador_scanner": "10049",
+      "cwes": [
+        "CWE-524"
+      ],
+      "vinculos": {},
+      "referencia": "reports-0a8e877_zap-report.json#/site/1/alerts/16",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-158",
+      "ferramenta": "OWASP ZAP (Baseline)",
+      "camada": "APP",
+      "estagio": "deploy",
+      "classe": "sem_matriz",
+      "score": 0.0,
+      "origem_score": "proxy_zap_baseline",
+      "severidade_original": "Informational (Medium)",
+      "identificador_scanner": "10049",
+      "cwes": [
+        "CWE-524"
+      ],
+      "vinculos": {},
+      "referencia": "reports-0a8e877_zap-report.json#/site/1/alerts/17",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-159",
+      "ferramenta": "OWASP ZAP (Baseline)",
+      "camada": "APP",
+      "estagio": "deploy",
+      "classe": "sem_matriz",
+      "score": 0.0,
+      "origem_score": "proxy_zap_baseline",
+      "severidade_original": "Informational (Medium)",
+      "identificador_scanner": "10104",
+      "cwes": [
+        "CWE-0"
+      ],
+      "vinculos": {},
+      "referencia": "reports-0a8e877_zap-report.json#/site/1/alerts/18",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-160",
+      "ferramenta": "OWASP ZAP (Active)",
+      "camada": "APP",
+      "estagio": "deploy",
+      "classe": "sem_matriz",
+      "score": null,
+      "origem_score": "sem_score_zap_active",
+      "severidade_original": "Medium",
+      "identificador_scanner": "10020",
+      "cwes": [
+        "CWE-1021"
+      ],
+      "vinculos": {},
+      "referencia": "reports-0a8e877_zap-auth-active-report.json#/alerts/0",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-161",
+      "ferramenta": "OWASP ZAP (Active)",
+      "camada": "APP",
+      "estagio": "deploy",
+      "classe": "direta",
+      "score": null,
+      "origem_score": "sem_score_zap_active",
+      "severidade_original": "Medium",
+      "identificador_scanner": "10038",
+      "cwes": [
+        "CWE-693"
+      ],
+      "vinculos": {
+        "dvwa-csp-bypass": "direta"
+      },
+      "referencia": "reports-0a8e877_zap-auth-active-report.json#/alerts/1",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-162",
+      "ferramenta": "OWASP ZAP (Active)",
+      "camada": "APP",
+      "estagio": "deploy",
+      "classe": "sem_matriz",
+      "score": null,
+      "origem_score": "sem_score_zap_active",
+      "severidade_original": "Low",
+      "identificador_scanner": "10036",
+      "cwes": [
+        "CWE-497"
+      ],
+      "vinculos": {},
+      "referencia": "reports-0a8e877_zap-auth-active-report.json#/alerts/2",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-163",
+      "ferramenta": "OWASP ZAP (Active)",
+      "camada": "APP",
+      "estagio": "deploy",
+      "classe": "direta",
+      "score": null,
+      "origem_score": "sem_score_zap_active",
+      "severidade_original": "Low",
+      "identificador_scanner": "10021",
+      "cwes": [
+        "CWE-693"
+      ],
+      "vinculos": {
+        "dvwa-csp-bypass": "direta"
+      },
+      "referencia": "reports-0a8e877_zap-auth-active-report.json#/alerts/4",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-164",
+      "ferramenta": "OWASP ZAP (Active)",
+      "camada": "APP",
+      "estagio": "deploy",
+      "classe": "sem_matriz",
+      "score": null,
+      "origem_score": "sem_score_zap_active",
+      "severidade_original": "Low",
+      "identificador_scanner": "10009",
+      "cwes": [
+        "CWE-497"
+      ],
+      "vinculos": {},
+      "referencia": "reports-0a8e877_zap-auth-active-report.json#/alerts/9",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-165",
+      "ferramenta": "OWASP ZAP (Active)",
+      "camada": "APP",
+      "estagio": "deploy",
+      "classe": "sem_matriz",
+      "score": null,
+      "origem_score": "sem_score_zap_active",
+      "severidade_original": "Medium",
+      "identificador_scanner": "90022",
+      "cwes": [
+        "CWE-550"
+      ],
+      "vinculos": {},
+      "referencia": "reports-0a8e877_zap-auth-active-report.json#/alerts/24",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-166",
+      "ferramenta": "OWASP ZAP (Active)",
+      "camada": "APP",
+      "estagio": "deploy",
+      "classe": "sem_matriz",
+      "score": null,
+      "origem_score": "sem_score_zap_active",
+      "severidade_original": "Medium",
+      "identificador_scanner": "10033",
+      "cwes": [
+        "CWE-548"
+      ],
+      "vinculos": {},
+      "referencia": "reports-0a8e877_zap-auth-active-report.json#/alerts/26",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-167",
+      "ferramenta": "OWASP ZAP (Active)",
+      "camada": "APP",
+      "estagio": "deploy",
+      "classe": "sem_matriz",
+      "score": null,
+      "origem_score": "sem_score_zap_active",
+      "severidade_original": "Informational",
+      "identificador_scanner": "10111",
+      "cwes": [],
+      "vinculos": {},
+      "referencia": "reports-0a8e877_zap-auth-active-report.json#/alerts/39",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-168",
+      "ferramenta": "OWASP ZAP (Active)",
+      "camada": "APP",
+      "estagio": "deploy",
+      "classe": "sem_matriz",
+      "score": null,
+      "origem_score": "sem_score_zap_active",
+      "severidade_original": "Informational",
+      "identificador_scanner": "10027",
+      "cwes": [
+        "CWE-615"
+      ],
+      "vinculos": {},
+      "referencia": "reports-0a8e877_zap-auth-active-report.json#/alerts/65",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-169",
+      "ferramenta": "OWASP ZAP (Active)",
+      "camada": "APP",
+      "estagio": "deploy",
+      "classe": "sem_matriz",
+      "score": null,
+      "origem_score": "sem_score_zap_active",
+      "severidade_original": "Low",
+      "identificador_scanner": "10023",
+      "cwes": [
+        "CWE-1295"
+      ],
+      "vinculos": {},
+      "referencia": "reports-0a8e877_zap-auth-active-report.json#/alerts/86",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-170",
+      "ferramenta": "OWASP ZAP (Active)",
+      "camada": "APP",
+      "estagio": "deploy",
+      "classe": "direta",
+      "score": null,
+      "origem_score": "sem_score_zap_active",
+      "severidade_original": "High",
+      "identificador_scanner": "40018",
+      "cwes": [
+        "CWE-89"
+      ],
+      "vinculos": {
+        "dvwa-sql-injection": "direta"
+      },
+      "referencia": "reports-0a8e877_zap-auth-active-report.json#/alerts/100",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-171",
+      "ferramenta": "OWASP ZAP (Active)",
+      "camada": "APP",
+      "estagio": "deploy",
+      "classe": "sem_matriz",
+      "score": null,
+      "origem_score": "sem_score_zap_active",
+      "severidade_original": "Medium",
+      "identificador_scanner": "0",
+      "cwes": [
+        "CWE-548"
+      ],
+      "vinculos": {},
+      "referencia": "reports-0a8e877_zap-auth-active-report.json#/alerts/101",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-172",
+      "ferramenta": "OWASP ZAP (Active)",
+      "camada": "APP",
+      "estagio": "deploy",
+      "classe": "sem_matriz",
+      "score": null,
+      "origem_score": "sem_score_zap_active",
+      "severidade_original": "Medium",
+      "identificador_scanner": "10106",
+      "cwes": [
+        "CWE-311"
+      ],
+      "vinculos": {},
+      "referencia": "reports-0a8e877_zap-auth-active-report.json#/alerts/107",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-173",
+      "ferramenta": "OWASP ZAP (Active)",
+      "camada": "APP",
+      "estagio": "deploy",
+      "classe": "sem_matriz",
+      "score": null,
+      "origem_score": "sem_score_zap_active",
+      "severidade_original": "Informational",
+      "identificador_scanner": "10104",
+      "cwes": [
+        "CWE-0"
+      ],
+      "vinculos": {},
+      "referencia": "reports-0a8e877_zap-auth-active-report.json#/alerts/108",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-174",
+      "ferramenta": "Brute Force",
+      "camada": "APP",
+      "estagio": "deploy",
+      "classe": "direta",
+      "score": 7.5,
+      "origem_score": "proxy_teste_credenciais",
+      "severidade_original": "High",
+      "identificador_scanner": "bf-rate-limit",
+      "cwes": [
+        "CWE-307"
+      ],
+      "vinculos": {
+        "dvwa-brute-force": "direta"
+      },
+      "referencia": "reports-0a8e877_hydra-bruteforce.json#/vulnerable",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-175",
+      "ferramenta": "Brute Force",
+      "camada": "APP",
+      "estagio": "deploy",
+      "classe": "direta",
+      "score": 7.5,
+      "origem_score": "proxy_teste_credenciais",
+      "severidade_original": "High",
+      "identificador_scanner": "bf-default-creds",
+      "cwes": [
+        "CWE-798"
+      ],
+      "vinculos": {
+        "dvwa-default-credentials": "direta"
+      },
+      "referencia": "reports-0a8e877_hydra-bruteforce.json#/vulnerable",
+      "granularidade": "individual"
+    },
+    {
+      "id": "dvwa-176",
+      "ferramenta": "Trivy Container",
+      "camada": "INFRA",
+      "estagio": "build",
+      "classe": "indireta",
+      "score": 6.1,
+      "origem_score": "cvss_v3",
+      "severidade_original": "MEDIUM",
+      "identificador_scanner": "CVE-2019-10092",
+      "cwes": [
+        "CWE-79"
+      ],
+      "vinculos": {
+        "dvwa-xss": "indireta"
+      },
+      "referencia": "reports-0a8e877_trivy-report.json#/Results/0/Vulnerabilities/27",
+      "granularidade": "individual_app_match"
+    },
+    {
+      "id": "dvwa-177",
+      "ferramenta": "Trivy Container",
+      "camada": "INFRA",
+      "estagio": "build",
+      "classe": "indireta",
+      "score": 6.1,
+      "origem_score": "cvss_v3",
+      "severidade_original": "MEDIUM",
+      "identificador_scanner": "CVE-2019-10098",
+      "cwes": [
+        "CWE-601"
+      ],
+      "vinculos": {
+        "dvwa-open-http-redirect": "indireta"
+      },
+      "referencia": "reports-0a8e877_trivy-report.json#/Results/0/Vulnerabilities/28",
+      "granularidade": "individual_app_match"
+    },
+    {
+      "id": "dvwa-178",
+      "ferramenta": "Trivy Container",
+      "camada": "INFRA",
+      "estagio": "build",
+      "classe": "indireta",
+      "score": 6.1,
+      "origem_score": "cvss_v3",
+      "severidade_original": "MEDIUM",
+      "identificador_scanner": "CVE-2020-1927",
+      "cwes": [
+        "CWE-601"
+      ],
+      "vinculos": {
+        "dvwa-open-http-redirect": "indireta"
+      },
+      "referencia": "reports-0a8e877_trivy-report.json#/Results/0/Vulnerabilities/30",
+      "granularidade": "individual_app_match"
+    },
+    {
+      "id": "dvwa-179",
+      "ferramenta": "Trivy Container",
+      "camada": "INFRA",
+      "estagio": "build",
+      "classe": "indireta",
+      "score": 6.1,
+      "origem_score": "cvss_v3",
+      "severidade_original": "MEDIUM",
+      "identificador_scanner": "CVE-2019-10092",
+      "cwes": [
+        "CWE-79"
+      ],
+      "vinculos": {
+        "dvwa-xss": "indireta"
+      },
+      "referencia": "reports-0a8e877_trivy-report.json#/Results/0/Vulnerabilities/60",
+      "granularidade": "individual_app_match"
+    },
+    {
+      "id": "dvwa-180",
+      "ferramenta": "Trivy Container",
+      "camada": "INFRA",
+      "estagio": "build",
+      "classe": "indireta",
+      "score": 6.1,
+      "origem_score": "cvss_v3",
+      "severidade_original": "MEDIUM",
+      "identificador_scanner": "CVE-2019-10098",
+      "cwes": [
+        "CWE-601"
+      ],
+      "vinculos": {
+        "dvwa-open-http-redirect": "indireta"
+      },
+      "referencia": "reports-0a8e877_trivy-report.json#/Results/0/Vulnerabilities/61",
+      "granularidade": "individual_app_match"
+    },
+    {
+      "id": "dvwa-181",
+      "ferramenta": "Trivy Container",
+      "camada": "INFRA",
+      "estagio": "build",
+      "classe": "indireta",
+      "score": 6.1,
+      "origem_score": "cvss_v3",
+      "severidade_original": "MEDIUM",
+      "identificador_scanner": "CVE-2020-1927",
+      "cwes": [
+        "CWE-601"
+      ],
+      "vinculos": {
+        "dvwa-open-http-redirect": "indireta"
+      },
+      "referencia": "reports-0a8e877_trivy-report.json#/Results/0/Vulnerabilities/63",
+      "granularidade": "individual_app_match"
+    },
+    {
+      "id": "dvwa-182",
+      "ferramenta": "Trivy Container",
+      "camada": "INFRA",
+      "estagio": "build",
+      "classe": "indireta",
+      "score": 6.1,
+      "origem_score": "cvss_v3",
+      "severidade_original": "MEDIUM",
+      "identificador_scanner": "CVE-2019-10092",
+      "cwes": [
+        "CWE-79"
+      ],
+      "vinculos": {
+        "dvwa-xss": "indireta"
+      },
+      "referencia": "reports-0a8e877_trivy-report.json#/Results/0/Vulnerabilities/93",
+      "granularidade": "individual_app_match"
+    },
+    {
+      "id": "dvwa-183",
+      "ferramenta": "Trivy Container",
+      "camada": "INFRA",
+      "estagio": "build",
+      "classe": "indireta",
+      "score": 6.1,
+      "origem_score": "cvss_v3",
+      "severidade_original": "MEDIUM",
+      "identificador_scanner": "CVE-2019-10098",
+      "cwes": [
+        "CWE-601"
+      ],
+      "vinculos": {
+        "dvwa-open-http-redirect": "indireta"
+      },
+      "referencia": "reports-0a8e877_trivy-report.json#/Results/0/Vulnerabilities/94",
+      "granularidade": "individual_app_match"
+    },
+    {
+      "id": "dvwa-184",
+      "ferramenta": "Trivy Container",
+      "camada": "INFRA",
+      "estagio": "build",
+      "classe": "indireta",
+      "score": 6.1,
+      "origem_score": "cvss_v3",
+      "severidade_original": "MEDIUM",
+      "identificador_scanner": "CVE-2020-1927",
+      "cwes": [
+        "CWE-601"
+      ],
+      "vinculos": {
+        "dvwa-open-http-redirect": "indireta"
+      },
+      "referencia": "reports-0a8e877_trivy-report.json#/Results/0/Vulnerabilities/96",
+      "granularidade": "individual_app_match"
+    },
+    {
+      "id": "dvwa-185",
+      "ferramenta": "Trivy Container",
+      "camada": "INFRA",
+      "estagio": "build",
+      "classe": "indireta",
+      "score": 6.1,
+      "origem_score": "cvss_v3",
+      "severidade_original": "MEDIUM",
+      "identificador_scanner": "CVE-2019-10092",
+      "cwes": [
+        "CWE-79"
+      ],
+      "vinculos": {
+        "dvwa-xss": "indireta"
+      },
+      "referencia": "reports-0a8e877_trivy-report.json#/Results/0/Vulnerabilities/126",
+      "granularidade": "individual_app_match"
+    },
+    {
+      "id": "dvwa-186",
+      "ferramenta": "Trivy Container",
+      "camada": "INFRA",
+      "estagio": "build",
+      "classe": "indireta",
+      "score": 6.1,
+      "origem_score": "cvss_v3",
+      "severidade_original": "MEDIUM",
+      "identificador_scanner": "CVE-2019-10098",
+      "cwes": [
+        "CWE-601"
+      ],
+      "vinculos": {
+        "dvwa-open-http-redirect": "indireta"
+      },
+      "referencia": "reports-0a8e877_trivy-report.json#/Results/0/Vulnerabilities/127",
+      "granularidade": "individual_app_match"
+    },
+    {
+      "id": "dvwa-187",
+      "ferramenta": "Trivy Container",
+      "camada": "INFRA",
+      "estagio": "build",
+      "classe": "indireta",
+      "score": 6.1,
+      "origem_score": "cvss_v3",
+      "severidade_original": "MEDIUM",
+      "identificador_scanner": "CVE-2020-1927",
+      "cwes": [
+        "CWE-601"
+      ],
+      "vinculos": {
+        "dvwa-open-http-redirect": "indireta"
+      },
+      "referencia": "reports-0a8e877_trivy-report.json#/Results/0/Vulnerabilities/129",
+      "granularidade": "individual_app_match"
+    },
+    {
+      "id": "dvwa-188",
+      "ferramenta": "Trivy Container",
+      "camada": "INFRA",
+      "estagio": "build",
+      "classe": "indireta",
+      "score": 8.8,
+      "origem_score": "cvss_v3",
+      "severidade_original": "HIGH",
+      "identificador_scanner": "CVE-2018-1000858",
+      "cwes": [
+        "CWE-352"
+      ],
+      "vinculos": {
+        "dvwa-csrf": "indireta"
+      },
+      "referencia": "reports-0a8e877_trivy-report.json#/Results/0/Vulnerabilities/151",
+      "granularidade": "individual_app_match"
+    },
+    {
+      "id": "dvwa-189",
+      "ferramenta": "Trivy Container",
+      "camada": "INFRA",
+      "estagio": "build",
+      "classe": "indireta",
+      "score": 7.0,
+      "origem_score": "cvss_v3",
+      "severidade_original": "HIGH",
+      "identificador_scanner": "CVE-2021-21703",
+      "cwes": [
+        "CWE-284",
+        "CWE-787"
+      ],
+      "vinculos": {
+        "dvwa-exposed-mysql": "indireta"
+      },
+      "referencia": "reports-0a8e877_trivy-report.json#/Results/0/Vulnerabilities/198",
+      "granularidade": "individual_app_match"
+    },
+    {
+      "id": "dvwa-190",
+      "ferramenta": "Trivy Container",
+      "camada": "INFRA",
+      "estagio": "build",
+      "classe": "indireta",
+      "score": 6.1,
+      "origem_score": "cvss_v3",
+      "severidade_original": "MEDIUM",
+      "identificador_scanner": "CVE-2018-17082",
+      "cwes": [
+        "CWE-79"
+      ],
+      "vinculos": {
+        "dvwa-xss": "indireta"
+      },
+      "referencia": "reports-0a8e877_trivy-report.json#/Results/0/Vulnerabilities/202",
+      "granularidade": "individual_app_match"
+    },
+    {
+      "id": "dvwa-191",
+      "ferramenta": "Trivy Container",
+      "camada": "INFRA",
+      "estagio": "build",
+      "classe": "indireta",
+      "score": 9.8,
+      "origem_score": "cvss_v3",
+      "severidade_original": "CRITICAL",
+      "identificador_scanner": "CVE-2022-29155",
+      "cwes": [
+        "CWE-89"
+      ],
+      "vinculos": {
+        "dvwa-sql-injection": "indireta"
+      },
+      "referencia": "reports-0a8e877_trivy-report.json#/Results/0/Vulnerabilities/348",
+      "granularidade": "individual_app_match"
+    },
+    {
+      "id": "dvwa-192",
+      "ferramenta": "Trivy Container",
+      "camada": "INFRA",
+      "estagio": "build",
+      "classe": "indireta",
+      "score": 9.8,
+      "origem_score": "cvss_v3",
+      "severidade_original": "CRITICAL",
+      "identificador_scanner": "CVE-2022-29155",
+      "cwes": [
+        "CWE-89"
+      ],
+      "vinculos": {
+        "dvwa-sql-injection": "indireta"
+      },
+      "referencia": "reports-0a8e877_trivy-report.json#/Results/0/Vulnerabilities/366",
+      "granularidade": "individual_app_match"
+    },
+    {
+      "id": "dvwa-193",
+      "ferramenta": "Trivy Container",
+      "camada": "INFRA",
+      "estagio": "build",
+      "classe": "indireta",
+      "score": 8.8,
+      "origem_score": "cvss_v3",
+      "severidade_original": "HIGH",
+      "identificador_scanner": "CVE-2019-10208",
+      "cwes": [
+        "CWE-89"
+      ],
+      "vinculos": {
+        "dvwa-sql-injection": "indireta"
+      },
+      "referencia": "reports-0a8e877_trivy-report.json#/Results/0/Vulnerabilities/473",
+      "granularidade": "individual_app_match"
+    },
+    {
+      "id": "dvwa-194",
+      "ferramenta": "Trivy Container",
+      "camada": "INFRA",
+      "estagio": "build",
+      "classe": "indireta",
+      "score": 8.8,
+      "origem_score": "cvss_v3",
+      "severidade_original": "HIGH",
+      "identificador_scanner": "CVE-2020-25695",
+      "cwes": [
+        "CWE-89"
+      ],
+      "vinculos": {
+        "dvwa-sql-injection": "indireta"
+      },
+      "referencia": "reports-0a8e877_trivy-report.json#/Results/0/Vulnerabilities/476",
+      "granularidade": "individual_app_match"
+    },
+    {
+      "id": "dvwa-195",
+      "ferramenta": "Trivy Container",
+      "camada": "INFRA",
+      "estagio": "build",
+      "classe": "indireta",
+      "score": 8.1,
+      "origem_score": "cvss_v3",
+      "severidade_original": "HIGH",
+      "identificador_scanner": "CVE-2021-23214",
+      "cwes": [
+        "CWE-89"
+      ],
+      "vinculos": {
+        "dvwa-sql-injection": "indireta"
+      },
+      "referencia": "reports-0a8e877_trivy-report.json#/Results/0/Vulnerabilities/478",
+      "granularidade": "individual_app_match"
+    },
+    {
+      "id": "dvwa-196",
+      "ferramenta": "Trivy Container",
+      "camada": "INFRA",
+      "estagio": "build",
+      "classe": "indireta",
+      "score": 4.3,
+      "origem_score": "cvss_v3",
+      "severidade_original": "MEDIUM",
+      "identificador_scanner": "CVE-2019-10130",
+      "cwes": [
+        "CWE-284"
+      ],
+      "vinculos": {
+        "dvwa-exposed-mysql": "indireta"
+      },
+      "referencia": "reports-0a8e877_trivy-report.json#/Results/0/Vulnerabilities/480",
+      "granularidade": "individual_app_match"
+    },
+    {
+      "id": "dvwa-197",
+      "ferramenta": "Trivy Container",
+      "camada": "INFRA",
+      "estagio": "build",
+      "classe": "indireta",
+      "score": 8.8,
+      "origem_score": "cvss_v3",
+      "severidade_original": "HIGH",
+      "identificador_scanner": "CVE-2022-24407",
+      "cwes": [
+        "CWE-89"
+      ],
+      "vinculos": {
+        "dvwa-sql-injection": "indireta"
+      },
+      "referencia": "reports-0a8e877_trivy-report.json#/Results/0/Vulnerabilities/486",
+      "granularidade": "individual_app_match"
+    },
+    {
+      "id": "dvwa-198",
+      "ferramenta": "Trivy Container",
+      "camada": "INFRA",
+      "estagio": "build",
+      "classe": "indireta",
+      "score": 8.8,
+      "origem_score": "cvss_v3",
+      "severidade_original": "HIGH",
+      "identificador_scanner": "CVE-2022-24407",
+      "cwes": [
+        "CWE-89"
+      ],
+      "vinculos": {
+        "dvwa-sql-injection": "indireta"
+      },
+      "referencia": "reports-0a8e877_trivy-report.json#/Results/0/Vulnerabilities/488",
+      "granularidade": "individual_app_match"
+    },
+    {
+      "id": "dvwa-199",
+      "ferramenta": "Trivy Container",
+      "camada": "INFRA",
+      "estagio": "build",
+      "classe": "indireta",
+      "score": 8.8,
+      "origem_score": "cvss_v3",
+      "severidade_original": "HIGH",
+      "identificador_scanner": "CVE-2022-24407",
+      "cwes": [
+        "CWE-89"
+      ],
+      "vinculos": {
+        "dvwa-sql-injection": "indireta"
+      },
+      "referencia": "reports-0a8e877_trivy-report.json#/Results/0/Vulnerabilities/490",
+      "granularidade": "individual_app_match"
+    },
+    {
+      "id": "dvwa-200",
+      "ferramenta": "Trivy Container",
+      "camada": "INFRA",
+      "estagio": "build",
+      "classe": "indireta",
+      "score": 7.4,
+      "origem_score": "cvss_v3",
+      "severidade_original": "HIGH",
+      "identificador_scanner": "CVE-2019-1543",
+      "cwes": [
+        "CWE-327",
+        "CWE-330"
+      ],
+      "vinculos": {
+        "dvwa-weak-session-ids": "indireta"
+      },
+      "referencia": "reports-0a8e877_trivy-report.json#/Results/0/Vulnerabilities/532",
+      "granularidade": "individual_app_match"
+    },
+    {
+      "id": "dvwa-201",
+      "ferramenta": "Trivy Container",
+      "camada": "INFRA",
+      "estagio": "build",
+      "classe": "indireta",
+      "score": 7.3,
+      "origem_score": "cvss_v3",
+      "severidade_original": "HIGH",
+      "identificador_scanner": "CVE-2022-1292",
+      "cwes": [
+        "CWE-78"
+      ],
+      "vinculos": {
+        "dvwa-command-injection": "indireta"
+      },
+      "referencia": "reports-0a8e877_trivy-report.json#/Results/0/Vulnerabilities/536",
+      "granularidade": "individual_app_match"
+    },
+    {
+      "id": "dvwa-202",
+      "ferramenta": "Trivy Container",
+      "camada": "INFRA",
+      "estagio": "build",
+      "classe": "indireta",
+      "score": 7.4,
+      "origem_score": "cvss_v3",
+      "severidade_original": "HIGH",
+      "identificador_scanner": "CVE-2019-1543",
+      "cwes": [
+        "CWE-327",
+        "CWE-330"
+      ],
+      "vinculos": {
+        "dvwa-weak-session-ids": "indireta"
+      },
+      "referencia": "reports-0a8e877_trivy-report.json#/Results/0/Vulnerabilities/982",
+      "granularidade": "individual_app_match"
+    },
+    {
+      "id": "dvwa-203",
+      "ferramenta": "Trivy Container",
+      "camada": "INFRA",
+      "estagio": "build",
+      "classe": "indireta",
+      "score": 7.3,
+      "origem_score": "cvss_v3",
+      "severidade_original": "HIGH",
+      "identificador_scanner": "CVE-2022-1292",
+      "cwes": [
+        "CWE-78"
+      ],
+      "vinculos": {
+        "dvwa-command-injection": "indireta"
+      },
+      "referencia": "reports-0a8e877_trivy-report.json#/Results/0/Vulnerabilities/986",
+      "granularidade": "individual_app_match"
+    },
+    {
+      "id": "dvwa-204",
+      "ferramenta": "Trivy Container",
+      "camada": "INFRA",
+      "estagio": "build",
+      "classe": "indireta",
+      "score": 7.0,
+      "origem_score": "cvss_v3",
+      "severidade_original": "HIGH",
+      "identificador_scanner": "CVE-2021-21703",
+      "cwes": [
+        "CWE-284",
+        "CWE-787"
+      ],
+      "vinculos": {
+        "dvwa-exposed-mysql": "indireta"
+      },
+      "referencia": "reports-0a8e877_trivy-report.json#/Results/0/Vulnerabilities/1062",
+      "granularidade": "individual_app_match"
+    },
+    {
+      "id": "dvwa-205",
+      "ferramenta": "Trivy Container",
+      "camada": "INFRA",
+      "estagio": "build",
+      "classe": "indireta",
+      "score": 6.1,
+      "origem_score": "cvss_v3",
+      "severidade_original": "MEDIUM",
+      "identificador_scanner": "CVE-2018-17082",
+      "cwes": [
+        "CWE-79"
+      ],
+      "vinculos": {
+        "dvwa-xss": "indireta"
+      },
+      "referencia": "reports-0a8e877_trivy-report.json#/Results/0/Vulnerabilities/1066",
+      "granularidade": "individual_app_match"
+    },
+    {
+      "id": "dvwa-206",
+      "ferramenta": "Trivy Container",
+      "camada": "INFRA",
+      "estagio": "build",
+      "classe": "indireta",
+      "score": 7.0,
+      "origem_score": "cvss_v3",
+      "severidade_original": "HIGH",
+      "identificador_scanner": "CVE-2021-21703",
+      "cwes": [
+        "CWE-284",
+        "CWE-787"
+      ],
+      "vinculos": {
+        "dvwa-exposed-mysql": "indireta"
+      },
+      "referencia": "reports-0a8e877_trivy-report.json#/Results/0/Vulnerabilities/1115",
+      "granularidade": "individual_app_match"
+    },
+    {
+      "id": "dvwa-207",
+      "ferramenta": "Trivy Container",
+      "camada": "INFRA",
+      "estagio": "build",
+      "classe": "indireta",
+      "score": 6.1,
+      "origem_score": "cvss_v3",
+      "severidade_original": "MEDIUM",
+      "identificador_scanner": "CVE-2018-17082",
+      "cwes": [
+        "CWE-79"
+      ],
+      "vinculos": {
+        "dvwa-xss": "indireta"
+      },
+      "referencia": "reports-0a8e877_trivy-report.json#/Results/0/Vulnerabilities/1119",
+      "granularidade": "individual_app_match"
+    },
+    {
+      "id": "dvwa-208",
+      "ferramenta": "Trivy Container",
+      "camada": "INFRA",
+      "estagio": "build",
+      "classe": "indireta",
+      "score": 7.0,
+      "origem_score": "cvss_v3",
+      "severidade_original": "HIGH",
+      "identificador_scanner": "CVE-2021-21703",
+      "cwes": [
+        "CWE-284",
+        "CWE-787"
+      ],
+      "vinculos": {
+        "dvwa-exposed-mysql": "indireta"
+      },
+      "referencia": "reports-0a8e877_trivy-report.json#/Results/0/Vulnerabilities/1168",
+      "granularidade": "individual_app_match"
+    },
+    {
+      "id": "dvwa-209",
+      "ferramenta": "Trivy Container",
+      "camada": "INFRA",
+      "estagio": "build",
+      "classe": "indireta",
+      "score": 6.1,
+      "origem_score": "cvss_v3",
+      "severidade_original": "MEDIUM",
+      "identificador_scanner": "CVE-2018-17082",
+      "cwes": [
+        "CWE-79"
+      ],
+      "vinculos": {
+        "dvwa-xss": "indireta"
+      },
+      "referencia": "reports-0a8e877_trivy-report.json#/Results/0/Vulnerabilities/1172",
+      "granularidade": "individual_app_match"
+    },
+    {
+      "id": "dvwa-210",
+      "ferramenta": "Trivy Container",
+      "camada": "INFRA",
+      "estagio": "build",
+      "classe": "indireta",
+      "score": 7.0,
+      "origem_score": "cvss_v3",
+      "severidade_original": "HIGH",
+      "identificador_scanner": "CVE-2021-21703",
+      "cwes": [
+        "CWE-284",
+        "CWE-787"
+      ],
+      "vinculos": {
+        "dvwa-exposed-mysql": "indireta"
+      },
+      "referencia": "reports-0a8e877_trivy-report.json#/Results/0/Vulnerabilities/1221",
+      "granularidade": "individual_app_match"
+    },
+    {
+      "id": "dvwa-211",
+      "ferramenta": "Trivy Container",
+      "camada": "INFRA",
+      "estagio": "build",
+      "classe": "indireta",
+      "score": 6.1,
+      "origem_score": "cvss_v3",
+      "severidade_original": "MEDIUM",
+      "identificador_scanner": "CVE-2018-17082",
+      "cwes": [
+        "CWE-79"
+      ],
+      "vinculos": {
+        "dvwa-xss": "indireta"
+      },
+      "referencia": "reports-0a8e877_trivy-report.json#/Results/0/Vulnerabilities/1225",
+      "granularidade": "individual_app_match"
+    },
+    {
+      "id": "dvwa-212",
+      "ferramenta": "Trivy Container",
+      "camada": "INFRA",
+      "estagio": "build",
+      "classe": "indireta",
+      "score": 7.0,
+      "origem_score": "cvss_v3",
+      "severidade_original": "HIGH",
+      "identificador_scanner": "CVE-2021-21703",
+      "cwes": [
+        "CWE-284",
+        "CWE-787"
+      ],
+      "vinculos": {
+        "dvwa-exposed-mysql": "indireta"
+      },
+      "referencia": "reports-0a8e877_trivy-report.json#/Results/0/Vulnerabilities/1274",
+      "granularidade": "individual_app_match"
+    },
+    {
+      "id": "dvwa-213",
+      "ferramenta": "Trivy Container",
+      "camada": "INFRA",
+      "estagio": "build",
+      "classe": "indireta",
+      "score": 6.1,
+      "origem_score": "cvss_v3",
+      "severidade_original": "MEDIUM",
+      "identificador_scanner": "CVE-2018-17082",
+      "cwes": [
+        "CWE-79"
+      ],
+      "vinculos": {
+        "dvwa-xss": "indireta"
+      },
+      "referencia": "reports-0a8e877_trivy-report.json#/Results/0/Vulnerabilities/1278",
+      "granularidade": "individual_app_match"
+    },
+    {
+      "id": "dvwa-214",
+      "ferramenta": "Trivy Container",
+      "camada": "INFRA",
+      "estagio": "build",
+      "classe": "indireta",
+      "score": 7.0,
+      "origem_score": "cvss_v3",
+      "severidade_original": "HIGH",
+      "identificador_scanner": "CVE-2021-21703",
+      "cwes": [
+        "CWE-284",
+        "CWE-787"
+      ],
+      "vinculos": {
+        "dvwa-exposed-mysql": "indireta"
+      },
+      "referencia": "reports-0a8e877_trivy-report.json#/Results/0/Vulnerabilities/1327",
+      "granularidade": "individual_app_match"
+    },
+    {
+      "id": "dvwa-215",
+      "ferramenta": "Trivy Container",
+      "camada": "INFRA",
+      "estagio": "build",
+      "classe": "indireta",
+      "score": 6.1,
+      "origem_score": "cvss_v3",
+      "severidade_original": "MEDIUM",
+      "identificador_scanner": "CVE-2018-17082",
+      "cwes": [
+        "CWE-79"
+      ],
+      "vinculos": {
+        "dvwa-xss": "indireta"
+      },
+      "referencia": "reports-0a8e877_trivy-report.json#/Results/0/Vulnerabilities/1331",
+      "granularidade": "individual_app_match"
+    },
+    {
+      "id": "dvwa-216",
+      "ferramenta": "Trivy Container",
+      "camada": "INFRA",
+      "estagio": "build",
+      "classe": "indireta",
+      "score": 7.0,
+      "origem_score": "cvss_v3",
+      "severidade_original": "HIGH",
+      "identificador_scanner": "CVE-2021-21703",
+      "cwes": [
+        "CWE-284",
+        "CWE-787"
+      ],
+      "vinculos": {
+        "dvwa-exposed-mysql": "indireta"
+      },
+      "referencia": "reports-0a8e877_trivy-report.json#/Results/0/Vulnerabilities/1380",
+      "granularidade": "individual_app_match"
+    },
+    {
+      "id": "dvwa-217",
+      "ferramenta": "Trivy Container",
+      "camada": "INFRA",
+      "estagio": "build",
+      "classe": "indireta",
+      "score": 6.1,
+      "origem_score": "cvss_v3",
+      "severidade_original": "MEDIUM",
+      "identificador_scanner": "CVE-2018-17082",
+      "cwes": [
+        "CWE-79"
+      ],
+      "vinculos": {
+        "dvwa-xss": "indireta"
+      },
+      "referencia": "reports-0a8e877_trivy-report.json#/Results/0/Vulnerabilities/1384",
+      "granularidade": "individual_app_match"
+    },
+    {
+      "id": "dvwa-218",
+      "ferramenta": "Trivy Container",
+      "camada": "INFRA",
+      "estagio": "build",
+      "classe": "indireta",
+      "score": 7.0,
+      "origem_score": "cvss_v3",
+      "severidade_original": "HIGH",
+      "identificador_scanner": "CVE-2021-21703",
+      "cwes": [
+        "CWE-284",
+        "CWE-787"
+      ],
+      "vinculos": {
+        "dvwa-exposed-mysql": "indireta"
+      },
+      "referencia": "reports-0a8e877_trivy-report.json#/Results/0/Vulnerabilities/1433",
+      "granularidade": "individual_app_match"
+    },
+    {
+      "id": "dvwa-219",
+      "ferramenta": "Trivy Container",
+      "camada": "INFRA",
+      "estagio": "build",
+      "classe": "indireta",
+      "score": 6.1,
+      "origem_score": "cvss_v3",
+      "severidade_original": "MEDIUM",
+      "identificador_scanner": "CVE-2018-17082",
+      "cwes": [
+        "CWE-79"
+      ],
+      "vinculos": {
+        "dvwa-xss": "indireta"
+      },
+      "referencia": "reports-0a8e877_trivy-report.json#/Results/0/Vulnerabilities/1437",
+      "granularidade": "individual_app_match"
+    },
+    {
+      "id": "dvwa-220",
+      "ferramenta": "Trivy Container",
+      "camada": "INFRA",
+      "estagio": "build",
+      "classe": "indireta",
+      "score": 7.0,
+      "origem_score": "cvss_v3",
+      "severidade_original": "HIGH",
+      "identificador_scanner": "CVE-2021-21703",
+      "cwes": [
+        "CWE-284",
+        "CWE-787"
+      ],
+      "vinculos": {
+        "dvwa-exposed-mysql": "indireta"
+      },
+      "referencia": "reports-0a8e877_trivy-report.json#/Results/0/Vulnerabilities/1486",
+      "granularidade": "individual_app_match"
+    },
+    {
+      "id": "dvwa-221",
+      "ferramenta": "Trivy Container",
+      "camada": "INFRA",
+      "estagio": "build",
+      "classe": "indireta",
+      "score": 6.1,
+      "origem_score": "cvss_v3",
+      "severidade_original": "MEDIUM",
+      "identificador_scanner": "CVE-2018-17082",
+      "cwes": [
+        "CWE-79"
+      ],
+      "vinculos": {
+        "dvwa-xss": "indireta"
+      },
+      "referencia": "reports-0a8e877_trivy-report.json#/Results/0/Vulnerabilities/1490",
+      "granularidade": "individual_app_match"
+    },
+    {
+      "id": "dvwa-222",
+      "ferramenta": "Trivy Container",
+      "camada": "INFRA",
+      "estagio": "build",
+      "classe": "indireta",
+      "score": 7.0,
+      "origem_score": "cvss_v3",
+      "severidade_original": "HIGH",
+      "identificador_scanner": "CVE-2021-21703",
+      "cwes": [
+        "CWE-284",
+        "CWE-787"
+      ],
+      "vinculos": {
+        "dvwa-exposed-mysql": "indireta"
+      },
+      "referencia": "reports-0a8e877_trivy-report.json#/Results/0/Vulnerabilities/1539",
+      "granularidade": "individual_app_match"
+    },
+    {
+      "id": "dvwa-223",
+      "ferramenta": "Trivy Container",
+      "camada": "INFRA",
+      "estagio": "build",
+      "classe": "indireta",
+      "score": 6.1,
+      "origem_score": "cvss_v3",
+      "severidade_original": "MEDIUM",
+      "identificador_scanner": "CVE-2018-17082",
+      "cwes": [
+        "CWE-79"
+      ],
+      "vinculos": {
+        "dvwa-xss": "indireta"
+      },
+      "referencia": "reports-0a8e877_trivy-report.json#/Results/0/Vulnerabilities/1543",
+      "granularidade": "individual_app_match"
+    },
+    {
+      "id": "dvwa-224",
+      "ferramenta": "Trivy Container",
+      "camada": "INFRA",
+      "estagio": "build",
+      "classe": "direta",
+      "score": 9.8,
+      "origem_score": "trivy_max",
+      "severidade_original": "CRITICAL",
+      "identificador_scanner": "agg-outdated-os",
+      "cwes": [
+        "CWE-1104"
+      ],
+      "vinculos": {
+        "dvwa-outdated-os": "direta"
+      },
+      "referencia": "trivy_composicao.csv#agg-outdated-os",
+      "granularidade": "aggregate_eosl"
+    },
+    {
+      "id": "dvwa-225",
+      "ferramenta": "Trivy Container",
+      "camada": "INFRA",
+      "estagio": "build",
+      "classe": "direta",
+      "score": 9.8,
+      "origem_score": "trivy_max",
+      "severidade_original": "HIGH",
+      "identificador_scanner": "agg-outdated-packages",
+      "cwes": [
+        "CWE-1104"
+      ],
+      "vinculos": {
+        "dvwa-outdated-packages": "direta"
+      },
+      "referencia": "trivy_composicao.csv#agg-outdated-packages",
+      "granularidade": "aggregate_fixable"
+    },
+    {
+      "id": "dvwa-226",
+      "ferramenta": "Trivy Container",
+      "camada": "INFRA",
+      "estagio": "build",
+      "classe": "sem_matriz",
+      "score": 9.8,
+      "origem_score": "trivy_max",
+      "severidade_original": "HIGH",
+      "identificador_scanner": "agg-other-os-cves",
+      "cwes": [],
+      "vinculos": {},
+      "referencia": "trivy_composicao.csv#agg-other-os-cves",
+      "granularidade": "aggregate_other"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+﻿vulnerability_id,nome,cwe,camada,diretas,indiretas,status_deteccao
+dvwa-sql-injection,SQL Injection,CWE-89,APP,15,8,direta
+dvwa-xss,Cross-Site Scripting (XSS),CWE-79,APP,7,15,direta
+dvwa-command-injection,Command Injection,CWE-78,APP,11,2,direta
+dvwa-csrf,CSRF,CWE-352,APP,0,1,apenas indireta
+dvwa-weak-session-ids,Weak Session IDs,CWE-330,APP,0,2,apenas indireta
+dvwa-brute-force,Brute Force,CWE-307,APP,1,0,direta
+dvwa-open-http-redirect,Open HTTP Redirect,CWE-601,APP,0,8,apenas indireta
+dvwa-javascript-attacks,JavaScript Attacks,CWE-749,APP,4,0,direta
+dvwa-csp-bypass,Content Security Policy Bypass,CWE-693,APP,6,0,direta
+dvwa-default-credentials,Default Credentials,CWE-798,APP,1,0,direta
+dvwa-exposed-mysql,Exposed MySQL,CWE-284,APP,11,12,direta
+dvwa-outdated-os,Outdated OS,CWE-1104,INFRA,1,0,direta
+dvwa-outdated-packages,Outdated Packages,CWE-1104,INFRA,1,0,direta

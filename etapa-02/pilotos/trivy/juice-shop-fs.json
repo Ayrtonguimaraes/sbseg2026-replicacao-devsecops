@@ -1,0 +1,18 @@
+{
+  "SchemaVersion": 2,
+  "Trivy": {
+    "Version": "0.69.3"
+  },
+  "ReportID": "01a1e0e2-7de8-77d0-82b4-6ac6282a3570",
+  "CreatedAt": "2026-11-15T17:25:02.184514048-03:00",
+  "ArtifactID": "sha256:2bce96b73de224d2ca5ba1690aa5cf41dbc2bc692754cd23eca25ebf0166affb",
+  "ArtifactName": "/laboratorio/work/candidatas/juice-shop",
+  "ArtifactType": "repository",
+  "Metadata": {
+    "RepoURL": "https://github.com/juice-shop/juice-shop.git",
+    "Commit": "36870cbbdfe7864698e1adf644c7bf772f67ebb7",
+    "CommitMsg": "Merge pull request #2725 from juice-shop/fix/update-to-juicy-chat-bot-0-9-0\n\nUpdate juicy-chat-bot version to 0.9.0",
+    "Author": "Jannik Hollenbach \u003cjannik.hollenbach@owasp.org\u003e",
+    "Committer": "GitHub \u003cnoreply@github.com\u003e"
+  }
+}

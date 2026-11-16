@@ -1,0 +1,227 @@
+﻿id,ferramenta,camada,estagio,classe,score,origem_score,severidade_original,identificador_scanner,cwes,vinculos,referencia,granularidade
+dvwa-001,Semgrep,APP,commit,sem_matriz,5.0,semgrep_warning,WARNING,php.lang.security.injection.tainted-filename.tainted-filename,CWE-918,,reports-0a8e877_semgrep-report.json#/results/0,individual
+dvwa-002,Semgrep,APP,commit,sem_matriz,7.5,semgrep_error,ERROR,php.lang.security.md5-loose-equality.md5-loose-equality,CWE-697,,reports-0a8e877_semgrep-report.json#/results/1,individual
+dvwa-003,Semgrep,APP,commit,sem_matriz,7.5,semgrep_error,ERROR,php.lang.security.phpinfo-use.phpinfo-use,CWE-200,,reports-0a8e877_semgrep-report.json#/results/2,individual
+dvwa-004,Semgrep,APP,commit,sem_matriz,5.0,semgrep_warning,WARNING,php.lang.security.php-permissive-cors.php-permissive-cors,CWE-346,,reports-0a8e877_semgrep-report.json#/results/3,individual
+dvwa-005,Semgrep,APP,commit,sem_matriz,5.0,semgrep_warning,WARNING,php.lang.security.php-permissive-cors.php-permissive-cors,CWE-346,,reports-0a8e877_semgrep-report.json#/results/4,individual
+dvwa-006,Semgrep,APP,commit,direta,5.0,semgrep_warning,WARNING,php.lang.security.injection.tainted-exec.tainted-exec,CWE-78,dvwa-command-injection:direta,reports-0a8e877_semgrep-report.json#/results/5,individual
+dvwa-007,Semgrep,APP,commit,sem_matriz,7.5,semgrep_error,ERROR,php.lang.security.exec-use.exec-use,CWE-94,,reports-0a8e877_semgrep-report.json#/results/6,individual
+dvwa-008,Semgrep,APP,commit,sem_matriz,5.0,semgrep_warning,WARNING,php.lang.security.audit.openssl-decrypt-validate.openssl-decrypt-validate,CWE-252,,reports-0a8e877_semgrep-report.json#/results/7,individual
+dvwa-009,Semgrep,APP,commit,direta,7.5,semgrep_error,ERROR,javascript.browser.security.insecure-document-method.insecure-document-method,CWE-79,dvwa-xss:direta,reports-0a8e877_semgrep-report.json#/results/8,individual
+dvwa-010,Semgrep,APP,commit,direta,7.5,semgrep_error,ERROR,javascript.browser.security.insecure-document-method.insecure-document-method,CWE-79,dvwa-xss:direta,reports-0a8e877_semgrep-report.json#/results/9,individual
+dvwa-011,Semgrep,APP,commit,direta,7.5,semgrep_error,ERROR,javascript.browser.security.insecure-document-method.insecure-document-method,CWE-79,dvwa-xss:direta,reports-0a8e877_semgrep-report.json#/results/10,individual
+dvwa-012,Semgrep,APP,commit,direta,7.5,semgrep_error,ERROR,javascript.browser.security.insecure-document-method.insecure-document-method,CWE-79,dvwa-xss:direta,reports-0a8e877_semgrep-report.json#/results/11,individual
+dvwa-013,Semgrep,APP,commit,direta,7.5,semgrep_error,ERROR,php.lang.security.injection.tainted-sql-string.tainted-sql-string,CWE-89,dvwa-sql-injection:direta,reports-0a8e877_semgrep-report.json#/results/12,individual
+dvwa-014,Semgrep,APP,commit,direta,7.5,semgrep_error,ERROR,php.lang.security.injection.tainted-sql-string.tainted-sql-string,CWE-89,dvwa-sql-injection:direta,reports-0a8e877_semgrep-report.json#/results/13,individual
+dvwa-015,Semgrep,APP,commit,direta,7.5,semgrep_error,ERROR,php.lang.security.injection.tainted-sql-string.tainted-sql-string,CWE-89,dvwa-sql-injection:direta,reports-0a8e877_semgrep-report.json#/results/14,individual
+dvwa-016,Semgrep,APP,commit,direta,7.5,semgrep_error,ERROR,php.lang.security.injection.tainted-sql-string.tainted-sql-string,CWE-89,dvwa-sql-injection:direta,reports-0a8e877_semgrep-report.json#/results/15,individual
+dvwa-017,Semgrep,APP,commit,direta,7.5,semgrep_error,ERROR,php.lang.security.injection.tainted-sql-string.tainted-sql-string,CWE-89,dvwa-sql-injection:direta,reports-0a8e877_semgrep-report.json#/results/16,individual
+dvwa-018,Semgrep,APP,commit,direta,7.5,semgrep_error,ERROR,php.lang.security.injection.tainted-sql-string.tainted-sql-string,CWE-89,dvwa-sql-injection:direta,reports-0a8e877_semgrep-report.json#/results/17,individual
+dvwa-019,Semgrep,APP,commit,sem_matriz,7.5,semgrep_error,ERROR,php.lang.security.md5-loose-equality.md5-loose-equality,CWE-697,,reports-0a8e877_semgrep-report.json#/results/18,individual
+dvwa-020,Semgrep,APP,commit,direta,7.5,semgrep_error,ERROR,php.lang.security.injection.tainted-sql-string.tainted-sql-string,CWE-89,dvwa-sql-injection:direta,reports-0a8e877_semgrep-report.json#/results/19,individual
+dvwa-021,Semgrep,APP,commit,sem_matriz,7.5,semgrep_error,ERROR,php.lang.security.md5-loose-equality.md5-loose-equality,CWE-697,,reports-0a8e877_semgrep-report.json#/results/20,individual
+dvwa-022,Semgrep,APP,commit,sem_matriz,7.5,semgrep_error,ERROR,php.lang.security.md5-loose-equality.md5-loose-equality,CWE-697,,reports-0a8e877_semgrep-report.json#/results/21,individual
+dvwa-023,Semgrep,APP,commit,sem_matriz,7.5,semgrep_error,ERROR,php.lang.security.md5-loose-equality.md5-loose-equality,CWE-697,,reports-0a8e877_semgrep-report.json#/results/22,individual
+dvwa-024,Semgrep,APP,commit,sem_matriz,7.5,semgrep_error,ERROR,php.lang.security.md5-loose-equality.md5-loose-equality,CWE-697,,reports-0a8e877_semgrep-report.json#/results/23,individual
+dvwa-025,Semgrep,APP,commit,sem_matriz,7.5,semgrep_error,ERROR,php.lang.security.md5-loose-equality.md5-loose-equality,CWE-697,,reports-0a8e877_semgrep-report.json#/results/24,individual
+dvwa-026,Semgrep,APP,commit,direta,7.5,semgrep_error,ERROR,javascript.browser.security.insecure-document-method.insecure-document-method,CWE-79,dvwa-xss:direta,reports-0a8e877_semgrep-report.json#/results/25,individual
+dvwa-027,Semgrep,APP,commit,direta,7.5,semgrep_error,ERROR,javascript.browser.security.insecure-document-method.insecure-document-method,CWE-79,dvwa-xss:direta,reports-0a8e877_semgrep-report.json#/results/26,individual
+dvwa-028,Semgrep,APP,commit,direta,7.5,semgrep_error,ERROR,php.lang.security.injection.echoed-request.echoed-request,CWE-79,dvwa-xss:direta,reports-0a8e877_semgrep-report.json#/results/27,individual
+dvwa-029,Semgrep,APP,commit,sem_matriz,7.5,semgrep_error,ERROR,php.lang.security.md5-loose-equality.md5-loose-equality,CWE-697,,reports-0a8e877_semgrep-report.json#/results/28,individual
+dvwa-030,Semgrep,APP,commit,sem_matriz,7.5,semgrep_error,ERROR,php.lang.security.exec-use.exec-use,CWE-94,,reports-0a8e877_semgrep-report.json#/results/29,individual
+dvwa-031,Semgrep,APP,commit,direta,5.0,semgrep_warning,WARNING,php.lang.security.injection.tainted-exec.tainted-exec,CWE-78,dvwa-command-injection:direta,reports-0a8e877_semgrep-report.json#/results/30,individual
+dvwa-032,Semgrep,APP,commit,sem_matriz,7.5,semgrep_error,ERROR,php.lang.security.tainted-exec.tainted-exec,CWE-94,,reports-0a8e877_semgrep-report.json#/results/31,individual
+dvwa-033,Semgrep,APP,commit,sem_matriz,7.5,semgrep_error,ERROR,php.lang.security.exec-use.exec-use,CWE-94,,reports-0a8e877_semgrep-report.json#/results/32,individual
+dvwa-034,Semgrep,APP,commit,direta,5.0,semgrep_warning,WARNING,php.lang.security.injection.tainted-exec.tainted-exec,CWE-78,dvwa-command-injection:direta,reports-0a8e877_semgrep-report.json#/results/33,individual
+dvwa-035,Semgrep,APP,commit,sem_matriz,7.5,semgrep_error,ERROR,php.lang.security.tainted-exec.tainted-exec,CWE-94,,reports-0a8e877_semgrep-report.json#/results/34,individual
+dvwa-036,Semgrep,APP,commit,sem_matriz,7.5,semgrep_error,ERROR,php.lang.security.exec-use.exec-use,CWE-94,,reports-0a8e877_semgrep-report.json#/results/35,individual
+dvwa-037,Semgrep,APP,commit,direta,5.0,semgrep_warning,WARNING,php.lang.security.injection.tainted-exec.tainted-exec,CWE-78,dvwa-command-injection:direta,reports-0a8e877_semgrep-report.json#/results/36,individual
+dvwa-038,Semgrep,APP,commit,sem_matriz,7.5,semgrep_error,ERROR,php.lang.security.tainted-exec.tainted-exec,CWE-94,,reports-0a8e877_semgrep-report.json#/results/37,individual
+dvwa-039,Semgrep,APP,commit,sem_matriz,7.5,semgrep_error,ERROR,php.lang.security.exec-use.exec-use,CWE-94,,reports-0a8e877_semgrep-report.json#/results/38,individual
+dvwa-040,Semgrep,APP,commit,direta,5.0,semgrep_warning,WARNING,php.lang.security.injection.tainted-exec.tainted-exec,CWE-78,dvwa-command-injection:direta,reports-0a8e877_semgrep-report.json#/results/39,individual
+dvwa-041,Semgrep,APP,commit,sem_matriz,7.5,semgrep_error,ERROR,php.lang.security.tainted-exec.tainted-exec,CWE-94,,reports-0a8e877_semgrep-report.json#/results/40,individual
+dvwa-042,Semgrep,APP,commit,sem_matriz,7.5,semgrep_error,ERROR,php.lang.security.exec-use.exec-use,CWE-94,,reports-0a8e877_semgrep-report.json#/results/41,individual
+dvwa-043,Semgrep,APP,commit,direta,5.0,semgrep_warning,WARNING,php.lang.security.injection.tainted-exec.tainted-exec,CWE-78,dvwa-command-injection:direta,reports-0a8e877_semgrep-report.json#/results/42,individual
+dvwa-044,Semgrep,APP,commit,sem_matriz,7.5,semgrep_error,ERROR,php.lang.security.tainted-exec.tainted-exec,CWE-94,,reports-0a8e877_semgrep-report.json#/results/43,individual
+dvwa-045,Semgrep,APP,commit,sem_matriz,7.5,semgrep_error,ERROR,php.lang.security.exec-use.exec-use,CWE-94,,reports-0a8e877_semgrep-report.json#/results/44,individual
+dvwa-046,Semgrep,APP,commit,direta,5.0,semgrep_warning,WARNING,php.lang.security.injection.tainted-exec.tainted-exec,CWE-78,dvwa-command-injection:direta,reports-0a8e877_semgrep-report.json#/results/45,individual
+dvwa-047,Semgrep,APP,commit,sem_matriz,7.5,semgrep_error,ERROR,php.lang.security.tainted-exec.tainted-exec,CWE-94,,reports-0a8e877_semgrep-report.json#/results/46,individual
+dvwa-048,Semgrep,APP,commit,sem_matriz,7.5,semgrep_error,ERROR,php.lang.security.exec-use.exec-use,CWE-94,,reports-0a8e877_semgrep-report.json#/results/47,individual
+dvwa-049,Semgrep,APP,commit,direta,5.0,semgrep_warning,WARNING,php.lang.security.injection.tainted-exec.tainted-exec,CWE-78,dvwa-command-injection:direta,reports-0a8e877_semgrep-report.json#/results/48,individual
+dvwa-050,Semgrep,APP,commit,sem_matriz,7.5,semgrep_error,ERROR,php.lang.security.tainted-exec.tainted-exec,CWE-94,,reports-0a8e877_semgrep-report.json#/results/49,individual
+dvwa-051,Semgrep,APP,commit,sem_matriz,7.5,semgrep_error,ERROR,php.lang.security.exec-use.exec-use,CWE-94,,reports-0a8e877_semgrep-report.json#/results/50,individual
+dvwa-052,Semgrep,APP,commit,direta,5.0,semgrep_warning,WARNING,php.lang.security.injection.tainted-exec.tainted-exec,CWE-78,dvwa-command-injection:direta,reports-0a8e877_semgrep-report.json#/results/51,individual
+dvwa-053,Semgrep,APP,commit,sem_matriz,7.5,semgrep_error,ERROR,php.lang.security.tainted-exec.tainted-exec,CWE-94,,reports-0a8e877_semgrep-report.json#/results/52,individual
+dvwa-054,Semgrep,APP,commit,sem_matriz,5.0,semgrep_warning,WARNING,php.lang.security.injection.tainted-filename.tainted-filename,CWE-918,,reports-0a8e877_semgrep-report.json#/results/53,individual
+dvwa-055,Semgrep,APP,commit,direta,7.5,semgrep_error,ERROR,php.lang.security.md5-loose-equality.md5-loose-equality,CWE-697,dvwa-javascript-attacks:direta,reports-0a8e877_semgrep-report.json#/results/54,individual
+dvwa-056,Semgrep,APP,commit,direta,7.5,semgrep_error,ERROR,php.lang.security.md5-loose-equality.md5-loose-equality,CWE-697,dvwa-javascript-attacks:direta,reports-0a8e877_semgrep-report.json#/results/55,individual
+dvwa-057,Semgrep,APP,commit,direta,5.0,semgrep_warning,WARNING,javascript.browser.security.eval-detected.eval-detected,CWE-95,dvwa-javascript-attacks:direta,reports-0a8e877_semgrep-report.json#/results/56,individual
+dvwa-058,Semgrep,APP,commit,direta,5.0,semgrep_warning,WARNING,javascript.lang.security.audit.detect-non-literal-regexp.detect-non-literal-regexp,CWE-1333,dvwa-javascript-attacks:direta,reports-0a8e877_semgrep-report.json#/results/57,individual
+dvwa-059,Semgrep,APP,commit,direta,7.5,semgrep_error,ERROR,php.lang.security.injection.tainted-sql-string.tainted-sql-string,CWE-89,dvwa-sql-injection:direta,reports-0a8e877_semgrep-report.json#/results/58,individual
+dvwa-060,Semgrep,APP,commit,direta,7.5,semgrep_error,ERROR,php.lang.security.injection.tainted-sql-string.tainted-sql-string,CWE-89,dvwa-sql-injection:direta,reports-0a8e877_semgrep-report.json#/results/59,individual
+dvwa-061,Semgrep,APP,commit,direta,7.5,semgrep_error,ERROR,php.lang.security.injection.tainted-sql-string.tainted-sql-string,CWE-89,dvwa-sql-injection:direta,reports-0a8e877_semgrep-report.json#/results/60,individual
+dvwa-062,Semgrep,APP,commit,direta,7.5,semgrep_error,ERROR,php.lang.security.injection.tainted-sql-string.tainted-sql-string,CWE-89,dvwa-sql-injection:direta,reports-0a8e877_semgrep-report.json#/results/61,individual
+dvwa-063,Semgrep,APP,commit,direta,7.5,semgrep_error,ERROR,php.lang.security.injection.tainted-sql-string.tainted-sql-string,CWE-89,dvwa-sql-injection:direta,reports-0a8e877_semgrep-report.json#/results/62,individual
+dvwa-064,Semgrep,APP,commit,direta,7.5,semgrep_error,ERROR,php.lang.security.injection.tainted-sql-string.tainted-sql-string,CWE-89,dvwa-sql-injection:direta,reports-0a8e877_semgrep-report.json#/results/63,individual
+dvwa-065,Semgrep,APP,commit,direta,7.5,semgrep_error,ERROR,php.lang.security.injection.tainted-sql-string.tainted-sql-string,CWE-89,dvwa-sql-injection:direta,reports-0a8e877_semgrep-report.json#/results/64,individual
+dvwa-066,Semgrep,APP,commit,sem_matriz,5.0,semgrep_warning,WARNING,php.lang.security.unlink-use.unlink-use,CWE-22,,reports-0a8e877_semgrep-report.json#/results/65,individual
+dvwa-067,Semgrep,APP,commit,direta,7.5,semgrep_error,ERROR,php.lang.security.eval-use.eval-use,CWE-78,dvwa-command-injection:direta,reports-0a8e877_semgrep-report.json#/results/66,individual
+dvwa-068,Semgrep,APP,commit,sem_matriz,5.0,semgrep_warning,WARNING,php.lang.security.injection.tainted-filename.tainted-filename,CWE-918,,reports-0a8e877_semgrep-report.json#/results/67,individual
+dvwa-069,Semgrep,APP,commit,direta,7.5,semgrep_error,ERROR,php.lang.security.eval-use.eval-use,CWE-78,dvwa-command-injection:direta,reports-0a8e877_semgrep-report.json#/results/68,individual
+dvwa-070,Semgrep,APP,commit,sem_matriz,5.0,semgrep_warning,WARNING,php.lang.security.injection.tainted-filename.tainted-filename,CWE-918,,reports-0a8e877_semgrep-report.json#/results/69,individual
+dvwa-071,Semgrep,APP,commit,sem_matriz,5.0,semgrep_warning,WARNING,php.lang.security.injection.tainted-filename.tainted-filename,CWE-918,,reports-0a8e877_semgrep-report.json#/results/70,individual
+dvwa-072,Semgrep,APP,commit,sem_matriz,5.0,semgrep_warning,WARNING,php.lang.security.injection.tainted-filename.tainted-filename,CWE-918,,reports-0a8e877_semgrep-report.json#/results/71,individual
+dvwa-073,Semgrep,APP,commit,sem_matriz,5.0,semgrep_warning,WARNING,php.lang.security.injection.tainted-filename.tainted-filename,CWE-918,,reports-0a8e877_semgrep-report.json#/results/72,individual
+dvwa-074,Semgrep,APP,commit,sem_matriz,5.0,semgrep_warning,WARNING,php.lang.security.injection.tainted-filename.tainted-filename,CWE-918,,reports-0a8e877_semgrep-report.json#/results/73,individual
+dvwa-075,Semgrep,APP,commit,sem_matriz,5.0,semgrep_warning,WARNING,php.lang.security.injection.tainted-filename.tainted-filename,CWE-918,,reports-0a8e877_semgrep-report.json#/results/74,individual
+dvwa-076,Semgrep,APP,commit,sem_matriz,5.0,semgrep_warning,WARNING,php.lang.security.injection.tainted-filename.tainted-filename,CWE-918,,reports-0a8e877_semgrep-report.json#/results/75,individual
+dvwa-077,Semgrep,APP,commit,sem_matriz,5.0,semgrep_warning,WARNING,php.lang.security.injection.tainted-filename.tainted-filename,CWE-918,,reports-0a8e877_semgrep-report.json#/results/76,individual
+dvwa-078,Checkov,INFRA,build,sem_matriz,5.0,proxy_checkov,MEDIUM,CKV_GCP_84,,,reports-0a8e877_checkov-terraform.json#/results/failed_checks/0,individual
+dvwa-079,Checkov,INFRA,build,sem_matriz,5.0,proxy_checkov,MEDIUM,CKV_GCP_70,,,reports-0a8e877_checkov-terraform.json#/results/failed_checks/1,individual
+dvwa-080,Checkov,INFRA,build,sem_matriz,5.0,proxy_checkov,MEDIUM,CKV_GCP_65,,,reports-0a8e877_checkov-terraform.json#/results/failed_checks/2,individual
+dvwa-081,Checkov,INFRA,build,sem_matriz,5.0,proxy_checkov,MEDIUM,CKV_GCP_13,,,reports-0a8e877_checkov-terraform.json#/results/failed_checks/3,individual
+dvwa-082,Checkov,INFRA,build,sem_matriz,5.0,proxy_checkov,MEDIUM,CKV_GCP_20,,,reports-0a8e877_checkov-terraform.json#/results/failed_checks/4,individual
+dvwa-083,Checkov,INFRA,build,sem_matriz,5.0,proxy_checkov,MEDIUM,CKV_GCP_25,,,reports-0a8e877_checkov-terraform.json#/results/failed_checks/5,individual
+dvwa-084,Checkov,INFRA,build,sem_matriz,5.0,proxy_checkov,MEDIUM,CKV_GCP_66,,,reports-0a8e877_checkov-terraform.json#/results/failed_checks/6,individual
+dvwa-085,Checkov,INFRA,build,direta,5.0,proxy_checkov,MEDIUM,CKV_GCP_21,,dvwa-exposed-mysql:direta,reports-0a8e877_checkov-terraform.json#/results/failed_checks/7,individual
+dvwa-086,Checkov,INFRA,build,sem_matriz,5.0,proxy_checkov,MEDIUM,CKV_GCP_12,,,reports-0a8e877_checkov-terraform.json#/results/failed_checks/8,individual
+dvwa-087,Checkov,INFRA,build,sem_matriz,5.0,proxy_checkov,MEDIUM,CKV_GCP_64,,,reports-0a8e877_checkov-terraform.json#/results/failed_checks/9,individual
+dvwa-088,Checkov,INFRA,build,sem_matriz,5.0,proxy_checkov,MEDIUM,CKV_GCP_69,,,reports-0a8e877_checkov-terraform.json#/results/failed_checks/10,individual
+dvwa-089,Checkov,INFRA,build,sem_matriz,5.0,proxy_checkov,MEDIUM,CKV_GCP_61,,,reports-0a8e877_checkov-terraform.json#/results/failed_checks/11,individual
+dvwa-090,Checkov,INFRA,build,sem_matriz,5.0,proxy_checkov,MEDIUM,CKV_GCP_68,,,reports-0a8e877_checkov-terraform.json#/results/failed_checks/12,individual
+dvwa-091,Checkov,INFRA,build,sem_matriz,5.0,proxy_checkov,MEDIUM,CKV_GCP_9,,,reports-0a8e877_checkov-terraform.json#/results/failed_checks/13,individual
+dvwa-092,Checkov,INFRA,build,sem_matriz,5.0,proxy_checkov,MEDIUM,CKV_GCP_10,,,reports-0a8e877_checkov-terraform.json#/results/failed_checks/14,individual
+dvwa-093,Checkov,INFRA,build,sem_matriz,5.0,proxy_checkov,MEDIUM,CKV_GCP_69,,,reports-0a8e877_checkov-terraform.json#/results/failed_checks/15,individual
+dvwa-094,Checkov,INFRA,build,sem_matriz,5.0,proxy_checkov,MEDIUM,CKV_GCP_49,,,reports-0a8e877_checkov-terraform.json#/results/failed_checks/16,individual
+dvwa-095,Checkov,INFRA,build,sem_matriz,5.0,proxy_checkov,MEDIUM,CKV_GCP_114,,,reports-0a8e877_checkov-terraform.json#/results/failed_checks/17,individual
+dvwa-096,Checkov,INFRA,build,sem_matriz,5.0,proxy_checkov,MEDIUM,CKV_GCP_78,,,reports-0a8e877_checkov-terraform.json#/results/failed_checks/18,individual
+dvwa-097,Checkov,INFRA,build,direta,5.0,proxy_checkov,MEDIUM,CKV_GCP_62,,dvwa-exposed-mysql:direta,reports-0a8e877_checkov-terraform.json#/results/failed_checks/19,individual
+dvwa-098,Checkov,INFRA,build,sem_matriz,5.0,proxy_checkov,MEDIUM,CKV_GCP_114,,,reports-0a8e877_checkov-terraform.json#/results/failed_checks/20,individual
+dvwa-099,Checkov,INFRA,build,sem_matriz,5.0,proxy_checkov,MEDIUM,CKV_GCP_78,,,reports-0a8e877_checkov-terraform.json#/results/failed_checks/21,individual
+dvwa-100,Checkov,INFRA,build,direta,5.0,proxy_checkov,MEDIUM,CKV_GCP_62,,dvwa-exposed-mysql:direta,reports-0a8e877_checkov-terraform.json#/results/failed_checks/22,individual
+dvwa-101,Checkov,INFRA,build,sem_matriz,5.0,proxy_checkov,MEDIUM,CKV_GCP_26,,,reports-0a8e877_checkov-terraform.json#/results/failed_checks/23,individual
+dvwa-102,Checkov,INFRA,build,sem_matriz,5.0,proxy_checkov,MEDIUM,CKV2_GCP_18,,,reports-0a8e877_checkov-terraform.json#/results/failed_checks/24,individual
+dvwa-103,Checkov,INFRA,build,sem_matriz,5.0,proxy_checkov,MEDIUM,CKV_K8S_9,,,reports-0a8e877_checkov-k8s.json#/results/failed_checks/0,individual
+dvwa-104,Checkov,INFRA,build,direta,5.0,proxy_checkov,MEDIUM,CKV_K8S_38,,dvwa-exposed-mysql:direta,reports-0a8e877_checkov-k8s.json#/results/failed_checks/1,individual
+dvwa-105,Checkov,INFRA,build,sem_matriz,5.0,proxy_checkov,MEDIUM,CKV_K8S_13,,,reports-0a8e877_checkov-k8s.json#/results/failed_checks/2,individual
+dvwa-106,Checkov,INFRA,build,sem_matriz,5.0,proxy_checkov,MEDIUM,CKV_K8S_21,,,reports-0a8e877_checkov-k8s.json#/results/failed_checks/3,individual
+dvwa-107,Checkov,INFRA,build,sem_matriz,5.0,proxy_checkov,MEDIUM,CKV_K8S_43,,,reports-0a8e877_checkov-k8s.json#/results/failed_checks/4,individual
+dvwa-108,Checkov,INFRA,build,sem_matriz,5.0,proxy_checkov,MEDIUM,CKV_K8S_20,,,reports-0a8e877_checkov-k8s.json#/results/failed_checks/5,individual
+dvwa-109,Checkov,INFRA,build,sem_matriz,5.0,proxy_checkov,MEDIUM,CKV_K8S_22,,,reports-0a8e877_checkov-k8s.json#/results/failed_checks/6,individual
+dvwa-110,Checkov,INFRA,build,direta,5.0,proxy_checkov,MEDIUM,CKV_K8S_31,,dvwa-exposed-mysql:direta,reports-0a8e877_checkov-k8s.json#/results/failed_checks/7,individual
+dvwa-111,Checkov,INFRA,build,sem_matriz,5.0,proxy_checkov,MEDIUM,CKV_K8S_11,,,reports-0a8e877_checkov-k8s.json#/results/failed_checks/8,individual
+dvwa-112,Checkov,INFRA,build,direta,5.0,proxy_checkov,MEDIUM,CKV_K8S_30,,dvwa-exposed-mysql:direta,reports-0a8e877_checkov-k8s.json#/results/failed_checks/9,individual
+dvwa-113,Checkov,INFRA,build,sem_matriz,5.0,proxy_checkov,MEDIUM,CKV_K8S_40,,,reports-0a8e877_checkov-k8s.json#/results/failed_checks/10,individual
+dvwa-114,Checkov,INFRA,build,sem_matriz,5.0,proxy_checkov,MEDIUM,CKV_K8S_10,,,reports-0a8e877_checkov-k8s.json#/results/failed_checks/11,individual
+dvwa-115,Checkov,INFRA,build,sem_matriz,5.0,proxy_checkov,MEDIUM,CKV_K8S_8,,,reports-0a8e877_checkov-k8s.json#/results/failed_checks/12,individual
+dvwa-116,Checkov,INFRA,build,sem_matriz,5.0,proxy_checkov,MEDIUM,CKV_K8S_15,,,reports-0a8e877_checkov-k8s.json#/results/failed_checks/13,individual
+dvwa-117,Checkov,INFRA,build,sem_matriz,5.0,proxy_checkov,MEDIUM,CKV_K8S_28,,,reports-0a8e877_checkov-k8s.json#/results/failed_checks/14,individual
+dvwa-118,Checkov,INFRA,build,sem_matriz,5.0,proxy_checkov,MEDIUM,CKV_K8S_23,,,reports-0a8e877_checkov-k8s.json#/results/failed_checks/15,individual
+dvwa-119,Checkov,INFRA,build,direta,5.0,proxy_checkov,MEDIUM,CKV_K8S_29,,dvwa-exposed-mysql:direta,reports-0a8e877_checkov-k8s.json#/results/failed_checks/16,individual
+dvwa-120,Checkov,INFRA,build,sem_matriz,5.0,proxy_checkov,MEDIUM,CKV_K8S_37,,,reports-0a8e877_checkov-k8s.json#/results/failed_checks/17,individual
+dvwa-121,Checkov,INFRA,build,sem_matriz,5.0,proxy_checkov,MEDIUM,CKV_K8S_12,,,reports-0a8e877_checkov-k8s.json#/results/failed_checks/18,individual
+dvwa-122,Checkov,INFRA,build,sem_matriz,5.0,proxy_checkov,MEDIUM,CKV_K8S_21,,,reports-0a8e877_checkov-k8s.json#/results/failed_checks/19,individual
+dvwa-123,Checkov,INFRA,build,sem_matriz,5.0,proxy_checkov,MEDIUM,CKV_K8S_9,,,reports-0a8e877_checkov-k8s.json#/results/failed_checks/20,individual
+dvwa-124,Checkov,INFRA,build,direta,5.0,proxy_checkov,MEDIUM,CKV_K8S_38,,dvwa-exposed-mysql:direta,reports-0a8e877_checkov-k8s.json#/results/failed_checks/21,individual
+dvwa-125,Checkov,INFRA,build,sem_matriz,5.0,proxy_checkov,MEDIUM,CKV_K8S_21,,,reports-0a8e877_checkov-k8s.json#/results/failed_checks/22,individual
+dvwa-126,Checkov,INFRA,build,sem_matriz,5.0,proxy_checkov,MEDIUM,CKV_K8S_43,,,reports-0a8e877_checkov-k8s.json#/results/failed_checks/23,individual
+dvwa-127,Checkov,INFRA,build,sem_matriz,5.0,proxy_checkov,MEDIUM,CKV_K8S_20,,,reports-0a8e877_checkov-k8s.json#/results/failed_checks/24,individual
+dvwa-128,Checkov,INFRA,build,sem_matriz,5.0,proxy_checkov,MEDIUM,CKV_K8S_22,,,reports-0a8e877_checkov-k8s.json#/results/failed_checks/25,individual
+dvwa-129,Checkov,INFRA,build,direta,5.0,proxy_checkov,MEDIUM,CKV_K8S_31,,dvwa-exposed-mysql:direta,reports-0a8e877_checkov-k8s.json#/results/failed_checks/26,individual
+dvwa-130,Checkov,INFRA,build,direta,5.0,proxy_checkov,MEDIUM,CKV_K8S_30,,dvwa-exposed-mysql:direta,reports-0a8e877_checkov-k8s.json#/results/failed_checks/27,individual
+dvwa-131,Checkov,INFRA,build,sem_matriz,5.0,proxy_checkov,MEDIUM,CKV_K8S_40,,,reports-0a8e877_checkov-k8s.json#/results/failed_checks/28,individual
+dvwa-132,Checkov,INFRA,build,sem_matriz,5.0,proxy_checkov,MEDIUM,CKV_K8S_8,,,reports-0a8e877_checkov-k8s.json#/results/failed_checks/29,individual
+dvwa-133,Checkov,INFRA,build,sem_matriz,5.0,proxy_checkov,MEDIUM,CKV_K8S_14,,,reports-0a8e877_checkov-k8s.json#/results/failed_checks/30,individual
+dvwa-134,Checkov,INFRA,build,sem_matriz,5.0,proxy_checkov,MEDIUM,CKV_K8S_28,,,reports-0a8e877_checkov-k8s.json#/results/failed_checks/31,individual
+dvwa-135,Checkov,INFRA,build,sem_matriz,5.0,proxy_checkov,MEDIUM,CKV_K8S_23,,,reports-0a8e877_checkov-k8s.json#/results/failed_checks/32,individual
+dvwa-136,Checkov,INFRA,build,direta,5.0,proxy_checkov,MEDIUM,CKV_K8S_29,,dvwa-exposed-mysql:direta,reports-0a8e877_checkov-k8s.json#/results/failed_checks/33,individual
+dvwa-137,Checkov,INFRA,build,sem_matriz,5.0,proxy_checkov,MEDIUM,CKV_K8S_37,,,reports-0a8e877_checkov-k8s.json#/results/failed_checks/34,individual
+dvwa-138,Checkov,INFRA,build,sem_matriz,5.0,proxy_checkov,MEDIUM,CKV_K8S_21,,,reports-0a8e877_checkov-k8s.json#/results/failed_checks/35,individual
+dvwa-139,Checkov,INFRA,build,sem_matriz,5.0,proxy_checkov,MEDIUM,CKV2_K8S_6,,,reports-0a8e877_checkov-k8s.json#/results/failed_checks/36,individual
+dvwa-140,Checkov,INFRA,build,sem_matriz,5.0,proxy_checkov,MEDIUM,CKV2_K8S_6,,,reports-0a8e877_checkov-k8s.json#/results/failed_checks/37,individual
+dvwa-141,OWASP ZAP (Baseline),APP,deploy,direta,5.0,proxy_zap_baseline,Medium (High),10038,CWE-693,dvwa-csp-bypass:direta,reports-0a8e877_zap-report.json#/site/1/alerts/0,individual
+dvwa-142,OWASP ZAP (Baseline),APP,deploy,sem_matriz,5.0,proxy_zap_baseline,Medium (Medium),0,CWE-548,,reports-0a8e877_zap-report.json#/site/1/alerts/1,individual
+dvwa-143,OWASP ZAP (Baseline),APP,deploy,sem_matriz,5.0,proxy_zap_baseline,Medium (Medium),10106,CWE-311,,reports-0a8e877_zap-report.json#/site/1/alerts/2,individual
+dvwa-144,OWASP ZAP (Baseline),APP,deploy,sem_matriz,5.0,proxy_zap_baseline,Medium (Medium),10020,CWE-1021,,reports-0a8e877_zap-report.json#/site/1/alerts/3,individual
+dvwa-145,OWASP ZAP (Baseline),APP,deploy,sem_matriz,5.0,proxy_zap_baseline,Medium (Medium),10051,CWE-20,,reports-0a8e877_zap-report.json#/site/1/alerts/4,individual
+dvwa-146,OWASP ZAP (Baseline),APP,deploy,sem_matriz,3.0,proxy_zap_baseline,Low (Medium),10010,CWE-1004,,reports-0a8e877_zap-report.json#/site/1/alerts/5,individual
+dvwa-147,OWASP ZAP (Baseline),APP,deploy,sem_matriz,3.0,proxy_zap_baseline,Low (Medium),10054,CWE-1275,,reports-0a8e877_zap-report.json#/site/1/alerts/6,individual
+dvwa-148,OWASP ZAP (Baseline),APP,deploy,sem_matriz,3.0,proxy_zap_baseline,Low (High),10009,CWE-497,,reports-0a8e877_zap-report.json#/site/1/alerts/7,individual
+dvwa-149,OWASP ZAP (Baseline),APP,deploy,direta,3.0,proxy_zap_baseline,Low (Medium),90004,CWE-693,dvwa-csp-bypass:direta,reports-0a8e877_zap-report.json#/site/1/alerts/8,individual
+dvwa-150,OWASP ZAP (Baseline),APP,deploy,direta,3.0,proxy_zap_baseline,Low (Medium),10063,CWE-693,dvwa-csp-bypass:direta,reports-0a8e877_zap-report.json#/site/1/alerts/9,individual
+dvwa-151,OWASP ZAP (Baseline),APP,deploy,sem_matriz,3.0,proxy_zap_baseline,Low (High),10036,CWE-497,,reports-0a8e877_zap-report.json#/site/1/alerts/10,individual
+dvwa-152,OWASP ZAP (Baseline),APP,deploy,direta,3.0,proxy_zap_baseline,Low (Medium),10021,CWE-693,dvwa-csp-bypass:direta,reports-0a8e877_zap-report.json#/site/1/alerts/11,individual
+dvwa-153,OWASP ZAP (Baseline),APP,deploy,sem_matriz,0.0,proxy_zap_baseline,Informational (High),10111,,,reports-0a8e877_zap-report.json#/site/1/alerts/12,individual
+dvwa-154,OWASP ZAP (Baseline),APP,deploy,sem_matriz,0.0,proxy_zap_baseline,Informational (Low),90027,CWE-205,,reports-0a8e877_zap-report.json#/site/1/alerts/13,individual
+dvwa-155,OWASP ZAP (Baseline),APP,deploy,sem_matriz,0.0,proxy_zap_baseline,Informational (Medium),10049,CWE-524,,reports-0a8e877_zap-report.json#/site/1/alerts/14,individual
+dvwa-156,OWASP ZAP (Baseline),APP,deploy,sem_matriz,0.0,proxy_zap_baseline,Informational (Medium),10112,,,reports-0a8e877_zap-report.json#/site/1/alerts/15,individual
+dvwa-157,OWASP ZAP (Baseline),APP,deploy,sem_matriz,0.0,proxy_zap_baseline,Informational (Medium),10049,CWE-524,,reports-0a8e877_zap-report.json#/site/1/alerts/16,individual
+dvwa-158,OWASP ZAP (Baseline),APP,deploy,sem_matriz,0.0,proxy_zap_baseline,Informational (Medium),10049,CWE-524,,reports-0a8e877_zap-report.json#/site/1/alerts/17,individual
+dvwa-159,OWASP ZAP (Baseline),APP,deploy,sem_matriz,0.0,proxy_zap_baseline,Informational (Medium),10104,CWE-0,,reports-0a8e877_zap-report.json#/site/1/alerts/18,individual
+dvwa-160,OWASP ZAP (Active),APP,deploy,sem_matriz,,sem_score_zap_active,Medium,10020,CWE-1021,,reports-0a8e877_zap-auth-active-report.json#/alerts/0,individual
+dvwa-161,OWASP ZAP (Active),APP,deploy,direta,,sem_score_zap_active,Medium,10038,CWE-693,dvwa-csp-bypass:direta,reports-0a8e877_zap-auth-active-report.json#/alerts/1,individual
+dvwa-162,OWASP ZAP (Active),APP,deploy,sem_matriz,,sem_score_zap_active,Low,10036,CWE-497,,reports-0a8e877_zap-auth-active-report.json#/alerts/2,individual
+dvwa-163,OWASP ZAP (Active),APP,deploy,direta,,sem_score_zap_active,Low,10021,CWE-693,dvwa-csp-bypass:direta,reports-0a8e877_zap-auth-active-report.json#/alerts/4,individual
+dvwa-164,OWASP ZAP (Active),APP,deploy,sem_matriz,,sem_score_zap_active,Low,10009,CWE-497,,reports-0a8e877_zap-auth-active-report.json#/alerts/9,individual
+dvwa-165,OWASP ZAP (Active),APP,deploy,sem_matriz,,sem_score_zap_active,Medium,90022,CWE-550,,reports-0a8e877_zap-auth-active-report.json#/alerts/24,individual
+dvwa-166,OWASP ZAP (Active),APP,deploy,sem_matriz,,sem_score_zap_active,Medium,10033,CWE-548,,reports-0a8e877_zap-auth-active-report.json#/alerts/26,individual
+dvwa-167,OWASP ZAP (Active),APP,deploy,sem_matriz,,sem_score_zap_active,Informational,10111,,,reports-0a8e877_zap-auth-active-report.json#/alerts/39,individual
+dvwa-168,OWASP ZAP (Active),APP,deploy,sem_matriz,,sem_score_zap_active,Informational,10027,CWE-615,,reports-0a8e877_zap-auth-active-report.json#/alerts/65,individual
+dvwa-169,OWASP ZAP (Active),APP,deploy,sem_matriz,,sem_score_zap_active,Low,10023,CWE-1295,,reports-0a8e877_zap-auth-active-report.json#/alerts/86,individual
+dvwa-170,OWASP ZAP (Active),APP,deploy,direta,,sem_score_zap_active,High,40018,CWE-89,dvwa-sql-injection:direta,reports-0a8e877_zap-auth-active-report.json#/alerts/100,individual
+dvwa-171,OWASP ZAP (Active),APP,deploy,sem_matriz,,sem_score_zap_active,Medium,0,CWE-548,,reports-0a8e877_zap-auth-active-report.json#/alerts/101,individual
+dvwa-172,OWASP ZAP (Active),APP,deploy,sem_matriz,,sem_score_zap_active,Medium,10106,CWE-311,,reports-0a8e877_zap-auth-active-report.json#/alerts/107,individual
+dvwa-173,OWASP ZAP (Active),APP,deploy,sem_matriz,,sem_score_zap_active,Informational,10104,CWE-0,,reports-0a8e877_zap-auth-active-report.json#/alerts/108,individual
+dvwa-174,Brute Force,APP,deploy,direta,7.5,proxy_teste_credenciais,High,bf-rate-limit,CWE-307,dvwa-brute-force:direta,reports-0a8e877_hydra-bruteforce.json#/vulnerable,individual
+dvwa-175,Brute Force,APP,deploy,direta,7.5,proxy_teste_credenciais,High,bf-default-creds,CWE-798,dvwa-default-credentials:direta,reports-0a8e877_hydra-bruteforce.json#/vulnerable,individual
+dvwa-176,Trivy Container,INFRA,build,indireta,6.1,cvss_v3,MEDIUM,CVE-2019-10092,CWE-79,dvwa-xss:indireta,reports-0a8e877_trivy-report.json#/Results/0/Vulnerabilities/27,individual_app_match
+dvwa-177,Trivy Container,INFRA,build,indireta,6.1,cvss_v3,MEDIUM,CVE-2019-10098,CWE-601,dvwa-open-http-redirect:indireta,reports-0a8e877_trivy-report.json#/Results/0/Vulnerabilities/28,individual_app_match
+dvwa-178,Trivy Container,INFRA,build,indireta,6.1,cvss_v3,MEDIUM,CVE-2020-1927,CWE-601,dvwa-open-http-redirect:indireta,reports-0a8e877_trivy-report.json#/Results/0/Vulnerabilities/30,individual_app_match
+dvwa-179,Trivy Container,INFRA,build,indireta,6.1,cvss_v3,MEDIUM,CVE-2019-10092,CWE-79,dvwa-xss:indireta,reports-0a8e877_trivy-report.json#/Results/0/Vulnerabilities/60,individual_app_match
+dvwa-180,Trivy Container,INFRA,build,indireta,6.1,cvss_v3,MEDIUM,CVE-2019-10098,CWE-601,dvwa-open-http-redirect:indireta,reports-0a8e877_trivy-report.json#/Results/0/Vulnerabilities/61,individual_app_match
+dvwa-181,Trivy Container,INFRA,build,indireta,6.1,cvss_v3,MEDIUM,CVE-2020-1927,CWE-601,dvwa-open-http-redirect:indireta,reports-0a8e877_trivy-report.json#/Results/0/Vulnerabilities/63,individual_app_match
+dvwa-182,Trivy Container,INFRA,build,indireta,6.1,cvss_v3,MEDIUM,CVE-2019-10092,CWE-79,dvwa-xss:indireta,reports-0a8e877_trivy-report.json#/Results/0/Vulnerabilities/93,individual_app_match
+dvwa-183,Trivy Container,INFRA,build,indireta,6.1,cvss_v3,MEDIUM,CVE-2019-10098,CWE-601,dvwa-open-http-redirect:indireta,reports-0a8e877_trivy-report.json#/Results/0/Vulnerabilities/94,individual_app_match
+dvwa-184,Trivy Container,INFRA,build,indireta,6.1,cvss_v3,MEDIUM,CVE-2020-1927,CWE-601,dvwa-open-http-redirect:indireta,reports-0a8e877_trivy-report.json#/Results/0/Vulnerabilities/96,individual_app_match
+dvwa-185,Trivy Container,INFRA,build,indireta,6.1,cvss_v3,MEDIUM,CVE-2019-10092,CWE-79,dvwa-xss:indireta,reports-0a8e877_trivy-report.json#/Results/0/Vulnerabilities/126,individual_app_match
+dvwa-186,Trivy Container,INFRA,build,indireta,6.1,cvss_v3,MEDIUM,CVE-2019-10098,CWE-601,dvwa-open-http-redirect:indireta,reports-0a8e877_trivy-report.json#/Results/0/Vulnerabilities/127,individual_app_match
+dvwa-187,Trivy Container,INFRA,build,indireta,6.1,cvss_v3,MEDIUM,CVE-2020-1927,CWE-601,dvwa-open-http-redirect:indireta,reports-0a8e877_trivy-report.json#/Results/0/Vulnerabilities/129,individual_app_match
+dvwa-188,Trivy Container,INFRA,build,indireta,8.8,cvss_v3,HIGH,CVE-2018-1000858,CWE-352,dvwa-csrf:indireta,reports-0a8e877_trivy-report.json#/Results/0/Vulnerabilities/151,individual_app_match
+dvwa-189,Trivy Container,INFRA,build,indireta,7.0,cvss_v3,HIGH,CVE-2021-21703,CWE-284|CWE-787,dvwa-exposed-mysql:indireta,reports-0a8e877_trivy-report.json#/Results/0/Vulnerabilities/198,individual_app_match
+dvwa-190,Trivy Container,INFRA,build,indireta,6.1,cvss_v3,MEDIUM,CVE-2018-17082,CWE-79,dvwa-xss:indireta,reports-0a8e877_trivy-report.json#/Results/0/Vulnerabilities/202,individual_app_match
+dvwa-191,Trivy Container,INFRA,build,indireta,9.8,cvss_v3,CRITICAL,CVE-2022-29155,CWE-89,dvwa-sql-injection:indireta,reports-0a8e877_trivy-report.json#/Results/0/Vulnerabilities/348,individual_app_match
+dvwa-192,Trivy Container,INFRA,build,indireta,9.8,cvss_v3,CRITICAL,CVE-2022-29155,CWE-89,dvwa-sql-injection:indireta,reports-0a8e877_trivy-report.json#/Results/0/Vulnerabilities/366,individual_app_match
+dvwa-193,Trivy Container,INFRA,build,indireta,8.8,cvss_v3,HIGH,CVE-2019-10208,CWE-89,dvwa-sql-injection:indireta,reports-0a8e877_trivy-report.json#/Results/0/Vulnerabilities/473,individual_app_match
+dvwa-194,Trivy Container,INFRA,build,indireta,8.8,cvss_v3,HIGH,CVE-2020-25695,CWE-89,dvwa-sql-injection:indireta,reports-0a8e877_trivy-report.json#/Results/0/Vulnerabilities/476,individual_app_match
+dvwa-195,Trivy Container,INFRA,build,indireta,8.1,cvss_v3,HIGH,CVE-2021-23214,CWE-89,dvwa-sql-injection:indireta,reports-0a8e877_trivy-report.json#/Results/0/Vulnerabilities/478,individual_app_match
+dvwa-196,Trivy Container,INFRA,build,indireta,4.3,cvss_v3,MEDIUM,CVE-2019-10130,CWE-284,dvwa-exposed-mysql:indireta,reports-0a8e877_trivy-report.json#/Results/0/Vulnerabilities/480,individual_app_match
+dvwa-197,Trivy Container,INFRA,build,indireta,8.8,cvss_v3,HIGH,CVE-2022-24407,CWE-89,dvwa-sql-injection:indireta,reports-0a8e877_trivy-report.json#/Results/0/Vulnerabilities/486,individual_app_match
+dvwa-198,Trivy Container,INFRA,build,indireta,8.8,cvss_v3,HIGH,CVE-2022-24407,CWE-89,dvwa-sql-injection:indireta,reports-0a8e877_trivy-report.json#/Results/0/Vulnerabilities/488,individual_app_match
+dvwa-199,Trivy Container,INFRA,build,indireta,8.8,cvss_v3,HIGH,CVE-2022-24407,CWE-89,dvwa-sql-injection:indireta,reports-0a8e877_trivy-report.json#/Results/0/Vulnerabilities/490,individual_app_match
+dvwa-200,Trivy Container,INFRA,build,indireta,7.4,cvss_v3,HIGH,CVE-2019-1543,CWE-327|CWE-330,dvwa-weak-session-ids:indireta,reports-0a8e877_trivy-report.json#/Results/0/Vulnerabilities/532,individual_app_match
+dvwa-201,Trivy Container,INFRA,build,indireta,7.3,cvss_v3,HIGH,CVE-2022-1292,CWE-78,dvwa-command-injection:indireta,reports-0a8e877_trivy-report.json#/Results/0/Vulnerabilities/536,individual_app_match
+dvwa-202,Trivy Container,INFRA,build,indireta,7.4,cvss_v3,HIGH,CVE-2019-1543,CWE-327|CWE-330,dvwa-weak-session-ids:indireta,reports-0a8e877_trivy-report.json#/Results/0/Vulnerabilities/982,individual_app_match
+dvwa-203,Trivy Container,INFRA,build,indireta,7.3,cvss_v3,HIGH,CVE-2022-1292,CWE-78,dvwa-command-injection:indireta,reports-0a8e877_trivy-report.json#/Results/0/Vulnerabilities/986,individual_app_match
+dvwa-204,Trivy Container,INFRA,build,indireta,7.0,cvss_v3,HIGH,CVE-2021-21703,CWE-284|CWE-787,dvwa-exposed-mysql:indireta,reports-0a8e877_trivy-report.json#/Results/0/Vulnerabilities/1062,individual_app_match
+dvwa-205,Trivy Container,INFRA,build,indireta,6.1,cvss_v3,MEDIUM,CVE-2018-17082,CWE-79,dvwa-xss:indireta,reports-0a8e877_trivy-report.json#/Results/0/Vulnerabilities/1066,individual_app_match
+dvwa-206,Trivy Container,INFRA,build,indireta,7.0,cvss_v3,HIGH,CVE-2021-21703,CWE-284|CWE-787,dvwa-exposed-mysql:indireta,reports-0a8e877_trivy-report.json#/Results/0/Vulnerabilities/1115,individual_app_match
+dvwa-207,Trivy Container,INFRA,build,indireta,6.1,cvss_v3,MEDIUM,CVE-2018-17082,CWE-79,dvwa-xss:indireta,reports-0a8e877_trivy-report.json#/Results/0/Vulnerabilities/1119,individual_app_match
+dvwa-208,Trivy Container,INFRA,build,indireta,7.0,cvss_v3,HIGH,CVE-2021-21703,CWE-284|CWE-787,dvwa-exposed-mysql:indireta,reports-0a8e877_trivy-report.json#/Results/0/Vulnerabilities/1168,individual_app_match
+dvwa-209,Trivy Container,INFRA,build,indireta,6.1,cvss_v3,MEDIUM,CVE-2018-17082,CWE-79,dvwa-xss:indireta,reports-0a8e877_trivy-report.json#/Results/0/Vulnerabilities/1172,individual_app_match
+dvwa-210,Trivy Container,INFRA,build,indireta,7.0,cvss_v3,HIGH,CVE-2021-21703,CWE-284|CWE-787,dvwa-exposed-mysql:indireta,reports-0a8e877_trivy-report.json#/Results/0/Vulnerabilities/1221,individual_app_match
+dvwa-211,Trivy Container,INFRA,build,indireta,6.1,cvss_v3,MEDIUM,CVE-2018-17082,CWE-79,dvwa-xss:indireta,reports-0a8e877_trivy-report.json#/Results/0/Vulnerabilities/1225,individual_app_match
+dvwa-212,Trivy Container,INFRA,build,indireta,7.0,cvss_v3,HIGH,CVE-2021-21703,CWE-284|CWE-787,dvwa-exposed-mysql:indireta,reports-0a8e877_trivy-report.json#/Results/0/Vulnerabilities/1274,individual_app_match
+dvwa-213,Trivy Container,INFRA,build,indireta,6.1,cvss_v3,MEDIUM,CVE-2018-17082,CWE-79,dvwa-xss:indireta,reports-0a8e877_trivy-report.json#/Results/0/Vulnerabilities/1278,individual_app_match
+dvwa-214,Trivy Container,INFRA,build,indireta,7.0,cvss_v3,HIGH,CVE-2021-21703,CWE-284|CWE-787,dvwa-exposed-mysql:indireta,reports-0a8e877_trivy-report.json#/Results/0/Vulnerabilities/1327,individual_app_match
+dvwa-215,Trivy Container,INFRA,build,indireta,6.1,cvss_v3,MEDIUM,CVE-2018-17082,CWE-79,dvwa-xss:indireta,reports-0a8e877_trivy-report.json#/Results/0/Vulnerabilities/1331,individual_app_match
+dvwa-216,Trivy Container,INFRA,build,indireta,7.0,cvss_v3,HIGH,CVE-2021-21703,CWE-284|CWE-787,dvwa-exposed-mysql:indireta,reports-0a8e877_trivy-report.json#/Results/0/Vulnerabilities/1380,individual_app_match
+dvwa-217,Trivy Container,INFRA,build,indireta,6.1,cvss_v3,MEDIUM,CVE-2018-17082,CWE-79,dvwa-xss:indireta,reports-0a8e877_trivy-report.json#/Results/0/Vulnerabilities/1384,individual_app_match
+dvwa-218,Trivy Container,INFRA,build,indireta,7.0,cvss_v3,HIGH,CVE-2021-21703,CWE-284|CWE-787,dvwa-exposed-mysql:indireta,reports-0a8e877_trivy-report.json#/Results/0/Vulnerabilities/1433,individual_app_match
+dvwa-219,Trivy Container,INFRA,build,indireta,6.1,cvss_v3,MEDIUM,CVE-2018-17082,CWE-79,dvwa-xss:indireta,reports-0a8e877_trivy-report.json#/Results/0/Vulnerabilities/1437,individual_app_match
+dvwa-220,Trivy Container,INFRA,build,indireta,7.0,cvss_v3,HIGH,CVE-2021-21703,CWE-284|CWE-787,dvwa-exposed-mysql:indireta,reports-0a8e877_trivy-report.json#/Results/0/Vulnerabilities/1486,individual_app_match
+dvwa-221,Trivy Container,INFRA,build,indireta,6.1,cvss_v3,MEDIUM,CVE-2018-17082,CWE-79,dvwa-xss:indireta,reports-0a8e877_trivy-report.json#/Results/0/Vulnerabilities/1490,individual_app_match
+dvwa-222,Trivy Container,INFRA,build,indireta,7.0,cvss_v3,HIGH,CVE-2021-21703,CWE-284|CWE-787,dvwa-exposed-mysql:indireta,reports-0a8e877_trivy-report.json#/Results/0/Vulnerabilities/1539,individual_app_match
+dvwa-223,Trivy Container,INFRA,build,indireta,6.1,cvss_v3,MEDIUM,CVE-2018-17082,CWE-79,dvwa-xss:indireta,reports-0a8e877_trivy-report.json#/Results/0/Vulnerabilities/1543,individual_app_match
+dvwa-224,Trivy Container,INFRA,build,direta,9.8,trivy_max,CRITICAL,agg-outdated-os,CWE-1104,dvwa-outdated-os:direta,trivy_composicao.csv#agg-outdated-os,aggregate_eosl
+dvwa-225,Trivy Container,INFRA,build,direta,9.8,trivy_max,HIGH,agg-outdated-packages,CWE-1104,dvwa-outdated-packages:direta,trivy_composicao.csv#agg-outdated-packages,aggregate_fixable
+dvwa-226,Trivy Container,INFRA,build,sem_matriz,9.8,trivy_max,HIGH,agg-other-os-cves,,,trivy_composicao.csv#agg-other-os-cves,aggregate_other

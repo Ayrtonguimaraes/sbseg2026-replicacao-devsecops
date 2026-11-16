@@ -1,0 +1,10 @@
+﻿agregacao,politica,limiar,unidades,bloqueios,diretos,indiretos,sem_matriz,commit,build,deploy,vulnerabilidades_matriz,detectadas,detectadas_diretas,cobertura_bloqueante,cobertura_bloqueante_pct,ids_bloqueados
+maximo,P1,9,226,5,2,2,1,0,5,0,13,13,10,3,23.08,dvwa-outdated-os|dvwa-outdated-packages|dvwa-sql-injection
+maximo,P2,7,226,80,29,24,27,51,27,2,13,13,10,11,84.62,dvwa-brute-force|dvwa-command-injection|dvwa-csrf|dvwa-default-credentials|dvwa-exposed-mysql|dvwa-javascript-attacks|dvwa-outdated-os|dvwa-outdated-packages|dvwa-sql-injection|dvwa-weak-session-ids|dvwa-xss
+maximo,P3,7,226,56,29,0,27,51,3,2,13,13,10,8,61.54,dvwa-brute-force|dvwa-command-injection|dvwa-default-credentials|dvwa-javascript-attacks|dvwa-outdated-os|dvwa-outdated-packages|dvwa-sql-injection|dvwa-xss
+media,P1,9,226,2,0,2,0,0,2,0,13,13,10,1,7.69,dvwa-sql-injection
+media,P2,7,226,77,27,24,26,51,24,2,13,13,10,9,69.23,dvwa-brute-force|dvwa-command-injection|dvwa-csrf|dvwa-default-credentials|dvwa-exposed-mysql|dvwa-javascript-attacks|dvwa-sql-injection|dvwa-weak-session-ids|dvwa-xss
+media,P3,7,226,53,27,0,26,51,0,2,13,13,10,6,46.15,dvwa-brute-force|dvwa-command-injection|dvwa-default-credentials|dvwa-javascript-attacks|dvwa-sql-injection|dvwa-xss
+mediana,P1,9,226,2,0,2,0,0,2,0,13,13,10,1,7.69,dvwa-sql-injection
+mediana,P2,7,226,80,29,24,27,51,27,2,13,13,10,11,84.62,dvwa-brute-force|dvwa-command-injection|dvwa-csrf|dvwa-default-credentials|dvwa-exposed-mysql|dvwa-javascript-attacks|dvwa-outdated-os|dvwa-outdated-packages|dvwa-sql-injection|dvwa-weak-session-ids|dvwa-xss
+mediana,P3,7,226,56,29,0,27,51,3,2,13,13,10,8,61.54,dvwa-brute-force|dvwa-command-injection|dvwa-default-credentials|dvwa-javascript-attacks|dvwa-outdated-os|dvwa-outdated-packages|dvwa-sql-injection|dvwa-xss

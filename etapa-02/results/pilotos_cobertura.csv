@@ -1,0 +1,7 @@
+﻿aplicacao,caso,diretas,indiretas
+juice-shop,js-sqli-search,2,1
+juice-shop,js-redirect-outdated,2,0
+juice-shop,js-reflected-xss,0,10
+webgoat,wg-sqli-5a,1,0
+webgoat,wg-xss-lesson,0,3
+webgoat,wg-csrf-review,0,0

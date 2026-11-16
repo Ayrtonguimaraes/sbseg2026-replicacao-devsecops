@@ -1,0 +1,50 @@
+Artefato dos autores: 5b18244126350d1a6a4bf39e7a34701af9190563
+Baseline validado: 1575 ocorrências Trivy e 226 unidades totais.
+Counter({'semgrep_error': 51, 'semgrep_warning': 26})
+P1: 5 bloqueios, cobertura 3/13
+P2: 80 bloqueios, cobertura 11/13
+P3: 56 bloqueios, cobertura 8/13
+Resultados e dados normalizados em /laboratorio/work/grupo-checkout/grupo/etapa-02
+[
+  {
+    "politica": "P3",
+    "base_bloqueios": 56,
+    "bloqueios_adicionais_no_deploy": 0,
+    "decisoes_simuladas": 56,
+    "cobertura_bloqueante": 8,
+    "vulnerabilidades_matriz": 13,
+    "novos_ids_bloqueados": "",
+    "fonte_validacoes": "nao_aplicavel"
+  },
+  {
+    "politica": "P4-A",
+    "base_bloqueios": 56,
+    "bloqueios_adicionais_no_deploy": 2,
+    "decisoes_simuladas": 58,
+    "cobertura_bloqueante": 10,
+    "vulnerabilidades_matriz": 13,
+    "novos_ids_bloqueados": "dvwa-csrf|dvwa-weak-session-ids",
+    "fonte_validacoes": "evidencias_informadas"
+  },
+  {
+    "politica": "P4-B",
+    "base_bloqueios": 56,
+    "bloqueios_adicionais_no_deploy": 0,
+    "decisoes_simuladas": 56,
+    "cobertura_bloqueante": 8,
+    "vulnerabilidades_matriz": 13,
+    "novos_ids_bloqueados": "",
+    "fonte_validacoes": "evidencias_informadas"
+  }
+]
+test_baseline_por_classe_e_estagio (test_analise.TesteAnalise.test_baseline_por_classe_e_estagio) ... ok
+test_confirmacao_p4_com_e_sem_nota (test_analise.TesteAnalise.test_confirmacao_p4_com_e_sem_nota) ... ok
+test_estagio_e_classe_somam_bloqueios_em_toda_a_grade (test_analise.TesteAnalise.test_estagio_e_classe_somam_bloqueios_em_toda_a_grade) ... ok
+test_lacunas_e_ids_de_infra_distintos (test_analise.TesteAnalise.test_lacunas_e_ids_de_infra_distintos) ... ok
+test_limiar_inclusivo_e_proxies_distintos (test_analise.TesteAnalise.test_limiar_inclusivo_e_proxies_distintos) ... ok
+test_score_ausente_e_escopo_das_duas_politicas (test_analise.TesteAnalise.test_score_ausente_e_escopo_das_duas_politicas) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.004s
+
+OK

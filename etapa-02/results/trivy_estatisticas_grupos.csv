@@ -1,0 +1,4 @@
+﻿grupo,ocorrencias,com_cvss_v3,sem_cvss_v3,maximo,media,mediana
+agg-outdated-os,1575,1563,12,9.8,6.982149712092131,7.1
+agg-outdated-packages,1380,1368,12,9.8,6.958991228070175,7.1
+agg-other-os-cves,1527,1515,12,9.8,6.9845544554455445,7.2

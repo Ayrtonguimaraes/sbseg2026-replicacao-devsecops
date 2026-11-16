@@ -1,0 +1,18 @@
+{
+  "app": "webgoat",
+  "healthcheck": "http://127.0.0.1:18080/WebGoat/login",
+  "active_target": "http://127.0.0.1:18080/WebGoat/login?error=true",
+  "autenticado": false,
+  "rede": "namespace_somente_loopback",
+  "healthcheck_http": 200,
+  "zap": {
+    "version": "2.17.0"
+  },
+  "urls_passivas": 19,
+  "alertas_passivos": 33,
+  "alertas_ativos": 0,
+  "regras_ativas": [
+    40012,
+    40018
+  ]
+}

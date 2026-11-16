@@ -1,0 +1,7 @@
+aplicacao,versao,vulnerability_id,cwe,nome,arquivo_sast,rota_dast,referencia,estado
+juice-shop,19.0.0,js-sqli-search,CWE-89,Injeção SQL na busca,routes/search.ts,/rest/products/search,https://github.com/juice-shop/juice-shop/blob/v19.0.0/routes/search.ts,referencia_codigo_com_sinal_zap
+juice-shop,19.0.0,js-redirect-outdated,CWE-601,Redirecionamento por lista antiga,routes/redirect.ts,,https://github.com/juice-shop/juice-shop/blob/v19.0.0/routes/redirect.ts,referencia_codigo
+juice-shop,19.0.0,js-reflected-xss,CWE-79,XSS refletido no rastreamento,routes/trackOrder.ts,,https://github.com/juice-shop/juice-shop/blob/v19.0.0/routes/trackOrder.ts,referencia_codigo
+webgoat,2025.3,wg-sqli-5a,CWE-89,SQL Injection lesson 5a,src/main/java/org/owasp/webgoat/lessons/sqlinjection/introduction/SqlInjectionLesson5a.java,,https://github.com/WebGoat/WebGoat/blob/v2025.3/src/main/java/org/owasp/webgoat/lessons/sqlinjection/introduction/SqlInjectionLesson5a.java,referencia_codigo
+webgoat,2025.3,wg-xss-lesson,CWE-79,Cross-Site Scripting lesson,src/main/java/org/owasp/webgoat/lessons/xss/CrossSiteScripting.java,,https://github.com/WebGoat/WebGoat/tree/v2025.3/src/main/java/org/owasp/webgoat/lessons/xss,referencia_codigo
+webgoat,2025.3,wg-csrf-review,CWE-352,CSRF Forged Reviews,src/main/java/org/owasp/webgoat/lessons/csrf/ForgedReviews.java,,https://github.com/WebGoat/WebGoat/tree/v2025.3/src/main/java/org/owasp/webgoat/lessons/csrf,referencia_codigo

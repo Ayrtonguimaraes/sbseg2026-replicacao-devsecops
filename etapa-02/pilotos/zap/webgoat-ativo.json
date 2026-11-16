@@ -1,0 +1,9 @@
+{
+  "url": "http://127.0.0.1:18080/WebGoat/login?error=true",
+  "regras": [
+    40012,
+    40018
+  ],
+  "ids": [],
+  "alerts": []
+}

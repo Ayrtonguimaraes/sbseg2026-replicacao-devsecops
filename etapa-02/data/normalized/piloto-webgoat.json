@@ -1,0 +1,982 @@
+{
+  "aplicacao": "webgoat",
+  "versao": "2025.3",
+  "scores_ausentes": 0,
+  "unidades": [
+    {
+      "id": "webgoat-sast-000",
+      "ferramenta": "Semgrep",
+      "camada": "APP",
+      "estagio": "commit",
+      "classe": "sem_matriz",
+      "score": 5.0,
+      "origem_score": "semgrep_warning",
+      "severidade_original": "WARNING",
+      "identificador_scanner": "unrestricted-request-mapping",
+      "cwes": [
+        "CWE-352"
+      ],
+      "vinculos": {},
+      "referencia": "semgrep/webgoat.json#/results/0",
+      "granularidade": "individual"
+    },
+    {
+      "id": "webgoat-sast-001",
+      "ferramenta": "Semgrep",
+      "camada": "APP",
+      "estagio": "commit",
+      "classe": "sem_matriz",
+      "score": 5.0,
+      "origem_score": "semgrep_warning",
+      "severidade_original": "WARNING",
+      "identificador_scanner": "unrestricted-request-mapping",
+      "cwes": [
+        "CWE-352"
+      ],
+      "vinculos": {},
+      "referencia": "semgrep/webgoat.json#/results/1",
+      "granularidade": "individual"
+    },
+    {
+      "id": "webgoat-sast-002",
+      "ferramenta": "Semgrep",
+      "camada": "APP",
+      "estagio": "commit",
+      "classe": "sem_matriz",
+      "score": 5.0,
+      "origem_score": "semgrep_warning",
+      "severidade_original": "WARNING",
+      "identificador_scanner": "unrestricted-request-mapping",
+      "cwes": [
+        "CWE-352"
+      ],
+      "vinculos": {},
+      "referencia": "semgrep/webgoat.json#/results/2",
+      "granularidade": "individual"
+    },
+    {
+      "id": "webgoat-sast-003",
+      "ferramenta": "Semgrep",
+      "camada": "APP",
+      "estagio": "commit",
+      "classe": "sem_matriz",
+      "score": 5.0,
+      "origem_score": "semgrep_warning",
+      "severidade_original": "WARNING",
+      "identificador_scanner": "unrestricted-request-mapping",
+      "cwes": [
+        "CWE-352"
+      ],
+      "vinculos": {},
+      "referencia": "semgrep/webgoat.json#/results/3",
+      "granularidade": "individual"
+    },
+    {
+      "id": "webgoat-sast-004",
+      "ferramenta": "Semgrep",
+      "camada": "APP",
+      "estagio": "commit",
+      "classe": "sem_matriz",
+      "score": 5.0,
+      "origem_score": "semgrep_warning",
+      "severidade_original": "WARNING",
+      "identificador_scanner": "weak-random",
+      "cwes": [
+        "CWE-330"
+      ],
+      "vinculos": {},
+      "referencia": "semgrep/webgoat.json#/results/4",
+      "granularidade": "individual"
+    },
+    {
+      "id": "webgoat-sast-005",
+      "ferramenta": "Semgrep",
+      "camada": "APP",
+      "estagio": "commit",
+      "classe": "sem_matriz",
+      "score": 7.5,
+      "origem_score": "semgrep_error",
+      "severidade_original": "ERROR",
+      "identificador_scanner": "tainted-sql-string",
+      "cwes": [
+        "CWE-89"
+      ],
+      "vinculos": {},
+      "referencia": "semgrep/webgoat.json#/results/5",
+      "granularidade": "individual"
+    },
+    {
+      "id": "webgoat-sast-006",
+      "ferramenta": "Semgrep",
+      "camada": "APP",
+      "estagio": "commit",
+      "classe": "sem_matriz",
+      "score": 7.5,
+      "origem_score": "semgrep_error",
+      "severidade_original": "ERROR",
+      "identificador_scanner": "formatted-sql-string",
+      "cwes": [
+        "CWE-89"
+      ],
+      "vinculos": {},
+      "referencia": "semgrep/webgoat.json#/results/6",
+      "granularidade": "individual"
+    },
+    {
+      "id": "webgoat-sast-007",
+      "ferramenta": "Semgrep",
+      "camada": "APP",
+      "estagio": "commit",
+      "classe": "sem_matriz",
+      "score": 5.0,
+      "origem_score": "semgrep_warning",
+      "severidade_original": "WARNING",
+      "identificador_scanner": "weak-random",
+      "cwes": [
+        "CWE-330"
+      ],
+      "vinculos": {},
+      "referencia": "semgrep/webgoat.json#/results/7",
+      "granularidade": "individual"
+    },
+    {
+      "id": "webgoat-sast-008",
+      "ferramenta": "Semgrep",
+      "camada": "APP",
+      "estagio": "commit",
+      "classe": "sem_matriz",
+      "score": 5.0,
+      "origem_score": "semgrep_warning",
+      "severidade_original": "WARNING",
+      "identificador_scanner": "tainted-session-from-http-request",
+      "cwes": [
+        "CWE-501"
+      ],
+      "vinculos": {},
+      "referencia": "semgrep/webgoat.json#/results/8",
+      "granularidade": "individual"
+    },
+    {
+      "id": "webgoat-sast-009",
+      "ferramenta": "Semgrep",
+      "camada": "APP",
+      "estagio": "commit",
+      "classe": "sem_matriz",
+      "score": 5.0,
+      "origem_score": "semgrep_warning",
+      "severidade_original": "WARNING",
+      "identificador_scanner": "unrestricted-request-mapping",
+      "cwes": [
+        "CWE-352"
+      ],
+      "vinculos": {},
+      "referencia": "semgrep/webgoat.json#/results/9",
+      "granularidade": "individual"
+    },
+    {
+      "id": "webgoat-sast-010",
+      "ferramenta": "Semgrep",
+      "camada": "APP",
+      "estagio": "commit",
+      "classe": "sem_matriz",
+      "score": 5.0,
+      "origem_score": "semgrep_warning",
+      "severidade_original": "WARNING",
+      "identificador_scanner": "weak-random",
+      "cwes": [
+        "CWE-330"
+      ],
+      "vinculos": {},
+      "referencia": "semgrep/webgoat.json#/results/10",
+      "granularidade": "individual"
+    },
+    {
+      "id": "webgoat-sast-011",
+      "ferramenta": "Semgrep",
+      "camada": "APP",
+      "estagio": "commit",
+      "classe": "sem_matriz",
+      "score": 5.0,
+      "origem_score": "semgrep_warning",
+      "severidade_original": "WARNING",
+      "identificador_scanner": "use-of-md5",
+      "cwes": [
+        "CWE-328"
+      ],
+      "vinculos": {},
+      "referencia": "semgrep/webgoat.json#/results/11",
+      "granularidade": "individual"
+    },
+    {
+      "id": "webgoat-sast-012",
+      "ferramenta": "Semgrep",
+      "camada": "APP",
+      "estagio": "commit",
+      "classe": "sem_matriz",
+      "score": 5.0,
+      "origem_score": "semgrep_warning",
+      "severidade_original": "WARNING",
+      "identificador_scanner": "unrestricted-request-mapping",
+      "cwes": [
+        "CWE-352"
+      ],
+      "vinculos": {},
+      "referencia": "semgrep/webgoat.json#/results/12",
+      "granularidade": "individual"
+    },
+    {
+      "id": "webgoat-sast-013",
+      "ferramenta": "Semgrep",
+      "camada": "APP",
+      "estagio": "commit",
+      "classe": "sem_matriz",
+      "score": 5.0,
+      "origem_score": "semgrep_warning",
+      "severidade_original": "WARNING",
+      "identificador_scanner": "weak-random",
+      "cwes": [
+        "CWE-330"
+      ],
+      "vinculos": {},
+      "referencia": "semgrep/webgoat.json#/results/13",
+      "granularidade": "individual"
+    },
+    {
+      "id": "webgoat-sast-014",
+      "ferramenta": "Semgrep",
+      "camada": "APP",
+      "estagio": "commit",
+      "classe": "sem_matriz",
+      "score": 5.0,
+      "origem_score": "semgrep_warning",
+      "severidade_original": "WARNING",
+      "identificador_scanner": "unrestricted-request-mapping",
+      "cwes": [
+        "CWE-352"
+      ],
+      "vinculos": {},
+      "referencia": "semgrep/webgoat.json#/results/14",
+      "granularidade": "individual"
+    },
+    {
+      "id": "webgoat-sast-015",
+      "ferramenta": "Semgrep",
+      "camada": "APP",
+      "estagio": "commit",
+      "classe": "sem_matriz",
+      "score": 5.0,
+      "origem_score": "semgrep_warning",
+      "severidade_original": "WARNING",
+      "identificador_scanner": "object-deserialization",
+      "cwes": [
+        "CWE-502"
+      ],
+      "vinculos": {},
+      "referencia": "semgrep/webgoat.json#/results/15",
+      "granularidade": "individual"
+    },
+    {
+      "id": "webgoat-sast-016",
+      "ferramenta": "Semgrep",
+      "camada": "APP",
+      "estagio": "commit",
+      "classe": "sem_matriz",
+      "score": 5.0,
+      "origem_score": "semgrep_warning",
+      "severidade_original": "WARNING",
+      "identificador_scanner": "object-deserialization",
+      "cwes": [
+        "CWE-502"
+      ],
+      "vinculos": {},
+      "referencia": "semgrep/webgoat.json#/results/16",
+      "granularidade": "individual"
+    },
+    {
+      "id": "webgoat-sast-017",
+      "ferramenta": "Semgrep",
+      "camada": "APP",
+      "estagio": "commit",
+      "classe": "sem_matriz",
+      "score": 5.0,
+      "origem_score": "semgrep_warning",
+      "severidade_original": "WARNING",
+      "identificador_scanner": "cookie-missing-httponly",
+      "cwes": [
+        "CWE-1004"
+      ],
+      "vinculos": {},
+      "referencia": "semgrep/webgoat.json#/results/17",
+      "granularidade": "individual"
+    },
+    {
+      "id": "webgoat-sast-018",
+      "ferramenta": "Semgrep",
+      "camada": "APP",
+      "estagio": "commit",
+      "classe": "sem_matriz",
+      "score": 5.0,
+      "origem_score": "semgrep_warning",
+      "severidade_original": "WARNING",
+      "identificador_scanner": "weak-random",
+      "cwes": [
+        "CWE-330"
+      ],
+      "vinculos": {},
+      "referencia": "semgrep/webgoat.json#/results/18",
+      "granularidade": "individual"
+    },
+    {
+      "id": "webgoat-sast-019",
+      "ferramenta": "Semgrep",
+      "camada": "APP",
+      "estagio": "commit",
+      "classe": "sem_matriz",
+      "score": 5.0,
+      "origem_score": "semgrep_warning",
+      "severidade_original": "WARNING",
+      "identificador_scanner": "weak-random",
+      "cwes": [
+        "CWE-330"
+      ],
+      "vinculos": {},
+      "referencia": "semgrep/webgoat.json#/results/19",
+      "granularidade": "individual"
+    },
+    {
+      "id": "webgoat-sast-020",
+      "ferramenta": "Semgrep",
+      "camada": "APP",
+      "estagio": "commit",
+      "classe": "sem_matriz",
+      "score": 5.0,
+      "origem_score": "semgrep_warning",
+      "severidade_original": "WARNING",
+      "identificador_scanner": "unrestricted-request-mapping",
+      "cwes": [
+        "CWE-352"
+      ],
+      "vinculos": {},
+      "referencia": "semgrep/webgoat.json#/results/20",
+      "granularidade": "individual"
+    },
+    {
+      "id": "webgoat-sast-021",
+      "ferramenta": "Semgrep",
+      "camada": "APP",
+      "estagio": "commit",
+      "classe": "sem_matriz",
+      "score": 5.0,
+      "origem_score": "semgrep_warning",
+      "severidade_original": "WARNING",
+      "identificador_scanner": "cookie-issecure-false",
+      "cwes": [
+        "CWE-319"
+      ],
+      "vinculos": {},
+      "referencia": "semgrep/webgoat.json#/results/21",
+      "granularidade": "individual"
+    },
+    {
+      "id": "webgoat-sast-022",
+      "ferramenta": "Semgrep",
+      "camada": "APP",
+      "estagio": "commit",
+      "classe": "sem_matriz",
+      "score": 5.0,
+      "origem_score": "semgrep_warning",
+      "severidade_original": "WARNING",
+      "identificador_scanner": "cookie-missing-httponly",
+      "cwes": [
+        "CWE-1004"
+      ],
+      "vinculos": {},
+      "referencia": "semgrep/webgoat.json#/results/22",
+      "granularidade": "individual"
+    },
+    {
+      "id": "webgoat-sast-023",
+      "ferramenta": "Semgrep",
+      "camada": "APP",
+      "estagio": "commit",
+      "classe": "sem_matriz",
+      "score": 5.0,
+      "origem_score": "semgrep_warning",
+      "severidade_original": "WARNING",
+      "identificador_scanner": "cookie-missing-secure-flag",
+      "cwes": [
+        "CWE-614"
+      ],
+      "vinculos": {},
+      "referencia": "semgrep/webgoat.json#/results/23",
+      "granularidade": "individual"
+    },
+    {
+      "id": "webgoat-sast-024",
+      "ferramenta": "Semgrep",
+      "camada": "APP",
+      "estagio": "commit",
+      "classe": "sem_matriz",
+      "score": 5.0,
+      "origem_score": "semgrep_warning",
+      "severidade_original": "WARNING",
+      "identificador_scanner": "cookie-issecure-false",
+      "cwes": [
+        "CWE-319"
+      ],
+      "vinculos": {},
+      "referencia": "semgrep/webgoat.json#/results/24",
+      "granularidade": "individual"
+    },
+    {
+      "id": "webgoat-sast-025",
+      "ferramenta": "Semgrep",
+      "camada": "APP",
+      "estagio": "commit",
+      "classe": "sem_matriz",
+      "score": 5.0,
+      "origem_score": "semgrep_warning",
+      "severidade_original": "WARNING",
+      "identificador_scanner": "cookie-missing-httponly",
+      "cwes": [
+        "CWE-1004"
+      ],
+      "vinculos": {},
+      "referencia": "semgrep/webgoat.json#/results/25",
+      "granularidade": "individual"
+    },
+    {
+      "id": "webgoat-sast-026",
+      "ferramenta": "Semgrep",
+      "camada": "APP",
+      "estagio": "commit",
+      "classe": "sem_matriz",
+      "score": 5.0,
+      "origem_score": "semgrep_warning",
+      "severidade_original": "WARNING",
+      "identificador_scanner": "cookie-missing-secure-flag",
+      "cwes": [
+        "CWE-614"
+      ],
+      "vinculos": {},
+      "referencia": "semgrep/webgoat.json#/results/26",
+      "granularidade": "individual"
+    },
+    {
+      "id": "webgoat-sast-027",
+      "ferramenta": "Semgrep",
+      "camada": "APP",
+      "estagio": "commit",
+      "classe": "sem_matriz",
+      "score": 7.5,
+      "origem_score": "semgrep_error",
+      "severidade_original": "ERROR",
+      "identificador_scanner": "tainted-url-host",
+      "cwes": [
+        "CWE-918"
+      ],
+      "vinculos": {},
+      "referencia": "semgrep/webgoat.json#/results/27",
+      "granularidade": "individual"
+    },
+    {
+      "id": "webgoat-sast-028",
+      "ferramenta": "Semgrep",
+      "camada": "APP",
+      "estagio": "commit",
+      "classe": "sem_matriz",
+      "score": 7.5,
+      "origem_score": "semgrep_error",
+      "severidade_original": "ERROR",
+      "identificador_scanner": "httpservlet-path-traversal",
+      "cwes": [
+        "CWE-22"
+      ],
+      "vinculos": {},
+      "referencia": "semgrep/webgoat.json#/results/28",
+      "granularidade": "individual"
+    },
+    {
+      "id": "webgoat-sast-029",
+      "ferramenta": "Semgrep",
+      "camada": "APP",
+      "estagio": "commit",
+      "classe": "sem_matriz",
+      "score": 5.0,
+      "origem_score": "semgrep_warning",
+      "severidade_original": "WARNING",
+      "identificador_scanner": "cookie-issecure-false",
+      "cwes": [
+        "CWE-319"
+      ],
+      "vinculos": {},
+      "referencia": "semgrep/webgoat.json#/results/29",
+      "granularidade": "individual"
+    },
+    {
+      "id": "webgoat-sast-030",
+      "ferramenta": "Semgrep",
+      "camada": "APP",
+      "estagio": "commit",
+      "classe": "sem_matriz",
+      "score": 5.0,
+      "origem_score": "semgrep_warning",
+      "severidade_original": "WARNING",
+      "identificador_scanner": "cookie-missing-httponly",
+      "cwes": [
+        "CWE-1004"
+      ],
+      "vinculos": {},
+      "referencia": "semgrep/webgoat.json#/results/30",
+      "granularidade": "individual"
+    },
+    {
+      "id": "webgoat-sast-031",
+      "ferramenta": "Semgrep",
+      "camada": "APP",
+      "estagio": "commit",
+      "classe": "sem_matriz",
+      "score": 5.0,
+      "origem_score": "semgrep_warning",
+      "severidade_original": "WARNING",
+      "identificador_scanner": "cookie-missing-secure-flag",
+      "cwes": [
+        "CWE-614"
+      ],
+      "vinculos": {},
+      "referencia": "semgrep/webgoat.json#/results/31",
+      "granularidade": "individual"
+    },
+    {
+      "id": "webgoat-sast-032",
+      "ferramenta": "Semgrep",
+      "camada": "APP",
+      "estagio": "commit",
+      "classe": "sem_matriz",
+      "score": 5.0,
+      "origem_score": "semgrep_warning",
+      "severidade_original": "WARNING",
+      "identificador_scanner": "cookie-missing-httponly",
+      "cwes": [
+        "CWE-1004"
+      ],
+      "vinculos": {},
+      "referencia": "semgrep/webgoat.json#/results/32",
+      "granularidade": "individual"
+    },
+    {
+      "id": "webgoat-sast-033",
+      "ferramenta": "Semgrep",
+      "camada": "APP",
+      "estagio": "commit",
+      "classe": "sem_matriz",
+      "score": 7.5,
+      "origem_score": "semgrep_error",
+      "severidade_original": "ERROR",
+      "identificador_scanner": "tainted-sql-string",
+      "cwes": [
+        "CWE-89"
+      ],
+      "vinculos": {},
+      "referencia": "semgrep/webgoat.json#/results/33",
+      "granularidade": "individual"
+    },
+    {
+      "id": "webgoat-sast-034",
+      "ferramenta": "Semgrep",
+      "camada": "APP",
+      "estagio": "commit",
+      "classe": "sem_matriz",
+      "score": 7.5,
+      "origem_score": "semgrep_error",
+      "severidade_original": "ERROR",
+      "identificador_scanner": "formatted-sql-string",
+      "cwes": [
+        "CWE-89"
+      ],
+      "vinculos": {},
+      "referencia": "semgrep/webgoat.json#/results/34",
+      "granularidade": "individual"
+    },
+    {
+      "id": "webgoat-sast-035",
+      "ferramenta": "Semgrep",
+      "camada": "APP",
+      "estagio": "commit",
+      "classe": "sem_matriz",
+      "score": 5.0,
+      "origem_score": "semgrep_warning",
+      "severidade_original": "WARNING",
+      "identificador_scanner": "jdbc-sqli",
+      "cwes": [
+        "CWE-89"
+      ],
+      "vinculos": {},
+      "referencia": "semgrep/webgoat.json#/results/35",
+      "granularidade": "individual"
+    },
+    {
+      "id": "webgoat-sast-036",
+      "ferramenta": "Semgrep",
+      "camada": "APP",
+      "estagio": "commit",
+      "classe": "sem_matriz",
+      "score": 7.5,
+      "origem_score": "semgrep_error",
+      "severidade_original": "ERROR",
+      "identificador_scanner": "formatted-sql-string",
+      "cwes": [
+        "CWE-89"
+      ],
+      "vinculos": {},
+      "referencia": "semgrep/webgoat.json#/results/36",
+      "granularidade": "individual"
+    },
+    {
+      "id": "webgoat-sast-037",
+      "ferramenta": "Semgrep",
+      "camada": "APP",
+      "estagio": "commit",
+      "classe": "sem_matriz",
+      "score": 5.0,
+      "origem_score": "semgrep_warning",
+      "severidade_original": "WARNING",
+      "identificador_scanner": "jdbc-sqli",
+      "cwes": [
+        "CWE-89"
+      ],
+      "vinculos": {},
+      "referencia": "semgrep/webgoat.json#/results/37",
+      "granularidade": "individual"
+    },
+    {
+      "id": "webgoat-sast-038",
+      "ferramenta": "Semgrep",
+      "camada": "APP",
+      "estagio": "commit",
+      "classe": "sem_matriz",
+      "score": 5.0,
+      "origem_score": "semgrep_warning",
+      "severidade_original": "WARNING",
+      "identificador_scanner": "jdbc-sqli",
+      "cwes": [
+        "CWE-89"
+      ],
+      "vinculos": {},
+      "referencia": "semgrep/webgoat.json#/results/38",
+      "granularidade": "individual"
+    },
+    {
+      "id": "webgoat-sast-039",
+      "ferramenta": "Semgrep",
+      "camada": "APP",
+      "estagio": "commit",
+      "classe": "direta",
+      "score": 7.5,
+      "origem_score": "semgrep_error",
+      "severidade_original": "ERROR",
+      "identificador_scanner": "formatted-sql-string",
+      "cwes": [
+        "CWE-89"
+      ],
+      "vinculos": {
+        "wg-sqli-5a": "direta"
+      },
+      "referencia": "semgrep/webgoat.json#/results/39",
+      "granularidade": "individual"
+    },
+    {
+      "id": "webgoat-sast-040",
+      "ferramenta": "Semgrep",
+      "camada": "APP",
+      "estagio": "commit",
+      "classe": "sem_matriz",
+      "score": 7.5,
+      "origem_score": "semgrep_error",
+      "severidade_original": "ERROR",
+      "identificador_scanner": "formatted-sql-string",
+      "cwes": [
+        "CWE-89"
+      ],
+      "vinculos": {},
+      "referencia": "semgrep/webgoat.json#/results/40",
+      "granularidade": "individual"
+    },
+    {
+      "id": "webgoat-sast-041",
+      "ferramenta": "Semgrep",
+      "camada": "APP",
+      "estagio": "commit",
+      "classe": "sem_matriz",
+      "score": 7.5,
+      "origem_score": "semgrep_error",
+      "severidade_original": "ERROR",
+      "identificador_scanner": "formatted-sql-string",
+      "cwes": [
+        "CWE-89"
+      ],
+      "vinculos": {},
+      "referencia": "semgrep/webgoat.json#/results/41",
+      "granularidade": "individual"
+    },
+    {
+      "id": "webgoat-sast-042",
+      "ferramenta": "Semgrep",
+      "camada": "APP",
+      "estagio": "commit",
+      "classe": "sem_matriz",
+      "score": 5.0,
+      "origem_score": "semgrep_warning",
+      "severidade_original": "WARNING",
+      "identificador_scanner": "jdbc-sqli",
+      "cwes": [
+        "CWE-89"
+      ],
+      "vinculos": {},
+      "referencia": "semgrep/webgoat.json#/results/42",
+      "granularidade": "individual"
+    },
+    {
+      "id": "webgoat-sast-043",
+      "ferramenta": "Semgrep",
+      "camada": "APP",
+      "estagio": "commit",
+      "classe": "sem_matriz",
+      "score": 7.5,
+      "origem_score": "semgrep_error",
+      "severidade_original": "ERROR",
+      "identificador_scanner": "formatted-sql-string",
+      "cwes": [
+        "CWE-89"
+      ],
+      "vinculos": {},
+      "referencia": "semgrep/webgoat.json#/results/43",
+      "granularidade": "individual"
+    },
+    {
+      "id": "webgoat-sast-044",
+      "ferramenta": "Semgrep",
+      "camada": "APP",
+      "estagio": "commit",
+      "classe": "sem_matriz",
+      "score": 5.0,
+      "origem_score": "semgrep_warning",
+      "severidade_original": "WARNING",
+      "identificador_scanner": "jdbc-sqli",
+      "cwes": [
+        "CWE-89"
+      ],
+      "vinculos": {},
+      "referencia": "semgrep/webgoat.json#/results/44",
+      "granularidade": "individual"
+    },
+    {
+      "id": "webgoat-sast-045",
+      "ferramenta": "Semgrep",
+      "camada": "APP",
+      "estagio": "commit",
+      "classe": "sem_matriz",
+      "score": 7.5,
+      "origem_score": "semgrep_error",
+      "severidade_original": "ERROR",
+      "identificador_scanner": "formatted-sql-string",
+      "cwes": [
+        "CWE-89"
+      ],
+      "vinculos": {},
+      "referencia": "semgrep/webgoat.json#/results/45",
+      "granularidade": "individual"
+    },
+    {
+      "id": "webgoat-sast-046",
+      "ferramenta": "Semgrep",
+      "camada": "APP",
+      "estagio": "commit",
+      "classe": "sem_matriz",
+      "score": 5.0,
+      "origem_score": "semgrep_warning",
+      "severidade_original": "WARNING",
+      "identificador_scanner": "jdbc-sqli",
+      "cwes": [
+        "CWE-89"
+      ],
+      "vinculos": {},
+      "referencia": "semgrep/webgoat.json#/results/46",
+      "granularidade": "individual"
+    },
+    {
+      "id": "webgoat-sast-047",
+      "ferramenta": "Semgrep",
+      "camada": "APP",
+      "estagio": "commit",
+      "classe": "sem_matriz",
+      "score": 5.0,
+      "origem_score": "semgrep_warning",
+      "severidade_original": "WARNING",
+      "identificador_scanner": "jdbc-sqli",
+      "cwes": [
+        "CWE-89"
+      ],
+      "vinculos": {},
+      "referencia": "semgrep/webgoat.json#/results/47",
+      "granularidade": "individual"
+    },
+    {
+      "id": "webgoat-sast-048",
+      "ferramenta": "Semgrep",
+      "camada": "APP",
+      "estagio": "commit",
+      "classe": "sem_matriz",
+      "score": 7.5,
+      "origem_score": "semgrep_error",
+      "severidade_original": "ERROR",
+      "identificador_scanner": "tainted-sql-string",
+      "cwes": [
+        "CWE-89"
+      ],
+      "vinculos": {},
+      "referencia": "semgrep/webgoat.json#/results/48",
+      "granularidade": "individual"
+    },
+    {
+      "id": "webgoat-sast-049",
+      "ferramenta": "Semgrep",
+      "camada": "APP",
+      "estagio": "commit",
+      "classe": "sem_matriz",
+      "score": 3.0,
+      "origem_score": "semgrep_info",
+      "severidade_original": "INFO",
+      "identificador_scanner": "java-pattern-from-string-parameter",
+      "cwes": [
+        "CWE-1333"
+      ],
+      "vinculos": {},
+      "referencia": "semgrep/webgoat.json#/results/49",
+      "granularidade": "individual"
+    },
+    {
+      "id": "webgoat-sast-050",
+      "ferramenta": "Semgrep",
+      "camada": "APP",
+      "estagio": "commit",
+      "classe": "sem_matriz",
+      "score": 5.0,
+      "origem_score": "semgrep_warning",
+      "severidade_original": "WARNING",
+      "identificador_scanner": "unrestricted-request-mapping",
+      "cwes": [
+        "CWE-352"
+      ],
+      "vinculos": {},
+      "referencia": "semgrep/webgoat.json#/results/50",
+      "granularidade": "individual"
+    },
+    {
+      "id": "webgoat-sast-051",
+      "ferramenta": "Semgrep",
+      "camada": "APP",
+      "estagio": "commit",
+      "classe": "sem_matriz",
+      "score": 5.0,
+      "origem_score": "semgrep_warning",
+      "severidade_original": "WARNING",
+      "identificador_scanner": "unrestricted-request-mapping",
+      "cwes": [
+        "CWE-352"
+      ],
+      "vinculos": {},
+      "referencia": "semgrep/webgoat.json#/results/51",
+      "granularidade": "individual"
+    },
+    {
+      "id": "webgoat-sast-052",
+      "ferramenta": "Semgrep",
+      "camada": "APP",
+      "estagio": "commit",
+      "classe": "sem_matriz",
+      "score": 7.5,
+      "origem_score": "semgrep_error",
+      "severidade_original": "ERROR",
+      "identificador_scanner": "tainted-file-path",
+      "cwes": [
+        "CWE-23"
+      ],
+      "vinculos": {},
+      "referencia": "semgrep/webgoat.json#/results/52",
+      "granularidade": "individual"
+    },
+    {
+      "id": "webgoat-imagem-01-0105",
+      "ferramenta": "Trivy Container",
+      "camada": "INFRA",
+      "estagio": "build",
+      "classe": "indireta",
+      "score": 4.7,
+      "origem_score": "cvss_v3",
+      "severidade_original": "MEDIUM",
+      "identificador_scanner": "CVE-2026-71497",
+      "cwes": [
+        "CWE-79"
+      ],
+      "vinculos": {
+        "wg-xss-lesson": "indireta"
+      },
+      "referencia": "trivy/webgoat-image.json#/Results/1/Vulnerabilities/105",
+      "granularidade": "individual"
+    },
+    {
+      "id": "webgoat-imagem-01-0133",
+      "ferramenta": "Trivy Container",
+      "camada": "INFRA",
+      "estagio": "build",
+      "classe": "indireta",
+      "score": 6.1,
+      "origem_score": "cvss_v3",
+      "severidade_original": "HIGH",
+      "identificador_scanner": "CVE-2026-41845",
+      "cwes": [
+        "CWE-79"
+      ],
+      "vinculos": {
+        "wg-xss-lesson": "indireta"
+      },
+      "referencia": "trivy/webgoat-image.json#/Results/1/Vulnerabilities/133",
+      "granularidade": "individual"
+    },
+    {
+      "id": "webgoat-imagem-01-0140",
+      "ferramenta": "Trivy Container",
+      "camada": "INFRA",
+      "estagio": "build",
+      "classe": "indireta",
+      "score": 6.1,
+      "origem_score": "cvss_v3",
+      "severidade_original": "MEDIUM",
+      "identificador_scanner": "CVE-2026-41846",
+      "cwes": [
+        "CWE-79"
+      ],
+      "vinculos": {
+        "wg-xss-lesson": "indireta"
+      },
+      "referencia": "trivy/webgoat-image.json#/Results/1/Vulnerabilities/140",
+      "granularidade": "individual"
+    },
+    {
+      "id": "webgoat-imagem-agregado",
+      "ferramenta": "Trivy Container",
+      "camada": "INFRA",
+      "estagio": "build",
+      "classe": "sem_matriz",
+      "score": 9.9,
+      "origem_score": "trivy_max",
+      "severidade_original": null,
+      "identificador_scanner": "demais-ocorrencias:822",
+      "cwes": [],
+      "vinculos": {},
+      "referencia": "trivy/webgoat-image.json",
+      "granularidade": "aggregate_other"
+    }
+  ]
+}

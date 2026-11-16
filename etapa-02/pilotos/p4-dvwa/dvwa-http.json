@@ -1,0 +1,91 @@
+{
+  "configuracao": "vulnerables/web-dvwa@sha256:dae203fe11646a86937bf04db0079adef295f426da68a92b40e3b181f337daa7, PHP 7.0 servidor local, MariaDB da imagem, low",
+  "base": "http://127.0.0.1:18080",
+  "nivel": "low",
+  "casos": {
+    "dvwa-csrf": {
+      "status": "confirmada",
+      "rota": "/vulnerabilities/csrf/",
+      "metodo": "GET",
+      "referer_distinto": "http://127.0.0.2:18081/controle",
+      "codigo_sem_sessao": 302,
+      "sem_sessao_redirecionou_login": true,
+      "formulario_com_user_token": false,
+      "codigo_sessao_autenticada": 200,
+      "resposta_indicou_alteracao": true,
+      "login_com_nova_senha": true,
+      "login_com_senha_anterior": false,
+      "senha_restaurada": true
+    },
+    "dvwa-weak-session-ids": {
+      "status": "confirmada",
+      "rota": "/vulnerabilities/weak_id/",
+      "amostras": [
+        {
+          "http": 200,
+          "id_treinamento": 1
+        },
+        {
+          "http": 200,
+          "id_treinamento": 2
+        },
+        {
+          "http": 200,
+          "id_treinamento": 3
+        },
+        {
+          "http": 200,
+          "id_treinamento": 4
+        },
+        {
+          "http": 200,
+          "id_treinamento": 5
+        },
+        {
+          "http": 200,
+          "id_treinamento": 6
+        },
+        {
+          "http": 200,
+          "id_treinamento": 7
+        },
+        {
+          "http": 200,
+          "id_treinamento": 8
+        },
+        {
+          "http": 200,
+          "id_treinamento": 9
+        },
+        {
+          "http": 200,
+          "id_treinamento": 10
+        },
+        {
+          "http": 200,
+          "id_treinamento": 11
+        },
+        {
+          "http": 200,
+          "id_treinamento": 12
+        }
+      ],
+      "incremento_unitario": true,
+      "cookie_teste": "dvwaSession"
+    },
+    "dvwa-open-http-redirect": {
+      "status": "inconclusiva",
+      "sondas_de_rota": {
+        "/vulnerabilities/open_redirect/": {
+          "http": 404,
+          "destino_de_controle_no_location": false
+        },
+        "/vulnerabilities/redirect/": {
+          "http": 404,
+          "destino_de_controle_no_location": false
+        }
+      },
+      "seguiu_redirecionamento": false
+    }
+  }
+}

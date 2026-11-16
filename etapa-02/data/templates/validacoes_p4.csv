@@ -1,0 +1,4 @@
+vulnerability_id,status,evidencia,sha256_evidencia,score_confirmacao,configuracao
+dvwa-csrf,nao_executada,,,,
+dvwa-weak-session-ids,nao_executada,,,,
+dvwa-open-http-redirect,nao_executada,,,,

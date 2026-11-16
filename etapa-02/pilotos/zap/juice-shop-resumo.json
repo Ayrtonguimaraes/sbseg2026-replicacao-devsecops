@@ -1,0 +1,18 @@
+{
+  "app": "juice-shop",
+  "healthcheck": "http://127.0.0.1:18080/",
+  "active_target": "http://127.0.0.1:18080/rest/products/search?q=apple",
+  "autenticado": false,
+  "rede": "namespace_somente_loopback",
+  "healthcheck_http": 200,
+  "zap": {
+    "version": "2.17.0"
+  },
+  "urls_passivas": 103,
+  "alertas_passivos": 432,
+  "alertas_ativos": 1,
+  "regras_ativas": [
+    40012,
+    40018
+  ]
+}

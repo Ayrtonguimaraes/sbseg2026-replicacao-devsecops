@@ -13,7 +13,7 @@ Projeto da disciplina de Cibersegurança, dedicado à reprodução e extensão d
 
 ## Objetivo
 
-Reproduzir os resultados experimentais das Tabelas 3, 4 e 5 do artigo, comparar os valores obtidos com os publicados e propor melhorias para uma segunda etapa experimental.
+Reproduzir os resultados experimentais das Tabelas 3, 4 e 5 do artigo e avaliar extensões para as políticas de bloqueio.
 
 O estudo investiga como a distinção entre detecções diretas e indiretas de vulnerabilidades influencia as decisões automatizadas de bloqueio em pipelines DevSecOps.
 
@@ -89,10 +89,15 @@ Os arquivos estão em `etapa-01/evidencias/`:
 
 ## Etapa 02 — Extensão do estudo
 
-Nesta etapa, o grupo implementará e avaliará uma melhoria sobre a metodologia ou as políticas de bloqueio estudadas.
+A etapa inclui a reprodução dos portões originais, a variação do proxy Semgrep e dos limiares, a comparação de agregações Trivy, a política P4 candidata com validações locais e dois pilotos com Juice Shop e WebGoat. Veja a [documentação da Etapa 02](etapa-02/README.md) para resultados, protocolo, scripts e evidências.
 
-A proposta específica será definida após a análise crítica dos resultados originais.
+| Resultado | Onde conferir |
+|---|---|
+| Referência na DVWA · 5, 80 e 56 bloqueios em P1, P2 e P3 | [Baseline](etapa-02/results/baseline.csv) |
+| Variação de nota, limiar e agregação | [CSVs](etapa-02/results/) e [gráficos](etapa-02/figures/) |
+| P4-A com laudos locais · 58 decisões simuladas e 10/13 casos cobertos | [Simulação P4](etapa-02/results/p4_resultados.csv) e [laudo HTTP](etapa-02/pilotos/p4-dvwa/dvwa-http.json) |
+| Juice Shop e WebGoat · três casos de referência por aplicação | [Simulação piloto](etapa-02/results/pilotos_politicas.csv) |
 
 ## Créditos
 
-O código original, os dados experimentais e a metodologia-base são de autoria dos pesquisadores responsáveis pelo artigo. Este repositório documenta a reprodução acadêmica realizada pelo grupo e reunirá suas futuras extensões experimentais.
+O código original, os dados experimentais e a metodologia-base são de autoria dos pesquisadores responsáveis pelo artigo. Este repositório documenta a reprodução acadêmica e a extensão experimental realizadas pelo grupo.

@@ -1,0 +1,11 @@
+﻿politica,limiar,unidades,bloqueios,diretos,indiretos,sem_matriz,commit,build,deploy,vulnerabilidades_matriz,detectadas,detectadas_diretas,cobertura_bloqueante,cobertura_bloqueante_pct,ids_bloqueados
+uniforme,5,226,197,52,47,98,77,113,7,13,13,10,13,100.0,dvwa-brute-force|dvwa-command-injection|dvwa-csp-bypass|dvwa-csrf|dvwa-default-credentials|dvwa-exposed-mysql|dvwa-javascript-attacks|dvwa-open-http-redirect|dvwa-outdated-os|dvwa-outdated-packages|dvwa-sql-injection|dvwa-weak-session-ids|dvwa-xss
+progressiva,5,226,150,52,0,98,77,66,7,13,13,10,10,76.92,dvwa-brute-force|dvwa-command-injection|dvwa-csp-bypass|dvwa-default-credentials|dvwa-exposed-mysql|dvwa-javascript-attacks|dvwa-outdated-os|dvwa-outdated-packages|dvwa-sql-injection|dvwa-xss
+uniforme,6,226,103,29,47,27,51,50,2,13,13,10,12,92.31,dvwa-brute-force|dvwa-command-injection|dvwa-csrf|dvwa-default-credentials|dvwa-exposed-mysql|dvwa-javascript-attacks|dvwa-open-http-redirect|dvwa-outdated-os|dvwa-outdated-packages|dvwa-sql-injection|dvwa-weak-session-ids|dvwa-xss
+progressiva,6,226,56,29,0,27,51,3,2,13,13,10,8,61.54,dvwa-brute-force|dvwa-command-injection|dvwa-default-credentials|dvwa-javascript-attacks|dvwa-outdated-os|dvwa-outdated-packages|dvwa-sql-injection|dvwa-xss
+uniforme,7,226,80,29,24,27,51,27,2,13,13,10,11,84.62,dvwa-brute-force|dvwa-command-injection|dvwa-csrf|dvwa-default-credentials|dvwa-exposed-mysql|dvwa-javascript-attacks|dvwa-outdated-os|dvwa-outdated-packages|dvwa-sql-injection|dvwa-weak-session-ids|dvwa-xss
+progressiva,7,226,56,29,0,27,51,3,2,13,13,10,8,61.54,dvwa-brute-force|dvwa-command-injection|dvwa-default-credentials|dvwa-javascript-attacks|dvwa-outdated-os|dvwa-outdated-packages|dvwa-sql-injection|dvwa-xss
+uniforme,8,226,12,2,9,1,0,12,0,13,13,10,4,30.77,dvwa-csrf|dvwa-outdated-os|dvwa-outdated-packages|dvwa-sql-injection
+progressiva,8,226,3,2,0,1,0,3,0,13,13,10,2,15.38,dvwa-outdated-os|dvwa-outdated-packages
+uniforme,9,226,5,2,2,1,0,5,0,13,13,10,3,23.08,dvwa-outdated-os|dvwa-outdated-packages|dvwa-sql-injection
+progressiva,9,226,3,2,0,1,0,3,0,13,13,10,2,15.38,dvwa-outdated-os|dvwa-outdated-packages
