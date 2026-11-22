@@ -16,6 +16,7 @@ Extensão da reprodução acadêmica do artigo de Machado, Cordeiro e Jandre ([S
 
 | Conteúdo | Caminho |
 |---|---|
+| **Tudo o que mudou em relação ao `main` original** | [docs/mudancas.md](docs/mudancas.md) |
 | Protocolo, decisões e limitações | [docs/protocolo.md](docs/protocolo.md) |
 | Evidências, configuração e comandos dos pilotos | [docs/pilotos.md](docs/pilotos.md) |
 | Esquema das saídas e referência de vulnerabilidades | [docs/esquema.md](docs/esquema.md) |
