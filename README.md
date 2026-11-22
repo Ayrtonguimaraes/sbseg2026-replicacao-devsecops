@@ -95,7 +95,8 @@ A etapa inclui a reprodução dos portões originais, a variação do proxy Semg
 |---|---|
 | Referência na DVWA · 5, 80 e 56 bloqueios em P1, P2 e P3 | [Baseline](etapa-02/results/baseline.csv) |
 | Variação de nota, limiar e agregação | [CSVs](etapa-02/results/) e [gráficos](etapa-02/figures/) |
-| P4-A com laudos locais · 58 decisões simuladas e 10/13 casos cobertos | [Simulação P4](etapa-02/results/p4_resultados.csv) e [laudo HTTP](etapa-02/pilotos/p4-dvwa/dvwa-http.json) |
+| Todas as notas proxy, isoladas e em conjunto · redução P3 vs P2 de 13% a 89% | [Tornado](etapa-02/results/sensibilidade_tornado.csv) e [Monte Carlo](etapa-02/results/sensibilidade_monte_carlo_resumo.csv) |
+| P4-A com laudos locais · 58 decisões simuladas e 10/13 casos cobertos; P4-B com CVSS do caso · 57 e 9/13 | [Simulação P4](etapa-02/results/p4_resultados.csv) e [laudo HTTP](etapa-02/pilotos/p4-dvwa/dvwa-http.json) |
 | Juice Shop e WebGoat · três casos de referência por aplicação | [Simulação piloto](etapa-02/results/pilotos_politicas.csv) |
 
 ## Créditos

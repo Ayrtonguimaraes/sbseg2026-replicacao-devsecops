@@ -40,15 +40,54 @@ A perda de cobertura da progressiva em relação à uniforme é de 3, 4, 3, 2 e 
 
 **Leitura do ZAP ativo na DVWA.** O JSON histórico traz categorias de risco em texto. O código original tenta converter `risk` em inteiro e as 14 unidades ativas ficam sem score. A variação diagnóstica converte High, Medium, Low e Informational para 7,5, 5,0, 3,0 e 0,0. P2 e P3 ganham um bloqueio no Deploy, sem alteração na cobertura bloqueante de nenhuma das três políticas. A versão histórica e a variação ficam em saídas distintas.
 
+## Sensibilidade de todas as notas proxy
+
+O script `scripts/sensibilidade_proxies.py` lê apenas `data/normalized/dvwa.json` e varia todos os mapeamentos arbitrários do script original, não só o Semgrep. Cada grupo muda inteiro, como mudaria o mapa de severidade.
+
+| Grupo | Unidades | Nota base | Origem da nota |
+|---|---:|---:|---|
+| Semgrep ERROR | 51 | 7,5 | Rótulo do scanner, mapa fixo |
+| Semgrep WARNING | 26 | 5,0 | Rótulo do scanner, mapa fixo |
+| Checkov | 63 | 5,0 | **Nenhuma.** O JSON bruto traz `severity: null` nas 63 reprovações e o código aplica `MEDIUM` por padrão |
+| ZAP Baseline Medium | 5 | 5,0 | `riskcode` 2, mapa fixo |
+| ZAP Baseline Low | 7 | 3,0 | `riskcode` 1, mapa fixo |
+| Brute Force e Default Credentials | 2 | 7,5 | Valor fixo no código do teste customizado |
+
+Saídas. `sensibilidade_proxies_individuais.csv` (cada grupo de 3 a 10, P1–P3), `sensibilidade_tornado.csv` (cada grupo em base − 2 e base + 2, os demais fixos), `sensibilidade_monte_carlo_resumo.csv` e `sensibilidade_monte_carlo_distribuicao.csv` (10.000 sorteios independentes por cenário, semente 20261122). Gráficos `figures/dvwa_tornado_proxies` e `figures/dvwa_monte_carlo_reducao`.
+
+**Resultados.**
+
+- Checkov é a maior nota arbitrária em volume. Em 7, P2 vai de 80 para 143 bloqueios e P3 de 56 para 119, com a cobertura de P3 passando de 8 para 9/13 (Exposed MySQL). A redução de P3 frente a P2 cai para 24/143 = 17%.
+- Com o teste de credenciais abaixo de 7, P3 perde Brute Force e Default Credentials e fica em 6/13.
+- A redução de 30% do artigo é um ponto de uma faixa. Variando uma nota por vez em ± 2, ela vai de 17% (Checkov em 7) a 83% (Semgrep ERROR em 5,5).
+- Na variação conjunta com todas as notas em base ± 2, 62% das amostras ficam em 30–31% e 38% em 83–89%. Só os dois grupos de base 7,5 (Semgrep ERROR e teste de credenciais) cruzam o corte 7 com probabilidade positiva. O pico de 89% (P2 27, P3 3) ocorre quando ambos ficam abaixo de 7. Os grupos de base 5 só alcançam 7 no extremo da faixa; cerca de 0,2% dos sorteios caíram exatamente em 7,00 após o arredondamento e produzem os valores isolados de 17% a 29%, que são artefato de borda.
+- Com todas as notas entre 1 e 10, a redução vai de 13% a 89%, com mediana 30%, e só 24% das amostras ficam entre 25% e 35%.
+- A distribuição é bimodal porque os 51 alertas ERROR cruzam o corte 7 juntos.
+- O resultado qualitativo resiste. Em todas as 20.000 amostras, P3 bloqueia menos que P2 e perde de 2 a 5 casos de cobertura bloqueante. O que não resiste é a magnitude.
+
+A amplitude ± 2 e a faixa 1–10 são escolhas do grupo. Os sorteios são independentes entre grupos e não impõem ERROR ≥ WARNING.
+
 ## Política P4 proposta
 
-1. Rodar a P3 com limiar 7 sobre as unidades originais.
-2. Um ID com sinal indireto, zero evidência direta e sem cobertura bloqueante vira candidato a um teste dirigido, com uma validação por ID e configuração. Na DVWA, os candidatos são CSRF, Weak Session IDs e Open HTTP Redirect.
+1. Rodar a P2 e a P3 com limiar 7 sobre as unidades originais.
+2. Entra na fila de teste dirigido todo ID sem bloqueio em P3 que atenda a um dos critérios. **apenas_indireta**: só há sinais indiretos (critério da primeira versão). **perda_p2_p3**: o ID é bloqueado em P2 e deixa de ser em P3, mesmo havendo sinal direto abaixo do limiar. Na DVWA, a fila tem CSRF, Weak Session IDs e Open HTTP Redirect pelo primeiro critério e Exposed MySQL pelo segundo. Com isso, toda perda de cobertura de P2 para P3 passa pela fila.
 3. Guardar o estado `confirmada`, `nao_confirmada`, `inconclusiva` ou `nao_executada`, com configuração, referência e hash da evidência quando houver teste. Uma execução inconclusiva permanece visível para triagem.
-4. **P4-A recomendada para avaliação.** Somar uma decisão de bloqueio no Deploy por confirmação nova, vinculada ao ID da matriz. **P4-B exploratória.** Pedir também score de confirmação igual ou superior a 7. A nota precisa ser avaliada para o caso confirmado. O score da CVE de origem é insuficiente para esse fim.
+4. **P4-A.** Somar uma decisão de bloqueio no Deploy por confirmação nova, vinculada ao ID da matriz. **P4-B.** Exigir também nota CVSS v3.1 do caso confirmado igual ou superior a 7. A nota sai do vetor registrado em `validacoes.csv` (`scripts/cvss31.py`), não da CVE de origem. **P4-B-alt** repete a P4-B com um vetor alternativo, para medir a dependência da escolha do vetor.
 5. Em implantação real, definir o catálogo de testes por versão, tempo limite, responsáveis e comportamento diante de indisponibilidade. O simulador modela decisões de portão. A integração com um pipeline operacional é uma tarefa posterior.
 
-Na DVWA, a P4-A pode adicionar de zero a três decisões às 56 da P3. O resultado máximo condicional é 59 bloqueios e 11/13, com conjunto de IDs diferente do de P2. Esse máximo depende de três confirmações. Veja `results/p4_resultados.csv` para o cenário avaliado no laboratório e `results/p4_cenarios_condicionais.csv` para a análise hipotética.
+**Vetores propostos (a ratificar pelo grupo).**
+
+| Caso | Vetor principal | Nota | Vetor alternativo | Nota |
+|---|---|---:|---|---:|
+| CSRF | `AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:N`. A troca forjada define uma senha conhecida pelo atacante, o que leva à tomada da conta | 8,1 | `C:N/I:H/A:N`. Conta só a alteração demonstrada | 6,5 |
+| Weak Session IDs | `AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N`. A evidência se limita ao cookie de treino `dvwaSession`, que não autentica | 5,3 | `C:H/I:H/A:N`. Trata o cookie como identificador de sessão real | 9,1 |
+
+**Resultados na DVWA.** P3 56 e 8/13. P4-A 58 e 10/13 (CSRF e Weak Session IDs). P4-B 57 e 9/13 (CSRF). P4-B-alt 57 e 9/13 (Weak Session IDs). Com os dois vetores, P4-B acrescenta um caso, mas um caso diferente em cada vetor, então a escolha do vetor decide qual lacuna é fechada. P2 tem 80 e 11/13 como referência. O máximo condicional da P4-A, com as quatro lacunas confirmadas, é 60 bloqueios e 12/13, acima da cobertura de P2 com 20 bloqueios a menos (`results/p4_cenarios_condicionais.csv`).
+
+**Pendências da fila.**
+
+- **Exposed MySQL (`nao_executada`).** Os 11 sinais "diretos" do artigo vêm do Checkov: `CKV_K8S_29/30/31/38` (contexto de segurança e token de service account nos Deployments `mysql` e `dvwa-app`), `CKV_GCP_21` (labels do cluster) e `CKV_GCP_62` (log de acesso a buckets). Nenhuma dessas verificações testa a exposição do MySQL, o que enfraquece a classificação direta desse caso. O teste comportamental é tentar conexão TCP e autenticação na porta 3306 de fora da fronteira da aplicação. Ele exige reproduzir o Service do manifesto `k8s/mysql.yaml` dos autores, que não foi publicado no artefato. Um `docker run` local que publica só a porta 80 daria `nao_confirmada` por construção, sem informação sobre o ambiente do artigo.
+- **Open HTTP Redirect (`inconclusiva`).** O relatório Semgrep dos autores contém caminhos `vulnerabilities/open_redirect`, `api`, `bac` e `cryptography`, módulos do código atual da DVWA. Na imagem histórica testada, as duas rotas de redirecionamento sondadas responderam HTTP 404 (as demais não foram sondadas). Isso indica que o SAST do artigo pode ter analisado uma versão do código diferente da imagem implantada. Para fechar o caso, listar a árvore da imagem fixada: `docker run --rm --entrypoint ls vulnerables/web-dvwa@sha256:dae203fe11646a86937bf04db0079adef295f426da68a92b40e3b181f337daa7 /var/www/html/vulnerabilities`. Se o módulo não existir, registrar `nao_confirmada` com esse laudo.
 
 ## Outras aplicações
 
@@ -58,7 +97,8 @@ Em limiar 7, no recorte do Juice Shop, a progressiva reduz 10 para 8 bloqueios e
 
 ## Decisões para o grupo
 
-- Ratificar P4-A e o limiar de severidade independente se P4-B continuar no estudo.
+- Ratificar P4-A e os vetores CVSS de CSRF e Weak Session IDs usados por P4-B e P4-B-alt.
+- Rodar a listagem da imagem para o Open HTTP Redirect e decidir se o Exposed MySQL será testado em um cluster que reproduza o manifesto dos autores.
 - Fixar o orçamento de cobertura aceitável antes de interpretar uma comparação confirmatória. Adotar um denominador auditado e justificar a margem em número de casos e pontos percentuais.
 - Definir cenários equivalentes entre aplicações, ampliar o conjunto versionado de casos e confirmar cada vínculo relevante diretamente no artefato ou no laboratório.
 - Divisão sugerida. Uma pessoa amplia a matriz e revisa associações. Outra configura autenticação e padroniza a coleta. A terceira integra políticas e análise. Revisão cruzada do artigo e dos slides.

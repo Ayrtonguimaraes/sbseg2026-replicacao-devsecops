@@ -7,7 +7,8 @@ Extensão da reprodução acadêmica do artigo de Machado, Cordeiro e Jandre ([S
 - **DVWA.** O artefato dos autores passou nas três verificações. O script adicional reproduziu 5, 80 e 56 bloqueios e coberturas bloqueantes de 3/13, 11/13 e 8/13. A base contém 226 unidades, com 51 alertas Semgrep ERROR e 26 WARNING.
 - **Sensibilidade.** Com as regras originais, atribuir 5 ou 6 ao grupo ERROR reduz P2 para 29 bloqueios e 9/13 de cobertura e P3 para 5 e 4/13. Atribuir 9 ou 10 eleva P1 para 56 e 6/13. O pacote inclui a grade de 70 combinações, a variação separada de WARNING e a análise dos agregados de Trivy.
 - **Pilotos.** Juice Shop 19.0.0 e WebGoat 2025.3 passaram por Semgrep, Checkov Dockerfile, Trivy Image, Trivy FS e ZAP passivo/ativo. O Trivy FS do Juice Shop encontrou zero artefatos de dependências no checkout. A simulação com três casos por alvo inclui Semgrep, Trivy Image e ZAP ativo.
-- **P4.** A variante candidata P4-A registra um bloqueio simulado adicional no Deploy quando um teste dinâmico confirma uma lacuna sem evidência direta anterior. A P4-B exige também uma nota de confirmação independente. Consulte o protocolo e os laudos da configuração local em `pilotos/p4-dvwa/`.
+- **Todas as notas proxy.** A análise passou a variar também o Checkov (63 unidades sem severidade no relatório, com 5,0 aplicado por padrão), o ZAP Baseline e o teste de credenciais, isoladamente e em conjunto (Monte Carlo). A redução de 30% de P3 frente a P2 vai de 17% a 83% variando uma nota por vez em ± 2 e de 13% a 89% com todas as notas sorteadas entre 1 e 10. Em todas as amostras, P3 bloqueia menos e perde de 2 a 5 casos de cobertura.
+- **P4.** A fila de testes dirigidos recebe toda lacuna sem bloqueio em P3 que só tem sinal indireto ou que P2 bloqueava, o que inclui Exposed MySQL. A P4-A registra um bloqueio simulado no Deploy por confirmação (58 e 10/13). A P4-B exige também nota CVSS v3.1 ≥ 7 do caso confirmado, calculada do vetor registrado (57 e 9/13). Consulte o protocolo e os laudos da configuração local em `pilotos/p4-dvwa/`.
 
 ## Onde conferir
 
@@ -35,6 +36,7 @@ git -C "$AUTOR" checkout --detach 5b18244126350d1a6a4bf39e7a34701af9190563
 (cd "$AUTOR" && bash scripts/run_all.sh)
 python3 etapa-02/scripts/analise_dvwa.py --autores "$AUTOR"
 python3 etapa-02/scripts/resumir_pilotos.py
+python3 etapa-02/scripts/sensibilidade_proxies.py
 python3 etapa-02/scripts/politica_p4.py --validacoes etapa-02/pilotos/p4-dvwa/validacoes.csv
 python3 -m unittest discover -s etapa-02/tests -v
 ```
