@@ -60,4 +60,51 @@ evidência usada, para que o grupo possa revisar ou contestar cada um.
 
 ## Resultados
 
-*(preenchido em commit posterior)*
+*Preenchido depois do sorteio (`scripts/amostra_auditoria.py`, semente 20261123). Julgamentos e
+evidência caso a caso em `results/auditoria_amostra.csv`. Fontes usadas: descrições dos CVEs
+nos relatórios do Trivy, `dpkg -L`, `ldd`, entrypoint e scripts das imagens fixadas por digest,
+manifesto Kubernetes de referência e código do TeaStore 1.4.2, código compilado do Juice Shop
+19.0.0 e do `juicy-chat-bot`. Nenhum teste de exploração.*
+
+| Estrato | Pares | Resultado |
+|---|---:|---|
+| Não carregado | 10 (DVWA 4, TeaStore 6) | **10 `confirmado_nao_usado`**, 0 `usado`, 0 indeterminado |
+| Carregado | 10 (DVWA 3, TeaStore 3, Juice Shop 4) | **2 `aplicavel`**, 8 `nao_aplicavel`, 0 indeterminado |
+
+**Precisão do "não carregado": 10 de 10.** Com n = 10, o intervalo de confiança de 95%
+(Clopper-Pearson) vai de 69% a 100%. A estimativa pontual passa do limite de 80% registrado,
+mas o intervalo ainda o inclui. A amostra é pequena demais para afirmar o limite com
+segurança. Os motivos encontrados se repetem:
+- pacotes que só existem por dependência transitiva (Heimdal no banco do TeaStore);
+- ferramentas de linha de comando usadas só no build ou no host (`curl` em
+  `tools/test_webui.sh`, `perl` em `tools/build_docker.sh`);
+- metapacotes e pacotes só de configuração (`php7.0`, `libldap-common`);
+- binários chamados por um cron que nem roda na imagem (`php7.0-cli`).
+
+O único falso negativo conhecido do coletor, o `handlebars` carregado só no fluxo autenticado,
+foi achado e corrigido **antes** desta auditoria (observação S4) e por isso caiu no estrato
+"carregado".
+
+**Fração aplicável entre os "carregados": 2 de 10** (IC 95%: 3% a 56%). Carregado não é o
+mesmo que explorável, como o protocolo previa. Os não aplicáveis caem em dois padrões:
+- **CVE de servidor atribuído a uma biblioteca cliente:** o SECURITY DEFINER do PostgreSQL em
+  `libpq5`, o back-sql do `slapd` em `libldap`;
+- **CVE de funcionalidade que a aplicação não usa:** ChaCha20 com nonce longo; política X.509,
+  desligada por padrão; validação de certificados no `gosu`, que não faz TLS; AST injetada no
+  `compile()` do handlebars; `NodeVM` com `zlib` no vm2.
+
+**Os dois aplicáveis são as fugas de sandbox do `vm2` no Juice Shop.** O `juicy-chat-bot`
+executa no vm2 código montado com o nome do usuário e com a pergunta enviada ao chatbot
+(`routes/chatbot.js`). São exatamente os achados que a P3 do artigo transformaria em registro
+informativo, e que a P4 mantém bloqueantes.
+
+### Leitura
+
+- **O filtro "não carregado" acertou em todos os casos auditados.** Isso sustenta usar o coletor
+  para tirar do bloqueio os achados de pacotes que a implantação não executa, mantendo-os
+  informativos e reavaliados pelo Runtime Watch.
+- **O filtro "carregado" ainda deixa passar ruído** (8 de 10 não aplicáveis). A P4 reduz o ruído
+  da P2, mas não o elimina. Um segundo refinamento natural, apontado pela própria auditoria,
+  é separar CVEs de componente servidor de bibliotecas cliente.
+- **Limite:** um único avaliador, amostra de 20 pares. Os julgamentos estão escritos caso a caso
+  para revisão do grupo.

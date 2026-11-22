@@ -24,7 +24,7 @@ de alguns casos (XSS ativo, RCE) e o push para o GitHub do grupo — detalhado a
 
 | Melhoria | Estado | Resultado |
 |---|---|---|
-| (1) Política P4 nova | ✅ Refeita: P4 com contexto de execução | Coletor de pacotes carregados no Deploy. Bloqueios indiretos da P2 sobre pacotes não carregados: TeaStore 96/123 (78%), DVWA 8/24 (33%), Juice Shop 0/19. A P4 de confirmação dirigida virou P3\* (Deploy Gate do artigo executado). Ver `p4-contexto.md`. |
+| (1) Política P4 nova | ✅ Refeita: P4 com contexto de execução | Coletor de pacotes carregados no Deploy. Bloqueios indiretos da P2 sobre pacotes não carregados: TeaStore 96/123 (78%), DVWA 8/24 (33%), Juice Shop 0/19. Auditoria manual de 20 pares: 10/10 "não carregados" confirmados; 2/10 "carregados" aplicáveis (vm2 do Juice Shop). A P4 de confirmação dirigida virou P3\* (Deploy Gate do artigo executado). Ver `p4-contexto.md` e `p4-auditoria.md`. |
 | (2) Mais aplicações | ✅ Análise completa, com Deploy Gate (ZAP passivo) nos dois alvos | TeaStore 1.4.2 e Juice Shop 19.0.0, matriz de 14 casos cada. |
 | (3) Sensibilidade das notas arbitrárias | ✅ Concluída | Redução de P3 vs P2 vai de 13% a 89% conforme as notas (Monte Carlo, 10.000 amostras). O resultado qualitativo resiste em todas as amostras. |
 

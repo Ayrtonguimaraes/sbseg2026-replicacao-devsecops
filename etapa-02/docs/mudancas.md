@@ -45,7 +45,9 @@ Isto é o que garante que a reprodução original continua de pé:
 | `fbd6e9a` | README da raiz com a avaliação da P4 |
 | `ce28de8` | Revisão da avaliação: ablação comparável (A4c), laudo do TeaStore congelado, conclusão reescrita |
 | `e53635e` | Protocolo da P4 com contexto de execução registrado antes dos resultados |
-| (último) | Coletor de contexto de execução, avaliação da nova P4, P4 anterior rebaixada a P3\*, docs e slides |
+| `e7721a2` | Coletor de contexto de execução, avaliação da nova P4, P4 anterior rebaixada a P3\*, docs |
+| `0e14cf3` | Critérios e sorteio da auditoria manual registrados antes |
+| (último) | Resultados da auditoria manual (`results/auditoria_amostra.csv`) |
 
 ## 3. Mudanças em código já existente (atenção na revisão)
 
@@ -102,6 +104,7 @@ motivos da seção 3.1. `evidence/p4_execucao.log` registra a nova execução.
 | `scripts/analise_alvos.py` | Aplica o modelo direto/indireto, P1–P3, limiares, sensibilidade, agregação do Trivy e fila da P4 ao TeaStore e ao Juice Shop |
 | `scripts/validar_juice_shop.py` | Teste **passivo** do Juice Shop: um GET em `/metrics`, conferido pelo placar oficial de desafios da aplicação |
 | `scripts/contexto_execucao.py` | Coletor de contexto de execução: bibliotecas mapeadas, arquivos abertos, scripts de inicialização e módulos Node carregados, por contêiner; classifica cada achado indireto como carregado ou não |
+| `scripts/amostra_auditoria.py` | Sorteio estratificado da auditoria manual (semente fixa) |
 | `scripts/politica_contexto.py` | Avalia a P4 com contexto de execução contra P2, P3, P3\* e as alternativas de limiar |
 | `ambientes/contexto/hook-modulos.js` | Hook de observação de módulos Node, injetado só no contêiner de teste |
 | `scripts/comparar_politicas.py` | Compara a P4 com P3 limiar 6, P3 + indiretos ≥ 9, P2 limiar 8 e a fila bloqueada sem teste; métricas de cobertura bruta e sustentada; confere antes que reproduz os números publicados |
@@ -160,6 +163,7 @@ com só o CWE primário), `results/sensibilidade_*.csv` da DVWA e
 | `docs/avancos.md` (novo) | Painel do que está pronto e do que falta |
 | `docs/limitacoes-assistente.md` (novo) | O que o assistente pode ou não automatizar, com fontes oficiais e o impacto de cada pendência |
 | `docs/mudancas.md` (novo) | Este documento |
+| `docs/p4-auditoria.md` (novo) | Auditoria manual estratificada do coletor (critérios registrados antes do sorteio) |
 | `docs/p4-contexto.md` (novo) | Protocolo e resultados da P4 com contexto de execução (proposta atual) |
 | `docs/p4-avaliacao.md` (novo, substituído) | Protocolo da avaliação da P4, registrado antes de calcular, e resultados |
 

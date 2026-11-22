@@ -188,7 +188,9 @@ para outro. A P4 substitui a regra uniforme por uma decisão por achado, tomada 
 evidência do contêiner implantado e sem depender da matriz de referência.
 
 **Limites:** carregado não é explorável; o coletor tem falso negativo em fluxos autenticados
-(mitigado pela realimentação do Runtime Watch); a amostra são três aplicações; não houve
-auditoria manual de aplicabilidade por CVE. A próxima verificação recomendada é uma amostra
-estratificada (cerca de dez achados carregados e dez não carregados) auditada à mão, com
-critérios escritos antes.
+(mitigado pela realimentação do Runtime Watch); a amostra são três aplicações.
+
+**Auditoria manual ([`p4-auditoria.md`](p4-auditoria.md), critérios registrados antes do
+sorteio):** em 20 pares sorteados, os 10 "não carregados" foram confirmados como não usados
+pela implantação (IC 95%: 69% a 100%); entre os 10 "carregados", 2 são aplicáveis, as fugas de
+sandbox do `vm2` alcançáveis pelo chatbot do Juice Shop, justamente os que a P3 silenciaria.
