@@ -9,8 +9,8 @@ alguns itens não podem ser automatizados por este assistente, veja
 ## Resumo em uma linha
 
 Etapa 01 (reprodução) concluída e conferida. Etapa 02 (extensão) com as três melhorias
-combinadas com o professor prontas: sensibilidade, dois alvos novos e a **P4 com contexto de
-execução**, com auditoria manual. O trabalho está no fork; falta o Pull Request para o
+combinadas com o professor prontas: sensibilidade, dois alvos novos e a **P4 orientada a ações,
+com contexto de execução** e VEX validado no Trivy. O trabalho está no fork; falta o Pull Request para o
 repositório do grupo, as decisões do grupo e confirmações manuais de XSS — detalhado abaixo.
 
 ## Etapa 01 — reprodução
@@ -25,7 +25,7 @@ repositório do grupo, as decisões do grupo e confirmações manuais de XSS —
 
 | Melhoria | Estado | Resultado |
 |---|---|---|
-| (1) Política P4 nova | ✅ Refeita: P4 com contexto de execução | Coletor de pacotes carregados no Deploy. Bloqueios indiretos da P2 sobre pacotes não carregados: TeaStore 96/123 (78%), DVWA 8/24 (33%), Juice Shop 0/19. Auditoria manual de 20 pares: 10/10 "não carregados" confirmados; 2/10 "carregados" aplicáveis (vm2 do Juice Shop). A P4 de confirmação dirigida virou P3\* (Deploy Gate do artigo executado). Ver `p4-contexto.md` e `p4-auditoria.md`. |
+| (1) Política P4 nova | ✅ Refeita: P4 orientada a ações, com contexto de execução | Todo CVE de imagem com nota ≥ 7, sem a matriz; não carregado sai do bloqueio com VEX (18–44% dos CVEs graves), validado no Trivy oficial (supressão exata). Medida em ações: redução não absorvida pela migração de SO só no Juice Shop (47 → 41). S1 e S5 falharam como registrado; falso negativo do bash na inicialização corrigido pós-registro. Achado exploratório: em ações, P2 = P3. Ver `p4-acoes.md`. Versões anteriores: `p4-contexto.md`, `p4-avaliacao.md`. |
 | (2) Mais aplicações | ✅ Análise completa, com Deploy Gate (ZAP passivo) nos dois alvos | TeaStore 1.4.2 e Juice Shop 19.0.0, matriz de 14 casos cada. |
 | (3) Sensibilidade das notas arbitrárias | ✅ Concluída | Redução de P3 vs P2 vai de 13% a 89% conforme as notas (Monte Carlo, 10.000 amostras). O resultado qualitativo resiste em todas as amostras. |
 
@@ -71,7 +71,7 @@ automatizar do que precisa ser feito manualmente — a razão está em
 | **TeaStore — ZAP ativo** | Usuário (opcional) | Só para simetria com o Juice Shop. O escaneamento ativo dispara payloads. |
 | **TeaStore `ts-tls-trust-all`** | Ninguém (limite do alvo) | Só existe com `USE_HTTPS=true`, fora da implantação de referência. |
 | **Juice Shop `js-rce-b2b`** | Usuário (ou ficar estático) | Decisão do grupo: **não automatizar**. O teste oficial tem efeito de negação de serviço. Apoiado só em evidência estática (Semgrep) + indireta (Trivy). |
-| **Decisões do grupo** | Grupo | Ratificar a P4 com contexto de execução, a regra de escopo e a ressalva de circularidade da matriz (ver `protocolo.md`, "Decisões para o grupo"). |
+| **Decisões do grupo** | Grupo | Ratificar a P4 orientada a ações (`p4-acoes.md`), a regra de escopo e a ressalva de circularidade da matriz (ver `protocolo.md`, "Decisões para o grupo"). |
 | **Slides da Etapa 02** | Grupo | Deck novo pronto (artefato Slides, 14 slides, cerca de 15 minutos); exportar para PowerPoint pelo menu Share › Export. Os PDFs antigos da raiz ficam como histórico. |
 
 Impacto numérico de cada pendência: `limitacoes-assistente.md`, seção 8.

@@ -1,5 +1,11 @@
 # P4 com contexto de execução: protocolo registrado antes do cálculo
 
+> **Versão anterior (22/11/2026).** Substituída pela P4 orientada a ações
+> ([`p4-acoes.md`](p4-acoes.md)). Uma revisão crítica mostrou que esta versão contava por
+> pacote dpkg, e não por vulnerabilidade (os "8 evitados" da DVWA são 1 CVE de 9), só filtrava
+> os indiretos (que dependem da matriz) e não mudava nenhuma decisão nem superava a regra
+> "P3 + indiretos ≥ 9". Mantida como registro.
+
 **Registrado em 22/11/2026, depois de um piloto qualitativo e antes de qualquer resultado
 numérico.** Substitui a P4 de "confirmação dirigida" como proposta do grupo. O motivo está em
 `p4-avaliacao.md` e resumido abaixo.

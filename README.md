@@ -96,7 +96,7 @@ A etapa inclui a reprodução dos portões originais, a variação do proxy Semg
 | Referência na DVWA · 5, 80 e 56 bloqueios em P1, P2 e P3 | [Baseline](etapa-02/results/baseline.csv) |
 | Variação de nota, limiar e agregação | [CSVs](etapa-02/results/) e [gráficos](etapa-02/figures/) |
 | Todas as notas proxy, isoladas e em conjunto · redução P3 vs P2 de 13% a 89% | [Tornado](etapa-02/results/sensibilidade_tornado.csv) e [Monte Carlo](etapa-02/results/sensibilidade_monte_carlo_resumo.csv) |
-| P4 com contexto de execução · bloqueios indiretos da P2 sobre pacotes não carregados: TeaStore 78%, DVWA 33%, Juice Shop 0% ([protocolo e resultados](etapa-02/docs/p4-contexto.md)) | [Contexto de execução](etapa-02/results/contexto_execucao.csv) e [políticas](etapa-02/results/p4_contexto_politicas.csv) |
+| P4 orientada a ações · 18–44% dos CVEs de imagem graves saem do bloqueio com VEX validado no Trivy; redução de trabalho não absorvida pela migração de SO só no Juice Shop (47 → 41 ações); S1 e S5 falharam como registrado ([protocolo e resultados](etapa-02/docs/p4-acoes.md)) | [Ações](etapa-02/results/p4_acoes_resumo.csv), [contexto](etapa-02/results/contexto_imagem.csv) e [VEX no Trivy](etapa-02/results/p4_vex_trivy.csv) |
 | TeaStore 1.4.2 e Juice Shop 19.0.0 · matriz de 14 casos, P1–P3, sensibilidade e P4 | [Políticas](etapa-02/results/alvos_politicas.csv), [cobertura](etapa-02/results/alvos_cobertura.csv) e [fila P4](etapa-02/results/alvos_p4_resultados.csv) |
 | WebGoat (piloto, 3 casos de referência) | [Simulação piloto](etapa-02/results/pilotos_politicas.csv) |
 

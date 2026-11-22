@@ -136,7 +136,9 @@ que o ZAP alerta em `/login`.
 
 ### 4.4 Evidência dinâmica (P4)
 
-Novos da P4 com contexto: `results/contexto_execucao.csv`, `results/p4_contexto_politicas.csv`, `results/p4_contexto_resumo.csv`, `results/auditoria_amostra.csv`, `pilotos/contexto/` (observações brutas S1–S3 de cada contêiner e S4 autenticado do Juice Shop) e `tests/test_contexto.py`.
+Novos da P4 orientada a ações: `scripts/politica_acoes.py`, `scripts/trivy_vex.sh`, `scripts/validar_vex_trivy.py`, `scripts/verificar_s5.py`, modo `--imagem` de `scripts/contexto_execucao.py` (com leitura do dpkg distroless e das bibliotecas da inicialização), `results/contexto_imagem.csv`, `results/p4_acoes.csv`, `results/p4_acoes_resumo.csv`, `results/p4_vex_trivy.csv`, `results/p4_s5.csv`, `pilotos/contexto-acoes/` (observações, dados da verificação S5 e VEX por imagem) e `tests/test_acoes.py`.
+
+Novos da P4 com contexto (versão anterior): `results/contexto_execucao.csv`, `results/p4_contexto_politicas.csv`, `results/p4_contexto_resumo.csv`, `results/auditoria_amostra.csv`, `pilotos/contexto/` (observações brutas S1–S3 de cada contêiner e S4 autenticado do Juice Shop) e `tests/test_contexto.py`.
 
 Novos também: `pilotos/p4-catalogo/` (saída do catálogo, regravada a cada execução), `pilotos/p4-teastore/catalogo-teastore.json` (cópia congelada usada como laudo), `tests/test_comparacao.py` (3 testes; o total passou de 9 para 12) e `results/p4_comparacao.csv`, `p4_dominancia.csv` e `p4_funil.csv`.
 
@@ -167,7 +169,8 @@ com só o CWE primário), `results/sensibilidade_*.csv` da DVWA e
 | `docs/limitacoes-assistente.md` (novo) | O que o assistente pode ou não automatizar, com fontes oficiais e o impacto de cada pendência |
 | `docs/mudancas.md` (novo) | Este documento |
 | `docs/p4-auditoria.md` (novo) | Auditoria manual estratificada do coletor (critérios registrados antes do sorteio) |
-| `docs/p4-contexto.md` (novo) | Protocolo e resultados da P4 com contexto de execução (proposta atual) |
+| `docs/p4-acoes.md` (novo) | Protocolo e resultados da P4 orientada a ações (proposta atual) |
+| `docs/p4-contexto.md` (novo, substituído) | Protocolo e resultados da P4 com contexto só sobre indiretos |
 | `docs/p4-avaliacao.md` (novo, substituído) | Protocolo da avaliação da P4, registrado antes de calcular, e resultados |
 
 ## 5. Números que mudaram
@@ -176,7 +179,8 @@ com só o CWE primário), `results/sensibilidade_*.csv` da DVWA e
 |---|---|---|
 | DVWA P1/P2/P3 | 5 / 80 / 56 | **igual** |
 | DVWA P3\* (antes P4-A, depois "P4") | 58, 10/13 | **igual** |
-| DVWA P4 com contexto de execução | não existia | 74, 11/13; 8 de 24 indiretos ≥ 7 sobre pacotes não carregados |
+| DVWA P4 com contexto de execução (versão anterior) | não existia | 74, 11/13; 8 de 24 indiretos ≥ 7 sobre pacotes não carregados (1 CVE de 9) |
+| P4 orientada a ações (atual) | não existia | ações P3\* → P4: DVWA 89 → 74, TeaStore 82 → 42, Juice Shop 47 → 41; não absorvidas pela migração de SO: 35 → 35, 17 → 17, 47 → 41; CVEs de imagem graves com VEX: 18,8%, 43,9%, 18,1% |
 | DVWA P4-B (agora só sensibilidade) | 56, 8/13 | 57, 9/13 (nota calculada do vetor) |
 | DVWA P4-B-alt | não existia | 57, 9/13 |
 | Pilotos | Juice Shop e WebGoat com 3 casos | WebGoat continua como apêndice; Juice Shop passou a ter 14 casos |

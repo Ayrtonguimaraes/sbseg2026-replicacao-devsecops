@@ -170,7 +170,29 @@ docker compose -p teastore down
 
 **Pendências do TeaStore.** `ts-output-encoding` (XSS armazenado) exige enviar um payload de script pelo checkout e abrir `/profile` no navegador: fica para verificação manual. `ts-tls-trust-all` só roda com `USE_HTTPS=true`, ausente da implantação de referência, e fica `nao_executada`.
 
-## P4 com contexto de execução · como reproduzir a coleta
+## P4 orientada a ações · como reproduzir
+
+Protocolo e resultados em `docs/p4-acoes.md`. Mesmos contêineres da seção seguinte (DVWA, Juice
+Shop com o hook de módulos e TeaStore com ZAP). O artefato dos autores fornece os relatórios
+Trivy e Semgrep da DVWA.
+
+~~~bash
+cd etapa-02
+AUTORES=../../sbseg2026-deteccao-direta-indireta   # clone do artefato, commit 5b18244
+python3 scripts/contexto_execucao.py --imagem --autores "$AUTORES" \
+  --spider-dvwa "http://$DV/" \
+  --spider-teastore "http://webui:8080/tools.descartes.teastore.webui/" \
+  --spider-juice-shop "http://$JS:3000/"
+python3 scripts/politica_acoes.py --autores "$AUTORES"
+bash scripts/trivy_vex.sh            # Trivy 0.69.3 com e sem VEX (saída em ~/.cache/trivy-p4)
+python3 scripts/validar_vex_trivy.py
+python3 scripts/verificar_s5.py
+SBSEG_AUTORES="$AUTORES" python3 -m unittest discover -s tests
+~~~
+
+Com Python 3.10 ou superior. Sem `SBSEG_AUTORES`, os testes da DVWA em `test_acoes.py` são pulados.
+
+## P4 com contexto de execução (versão anterior) · como reproduzir a coleta
 
 Protocolo e resultados em `docs/p4-contexto.md`. Requer Docker; as imagens amd64 rodam
 emuladas em Mac com Apple Silicon (colima com Rosetta). Tudo fica em `127.0.0.1`.
