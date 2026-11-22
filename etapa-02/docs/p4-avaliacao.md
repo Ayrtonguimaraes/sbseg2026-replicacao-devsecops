@@ -1,5 +1,12 @@
 # Avaliação da P4 como melhoria: protocolo registrado antes da execução
 
+> **Substituído em 22/11/2026 por [`p4-contexto.md`](p4-contexto.md).** Uma análise posterior
+> mostrou que esta P4 de "confirmação dirigida" não é uma política nova: o Deploy Gate do artigo
+> já bloqueia achados confirmados por testes customizados; o sinal indireto que abria a fila
+> (CVE de biblioteca com o mesmo CWE) não tinha relação com o caso testado; e a fila dependia
+> da matriz de referência. Os testes executados continuam válidos como **o Deploy Gate do
+> artigo efetivamente executado (P3\*)**. O texto abaixo é mantido como registro.
+
 **Registrado em 22/11/2026, antes de calcular qualquer política nova.** Este arquivo foi
 commitado sem resultados. A seção "Resultados" é preenchida depois, em outro commit, para
 que a diferença entre o que foi combinado e o que saiu fique visível no histórico do git.

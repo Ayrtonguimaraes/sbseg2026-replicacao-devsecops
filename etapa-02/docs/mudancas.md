@@ -43,7 +43,9 @@ Isto é o que garante que a reprodução original continua de pé:
 | `848ce2f` | Catálogo de testes benignos com controles negativos (`scripts/p4_catalogo.py`) |
 | `deeda78` | P4-A vira a P4 proposta; P4-B passa a análise de sensibilidade; resultados propagados para os docs |
 | `fbd6e9a` | README da raiz com a avaliação da P4 |
-| (último) | Revisão da avaliação: ablação comparável (A4c), laudo do TeaStore congelado, conclusão reescrita |
+| `ce28de8` | Revisão da avaliação: ablação comparável (A4c), laudo do TeaStore congelado, conclusão reescrita |
+| `e53635e` | Protocolo da P4 com contexto de execução registrado antes dos resultados |
+| (último) | Coletor de contexto de execução, avaliação da nova P4, P4 anterior rebaixada a P3\*, docs e slides |
 
 ## 3. Mudanças em código já existente (atenção na revisão)
 
@@ -69,7 +71,7 @@ ratificados pelo grupo (ver `protocolo.md`, "Decisões para o grupo").
 
 ### 3.3 `tests/test_analise.py`
 
-Eram 6 testes; agora são 12 (9 em `test_analise.py` e 3 em `test_comparacao.py`). O teste da fila foi atualizado para o novo formato (inclui
+Eram 6 testes; agora são 15 (9 em `test_analise.py`, 3 em `test_comparacao.py` e 3 em `test_contexto.py`). O teste da fila foi atualizado para o novo formato (inclui
 `dvwa-exposed-mysql` e o motivo). Os três testes novos cobrem o cálculo do CVSS 3.1 com
 vetores de referência, a P4-B-alt e os grupos de notas proxy e o tornado. Para rodar,
 use Python 3.10 ou superior (o código usa `float | None`):
@@ -99,6 +101,9 @@ motivos da seção 3.1. `evidence/p4_execucao.log` registra a nova execução.
 | `scripts/sensibilidade_proxies.py` | Varia cada nota proxy arbitrária da DVWA (Semgrep ERROR/WARNING, Checkov, ZAP Baseline, teste de credenciais), isoladamente (tornado) e em conjunto (Monte Carlo, 10.000 amostras) |
 | `scripts/analise_alvos.py` | Aplica o modelo direto/indireto, P1–P3, limiares, sensibilidade, agregação do Trivy e fila da P4 ao TeaStore e ao Juice Shop |
 | `scripts/validar_juice_shop.py` | Teste **passivo** do Juice Shop: um GET em `/metrics`, conferido pelo placar oficial de desafios da aplicação |
+| `scripts/contexto_execucao.py` | Coletor de contexto de execução: bibliotecas mapeadas, arquivos abertos, scripts de inicialização e módulos Node carregados, por contêiner; classifica cada achado indireto como carregado ou não |
+| `scripts/politica_contexto.py` | Avalia a P4 com contexto de execução contra P2, P3, P3\* e as alternativas de limiar |
+| `ambientes/contexto/hook-modulos.js` | Hook de observação de módulos Node, injetado só no contêiner de teste |
 | `scripts/comparar_politicas.py` | Compara a P4 com P3 limiar 6, P3 + indiretos ≥ 9, P2 limiar 8 e a fila bloqueada sem teste; métricas de cobertura bruta e sustentada; confere antes que reproduz os números publicados |
 | `scripts/p4_catalogo.py` | Catálogo de testes benignos da P4, escolhidos pelo CWE, com controle negativo por modelo |
 | `scripts/zap_passivo_docker.py` | ZAP **só passivo** (spider + regras passivas) contra um alvo em Docker; roda em macOS, ao contrário de `piloto_dast.py`, que exige `unshare` do Linux |
@@ -155,7 +160,8 @@ com só o CWE primário), `results/sensibilidade_*.csv` da DVWA e
 | `docs/avancos.md` (novo) | Painel do que está pronto e do que falta |
 | `docs/limitacoes-assistente.md` (novo) | O que o assistente pode ou não automatizar, com fontes oficiais e o impacto de cada pendência |
 | `docs/mudancas.md` (novo) | Este documento |
-| `docs/p4-avaliacao.md` (novo) | Protocolo da avaliação da P4, registrado antes de calcular, e resultados |
+| `docs/p4-contexto.md` (novo) | Protocolo e resultados da P4 com contexto de execução (proposta atual) |
+| `docs/p4-avaliacao.md` (novo, substituído) | Protocolo da avaliação da P4, registrado antes de calcular, e resultados |
 
 ## 5. Números que mudaram
 

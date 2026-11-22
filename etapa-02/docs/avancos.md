@@ -24,7 +24,7 @@ de alguns casos (XSS ativo, RCE) e o push para o GitHub do grupo — detalhado a
 
 | Melhoria | Estado | Resultado |
 |---|---|---|
-| (1) Política P4 nova | ✅ Concluída e testada contra alternativas | P4 (= P4-A): DVWA 58 e 10/13, TeaStore 140 e 5/14, Juice Shop 10 e 4/14. Recupera 4 dos 10 casos perdidos pela P3 com 2,4% dos bloqueios extras da P2. Não é dominada por ajustes de limiar na DVWA e no Juice Shop; no TeaStore, a P2 com limiar 8 a domina em cobertura bruta (protocolo registrado antes, `p4-avaliacao.md`). Catálogo benigno confirma 4 de 11 casos da fila. P4-B virou análise de sensibilidade. |
+| (1) Política P4 nova | ✅ Refeita: P4 com contexto de execução | Coletor de pacotes carregados no Deploy. Bloqueios indiretos da P2 sobre pacotes não carregados: TeaStore 96/123 (78%), DVWA 8/24 (33%), Juice Shop 0/19. A P4 de confirmação dirigida virou P3\* (Deploy Gate do artigo executado). Ver `p4-contexto.md`. |
 | (2) Mais aplicações | ✅ Análise completa, com Deploy Gate (ZAP passivo) nos dois alvos | TeaStore 1.4.2 e Juice Shop 19.0.0, matriz de 14 casos cada. |
 | (3) Sensibilidade das notas arbitrárias | ✅ Concluída | Redução de P3 vs P2 vai de 13% a 89% conforme as notas (Monte Carlo, 10.000 amostras). O resultado qualitativo resiste em todas as amostras. |
 
@@ -41,7 +41,7 @@ diretamente a maior ameaça à validade externa do artigo original.
 
 ### Verificação automatizada
 
-- 12 testes passam: `uv run --no-project --python 3.12 python -m unittest discover -s etapa-02/tests`.
+- 15 testes passam: `uv run --no-project --python 3.12 python -m unittest discover -s etapa-02/tests`.
 - **Atenção:** o Python do sistema (3.9) é velho demais; usar 3.10+.
 
 ## Avanços desta sessão (2026-11-22)

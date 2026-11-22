@@ -74,4 +74,121 @@ uso e quantos latentes; bloqueios e cobertura bruta de P2, P3, P3\* e P4.
 
 ## Resultados
 
-*(preenchido em commit posterior)*
+*Preenchido depois da coleta. Fontes: `results/contexto_execucao.csv` (uma linha por achado
+indireto), `results/p4_contexto_resumo.csv`, `results/p4_contexto_politicas.csv` e as
+observações brutas em `pilotos/contexto/`. Scripts: `scripts/contexto_execucao.py` e
+`scripts/politica_contexto.py`.*
+
+Terminologia: usamos **carregado / não carregado**, e não "em uso / latente". Carregado quer
+dizer que algum processo mapeou a biblioteca, abriu o arquivo ou executou o binário; não quer
+dizer que a função vulnerável foi chamada. A DVWA, por exemplo, carrega `libpq5` (PostgreSQL)
+sem usar PostgreSQL.
+
+### Critérios registrados
+
+| Critério | DVWA | TeaStore | Juice Shop | Resultado |
+|---|---|---|---|---|
+| Fração carregada entre os indiretos ≥ 7 (definição registrada, S1 ou S2) | 67% | 18% | 74% | **Passa** (3 de 3 entre 10% e 90%) |
+| S1 e S2 classificam igual | 24/24 | 117/123 (95%) | 19/19 | **Passa** (todos ≥ 90%) |
+
+### Resultado principal: quantos bloqueios indiretos da P2 recaem sobre pacotes não carregados
+
+Com a definição final (S1 a S3, inicialização e fluxo autenticado; ver desvios):
+
+| Alvo | Indiretos ≥ 7 (bloqueados pela P2) | Não carregados | Pares (pacote, CVE) distintos não carregados |
+|---|---:|---:|---:|
+| DVWA | 24 | 8 (33%) | 8 de 24 |
+| TeaStore | 123 | **96 (78%)** | 34 de 43 (79%) |
+| Juice Shop | 19 | **0 (0%)** | 0 de 19 |
+
+As duas pontas mostram um erro diferente das políticas do artigo:
+
+- **No TeaStore, a P2 bloqueia demais.** 96 dos 123 bloqueios indiretos são de pacotes que
+  nenhum processo carrega (`curl`, `libcurl`, `perl`, `openssl` CLI, `libexpat`, pacotes do
+  `gnupg` no banco). Isso é 37% de todos os bloqueios da P2 no alvo.
+- **No Juice Shop, a P3 bloqueia de menos.** Os 19 achados indiretos graves estão em
+  bibliotecas carregadas pela aplicação (por exemplo, as fugas de sandbox do `vm2`, que é
+  carregado). A P3 transforma todos em registro informativo.
+- **A DVWA fica no meio:** um terço dos indiretos está em pacotes não carregados.
+
+A suposição do artigo, de que o componente indireto "pode nunca ser invocado", é verdadeira em
+grau muito diferente conforme a composição da imagem: forte numa imagem de uso geral com
+microsserviços Java, fraca numa aplicação Node cujas dependências vulneráveis são bibliotecas
+da própria aplicação. **Uma regra uniforme para todos os indiretos, seja a da P2 ou a da P3,
+erra em pelo menos um dos dois cenários.**
+
+### O critério não é um limiar disfarçado
+
+| Alvo | Carregados entre indiretos com nota 7–8,9 | Carregados entre indiretos com nota ≥ 9 |
+|---|---:|---:|
+| DVWA | 15 de 22 | 1 de 2 |
+| TeaStore | 26 de 116 | 1 de 7 |
+| Juice Shop | 9 de 9 | 10 de 10 |
+
+No TeaStore, os indiretos mais graves estão, na maioria, em pacotes não carregados. Um ajuste de
+limiar não reproduz a seleção do coletor.
+
+### Políticas (bloqueios · cobertura bruta da matriz)
+
+| Política | DVWA | TeaStore | Juice Shop |
+|---|---|---|---|
+| P2 | 80 · 11/13 | 262 · 7/14 | 28 · 7/14 |
+| P3 | 56 · 8/13 | 139 · 4/14 | 9 · 3/14 |
+| P3\* (Deploy Gate do artigo executado) | 58 · 10/13 | 140 · 5/14 | 10 · 4/14 |
+| **P4 (contexto de execução)** | **74 · 11/13** | **167 · 7/14** | **29 · 7/14** |
+| P4 com a definição registrada (S1/S2) | 74 · 11/13 | 162 · 6/14 | 24 · 5/14 |
+
+Nenhuma das alternativas de limiar (A1, A2, A3) domina a P4 em nenhum alvo
+(`p4_contexto_resumo.csv`).
+
+**Por que a cobertura não é a manchete.** Os casos que a P4 cobre a mais que a P3\* vêm de
+coincidência de CWE, como na P2: `dvwa-exposed-mysql` por um CVE do PHP; `ts-tls-trust-all`
+por `libssl`, `libthrift` e `okhttp` carregados, embora o trecho trust-all não rode na
+implantação de referência; `js-rce-b2b` por `vm2` e `lodash`, embora a rota B2B use `node:vm`
+e `notevil`, não o `vm2`. A cobertura da matriz mede o quanto os CWEs coincidem, não se a
+falha do caso foi detectada. O que a P4 decide com evidência é **quais achados indiretos
+merecem bloqueio**, e isso não depende da matriz.
+
+### Desvios do protocolo e verificações posteriores
+
+- **Inicialização (pós-registro).** O snapshot não vê processos de vida curta. O coletor passou
+  a ler o Entrypoint e o Cmd das imagens e os scripts que eles chamam. Achado: o `gosu`
+  (binário Go do banco do TeaStore, 5 achados `stdlib`) roda na inicialização. Ele foi
+  reclassificado como carregado. `curl`, `perl` e `openssl` não aparecem nos scripts de
+  inicialização (`start.sh`, `catalina.sh`, `docker-entrypoint.sh`).
+- **Spider do ZAP, S3 (pós-registro).** Tráfego benigno mais amplo (29, 29 e 95 URLs). Não
+  mudou nenhuma classificação.
+- **Fluxo autenticado no Juice Shop, S4 (pós-registro, verificação manual).** O `handlebars`
+  aparecia como não carregado. O Juice Shop usa `hbs` como motor de views, mas só o carrega ao
+  renderizar uma página. Depois do login de uma conta de teste local e de um GET em
+  `/dataerasure/`, `hbs` e `handlebars` foram carregados (evidência em
+  `pilotos/contexto/juice-shop--juice-r--s4-autenticado.txt`). Isso mudou o Juice Shop de 5
+  achados não carregados para 0. **É um falso negativo real do coletor**: carregamento
+  preguiçoso em fluxos autenticados escapa da observação sem login.
+- **Dependência do tráfego no TeaStore.** 9 dos 27 achados carregados (as bibliotecas Java
+  `libthrift` e `okhttp`) só apareceram depois do tráfego. O critério de estabilidade passa
+  porque os pacotes de sistema nunca carregados dominam o denominador.
+
+### Consequência para a arquitetura
+
+Como o coletor pode deixar de ver uma biblioteca carregada só em fluxos raros (o caso do
+`handlebars`), **um achado "não carregado" não é descartado**: continua informativo, como na
+P3, e é reavaliado pelo **Runtime Watch**, o quarto estágio do artigo, que hoje não tem papel
+na simulação. Se a telemetria de produção registrar o carregamento, o achado passa a bloquear
+o próximo deploy. Isso dá ao Runtime Watch a função de realimentação que o artigo previu e
+deixou como trabalho futuro.
+
+### Conclusão
+
+**O avanço desta etapa não é um número de bloqueios; é transformar uma suposição do artigo em
+uma medida.** O artigo trata todo achado indireto como informativo porque o componente "pode
+nunca ser invocado". Medimos isso em três aplicações. A fração não carregada vai de 78%
+(TeaStore) a 0% (Juice Shop). Logo, a regra uniforme da P3 é adequada para um alvo e errada
+para outro. A P4 substitui a regra uniforme por uma decisão por achado, tomada no Deploy, com
+evidência do contêiner implantado e sem depender da matriz de referência.
+
+**Limites:** carregado não é explorável; o coletor tem falso negativo em fluxos autenticados
+(mitigado pela realimentação do Runtime Watch); a amostra são três aplicações; não houve
+auditoria manual de aplicabilidade por CVE. A próxima verificação recomendada é uma amostra
+estratificada (cerca de dez achados carregados e dez não carregados) auditada à mão, com
+critérios escritos antes.

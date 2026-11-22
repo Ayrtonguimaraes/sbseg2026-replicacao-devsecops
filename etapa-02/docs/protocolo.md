@@ -69,6 +69,8 @@ A amplitude ± 2 e a faixa 1–10 são escolhas do grupo. Os sorteios são indep
 
 ## Política P4 proposta
 
+> **Atualização (22/11/2026):** a proposta do grupo passou a ser a **P4 com contexto de execução** ([`p4-contexto.md`](p4-contexto.md)). A política descrita nesta seção (confirmação dirigida) é mantida como registro e passa a ser lida como **P3\***: o Deploy Gate do artigo efetivamente executado, com testes customizados benignos.
+
 1. Rodar a P2 e a P3 com limiar 7 sobre as unidades originais.
 2. Entra na fila de teste dirigido todo ID sem bloqueio em P3 que atenda a um dos critérios. **apenas_indireta**: só há sinais indiretos (critério da primeira versão). **perda_p2_p3**: o ID é bloqueado em P2 e deixa de ser em P3, mesmo havendo sinal direto abaixo do limiar. Na DVWA, a fila tem CSRF, Weak Session IDs e Open HTTP Redirect pelo primeiro critério e Exposed MySQL pelo segundo. Com isso, toda perda de cobertura de P2 para P3 passa pela fila.
 3. Guardar o estado `confirmada`, `nao_confirmada`, `inconclusiva` ou `nao_executada`, com configuração, referência e hash da evidência quando houver teste. Uma execução inconclusiva permanece visível para triagem.
@@ -132,7 +134,8 @@ A redução da P3 frente a P2 é de 47% no TeaStore e 68% no Juice Shop, maior q
 ## Decisões para o grupo
 
 - Ratificar P4-A e os vetores CVSS de CSRF e Weak Session IDs usados por P4-B e P4-B-alt.
-- Ratificar a P4-A como "a P4" proposta, com a P4-B só como análise de sensibilidade, e a métrica de cobertura sustentada (ver `docs/p4-avaliacao.md`).
+- Ratificar a P4 com contexto de execução como a proposta do grupo, e a decisão de manter os achados não carregados como informativos com reavaliação pelo Runtime Watch.
+- (Anterior, superado) Ratificar a P4-A como "a P4" proposta, com a P4-B só como análise de sensibilidade, e a métrica de cobertura sustentada (ver `docs/p4-avaliacao.md`).
 - Ratificar o vetor do `ts-db-reset-unauth` (TeaStore): proposto C:N/I:H/A:H (9,1, bloqueia na P4-B) contra alternativo C:N/I:L/A:L (6,5, não bloqueia). A escolha decide se a P4-B do TeaStore fica em 140 e 5/14 ou em 139 e 4/14.
 - Rodar a listagem da imagem para o Open HTTP Redirect e decidir se o Exposed MySQL será testado em um cluster que reproduza o manifesto dos autores.
 - Fixar o orçamento de cobertura aceitável antes de interpretar uma comparação confirmatória. Adotar um denominador auditado e justificar a margem em número de casos e pontos percentuais.
