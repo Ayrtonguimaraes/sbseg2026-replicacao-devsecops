@@ -82,6 +82,8 @@ def avaliar(app, ctx):
         "P3*": medir(p3, conf),
         "P4-reg": medir(p3 + reg, conf),
         "P4": medir(p3 + fin, conf),
+        # Comparação justa com A1-A3, que não têm os testes customizados da P3*.
+        "P3+carregados": medir(p3 + fin, set()),
         "A1": medir([u for u in us if nota(u) >= 6 and u.classe != "indireta"], set()),
         "A2": medir(p3 + [u for u in altos if nota(u) >= 9 and u.id not in ids_p3], set()),
         "A3": medir([u for u in us if nota(u) >= 8], set()),
@@ -100,8 +102,9 @@ def avaliar(app, ctx):
             faixa[("7-8.9", "1")] + faixa[("7-8.9", "0")],
         "faixa_9_carregados": faixa[("9+", "1")],
         "faixa_9_total": faixa[("9+", "1")] + faixa[("9+", "0")],
-        "alternativas_que_dominam_p4": "|".join(
-            k for k in ("A1", "A2", "A3") if domina(pol[k], pol["P4"])),
+        # A1-A3 não têm as confirmações da P3*; a comparação justa é com P3+carregados.
+        "alternativas_que_dominam_p3_mais_carregados": "|".join(
+            k for k in ("A1", "A2", "A3") if domina(pol[k], pol["P3+carregados"])),
         "casos_p2_perdidos_pela_p4": "|".join(sorted(
             set(pol["P2"]["ids"].split("|")) - set(pol["P4"]["ids"].split("|")) - {""})),
     }

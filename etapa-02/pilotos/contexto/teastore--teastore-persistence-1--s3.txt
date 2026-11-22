@@ -5,8 +5,8 @@
 /dev/random
 /dev/urandom
 /kieker/agent/agent.jar
-/kieker/logs/kieker-20261122-211838-7221321286690-UTC--KIEKER/kieker-20261122-211838136-UTC-001.dat
-/kieker/logs/kieker-20261122-211838-7221321286690-UTC--KIEKER/kieker.map
+/kieker/logs/kieker-20261122-215319-9307441182492-UTC--KIEKER/kieker-20261122-215319175-UTC-001.dat
+/kieker/logs/kieker-20261122-215319-9307441182492-UTC--KIEKER/kieker.map
 /lib/ld-linux-aarch64.so.1
 /lib/libc.so.6
 /lib/libm.so.6
@@ -98,7 +98,6 @@
 /usr/local/tomcat/lib/tomcat-util-scan.jar
 /usr/local/tomcat/lib/tomcat-util.jar
 /usr/local/tomcat/logs/catalina.2026-11-22.log
-/usr/local/tomcat/logs/localhost.2026-11-22.log
 /usr/local/tomcat/native-jni-lib/libtcnative-1.so.0.2.30
 /usr/local/tomcat/webapps/tools.descartes.teastore.persistence/WEB-INF/lib/annotations-2.0.0.jar
 /usr/local/tomcat/webapps/tools.descartes.teastore.persistence/WEB-INF/lib/aopalliance-repackaged-3.0.1.jar

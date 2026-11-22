@@ -109,7 +109,7 @@ A avaliação usou o digest histórico da imagem DVWA, com seus arquivos PHP e M
 | Weak Session IDs | Doze respostas HTTP 200 produziram o cookie de treinamento `dvwaSession` com os valores consecutivos 1 a 12. A evidência delimita-se a esse cookie. | Confirmada |
 | Open HTTP Redirect | Duas rotas candidatas retornaram 404 no digest ensaiado. Consultamos a árvore da imagem e não localizamos o módulo nessas rotas. | Inconclusiva |
 
-A P4-A, aplicada aos laudos, simulou 2 decisões novas de Deploy, totalizando 58 decisões e cobertura de 10/13. A P4-B usa a nota CVSS v3.1 calculada do vetor registrado em `validacoes.csv` para cada caso confirmado. Com os vetores principais (CSRF 8,1 e Weak Session IDs 5,3) ficou em 57 e 9/13. Com os alternativos (6,5 e 9,1) também ficou em 57 e 9/13, mas fechando o outro caso. O resultado de P4-A é uma simulação de portão com entradas obtidas em teste real. Um teste com navegador real pode refinar a verificação de envio de cookies no CSRF. A fila agora inclui Exposed MySQL (`nao_executada`, ver `protocolo.md`), e o máximo condicional com as quatro lacunas confirmadas é 60 bloqueios e 12/13.
+A P3\* (antes chamada P4-A; hoje lida como o Deploy Gate do artigo executado), aplicada aos laudos, simulou 2 decisões novas de Deploy, totalizando 58 decisões e cobertura de 10/13. A P4-B usa a nota CVSS v3.1 calculada do vetor registrado em `validacoes.csv` para cada caso confirmado. Com os vetores principais (CSRF 8,1 e Weak Session IDs 5,3) ficou em 57 e 9/13. Com os alternativos (6,5 e 9,1) também ficou em 57 e 9/13, mas fechando o outro caso. O resultado de P4-A é uma simulação de portão com entradas obtidas em teste real. Um teste com navegador real pode refinar a verificação de envio de cookies no CSRF. A fila agora inclui Exposed MySQL (`nao_executada`, ver `protocolo.md`), e o máximo condicional com as quatro lacunas confirmadas é 60 bloqueios e 12/13.
 
 A versão empacotada contém laudo HTTP com status, indicadores e hash. Para repetir a decisão a partir dessa evidência na raiz que contém `etapa-02/`.
 
@@ -169,3 +169,44 @@ docker compose -p teastore down
 ~~~
 
 **Pendências do TeaStore.** `ts-output-encoding` (XSS armazenado) exige enviar um payload de script pelo checkout e abrir `/profile` no navegador: fica para verificação manual. `ts-tls-trust-all` só roda com `USE_HTTPS=true`, ausente da implantação de referência, e fica `nao_executada`.
+
+## P4 com contexto de execução · como reproduzir a coleta
+
+Protocolo e resultados em `docs/p4-contexto.md`. Requer Docker; as imagens amd64 rodam
+emuladas em Mac com Apple Silicon (colima com Rosetta). Tudo fica em `127.0.0.1`.
+
+~~~bash
+cd etapa-02
+# DVWA (mesmo digest do artefato dos autores) e Juice Shop com o hook de módulos Node
+docker run -d --name dvwa-r --platform linux/amd64 -p 127.0.0.1:18083:80 \
+  vulnerables/web-dvwa@sha256:dae203fe11646a86937bf04db0079adef295f426da68a92b40e3b181f337daa7
+docker run -d --name juice-r --platform linux/amd64 -p 127.0.0.1:18082:3000 \
+  -e NODE_OPTIONS=--require=/hook/hook-modulos.js -v "$PWD/ambientes/contexto:/hook:ro" \
+  bkimminich/juice-shop@sha256:547bd3fef4a6d7e25e131da68f454e6dc4a59d281f8793df6853e6796c9bbf58
+# TeaStore (7 serviços) + ZAP; espere /status sem serviços Offline
+docker compose -f ambientes/teastore/docker-compose.yaml -p teastore up -d
+# o ZAP precisa alcançar a DVWA e o Juice Shop na rede padrão para o spider (S3)
+docker network connect bridge teastore-zap-1
+DV=$(docker inspect -f '{{.NetworkSettings.Networks.bridge.IPAddress}}' dvwa-r)
+JS=$(docker inspect -f '{{.NetworkSettings.Networks.bridge.IPAddress}}' juice-r)
+# o artefato dos autores fornece o relatório Trivy da DVWA
+python3 scripts/contexto_execucao.py --autores ../../sbseg2026-deteccao-direta-indireta \
+  --spider-dvwa "http://$DV/" \
+  --spider-teastore "http://webui:8080/tools.descartes.teastore.webui/" \
+  --spider-juice-shop "http://$JS:3000/"
+python3 scripts/politica_contexto.py
+~~~
+
+**Observação S4 (fluxo autenticado no Juice Shop), manual.** Com o Juice Shop ainda em
+execução: criar uma conta de teste local por `POST /api/Users/`, registrar uma resposta de
+segurança por `POST /api/SecurityAnswers/`, entrar por `POST /rest/user/login` e fazer
+`GET /dataerasure/` com o cookie `token`. Depois, copiar a lista de módulos carregados
+(`docker cp juice-r:/tmp/p4-modulos.txt -`) para
+`pilotos/contexto/juice-shop--juice-r--s4-autenticado.txt`. `politica_contexto.py` lê esse
+arquivo. Não use credenciais reais.
+
+Ao terminar: `docker rm -f dvwa-r juice-r` e `docker compose -p teastore down`.
+
+**Auditoria manual.** `scripts/amostra_auditoria.py` sorteia os 20 pares (semente fixa) e
+preserva os julgamentos já registrados em `results/auditoria_amostra.csv`.
+

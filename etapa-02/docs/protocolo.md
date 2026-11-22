@@ -133,10 +133,10 @@ A redução da P3 frente a P2 é de 47% no TeaStore e 68% no Juice Shop, maior q
 
 ## Decisões para o grupo
 
-- Ratificar P4-A e os vetores CVSS de CSRF e Weak Session IDs usados por P4-B e P4-B-alt.
+- (Superado: refere-se à P4 de confirmação dirigida, hoje P3\*) Ratificar P4-A e os vetores CVSS de CSRF e Weak Session IDs usados por P4-B e P4-B-alt.
 - Ratificar a P4 com contexto de execução como a proposta do grupo, e a decisão de manter os achados não carregados como informativos com reavaliação pelo Runtime Watch.
 - (Anterior, superado) Ratificar a P4-A como "a P4" proposta, com a P4-B só como análise de sensibilidade, e a métrica de cobertura sustentada (ver `docs/p4-avaliacao.md`).
-- Ratificar o vetor do `ts-db-reset-unauth` (TeaStore): proposto C:N/I:H/A:H (9,1, bloqueia na P4-B) contra alternativo C:N/I:L/A:L (6,5, não bloqueia). A escolha decide se a P4-B do TeaStore fica em 140 e 5/14 ou em 139 e 4/14.
+- (Superado, idem) Ratificar o vetor do `ts-db-reset-unauth` (TeaStore): proposto C:N/I:H/A:H (9,1, bloqueia na P4-B) contra alternativo C:N/I:L/A:L (6,5, não bloqueia). A escolha decide se a P4-B do TeaStore fica em 140 e 5/14 ou em 139 e 4/14.
 - Rodar a listagem da imagem para o Open HTTP Redirect e decidir se o Exposed MySQL será testado em um cluster que reproduza o manifesto dos autores.
 - Fixar o orçamento de cobertura aceitável antes de interpretar uma comparação confirmatória. Adotar um denominador auditado e justificar a margem em número de casos e pontos percentuais.
 - Definir cenários equivalentes entre aplicações, ampliar o conjunto versionado de casos e confirmar cada vínculo relevante diretamente no artefato ou no laboratório.

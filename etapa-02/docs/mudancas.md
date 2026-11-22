@@ -47,7 +47,8 @@ Isto é o que garante que a reprodução original continua de pé:
 | `e53635e` | Protocolo da P4 com contexto de execução registrado antes dos resultados |
 | `e7721a2` | Coletor de contexto de execução, avaliação da nova P4, P4 anterior rebaixada a P3\*, docs |
 | `0e14cf3` | Critérios e sorteio da auditoria manual registrados antes |
-| (último) | Resultados da auditoria manual (`results/auditoria_amostra.csv`) |
+| `6a45dfc` | Resultados da auditoria manual (`results/auditoria_amostra.csv`) |
+| (último) | Revisão final: coleta refeita em contêineres novos, comparação justa com as alternativas (P3 + carregados), ressalvas sobre agregados de imagem e matriz, instruções de reprodução, sorteio que preserva julgamentos |
 
 ## 3. Mudanças em código já existente (atenção na revisão)
 
@@ -135,6 +136,8 @@ que o ZAP alerta em `/login`.
 
 ### 4.4 Evidência dinâmica (P4)
 
+Novos da P4 com contexto: `results/contexto_execucao.csv`, `results/p4_contexto_politicas.csv`, `results/p4_contexto_resumo.csv`, `results/auditoria_amostra.csv`, `pilotos/contexto/` (observações brutas S1–S3 de cada contêiner e S4 autenticado do Juice Shop) e `tests/test_contexto.py`.
+
 Novos também: `pilotos/p4-catalogo/` (saída do catálogo, regravada a cada execução), `pilotos/p4-teastore/catalogo-teastore.json` (cópia congelada usada como laudo), `tests/test_comparacao.py` (3 testes; o total passou de 9 para 12) e `results/p4_comparacao.csv`, `p4_dominancia.csv` e `p4_funil.csv`.
 
 
@@ -172,12 +175,13 @@ com só o CWE primário), `results/sensibilidade_*.csv` da DVWA e
 | Resultado | Antes (`fa32bd1`) | Agora |
 |---|---|---|
 | DVWA P1/P2/P3 | 5 / 80 / 56 | **igual** |
-| DVWA P4 (antes P4-A) | 58, 10/13 | **igual** |
+| DVWA P3\* (antes P4-A, depois "P4") | 58, 10/13 | **igual** |
+| DVWA P4 com contexto de execução | não existia | 74, 11/13; 8 de 24 indiretos ≥ 7 sobre pacotes não carregados |
 | DVWA P4-B (agora só sensibilidade) | 56, 8/13 | 57, 9/13 (nota calculada do vetor) |
 | DVWA P4-B-alt | não existia | 57, 9/13 |
 | Pilotos | Juice Shop e WebGoat com 3 casos | WebGoat continua como apêndice; Juice Shop passou a ter 14 casos |
-| TeaStore | não existia | 729 unidades; P2 262, 7/14; P3 139, 4/14; P4 140, 5/14 |
-| Juice Shop (14 casos) | não existia | 83 unidades; P2 28, 7/14; P3 9, 3/14; P4 10, 4/14 |
+| TeaStore | não existia | 729 unidades; P2 262, 7/14; P3 139, 4/14; P3\* 140, 5/14; P4 com contexto 167, 7/14 (96 de 123 indiretos ≥ 7 não carregados) |
+| Juice Shop (14 casos) | não existia | 83 unidades; P2 28, 7/14; P3 9, 3/14; P3\* 10, 4/14; P4 com contexto 29, 7/14 (0 de 19 não carregados) |
 
 ## 6. O que fica para o grupo decidir antes do merge
 

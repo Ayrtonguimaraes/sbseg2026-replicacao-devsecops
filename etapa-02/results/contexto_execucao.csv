@@ -138,9 +138,9 @@ teastore,teastore-0603,Trivy Image,build,8.1,debian,perl,CVE-2023-31484,teastore
 teastore,teastore-0604,Trivy Image,build,8.1,debian,perl-base,CVE-2023-31484,teastore-image-1,0,0,0,0,0,0,ts-tls-trust-all
 teastore,teastore-0605,Trivy Image,build,8.1,debian,perl-modules-5.28,CVE-2023-31484,teastore-image-1,0,0,0,0,0,0,ts-tls-trust-all
 teastore,teastore-0606,Trivy Image,build,,jar,com.rabbitmq:amqp-client,CVE-2026-63336,teastore-image-1,1,1,1,1,0,1,ts-tls-trust-all
-teastore,teastore-0607,Trivy Image,build,7.5,jar,com.squareup.okhttp3:okhttp,CVE-2021-0341,teastore-image-1,1,0,1,1,0,1,ts-tls-trust-all
-teastore,teastore-0608,Trivy Image,build,7.5,jar,org.apache.thrift:libthrift,CVE-2018-1320,teastore-image-1,1,0,1,1,0,1,ts-tls-trust-all
-teastore,teastore-0609,Trivy Image,build,7.3,jar,org.apache.thrift:libthrift,CVE-2026-43869,teastore-image-1,1,0,1,1,0,1,ts-tls-trust-all
+teastore,teastore-0607,Trivy Image,build,7.5,jar,com.squareup.okhttp3:okhttp,CVE-2021-0341,teastore-image-1,1,1,1,1,0,1,ts-tls-trust-all
+teastore,teastore-0608,Trivy Image,build,7.5,jar,org.apache.thrift:libthrift,CVE-2018-1320,teastore-image-1,1,1,1,1,0,1,ts-tls-trust-all
+teastore,teastore-0609,Trivy Image,build,7.3,jar,org.apache.thrift:libthrift,CVE-2026-43869,teastore-image-1,1,1,1,1,0,1,ts-tls-trust-all
 teastore,teastore-0613,Trivy Image,build,8.1,debian,curl,CVE-2022-22576,teastore-persistence-1,0,0,0,0,0,0,ts-db-reset-unauth
 teastore,teastore-0614,Trivy Image,build,7.5,debian,curl,CVE-2022-27782,teastore-persistence-1,0,0,0,0,0,0,ts-tls-trust-all
 teastore,teastore-0615,Trivy Image,build,5.9,debian,curl,CVE-2023-28321,teastore-persistence-1,0,0,0,0,0,0,ts-tls-trust-all
@@ -187,8 +187,8 @@ teastore,teastore-0658,Trivy Image,build,8.1,debian,perl-base,CVE-2023-31484,tea
 teastore,teastore-0659,Trivy Image,build,8.1,debian,perl-modules-5.28,CVE-2023-31484,teastore-recommender-1,0,0,0,0,0,0,ts-tls-trust-all
 teastore,teastore-0660,Trivy Image,build,,jar,com.rabbitmq:amqp-client,CVE-2026-63336,teastore-recommender-1,1,1,1,1,0,1,ts-tls-trust-all
 teastore,teastore-0661,Trivy Image,build,7.5,jar,com.squareup.okhttp3:okhttp,CVE-2021-0341,teastore-recommender-1,1,0,1,1,0,1,ts-tls-trust-all
-teastore,teastore-0662,Trivy Image,build,7.5,jar,org.apache.thrift:libthrift,CVE-2018-1320,teastore-recommender-1,1,0,1,1,0,1,ts-tls-trust-all
-teastore,teastore-0663,Trivy Image,build,7.3,jar,org.apache.thrift:libthrift,CVE-2026-43869,teastore-recommender-1,1,0,1,1,0,1,ts-tls-trust-all
+teastore,teastore-0662,Trivy Image,build,7.5,jar,org.apache.thrift:libthrift,CVE-2018-1320,teastore-recommender-1,1,1,1,1,0,1,ts-tls-trust-all
+teastore,teastore-0663,Trivy Image,build,7.3,jar,org.apache.thrift:libthrift,CVE-2026-43869,teastore-recommender-1,1,1,1,1,0,1,ts-tls-trust-all
 teastore,teastore-0667,Trivy Image,build,8.1,debian,curl,CVE-2022-22576,teastore-registry-1,0,0,0,0,0,0,ts-db-reset-unauth
 teastore,teastore-0668,Trivy Image,build,7.5,debian,curl,CVE-2022-27782,teastore-registry-1,0,0,0,0,0,0,ts-tls-trust-all
 teastore,teastore-0669,Trivy Image,build,5.9,debian,curl,CVE-2023-28321,teastore-registry-1,0,0,0,0,0,0,ts-tls-trust-all

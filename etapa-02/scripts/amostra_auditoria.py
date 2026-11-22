@@ -36,7 +36,13 @@ def main():
                          if p["estrato"] == estrato and p["aplicacao"] == app),
                         key=lambda p: (p["pacote"], p["cve"]))
         amostra += rng.sample(celula, min(n, len(celula)))
-    with (ETAPA / "results/auditoria_amostra.csv").open("w", encoding="utf-8", newline="") as f:
+    destino = ETAPA / "results/auditoria_amostra.csv"
+    # Preserva julgamentos já registrados: rodar o sorteio de novo não apaga a auditoria.
+    anteriores = {}
+    if destino.exists():
+        with destino.open(encoding="utf-8", newline="") as f:
+            anteriores = {(r["aplicacao"], r["pacote"], r["cve"]): r for r in csv.DictReader(f)}
+    with destino.open("w", encoding="utf-8", newline="") as f:
         w = csv.DictWriter(f, fieldnames=["estrato", "aplicacao", "pacote", "cve", "tipo_pacote",
                                           "containers", "unidades", "julgamento", "evidencia"])
         w.writeheader()
@@ -44,7 +50,11 @@ def main():
             w.writerow({"estrato": p["estrato"], "aplicacao": p["aplicacao"], "pacote": p["pacote"],
                         "cve": p["cve"], "tipo_pacote": p["tipo_pacote"],
                         "containers": "|".join(sorted(p["containers"])),
-                        "unidades": "|".join(p["unidades"]), "julgamento": "", "evidencia": ""})
+                        "unidades": "|".join(p["unidades"]),
+                        "julgamento": anteriores.get((p["aplicacao"], p["pacote"], p["cve"]),
+                                                     {}).get("julgamento", ""),
+                        "evidencia": anteriores.get((p["aplicacao"], p["pacote"], p["cve"]),
+                                                    {}).get("evidencia", "")})
     for p in amostra:
         print(p["estrato"], p["aplicacao"], p["pacote"], p["cve"])
 

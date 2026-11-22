@@ -35,8 +35,10 @@ Node.js, os módulos carregados). Cada achado indireto do Build é reclassificad
 nota ≥ 7.** Os latentes continuam informativos, como na P3.
 
 A decisão sai do Build (estático) e passa para o Deploy (com o contexto da implantação), e
-não depende da matriz de referência: depende só do relatório do scanner e da observação do
-contêiner.
+o coletor não usa a matriz de referência: depende só do relatório do scanner e da observação do
+contêiner. *Ressalva:* nesta avaliação, quais CVEs contam como "indiretos" ainda vem da
+classificação do artigo, que depende da matriz (coincidência de CWE). Num pipeline sem matriz,
+o coletor se aplicaria a todos os achados de imagem.
 
 ## 3. Coleta (definida antes)
 
@@ -89,7 +91,8 @@ sem usar PostgreSQL.
 | Critério | DVWA | TeaStore | Juice Shop | Resultado |
 |---|---|---|---|---|
 | Fração carregada entre os indiretos ≥ 7 (definição registrada, S1 ou S2) | 67% | 18% | 74% | **Passa** (3 de 3 entre 10% e 90%) |
-| S1 e S2 classificam igual | 24/24 | 117/123 (95%) | 19/19 | **Passa** (todos ≥ 90%) |
+| Mesma fração com a definição final (S1 a S4 e inicialização) | 67% | 22% | 100% | **Passa** (2 de 3; no Juice Shop o coletor não filtra nada, o que é correto: tudo é carregado) |
+| S1 e S2 classificam igual (coleta limpa, contêineres novos) | 24/24 | 122/123 (99%) | 19/19 | **Passa** (todos ≥ 90%) |
 
 ### Resultado principal: quantos bloqueios indiretos da P2 recaem sobre pacotes não carregados
 
@@ -105,7 +108,11 @@ As duas pontas mostram um erro diferente das políticas do artigo:
 
 - **No TeaStore, a P2 bloqueia demais.** 96 dos 123 bloqueios indiretos são de pacotes que
   nenhum processo carrega (`curl`, `libcurl`, `perl`, `openssl` CLI, `libexpat`, pacotes do
-  `gnupg` no banco). Isso é 37% de todos os bloqueios da P2 no alvo.
+  `gnupg` no banco). Isso é 37% de todos os bloqueios da P2 no alvo. **Ressalva importante:**
+  o build do TeaStore continua bloqueado na P3 e na P4 pelos agregados de SO por imagem (21
+  bloqueios diretos: fim de suporte, pacotes com correção e demais CVEs, por máximo). Os 96 são
+  decisões de bloqueio a menos atribuídas a casos da aplicação, não a diferença entre um build
+  quebrado e um build que passa.
 - **No Juice Shop, a P3 bloqueia de menos.** Os 19 achados indiretos graves estão em
   bibliotecas carregadas pela aplicação (por exemplo, as fugas de sandbox do `vm2`, que é
   carregado). A P3 transforma todos em registro informativo.
@@ -137,9 +144,20 @@ limiar não reproduz a seleção do coletor.
 | P3\* (Deploy Gate do artigo executado) | 58 · 10/13 | 140 · 5/14 | 10 · 4/14 |
 | **P4 (contexto de execução)** | **74 · 11/13** | **167 · 7/14** | **29 · 7/14** |
 | P4 com a definição registrada (S1/S2) | 74 · 11/13 | 162 · 6/14 | 24 · 5/14 |
+| P3 + carregados (sem os testes da P3\*) | 72 · 10/13 | 166 · 6/14 | 28 · 7/14 |
+| A2 · P3 + indiretos ≥ 9 | 58 · 8/13 | 146 · 6/14 | 19 · 4/14 |
 
-Nenhuma das alternativas de limiar (A1, A2, A3) domina a P4 em nenhum alvo
-(`p4_contexto_resumo.csv`).
+A P3\* soma um bloqueio por caso confirmado pelos testes customizados, supondo nota ≥ 7 para
+cada confirmação, como o proxy 7,5 que o artigo dá ao seu teste customizado. Por isso, no
+Juice Shop, a P4 (29) passa a P2 (28): são os 19 indiretos carregados mais a confirmação de
+`js-exposed-metrics`.
+
+**Comparação justa com as alternativas de limiar.** A1 a A3 não têm os testes da P3\*, então a
+comparação justa é com "P3 + carregados". Nela, **a A2 domina no TeaStore** (146 · 6/14 contra
+166 · 6/14); na DVWA e no Juice Shop nenhuma alternativa domina
+(`p4_contexto_resumo.csv`). Ou seja: em contagem de bloqueios e cobertura da matriz, a P4 não é
+melhor que um limiar mais alto no TeaStore. A diferença entre as duas está em **quais** achados
+bloqueiam (item seguinte e auditoria), não nesses números.
 
 **Por que a cobertura não é a manchete.** Os casos que a P4 cobre a mais que a P3\* vêm de
 coincidência de CWE, como na P2: `dvwa-exposed-mysql` por um CVE do PHP; `ts-tls-trust-all`
@@ -147,7 +165,7 @@ por `libssl`, `libthrift` e `okhttp` carregados, embora o trecho trust-all não 
 implantação de referência; `js-rce-b2b` por `vm2` e `lodash`, embora a rota B2B use `node:vm`
 e `notevil`, não o `vm2`. A cobertura da matriz mede o quanto os CWEs coincidem, não se a
 falha do caso foi detectada. O que a P4 decide com evidência é **quais achados indiretos
-merecem bloqueio**, e isso não depende da matriz.
+merecem bloqueio**, e o coletor que decide isso não usa a matriz.
 
 ### Desvios do protocolo e verificações posteriores
 
@@ -165,9 +183,17 @@ merecem bloqueio**, e isso não depende da matriz.
   `pilotos/contexto/juice-shop--juice-r--s4-autenticado.txt`). Isso mudou o Juice Shop de 5
   achados não carregados para 0. **É um falso negativo real do coletor**: carregamento
   preguiçoso em fluxos autenticados escapa da observação sem login.
-- **Dependência do tráfego no TeaStore.** 9 dos 27 achados carregados (as bibliotecas Java
-  `libthrift` e `okhttp`) só apareceram depois do tráfego. O critério de estabilidade passa
-  porque os pacotes de sistema nunca carregados dominam o denominador.
+- **Comparabilidade da DVWA.** Nosso contêiner roda o `/main.sh` da imagem, que sobe MySQL e Apache juntos. O manifesto dos autores (`k8s/dvwa.yaml`, recuperado do relatório do Checkov deles) não sobrescreve o comando, então o contêiner `dvwa-app` deles também roda o `/main.sh`: a observação é comparável.
+- **Dependência do tráfego e do aquecimento no TeaStore.** As bibliotecas Java `libthrift` e
+  `okhttp` carregam sob demanda. Na primeira coleta, 9 dos 27 achados carregados só apareceram
+  depois do tráfego (S1 = S2 em 114/123). Na coleta limpa que está no repositório, a própria
+  verificação de prontidão (GET em `/status`, que chama os outros serviços) já os carregava
+  (122/123). O critério de estabilidade passa nas duas, mas em parte porque os pacotes de sistema
+  nunca carregados dominam o denominador. A classificação final (27 carregados) foi idêntica
+  nas três coletas feitas.
+- **Tráfego autenticado só no Juice Shop.** Na DVWA e no TeaStore não houve navegação com
+  login; bibliotecas carregadas só em fluxos autenticados nesses alvos apareceriam como não
+  carregadas. A auditoria manual (`p4-auditoria.md`) não encontrou nenhum caso assim na amostra.
 
 ### Consequência para a arquitetura
 
@@ -185,7 +211,11 @@ uma medida.** O artigo trata todo achado indireto como informativo porque o comp
 nunca ser invocado". Medimos isso em três aplicações. A fração não carregada vai de 78%
 (TeaStore) a 0% (Juice Shop). Logo, a regra uniforme da P3 é adequada para um alvo e errada
 para outro. A P4 substitui a regra uniforme por uma decisão por achado, tomada no Deploy, com
-evidência do contêiner implantado e sem depender da matriz de referência.
+evidência do contêiner implantado, por um coletor que não usa a matriz de referência.
+
+Em números de bloqueios e cobertura, a P4 não supera um limiar mais alto no TeaStore, e o build
+do TeaStore continua bloqueado pelos agregados de imagem. O ganho está na qualidade da decisão
+sobre os indiretos, que a auditoria manual sustenta do lado "não carregado" (10 de 10).
 
 **Limites:** carregado não é explorável; o coletor tem falso negativo em fluxos autenticados
 (mitigado pela realimentação do Runtime Watch); a amostra são três aplicações.

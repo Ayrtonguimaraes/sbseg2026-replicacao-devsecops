@@ -9,8 +9,9 @@ alguns itens não podem ser automatizados por este assistente, veja
 ## Resumo em uma linha
 
 Etapa 01 (reprodução) concluída e conferida. Etapa 02 (extensão) com as três melhorias
-combinadas com o professor **prontas e verificadas**. O que resta é confirmação dinâmica
-de alguns casos (XSS ativo, RCE) e o push para o GitHub do grupo — detalhado abaixo.
+combinadas com o professor prontas: sensibilidade, dois alvos novos e a **P4 com contexto de
+execução**, com auditoria manual. O trabalho está no fork; falta o Pull Request para o
+repositório do grupo, as decisões do grupo e confirmações manuais de XSS — detalhado abaixo.
 
 ## Etapa 01 — reprodução
 
@@ -53,7 +54,7 @@ diretamente a maior ameaça à validade externa do artigo original.
 | Imagens baixadas | ✅ | 7 serviços `descartesresearch/teastore-*:1.4.2`, `zaproxy/zap-stable`, DVWA fixada por digest. Digests registrados. |
 | TeaStore `ts-tls-trust-all` — análise de código | ✅ | O trecho "trust-all certs" (`RESTClient.java`) só roda com `USE_HTTPS=true`, que **não** existe no manifesto de referência (`teastore-clusterip.yaml`) nem no `docker-compose_default.yaml`. Logo, não é exercitado na implantação de referência. |
 | TeaStore — Deploy Gate | ✅ | 7 serviços + ZAP 2.17.0 em Docker local, portas só em `127.0.0.1`. ZAP **passivo**: 29 URLs, 532 alertas, 12 tipos. Nenhum acima do limiar, então P1–P3 não mudam; +1 detecção direta (`ts-cookie-flags`). Rotas DAST pré-registradas antes da coleta (`66ba136`). |
-| TeaStore `ts-db-reset-unauth` — P4 | ✅ Confirmado | O spider do ZAP, sem autenticação nem payload, submeteu o formulário público `/database` e o banco foi regenerado (log do webui). P4-A: **140 decisões, 5/14**. P4-B igual com o vetor proposto (9,1); com o alternativo (6,5) não bloqueia — **pendente de ratificação do vetor pelo grupo**. Laudo em `pilotos/p4-teastore/`. |
+| TeaStore `ts-db-reset-unauth` — Deploy Gate (P3\*) | ✅ Confirmado | O spider do ZAP, sem autenticação nem payload, submeteu o formulário público `/database` e o banco foi regenerado (log do webui). P3\*: **140 decisões, 5/14**. Laudo em `pilotos/p4-teastore/`. |
 | Política de uso — revalidação | ✅ | Citações conferidas nas páginas oficiais em 22/11; quote da AUP corrigido, Cyber Verification Program incluído, regra 3 do protocolo corrigida. Ver `limitacoes-assistente.md`. |
 | TeaStore `ts-output-encoding` — análise de código | ✅ | XSS armazenado real confirmado por leitura de código: campos `firstname/lastname/address1/address2` vêm de parâmetros POST em `CartActionServlet.java:131` e são renderizados sem escape em `profile.jsp` (`${order.address1}` etc.). |
 
@@ -65,13 +66,13 @@ automatizar do que precisa ser feito manualmente — a razão está em
 
 | Pendência | Quem | Observação |
 |---|---|---|
-| **Push dos commits para o GitHub do grupo** | Usuário | `git push` dá 403: a conta não tem escrita no repo do `jldsn`. Resolver com acesso de colaborador ou fork + PR. 3 commits locais + o trabalho desta sessão aguardam. |
+| **Levar o trabalho ao repositório do grupo** | Usuário | Resolvido em parte: o branch `etapa-02-conclusao` está no fork `Ayrtonguimaraes/sbseg2026-replicacao-devsecops`. Falta abrir o Pull Request para o `jldsn` (pelo navegador; o token atual só alcança o fork). |
 | **XSS ativo** (TeaStore `ts-output-encoding`; Juice Shop `js-dom-xss`, `js-reflected-xss`) | Usuário | Confirmar enviando payload num navegador. Evidência estática já existe; a dinâmica envia um exploit, o que o classificador de segurança pode bloquear. Alternativa oficial: o usuário pedir o Cyber Verification Program (Defense Access cobre "vulnerability triage and validation"). |
 | **TeaStore — ZAP ativo** | Usuário (opcional) | Só para simetria com o Juice Shop. O escaneamento ativo dispara payloads. |
 | **TeaStore `ts-tls-trust-all`** | Ninguém (limite do alvo) | Só existe com `USE_HTTPS=true`, fora da implantação de referência. |
 | **Juice Shop `js-rce-b2b`** | Usuário (ou ficar estático) | Decisão do grupo: **não automatizar**. O teste oficial tem efeito de negação de serviço. Apoiado só em evidência estática (Semgrep) + indireta (Trivy). |
-| **Decisões do grupo** | Grupo | Ratificar vetores CVSS da P4-B, regra de escopo e ressalva de circularidade da matriz (ver `protocolo.md`). |
-| **Slides da Etapa 02** | Grupo/Assistente | Os PDFs na raiz ainda mostram só o piloto de 3 casos. Não há bloqueio de política: o assistente pode preparar o conteúdo. |
+| **Decisões do grupo** | Grupo | Ratificar a P4 com contexto de execução, a regra de escopo e a ressalva de circularidade da matriz (ver `protocolo.md`, "Decisões para o grupo"). |
+| **Slides da Etapa 02** | Grupo | Deck novo pronto (artefato Slides, 14 slides, cerca de 15 minutos); exportar para PowerPoint pelo menu Share › Export. Os PDFs antigos da raiz ficam como histórico. |
 
 Impacto numérico de cada pendência: `limitacoes-assistente.md`, seção 8.
 

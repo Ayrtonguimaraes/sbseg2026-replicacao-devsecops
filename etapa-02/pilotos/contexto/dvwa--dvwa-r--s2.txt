@@ -39,12 +39,12 @@
 /lib/x86_64-linux-gnu/libz.so.1.2.8
 /main.sh
 /mnt/lima-rosetta/rosetta
-/tmp/.ZendSem.Ipc2d2
-/tmp/ibBcagfV
-/tmp/ibDuRFmx
-/tmp/ibGgIagk
-/tmp/ibYtafwW
-/tmp/ibpIu5gJ
+/tmp/.ZendSem.lONUQ2
+/tmp/ib4Td700
+/tmp/ib4ev3EV
+/tmp/ibQh8fTT
+/tmp/ibSQgRZ2
+/tmp/ibzt0QqX
 /usr/bin/env
 /usr/bin/logger
 /usr/bin/mysqld_safe
@@ -212,7 +212,6 @@
 /var/log/apache2/other_vhosts_access.log
 # comandos
 /mnt/lima-rosetta/rosetta /bin/bash /main.sh
-sh -c
 /mnt/lima-rosetta/rosetta /usr/sbin/mysqld --basedir=/usr --datadir=/var/lib/mysql --plugin-dir=/usr/lib/x86_64-linux-gnu/mariadb18/plugin --user=mysql --skip-log-error --pid-file=/var/run/mysqld/mysqld.pid --socket=/var/run/mysqld/mysqld.sock --port=3306
 /mnt/lima-rosetta/rosetta /usr/bin/logger -t mysqld -p daemon.error
 /mnt/lima-rosetta/rosetta /usr/sbin/apache2 -k start
@@ -223,5 +222,5 @@ sh -c
 /mnt/lima-rosetta/rosetta /usr/sbin/apache2 -k start
 /mnt/lima-rosetta/rosetta /usr/bin/tail -f /var/log/apache2/access.log /var/log/apache2/error.log /var/log/apache2/other_vhosts_access.log
 /mnt/lima-rosetta/rosetta /bin/bash /usr/bin/mysqld_safe
-/mnt/lima-rosetta/rosetta /usr/sbin/apache2 -k start
+sh -c
 # modulos
