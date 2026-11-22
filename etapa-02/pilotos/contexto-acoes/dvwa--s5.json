@@ -1,115 +1,6 @@
 {
  "dvwa-r": {
   "executaveis": {
-   "mount": [
-    "findmnt",
-    "losetup",
-    "mount",
-    "swapoff",
-    "swapon",
-    "umount"
-   ],
-   "ncurses-bin": [
-    "captoinfo",
-    "clear",
-    "infocmp",
-    "infotocap",
-    "reset",
-    "tabs",
-    "tic",
-    "toe",
-    "tput",
-    "tset"
-   ],
-   "libdbi-perl": [
-    "dbilogstrip",
-    "dbiprof",
-    "dbiproxy",
-    "dh_perl_dbi"
-   ],
-   "openssl": [
-    "c_rehash",
-    "openssl"
-   ],
-   "tzdata": [
-    "tzconfig"
-   ],
-   "tar": [
-    "rmt-tar",
-    "tar",
-    "tarcat"
-   ],
-   "libperl5.24": [
-    "cpan5.24-x86_64-linux-gnu",
-    "perl5.24-x86_64-linux-gnu"
-   ],
-   "passwd": [
-    "chage",
-    "chfn",
-    "chgpasswd",
-    "chpasswd",
-    "chsh",
-    "cpgr",
-    "cppw",
-    "expiry",
-    "gpasswd",
-    "groupadd",
-    "groupdel",
-    "groupmems",
-    "groupmod",
-    "grpck",
-    "grpconv",
-    "grpunconv",
-    "newusers",
-    "passwd",
-    "pwck",
-    "pwconv",
-    "pwunconv",
-    "shadowconfig",
-    "useradd",
-    "userdel",
-    "usermod",
-    "vigr",
-    "vipw"
-   ],
-   "e2fsprogs": [
-    "badblocks",
-    "chattr",
-    "debugfs",
-    "dumpe2fs",
-    "e2freefrag",
-    "e2fsck",
-    "e2image",
-    "e2label",
-    "e2undo",
-    "e4crypt",
-    "e4defrag",
-    "filefrag",
-    "fsck.ext2",
-    "fsck.ext3",
-    "fsck.ext4",
-    "logsave",
-    "lsattr",
-    "mke2fs",
-    "mkfs.ext2",
-    "mkfs.ext3",
-    "mkfs.ext4",
-    "mklost+found",
-    "resize2fs",
-    "tune2fs"
-   ],
-   "dpkg": [
-    "dpkg",
-    "dpkg-deb",
-    "dpkg-divert",
-    "dpkg-maintscript-helper",
-    "dpkg-query",
-    "dpkg-split",
-    "dpkg-statoverride",
-    "dpkg-trigger",
-    "start-stop-daemon",
-    "update-alternatives"
-   ],
    "mariadb-client-10.1": [
     "innotop",
     "mariabackup",
@@ -130,21 +21,6 @@
     "mysqlslap",
     "mytop"
    ],
-   "libc-bin": [
-    "catchsegv",
-    "getconf",
-    "getent",
-    "iconv",
-    "iconvconfig",
-    "ldconfig",
-    "ldd",
-    "locale",
-    "localedef",
-    "pldd",
-    "tzselect",
-    "zdump",
-    "zic"
-   ],
    "apache2-utils": [
     "ab",
     "check_forensic",
@@ -162,14 +38,31 @@
    "rsync": [
     "rsync"
    ],
-   "perl-base": [
-    "perl",
-    "perl5.24.1"
+   "ncurses-bin": [
+    "captoinfo",
+    "clear",
+    "infocmp",
+    "infotocap",
+    "reset",
+    "tabs",
+    "tic",
+    "toe",
+    "tput",
+    "tset"
    ],
-   "php-pear": [
-    "pear",
-    "peardev",
-    "pecl"
+   "apache2": [
+    "a2disconf",
+    "a2dismod",
+    "a2dissite",
+    "a2enconf",
+    "a2enmod",
+    "a2ensite",
+    "a2query",
+    "apache2ctl",
+    "apachectl"
+   ],
+   "tzdata": [
+    "tzconfig"
    ],
    "perl": [
     "c2ph",
@@ -205,73 +98,19 @@
     "xsubpp",
     "zipdetails"
    ],
-   "inetutils-ping": [
-    "ping",
-    "ping6"
-   ],
-   "bzip2": [
-    "bunzip2",
-    "bzcat",
-    "bzcmp",
-    "bzdiff",
-    "bzegrep",
-    "bzexe",
-    "bzfgrep",
-    "bzgrep",
-    "bzip2",
-    "bzip2recover",
-    "bzless",
-    "bzmore"
-   ],
-   "apt": [
-    "apt",
-    "apt-cache",
-    "apt-cdrom",
-    "apt-config",
-    "apt-get",
-    "apt-key",
-    "apt-mark"
-   ],
-   "login": [
-    "faillog",
-    "lastlog",
-    "login",
-    "newgrp",
-    "nologin",
-    "sg",
-    "su"
-   ],
-   "gpgv": [
-    "gpgv"
-   ],
-   "xz-utils": [
-    "lzmainfo",
-    "unxz",
-    "xz",
-    "xzcat",
-    "xzcmp",
-    "xzdiff",
-    "xzegrep",
-    "xzfgrep",
-    "xzgrep",
-    "xzless",
-    "xzmore"
-   ],
    "php7.0-cli": [
     "phar.phar7.0",
     "phar7.0",
     "php7.0"
    ],
-   "apache2": [
-    "a2disconf",
-    "a2dismod",
-    "a2dissite",
-    "a2enconf",
-    "a2enmod",
-    "a2ensite",
-    "a2query",
-    "apache2ctl",
-    "apachectl"
+   "php-pear": [
+    "pear",
+    "peardev",
+    "pecl"
+   ],
+   "inetutils-ping": [
+    "ping",
+    "ping6"
    ],
    "gzip": [
     "gunzip",
@@ -288,6 +127,101 @@
     "zless",
     "zmore",
     "znew"
+   ],
+   "xz-utils": [
+    "lzmainfo",
+    "unxz",
+    "xz",
+    "xzcat",
+    "xzcmp",
+    "xzdiff",
+    "xzegrep",
+    "xzfgrep",
+    "xzgrep",
+    "xzless",
+    "xzmore"
+   ],
+   "libdbi-perl": [
+    "dbilogstrip",
+    "dbiprof",
+    "dbiproxy",
+    "dh_perl_dbi"
+   ],
+   "mount": [
+    "findmnt",
+    "losetup",
+    "mount",
+    "swapoff",
+    "swapon",
+    "umount"
+   ],
+   "file": [
+    "file"
+   ],
+   "perl-base": [
+    "perl",
+    "perl5.24.1"
+   ],
+   "libperl5.24": [
+    "cpan5.24-x86_64-linux-gnu",
+    "perl5.24-x86_64-linux-gnu"
+   ],
+   "openssl": [
+    "c_rehash",
+    "openssl"
+   ],
+   "gpgv": [
+    "gpgv"
+   ],
+   "e2fsprogs": [
+    "badblocks",
+    "chattr",
+    "debugfs",
+    "dumpe2fs",
+    "e2freefrag",
+    "e2fsck",
+    "e2image",
+    "e2label",
+    "e2undo",
+    "e4crypt",
+    "e4defrag",
+    "filefrag",
+    "fsck.ext2",
+    "fsck.ext3",
+    "fsck.ext4",
+    "logsave",
+    "lsattr",
+    "mke2fs",
+    "mkfs.ext2",
+    "mkfs.ext3",
+    "mkfs.ext4",
+    "mklost+found",
+    "resize2fs",
+    "tune2fs"
+   ],
+   "libc-bin": [
+    "catchsegv",
+    "getconf",
+    "getent",
+    "iconv",
+    "iconvconfig",
+    "ldconfig",
+    "ldd",
+    "locale",
+    "localedef",
+    "pldd",
+    "tzselect",
+    "zdump",
+    "zic"
+   ],
+   "apt": [
+    "apt",
+    "apt-cache",
+    "apt-cdrom",
+    "apt-config",
+    "apt-get",
+    "apt-key",
+    "apt-mark"
    ],
    "util-linux": [
     "addpart",
@@ -372,66 +306,94 @@
     "x86_64",
     "zramctl"
    ],
-   "file": [
-    "file"
+   "bzip2": [
+    "bunzip2",
+    "bzcat",
+    "bzcmp",
+    "bzdiff",
+    "bzegrep",
+    "bzexe",
+    "bzfgrep",
+    "bzgrep",
+    "bzip2",
+    "bzip2recover",
+    "bzless",
+    "bzmore"
+   ],
+   "login": [
+    "faillog",
+    "lastlog",
+    "login",
+    "newgrp",
+    "nologin",
+    "sg",
+    "su"
+   ],
+   "passwd": [
+    "chage",
+    "chfn",
+    "chgpasswd",
+    "chpasswd",
+    "chsh",
+    "cpgr",
+    "cppw",
+    "expiry",
+    "gpasswd",
+    "groupadd",
+    "groupdel",
+    "groupmems",
+    "groupmod",
+    "grpck",
+    "grpconv",
+    "grpunconv",
+    "newusers",
+    "passwd",
+    "pwck",
+    "pwconv",
+    "pwunconv",
+    "shadowconfig",
+    "useradd",
+    "userdel",
+    "usermod",
+    "vigr",
+    "vipw"
+   ],
+   "tar": [
+    "rmt-tar",
+    "tar",
+    "tarcat"
+   ],
+   "dpkg": [
+    "dpkg",
+    "dpkg-deb",
+    "dpkg-divert",
+    "dpkg-maintscript-helper",
+    "dpkg-query",
+    "dpkg-split",
+    "dpkg-statoverride",
+    "dpkg-trigger",
+    "start-stop-daemon",
+    "update-alternatives"
    ]
   },
   "sonames": {
-   "e2fslibs": [
-    "libe2p.so.2",
-    "libe2p.so.2.3",
-    "libext2fs.so.2",
-    "libext2fs.so.2.4"
-   ],
-   "libfdisk1": [
-    "libfdisk.so.1",
-    "libfdisk.so.1.1.0"
-   ],
-   "libsqlite3-0": [
-    "libsqlite3.so.0",
-    "libsqlite3.so.0.8.6"
-   ],
-   "libnghttp2-14": [
-    "libnghttp2.so.14",
-    "libnghttp2.so.14.12.3"
+   "libmount1": [
+    "libmount.so.1",
+    "libmount.so.1.1.0"
    ],
    "libmariadbclient18": [
     "libmariadbclient.so.18",
     "libmariadbclient.so.18.0.0"
    ],
-   "libblkid1": [
-    "libblkid.so.1",
-    "libblkid.so.1.1.0"
-   ],
    "libsmartcols1": [
     "libsmartcols.so.1",
     "libsmartcols.so.1.1.0"
    ],
-   "libss2": [
-    "libss.so.2",
-    "libss.so.2.0"
-   ],
-   "libperl5.24": [
-    "libperl.so.5.24",
-    "libperl.so.5.24.1"
-   ],
-   "libncursesw5": [
-    "libformw.so.5",
-    "libformw.so.5.9",
-    "libmenuw.so.5",
-    "libmenuw.so.5.9",
-    "libncursesw.so.5",
-    "libncursesw.so.5.9",
-    "libpanelw.so.5",
-    "libpanelw.so.5.9"
-   ],
-   "libmagic1": [
-    "libmagic.so.1",
-    "libmagic.so.1.0.0"
-   ],
-   "libudev1": [
-    "libudev.so.1",
-    "libudev.so.1.6.5"
+   "e2fslibs": [
+    "libe2p.so.2",
+    "libe2p.so.2.3",
+    "libext2fs.so.2",
+    "libext2fs.so.2.4"
    ],
    "libssl1.0.2": [
     "lib4758cca.so",
@@ -449,23 +411,13 @@
     "libsureware.so",
     "libubsec.so"
    ],
-   "apt": [
-    "libapt-private.so.0.0",
-    "libapt-private.so.0.0.0"
-   ],
-   "libsasl2-modules-db": [
-    "libsasldb.so",
-    "libsasldb.so.2",
-    "libsasldb.so.2.0.25"
-   ],
    "libapt-pkg5.0": [
     "libapt-pkg.so.5.0",
     "libapt-pkg.so.5.0.1"
    ],
-   "libbz2-1.0": [
-    "libbz2.so.1",
-    "libbz2.so.1.0",
-    "libbz2.so.1.0.4"
+   "libudev1": [
+    "libudev.so.1",
+    "libudev.so.1.6.5"
    ],
    "libsepol1": [
     "libsepol.so.1"
@@ -490,16 +442,64 @@
     "libplain.so.2",
     "libplain.so.2.0.25"
    ],
-   "libelf1": [
-    "libelf-0.168.so",
-    "libelf.so.1"
+   "libmagic1": [
+    "libmagic.so.1",
+    "libmagic.so.1.0.0"
+   ],
+   "libss2": [
+    "libss.so.2",
+    "libss.so.2.0"
+   ],
+   "libsasl2-modules-db": [
+    "libsasldb.so",
+    "libsasldb.so.2",
+    "libsasldb.so.2.0.25"
+   ],
+   "libsqlite3-0": [
+    "libsqlite3.so.0",
+    "libsqlite3.so.0.8.6"
+   ],
+   "libnghttp2-14": [
+    "libnghttp2.so.14",
+    "libnghttp2.so.14.12.3"
+   ],
+   "libfdisk1": [
+    "libfdisk.so.1",
+    "libfdisk.so.1.1.0"
+   ],
+   "libperl5.24": [
+    "libperl.so.5.24",
+    "libperl.so.5.24.1"
+   ],
+   "libbz2-1.0": [
+    "libbz2.so.1",
+    "libbz2.so.1.0",
+    "libbz2.so.1.0.4"
+   ],
+   "apt": [
+    "libapt-private.so.0.0",
+    "libapt-private.so.0.0.0"
    ],
    "libdb5.3": [
     "libdb-5.3.so"
    ],
-   "libmount1": [
-    "libmount.so.1",
-    "libmount.so.1.1.0"
+   "libelf1": [
+    "libelf-0.168.so",
+    "libelf.so.1"
+   ],
+   "libblkid1": [
+    "libblkid.so.1",
+    "libblkid.so.1.1.0"
+   ],
+   "libncursesw5": [
+    "libformw.so.5",
+    "libformw.so.5.9",
+    "libmenuw.so.5",
+    "libmenuw.so.5.9",
+    "libncursesw.so.5",
+    "libncursesw.so.5.9",
+    "libpanelw.so.5",
+    "libpanelw.so.5.9"
    ]
   },
   "gatilhos": [
@@ -614,9 +614,23 @@
    "bash"
   ],
   "pacotes_interpretes": [
+   "apache2-bin",
    "bash",
+   "coreutils",
+   "init-system-helpers",
+   "libapr1",
+   "libaprutil1",
    "libc6",
-   "libtinfo5"
+   "libexpat1",
+   "libgcc1",
+   "libncurses5",
+   "libpcre3",
+   "libreadline5",
+   "libstdc++6",
+   "libtinfo5",
+   "libuuid1",
+   "mariadb-client-core-10.1",
+   "zlib1g"
   ],
   "sonames_citadas": {
    "libsepol.so.1": [

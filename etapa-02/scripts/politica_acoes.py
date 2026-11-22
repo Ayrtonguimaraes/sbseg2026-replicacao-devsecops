@@ -7,7 +7,7 @@ Políticas: P2, P3, P3*, A2 (artigo e alternativa de limiar); ESCOPO (ablação:
 do Trivy de imagem com nota >= 7, sem coletor); P4 (ESCOPO filtrado pelo coletor, por CVE).
 Entradas: unidades normalizadas, relatórios do Trivy de imagem, results/contexto_imagem.csv
 (scripts/contexto_execucao.py --imagem) e a fila de confirmações da P3*.
-Saídas: results/p4_acoes.csv, results/p4_acoes_resumo.csv e pilotos/contexto-acoes/vex-<alvo>.json.
+Saídas: results/p4_acoes.csv, results/p4_acoes_resumo.csv e pilotos/contexto-acoes/vex-<alvo>--<imagem>.json.
 """
 
 import argparse
@@ -209,21 +209,19 @@ class Alvo:
         ids = {vid for _, _, v in itens for vid in v}
         return itens, acoes, cves_imagem, ids
 
-    def vex(self, campo="carregado"):
-        """Declarações OpenVEX para os CVEs de imagem (nota >= 7) que a P4 tira do bloqueio."""
+    def vex(self, relatorio, campo="carregado"):
+        """Declarações OpenVEX, para uma imagem, dos CVEs (nota >= 7) que a P4 tira do bloqueio.
+        Uma declaração por imagem: o mesmo PURL pode estar carregado em um serviço e não em outro."""
         carregado = self.cve_carregado(campo)
         produtos = defaultdict(set)
-        # A declaração vale pelo PURL do pacote, sem distinguir a imagem. Se o mesmo par
-        # (CVE, PURL) bloqueia em alguma imagem do alvo, não se declara (escolha conservadora).
-        bloqueia_em_algum = {(r["cve"], r["purl"]) for r in self.registros
-                             if carregado[(r["relatorio"], r["cve"])]}
         for r in self.registros:
-            if nota(r["score"]) >= LIMIAR and not carregado[(r["relatorio"], r["cve"])] \
-                    and r["purl"] and (r["cve"], r["purl"]) not in bloqueia_em_algum:
+            if r["relatorio"] == relatorio and nota(r["score"]) >= LIMIAR \
+                    and not carregado[(r["relatorio"], r["cve"])] and r["purl"]:
                 produtos[r["cve"]].add(r["purl"])
+        nome = Path(relatorio).stem
         return {
             "@context": "https://openvex.dev/ns/v0.2.0",
-            "@id": f"https://github.com/jldsn/sbseg2026-replicacao-devsecops/vex/{self.app}",
+            "@id": f"https://github.com/jldsn/sbseg2026-replicacao-devsecops/vex/{self.app}/{nome}",
             "author": "Etapa 02 (replicação SBSeg 2026), coletor de contexto de execução",
             "timestamp": TIMESTAMP_VEX, "version": 1,
             "statements": [{
@@ -257,12 +255,18 @@ def avaliar_alvo(alvo):
     for pol in POLITICAS:
         itens, acoes, cves, ids = alvo.avaliar(pol)
         tipos = Counter(k[0] for k in acoes)
+        # Atualizar pacote de SO numa imagem base que a própria lista manda migrar não é
+        # trabalho separado: a migração absorve essas ações.
+        migrar = {k[1] for k in acoes if k[0] == "migrar_so"}
+        absorvidas = sum(1 for k in acoes if k[0] == "pacote_so" and k[1] in migrar)
         resumo.append({
             "aplicacao": alvo.app, "politica": pol, "universo": alvo.universo,
             "unidades_bloqueadas": len(itens), "acoes": len(acoes),
             "acoes_migrar_so": tipos["migrar_so"], "acoes_pacote_so": tipos["pacote_so"],
             "acoes_dependencia": tipos["dependencia"], "acoes_semgrep": tipos["semgrep"],
             "acoes_outras": tipos["unidade"] + tipos["confirmacao"],
+            "acoes_absorvidas_pela_migracao": absorvidas,
+            "acoes_nao_absorvidas": len(acoes) - absorvidas,
             "cves_imagem_bloqueantes": len(cves),
             "cves_imagem_distintos": len({c for _, c in cves}),
             "cobertura": len(ids), "ids": "|".join(sorted(ids))})
@@ -288,19 +292,23 @@ def main():
         d, r = avaliar_alvo(alvo)
         detalhe += d
         resumo += r
-        (destino_vex / f"vex-{app}.json").write_text(
-            json.dumps(alvo.vex(), indent=1, ensure_ascii=False) + "\n", encoding="utf-8")
-        # Definição registrada, antes da correção pós-registro (para a verificação S5).
-        (destino_vex / f"vex-{app}-registrado.json").write_text(
-            json.dumps(alvo.vex("carregado_registrado"), indent=1, ensure_ascii=False) + "\n",
-            encoding="utf-8")
+        for relatorio in sorted({r["relatorio"] for r in alvo.registros}):
+            nome = Path(relatorio).stem
+            (destino_vex / f"vex-{app}--{nome}.json").write_text(
+                json.dumps(alvo.vex(relatorio), indent=1, ensure_ascii=False) + "\n",
+                encoding="utf-8")
+            # Definição registrada, antes das correções pós-registro (para a verificação S5).
+            (destino_vex / f"vex-{app}--{nome}-registrado.json").write_text(
+                json.dumps(alvo.vex(relatorio, "carregado_registrado"), indent=1,
+                           ensure_ascii=False) + "\n", encoding="utf-8")
     gravar_csv(ETAPA / "results/p4_acoes.csv", detalhe)
     gravar_csv(ETAPA / "results/p4_acoes_resumo.csv", resumo)
     for x in resumo:
         print(f"{x['aplicacao']:10} {x['politica']:6} unidades {x['unidades_bloqueadas']:>4} · "
               f"ações {x['acoes']:>3} (SO {x['acoes_migrar_so']}, pacote {x['acoes_pacote_so']}, "
               f"dep {x['acoes_dependencia']}, semgrep {x['acoes_semgrep']}, outras "
-              f"{x['acoes_outras']}) · CVEs imagem {x['cves_imagem_distintos']} · "
+              f"{x['acoes_outras']}; não absorvidas {x['acoes_nao_absorvidas']}) · "
+              f"CVEs imagem {x['cves_imagem_distintos']} · "
               f"{x['cobertura']}/{x['universo']}")
 
 

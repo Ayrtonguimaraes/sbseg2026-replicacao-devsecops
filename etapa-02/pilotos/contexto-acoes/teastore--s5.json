@@ -1,245 +1,8 @@
 {
  "teastore-registry-1": {
   "executaveis": {
-   "gpg-wks-server": [
-    "gpg-wks-server"
-   ],
-   "dirmngr": [
-    "dirmngr",
-    "dirmngr-client"
-   ],
-   "gpgsm": [
-    "gpgsm"
-   ],
    "tzdata": [
     "tzconfig"
-   ],
-   "tar": [
-    "rmt-tar",
-    "tar",
-    "tarcat"
-   ],
-   "wget": [
-    "wget"
-   ],
-   "gpgconf": [
-    "gpg-connect-agent",
-    "gpgconf"
-   ],
-   "dpkg": [
-    "dpkg",
-    "dpkg-deb",
-    "dpkg-divert",
-    "dpkg-maintscript-helper",
-    "dpkg-query",
-    "dpkg-split",
-    "dpkg-statoverride",
-    "dpkg-trigger",
-    "start-stop-daemon",
-    "update-alternatives"
-   ],
-   "gpg": [
-    "gpg"
-   ],
-   "perl-base": [
-    "perl",
-    "perl5.28.1"
-   ],
-   "subversion": [
-    "svn",
-    "svnadmin",
-    "svnauthz",
-    "svnauthz-validate",
-    "svnbench",
-    "svndumpfilter",
-    "svnfsfs",
-    "svnlook",
-    "svnmucc",
-    "svnrdump",
-    "svnserve",
-    "svnsync",
-    "svnversion"
-   ],
-   "bzip2": [
-    "bunzip2",
-    "bzcat",
-    "bzcmp",
-    "bzdiff",
-    "bzegrep",
-    "bzexe",
-    "bzfgrep",
-    "bzgrep",
-    "bzip2",
-    "bzip2recover",
-    "bzless",
-    "bzmore"
-   ],
-   "unzip": [
-    "funzip",
-    "unzip",
-    "unzipsfx",
-    "zipgrep",
-    "zipinfo"
-   ],
-   "fdisk": [
-    "cfdisk",
-    "fdisk",
-    "sfdisk"
-   ],
-   "xz-utils": [
-    "lzmainfo",
-    "unxz",
-    "xz",
-    "xzcat",
-    "xzcmp",
-    "xzdiff",
-    "xzegrep",
-    "xzfgrep",
-    "xzgrep",
-    "xzless",
-    "xzmore"
-   ],
-   "libpam-modules-bin": [
-    "mkhomedir_helper",
-    "pam_tally",
-    "pam_tally2",
-    "pam_timestamp_check",
-    "unix_chkpwd",
-    "unix_update"
-   ],
-   "gzip": [
-    "gunzip",
-    "gzexe",
-    "gzip",
-    "uncompress",
-    "zcat",
-    "zcmp",
-    "zdiff",
-    "zegrep",
-    "zfgrep",
-    "zforce",
-    "zgrep",
-    "zless",
-    "zmore",
-    "znew"
-   ],
-   "iproute2": [
-    "arpd",
-    "bridge",
-    "ctstat",
-    "devlink",
-    "genl",
-    "ip",
-    "lnstat",
-    "nstat",
-    "rdma",
-    "routef",
-    "routel",
-    "rtacct",
-    "rtmon",
-    "rtstat",
-    "ss",
-    "tc",
-    "tipc"
-   ],
-   "mount": [
-    "losetup",
-    "mount",
-    "swapoff",
-    "swapon",
-    "umount"
-   ],
-   "curl": [
-    "curl"
-   ],
-   "libpam-runtime": [
-    "pam-auth-update",
-    "pam_getenv"
-   ],
-   "openssl": [
-    "c_rehash",
-    "openssl"
-   ],
-   "git": [
-    "git",
-    "git-receive-pack",
-    "git-shell",
-    "git-upload-archive",
-    "git-upload-pack"
-   ],
-   "gpg-agent": [
-    "gpg-agent"
-   ],
-   "passwd": [
-    "chage",
-    "chfn",
-    "chgpasswd",
-    "chpasswd",
-    "chsh",
-    "cpgr",
-    "cppw",
-    "expiry",
-    "gpasswd",
-    "groupadd",
-    "groupdel",
-    "groupmems",
-    "groupmod",
-    "grpck",
-    "grpconv",
-    "grpunconv",
-    "newusers",
-    "passwd",
-    "pwck",
-    "pwconv",
-    "pwunconv",
-    "shadowconfig",
-    "useradd",
-    "userdel",
-    "usermod",
-    "vigr",
-    "vipw"
-   ],
-   "e2fsprogs": [
-    "badblocks",
-    "chattr",
-    "debugfs",
-    "dumpe2fs",
-    "e2freefrag",
-    "e2fsck",
-    "e2image",
-    "e2label",
-    "e2mmpstatus",
-    "e2undo",
-    "e4crypt",
-    "e4defrag",
-    "filefrag",
-    "fsck.ext2",
-    "fsck.ext3",
-    "fsck.ext4",
-    "logsave",
-    "lsattr",
-    "mke2fs",
-    "mkfs.ext2",
-    "mkfs.ext3",
-    "mkfs.ext4",
-    "mklost+found",
-    "resize2fs",
-    "tune2fs"
-   ],
-   "openssh-client": [
-    "scp",
-    "sftp",
-    "slogin",
-    "ssh",
-    "ssh-add",
-    "ssh-agent",
-    "ssh-argv0",
-    "ssh-copy-id",
-    "ssh-keygen",
-    "ssh-keyscan"
-   ],
-   "python2.7-minimal": [
-    "python2.7"
    ],
    "perl": [
     "corelist",
@@ -272,9 +35,29 @@
     "xsubpp",
     "zipdetails"
    ],
-   "libperl5.28": [
-    "cpan5.28-x86_64-linux-gnu",
-    "perl5.28-x86_64-linux-gnu"
+   "xz-utils": [
+    "lzmainfo",
+    "unxz",
+    "xz",
+    "xzcat",
+    "xzcmp",
+    "xzdiff",
+    "xzegrep",
+    "xzfgrep",
+    "xzgrep",
+    "xzless",
+    "xzmore"
+   ],
+   "mount": [
+    "losetup",
+    "mount",
+    "swapoff",
+    "swapon",
+    "umount"
+   ],
+   "perl-base": [
+    "perl",
+    "perl5.28.1"
    ],
    "python2.7": [
     "2to3-2.7",
@@ -282,13 +65,16 @@
     "pydoc2.7",
     "pygettext2.7"
    ],
-   "login": [
-    "faillog",
-    "lastlog",
-    "login",
-    "newgrp",
-    "nologin",
-    "sg"
+   "gpgsm": [
+    "gpgsm"
+   ],
+   "gpgconf": [
+    "gpg-connect-agent",
+    "gpgconf"
+   ],
+   "openssl": [
+    "c_rehash",
+    "openssl"
    ],
    "gpgv": [
     "gpgv"
@@ -306,153 +92,226 @@
     "migrate-pubring-from-classic-gpg",
     "symcryptrun",
     "watchgnupg"
+   ],
+   "bzip2": [
+    "bunzip2",
+    "bzcat",
+    "bzcmp",
+    "bzdiff",
+    "bzegrep",
+    "bzexe",
+    "bzfgrep",
+    "bzgrep",
+    "bzip2",
+    "bzip2recover",
+    "bzless",
+    "bzmore"
+   ],
+   "unzip": [
+    "funzip",
+    "unzip",
+    "unzipsfx",
+    "zipgrep",
+    "zipinfo"
+   ],
+   "gpg-wks-server": [
+    "gpg-wks-server"
+   ],
+   "tar": [
+    "rmt-tar",
+    "tar",
+    "tarcat"
+   ],
+   "iproute2": [
+    "arpd",
+    "bridge",
+    "ctstat",
+    "devlink",
+    "genl",
+    "ip",
+    "lnstat",
+    "nstat",
+    "rdma",
+    "routef",
+    "routel",
+    "rtacct",
+    "rtmon",
+    "rtstat",
+    "ss",
+    "tc",
+    "tipc"
+   ],
+   "python2.7-minimal": [
+    "python2.7"
+   ],
+   "openssh-client": [
+    "scp",
+    "sftp",
+    "slogin",
+    "ssh",
+    "ssh-add",
+    "ssh-agent",
+    "ssh-argv0",
+    "ssh-copy-id",
+    "ssh-keygen",
+    "ssh-keyscan"
+   ],
+   "libpam-modules-bin": [
+    "mkhomedir_helper",
+    "pam_tally",
+    "pam_tally2",
+    "pam_timestamp_check",
+    "unix_chkpwd",
+    "unix_update"
+   ],
+   "gpg-agent": [
+    "gpg-agent"
+   ],
+   "dirmngr": [
+    "dirmngr",
+    "dirmngr-client"
+   ],
+   "gzip": [
+    "gunzip",
+    "gzexe",
+    "gzip",
+    "uncompress",
+    "zcat",
+    "zcmp",
+    "zdiff",
+    "zegrep",
+    "zfgrep",
+    "zforce",
+    "zgrep",
+    "zless",
+    "zmore",
+    "znew"
+   ],
+   "gpg": [
+    "gpg"
+   ],
+   "git": [
+    "git",
+    "git-receive-pack",
+    "git-shell",
+    "git-upload-archive",
+    "git-upload-pack"
+   ],
+   "dpkg": [
+    "dpkg",
+    "dpkg-deb",
+    "dpkg-divert",
+    "dpkg-maintscript-helper",
+    "dpkg-query",
+    "dpkg-split",
+    "dpkg-statoverride",
+    "dpkg-trigger",
+    "start-stop-daemon",
+    "update-alternatives"
+   ],
+   "libpam-runtime": [
+    "pam-auth-update",
+    "pam_getenv"
+   ],
+   "e2fsprogs": [
+    "badblocks",
+    "chattr",
+    "debugfs",
+    "dumpe2fs",
+    "e2freefrag",
+    "e2fsck",
+    "e2image",
+    "e2label",
+    "e2mmpstatus",
+    "e2undo",
+    "e4crypt",
+    "e4defrag",
+    "filefrag",
+    "fsck.ext2",
+    "fsck.ext3",
+    "fsck.ext4",
+    "logsave",
+    "lsattr",
+    "mke2fs",
+    "mkfs.ext2",
+    "mkfs.ext3",
+    "mkfs.ext4",
+    "mklost+found",
+    "resize2fs",
+    "tune2fs"
+   ],
+   "fdisk": [
+    "cfdisk",
+    "fdisk",
+    "sfdisk"
+   ],
+   "subversion": [
+    "svn",
+    "svnadmin",
+    "svnauthz",
+    "svnauthz-validate",
+    "svnbench",
+    "svndumpfilter",
+    "svnfsfs",
+    "svnlook",
+    "svnmucc",
+    "svnrdump",
+    "svnserve",
+    "svnsync",
+    "svnversion"
+   ],
+   "login": [
+    "faillog",
+    "lastlog",
+    "login",
+    "newgrp",
+    "nologin",
+    "sg"
+   ],
+   "passwd": [
+    "chage",
+    "chfn",
+    "chgpasswd",
+    "chpasswd",
+    "chsh",
+    "cpgr",
+    "cppw",
+    "expiry",
+    "gpasswd",
+    "groupadd",
+    "groupdel",
+    "groupmems",
+    "groupmod",
+    "grpck",
+    "grpconv",
+    "grpunconv",
+    "newusers",
+    "passwd",
+    "pwck",
+    "pwconv",
+    "pwunconv",
+    "shadowconfig",
+    "useradd",
+    "userdel",
+    "usermod",
+    "vigr",
+    "vipw"
+   ],
+   "wget": [
+    "wget"
+   ],
+   "curl": [
+    "curl"
+   ],
+   "libperl5.28": [
+    "cpan5.28-x86_64-linux-gnu",
+    "perl5.28-x86_64-linux-gnu"
    ]
   },
   "sonames": {
-   "libsqlite3-0": [
-    "libsqlite3.so.0",
-    "libsqlite3.so.0.8.6"
-   ],
-   "libnghttp2-14": [
-    "libnghttp2.so.14",
-    "libnghttp2.so.14.17.1"
-   ],
-   "libsmartcols1": [
-    "libsmartcols.so.1",
-    "libsmartcols.so.1.1.0"
-   ],
-   "libk5crypto3": [
-    "libk5crypto.so.3",
-    "libk5crypto.so.3.1"
-   ],
-   "libss2": [
-    "libss.so.2",
-    "libss.so.2.0"
-   ],
-   "libcurl3-gnutls": [
-    "libcurl-gnutls.so.3",
-    "libcurl-gnutls.so.4",
-    "libcurl-gnutls.so.4.5.0"
-   ],
-   "libpcre2-8-0": [
-    "libpcre2-8.so.0",
-    "libpcre2-8.so.0.7.1"
-   ],
-   "libtinfo6": [
-    "libtic.so.6",
-    "libtic.so.6.1",
-    "libtinfo.so.6",
-    "libtinfo.so.6.1"
-   ],
-   "libidn2-0": [
-    "libidn2.so.0",
-    "libidn2.so.0.3.4"
-   ],
-   "libksba8": [
-    "libksba.so.8",
-    "libksba.so.8.11.6"
-   ],
-   "libncurses6": [
-    "libform.so.6",
-    "libform.so.6.1",
-    "libmenu.so.6",
-    "libmenu.so.6.1",
-    "libncurses.so.6",
-    "libncurses.so.6.1",
-    "libpanel.so.6",
-    "libpanel.so.6.1"
-   ],
-   "liblz4-1": [
-    "liblz4.so.1",
-    "liblz4.so.1.8.3"
-   ],
-   "libpam0g": [
-    "libpam.so.0",
-    "libpam.so.0.84.2",
-    "libpam_misc.so.0",
-    "libpam_misc.so.0.82.1",
-    "libpamc.so.0",
-    "libpamc.so.0.82.1"
-   ],
-   "libssh2-1": [
-    "libssh2.so.1",
-    "libssh2.so.1.0.1"
-   ],
-   "libncursesw6": [
-    "libformw.so.6",
-    "libformw.so.6.1",
-    "libmenuw.so.6",
-    "libmenuw.so.6.1",
-    "libncursesw.so.6",
-    "libncursesw.so.6.1",
-    "libpanelw.so.6",
-    "libpanelw.so.6.1"
-   ],
-   "libaprutil1": [
-    "libaprutil-1.so.0",
-    "libaprutil-1.so.0.6.1"
-   ],
-   "libtasn1-6": [
-    "libtasn1.so.6",
-    "libtasn1.so.6.5.5"
-   ],
-   "libbz2-1.0": [
-    "libbz2.so.1",
-    "libbz2.so.1.0",
-    "libbz2.so.1.0.4"
-   ],
-   "libprocps7": [
-    "libprocps.so.7",
-    "libprocps.so.7.1.0"
-   ],
-   "libfreetype6": [
-    "libfreetype.so.6",
-    "libfreetype.so.6.16.1"
-   ],
-   "liblzma5": [
-    "liblzma.so.5",
-    "liblzma.so.5.2.4"
-   ],
    "libcurl4": [
     "libcurl.so.4",
     "libcurl.so.4.5.0"
-   ],
-   "libfdisk1": [
-    "libfdisk.so.1",
-    "libfdisk.so.1.1.0"
-   ],
-   "libkrb5support0": [
-    "libkrb5support.so.0",
-    "libkrb5support.so.0.1"
-   ],
-   "libblkid1": [
-    "libblkid.so.1",
-    "libblkid.so.1.1.0"
-   ],
-   "libext2fs2": [
-    "libe2p.so.2",
-    "libe2p.so.2.3",
-    "libext2fs.so.2",
-    "libext2fs.so.2.4"
-   ],
-   "libkrb5-3": [
-    "libkrb5.so.3",
-    "libkrb5.so.3.3"
-   ],
-   "libgnutls30": [
-    "libgnutls.so.30",
-    "libgnutls.so.30.23.2"
-   ],
-   "libldap-2.4-2": [
-    "liblber-2.4.so.2",
-    "liblber-2.4.so.2.10.10",
-    "libldap-2.4.so.2",
-    "libldap_r-2.4.so.2",
-    "libldap_r-2.4.so.2.10.10"
-   ],
-   "libgcrypt20": [
-    "libgcrypt.so.20",
-    "libgcrypt.so.20.2.4"
    ],
    "libsvn1": [
     "libsvn_auth_gnome_keyring-1.so.1",
@@ -490,54 +349,155 @@
     "libsvn_wc-1.so.1",
     "libsvn_wc-1.so.1.0.0"
    ],
-   "libgssapi-krb5-2": [
-    "libgssapi_krb5.so.2",
-    "libgssapi_krb5.so.2.2"
-   ],
-   "libperl5.28": [
-    "libperl.so.5.28",
-    "libperl.so.5.28.1"
-   ],
-   "libudev1": [
-    "libudev.so.1",
-    "libudev.so.1.6.13"
-   ],
-   "libsystemd0": [
-    "libsystemd.so.0",
-    "libsystemd.so.0.25.0"
+   "libss2": [
+    "libss.so.2",
+    "libss.so.2.0"
    ],
    "libsasl2-modules-db": [
     "libsasldb.so",
     "libsasldb.so.2",
     "libsasldb.so.2.0.25"
    ],
-   "libgmp10": [
-    "libgmp.so.10",
-    "libgmp.so.10.3.2"
+   "liblz4-1": [
+    "liblz4.so.1",
+    "liblz4.so.1.8.3"
    ],
-   "libexpat1": [
-    "libexpat.so.1",
-    "libexpat.so.1.6.8",
-    "libexpatw.so.1",
-    "libexpatw.so.1.6.8"
+   "libaprutil1": [
+    "libaprutil-1.so.0",
+    "libaprutil-1.so.0.6.1"
    ],
-   "libcom-err2": [
-    "libcom_err.so.2",
-    "libcom_err.so.2.1"
-   ],
-   "libsepol1": [
-    "libsepol.so.1"
-   ],
-   "libelf1": [
-    "libelf-0.176.so",
-    "libelf.so.1"
+   "libfdisk1": [
+    "libfdisk.so.1",
+    "libfdisk.so.1.1.0"
    ],
    "libsasl2-2": [
     "libsasl2.so.2",
     "libsasl2.so.2.0.25"
    ],
+   "libidn2-0": [
+    "libidn2.so.0",
+    "libidn2.so.0.3.4"
+   ],
+   "libext2fs2": [
+    "libe2p.so.2",
+    "libe2p.so.2.3",
+    "libext2fs.so.2",
+    "libext2fs.so.2.4"
+   ],
+   "libfreetype6": [
+    "libfreetype.so.6",
+    "libfreetype.so.6.16.1"
+   ],
+   "libtasn1-6": [
+    "libtasn1.so.6",
+    "libtasn1.so.6.5.5"
+   ],
    "libdb5.3": [
     "libdb-5.3.so"
+   ],
+   "libgssapi-krb5-2": [
+    "libgssapi_krb5.so.2",
+    "libgssapi_krb5.so.2.2"
+   ],
+   "libgnutls30": [
+    "libgnutls.so.30",
+    "libgnutls.so.30.23.2"
+   ],
+   "libgcrypt20": [
+    "libgcrypt.so.20",
+    "libgcrypt.so.20.2.4"
+   ],
+   "libksba8": [
+    "libksba.so.8",
+    "libksba.so.8.11.6"
+   ],
+   "libmount1": [
+    "libmount.so.1",
+    "libmount.so.1.1.0"
+   ],
+   "libncurses6": [
+    "libform.so.6",
+    "libform.so.6.1",
+    "libmenu.so.6",
+    "libmenu.so.6.1",
+    "libncurses.so.6",
+    "libncurses.so.6.1",
+    "libpanel.so.6",
+    "libpanel.so.6.1"
+   ],
+   "libsmartcols1": [
+    "libsmartcols.so.1",
+    "libsmartcols.so.1.1.0"
+   ],
+   "libkrb5support0": [
+    "libkrb5support.so.0",
+    "libkrb5support.so.0.1"
+   ],
+   "libudev1": [
+    "libudev.so.1",
+    "libudev.so.1.6.13"
+   ],
+   "libsepol1": [
+    "libsepol.so.1"
+   ],
+   "libk5crypto3": [
+    "libk5crypto.so.3",
+    "libk5crypto.so.3.1"
+   ],
+   "libprocps7": [
+    "libprocps.so.7",
+    "libprocps.so.7.1.0"
+   ],
+   "libsystemd0": [
+    "libsystemd.so.0",
+    "libsystemd.so.0.25.0"
+   ],
+   "libsqlite3-0": [
+    "libsqlite3.so.0",
+    "libsqlite3.so.0.8.6"
+   ],
+   "libtinfo6": [
+    "libtic.so.6",
+    "libtic.so.6.1",
+    "libtinfo.so.6",
+    "libtinfo.so.6.1"
+   ],
+   "libssh2-1": [
+    "libssh2.so.1",
+    "libssh2.so.1.0.1"
+   ],
+   "libcurl3-gnutls": [
+    "libcurl-gnutls.so.3",
+    "libcurl-gnutls.so.4",
+    "libcurl-gnutls.so.4.5.0"
+   ],
+   "libnghttp2-14": [
+    "libnghttp2.so.14",
+    "libnghttp2.so.14.17.1"
+   ],
+   "libbz2-1.0": [
+    "libbz2.so.1",
+    "libbz2.so.1.0",
+    "libbz2.so.1.0.4"
+   ],
+   "libcom-err2": [
+    "libcom_err.so.2",
+    "libcom_err.so.2.1"
+   ],
+   "libpcre2-8-0": [
+    "libpcre2-8.so.0",
+    "libpcre2-8.so.0.7.1"
+   ],
+   "liblzma5": [
+    "liblzma.so.5",
+    "liblzma.so.5.2.4"
+   ],
+   "libldap-2.4-2": [
+    "liblber-2.4.so.2",
+    "liblber-2.4.so.2.10.10",
+    "libldap-2.4.so.2",
+    "libldap_r-2.4.so.2",
+    "libldap_r-2.4.so.2.10.10"
    ],
    "libpcre3": [
     "libpcre.so.3",
@@ -545,9 +505,49 @@
     "libpcreposix.so.3",
     "libpcreposix.so.3.13.3"
    ],
-   "libmount1": [
-    "libmount.so.1",
-    "libmount.so.1.1.0"
+   "libncursesw6": [
+    "libformw.so.6",
+    "libformw.so.6.1",
+    "libmenuw.so.6",
+    "libmenuw.so.6.1",
+    "libncursesw.so.6",
+    "libncursesw.so.6.1",
+    "libpanelw.so.6",
+    "libpanelw.so.6.1"
+   ],
+   "libexpat1": [
+    "libexpat.so.1",
+    "libexpat.so.1.6.8",
+    "libexpatw.so.1",
+    "libexpatw.so.1.6.8"
+   ],
+   "libgmp10": [
+    "libgmp.so.10",
+    "libgmp.so.10.3.2"
+   ],
+   "libelf1": [
+    "libelf-0.176.so",
+    "libelf.so.1"
+   ],
+   "libblkid1": [
+    "libblkid.so.1",
+    "libblkid.so.1.1.0"
+   ],
+   "libkrb5-3": [
+    "libkrb5.so.3",
+    "libkrb5.so.3.3"
+   ],
+   "libpam0g": [
+    "libpam.so.0",
+    "libpam.so.0.84.2",
+    "libpam_misc.so.0",
+    "libpam_misc.so.0.82.1",
+    "libpamc.so.0",
+    "libpamc.so.0.82.1"
+   ],
+   "libperl5.28": [
+    "libperl.so.5.28",
+    "libperl.so.5.28.1"
    ]
   },
   "gatilhos": [
@@ -1697,8 +1697,28 @@
   ],
   "pacotes_interpretes": [
    "bash",
+   "bsdutils",
+   "coreutils",
+   "debianutils",
+   "findutils",
+   "grep",
+   "libacl1",
+   "libattr1",
    "libc6",
-   "libtinfo6"
+   "libgcrypt20",
+   "libgpg-error0",
+   "liblz4-1",
+   "liblzma5",
+   "libpcre3",
+   "libprocps7",
+   "libselinux1",
+   "libsystemd0",
+   "libtinfo6",
+   "mime-support",
+   "ncurses-bin",
+   "procps",
+   "sed",
+   "util-linux"
   ],
   "sonames_citadas": {
    "libtinfo.so.6": [
@@ -1711,86 +1731,83 @@
  },
  "teastore-db-1": {
   "executaveis": {
-   "gpg-wks-server": [
-    "gpg-wks-server"
+   "perl": [
+    "corelist",
+    "cpan",
+    "enc2xs",
+    "encguess",
+    "h2ph",
+    "h2xs",
+    "instmodsh",
+    "json_pp",
+    "libnetcfg",
+    "perlbug",
+    "perldoc",
+    "perlivp",
+    "perlthanks",
+    "piconv",
+    "pl2pm",
+    "pod2html",
+    "pod2man",
+    "pod2text",
+    "pod2usage",
+    "podchecker",
+    "podselect",
+    "prove",
+    "ptar",
+    "ptardiff",
+    "ptargrep",
+    "shasum",
+    "splain",
+    "xsubpp",
+    "zipdetails"
    ],
-   "ncurses-bin": [
-    "captoinfo",
-    "clear",
-    "infocmp",
-    "infotocap",
-    "reset",
-    "tabs",
-    "tic",
-    "toe",
-    "tput",
-    "tset"
+   "libdbi-perl": [
+    "dbilogstrip",
+    "dbiprof",
+    "dbiproxy",
+    "dh_perl_dbi"
    ],
-   "dirmngr": [
-    "dirmngr",
-    "dirmngr-client"
-   ],
-   "gpgsm": [
-    "gpgsm"
-   ],
-   "libperl5.26": [
-    "cpan5.26-x86_64-linux-gnu",
-    "perl5.26-x86_64-linux-gnu"
-   ],
-   "tar": [
-    "rmt-tar",
-    "tar",
-    "tarcat"
-   ],
-   "gpgconf": [
-    "gpg-connect-agent",
-    "gpgconf"
-   ],
-   "dpkg": [
-    "dpkg",
-    "dpkg-deb",
-    "dpkg-divert",
-    "dpkg-maintscript-helper",
-    "dpkg-query",
-    "dpkg-split",
-    "dpkg-statoverride",
-    "dpkg-trigger",
-    "start-stop-daemon",
-    "update-alternatives"
-   ],
-   "gpg": [
-    "gpg"
-   ],
-   "rsync": [
-    "rsync"
+   "mount": [
+    "losetup",
+    "mount",
+    "swapoff",
+    "swapon",
+    "umount"
    ],
    "perl-base": [
     "perl",
     "perl5.26.1"
    ],
-   "apt": [
-    "apt",
-    "apt-cache",
-    "apt-cdrom",
-    "apt-config",
-    "apt-get",
-    "apt-key",
-    "apt-mark"
+   "gpgsm": [
+    "gpgsm"
    ],
-   "fdisk": [
-    "cfdisk",
-    "fdisk",
-    "sfdisk"
+   "gpgconf": [
+    "gpg-connect-agent",
+    "gpgconf"
    ],
-   "libpam-modules-bin": [
-    "mkhomedir_helper",
-    "pam_extrausers_chkpwd",
-    "pam_extrausers_update",
-    "pam_tally",
-    "pam_tally2",
-    "pam_timestamp_check",
-    "unix_chkpwd",
-    "unix_update"
+   "gpgv": [
+    "gpgv"
+   ],
+   "gnupg-utils": [
+    "addgnupghome",
+    "applygnupgdefaults",
+    "gpg-zip",
+    "gpgparsemail",
+    "gpgsplit",
+    "kbxutil",
+    "lspgpot",
+    "migrate-pubring-from-classic-gpg",
+    "symcryptrun",
+    "watchgnupg"
+   ],
+   "gpg-wks-server": [
+    "gpg-wks-server"
+   ],
+   "tar": [
+    "rmt-tar",
+    "tar",
+    "tarcat"
    ],
    "iproute2": [
     "arpd",
@@ -1810,6 +1827,89 @@
     "ss",
     "tc",
     "tipc"
+   ],
+   "rsync": [
+    "rsync"
+   ],
+   "ncurses-bin": [
+    "captoinfo",
+    "clear",
+    "infocmp",
+    "infotocap",
+    "reset",
+    "tabs",
+    "tic",
+    "toe",
+    "tput",
+    "tset"
+   ],
+   "libpam-modules-bin": [
+    "mkhomedir_helper",
+    "pam_extrausers_chkpwd",
+    "pam_extrausers_update",
+    "pam_tally",
+    "pam_tally2",
+    "pam_timestamp_check",
+    "unix_chkpwd",
+    "unix_update"
+   ],
+   "gpg-agent": [
+    "gpg-agent"
+   ],
+   "dirmngr": [
+    "dirmngr",
+    "dirmngr-client"
+   ],
+   "gpg": [
+    "gpg"
+   ],
+   "libperl5.26": [
+    "cpan5.26-x86_64-linux-gnu",
+    "perl5.26-x86_64-linux-gnu"
+   ],
+   "libpam-runtime": [
+    "pam-auth-update",
+    "pam_getenv"
+   ],
+   "e2fsprogs": [
+    "badblocks",
+    "chattr",
+    "debugfs",
+    "dumpe2fs",
+    "e2freefrag",
+    "e2fsck",
+    "e2image",
+    "e2label",
+    "e2undo",
+    "e4crypt",
+    "e4defrag",
+    "filefrag",
+    "fsck.ext2",
+    "fsck.ext3",
+    "fsck.ext4",
+    "logsave",
+    "lsattr",
+    "mke2fs",
+    "mkfs.ext2",
+    "mkfs.ext3",
+    "mkfs.ext4",
+    "mklost+found",
+    "resize2fs",
+    "tune2fs"
+   ],
+   "fdisk": [
+    "cfdisk",
+    "fdisk",
+    "sfdisk"
+   ],
+   "apt": [
+    "apt",
+    "apt-cache",
+    "apt-cdrom",
+    "apt-config",
+    "apt-get",
+    "apt-key",
+    "apt-mark"
    ],
    "util-linux": [
     "addpart",
@@ -1890,25 +1990,14 @@
     "x86_64",
     "zramctl"
    ],
-   "mount": [
-    "losetup",
-    "mount",
-    "swapoff",
-    "swapon",
-    "umount"
-   ],
-   "libpam-runtime": [
-    "pam-auth-update",
-    "pam_getenv"
-   ],
-   "libdbi-perl": [
-    "dbilogstrip",
-    "dbiprof",
-    "dbiproxy",
-    "dh_perl_dbi"
-   ],
-   "gpg-agent": [
-    "gpg-agent"
+   "login": [
+    "faillog",
+    "lastlog",
+    "login",
+    "newgrp",
+    "nologin",
+    "sg",
+    "su"
    ],
    "passwd": [
     "chage",
@@ -1939,136 +2028,23 @@
     "vigr",
     "vipw"
    ],
-   "e2fsprogs": [
-    "badblocks",
-    "chattr",
-    "debugfs",
-    "dumpe2fs",
-    "e2freefrag",
-    "e2fsck",
-    "e2image",
-    "e2label",
-    "e2undo",
-    "e4crypt",
-    "e4defrag",
-    "filefrag",
-    "fsck.ext2",
-    "fsck.ext3",
-    "fsck.ext4",
-    "logsave",
-    "lsattr",
-    "mke2fs",
-    "mkfs.ext2",
-    "mkfs.ext3",
-    "mkfs.ext4",
-    "mklost+found",
-    "resize2fs",
-    "tune2fs"
-   ],
-   "perl": [
-    "corelist",
-    "cpan",
-    "enc2xs",
-    "encguess",
-    "h2ph",
-    "h2xs",
-    "instmodsh",
-    "json_pp",
-    "libnetcfg",
-    "perlbug",
-    "perldoc",
-    "perlivp",
-    "perlthanks",
-    "piconv",
-    "pl2pm",
-    "pod2html",
-    "pod2man",
-    "pod2text",
-    "pod2usage",
-    "podchecker",
-    "podselect",
-    "prove",
-    "ptar",
-    "ptardiff",
-    "ptargrep",
-    "shasum",
-    "splain",
-    "xsubpp",
-    "zipdetails"
-   ],
-   "login": [
-    "faillog",
-    "lastlog",
-    "login",
-    "newgrp",
-    "nologin",
-    "sg",
-    "su"
-   ],
-   "gpgv": [
-    "gpgv"
-   ],
-   "gnupg-utils": [
-    "addgnupghome",
-    "applygnupgdefaults",
-    "gpg-zip",
-    "gpgparsemail",
-    "gpgsplit",
-    "kbxutil",
-    "lspgpot",
-    "migrate-pubring-from-classic-gpg",
-    "symcryptrun",
-    "watchgnupg"
+   "dpkg": [
+    "dpkg",
+    "dpkg-deb",
+    "dpkg-divert",
+    "dpkg-maintscript-helper",
+    "dpkg-query",
+    "dpkg-split",
+    "dpkg-statoverride",
+    "dpkg-trigger",
+    "start-stop-daemon",
+    "update-alternatives"
    ]
   },
   "sonames": {
-   "libsqlite3-0": [
-    "libsqlite3.so.0",
-    "libsqlite3.so.0.8.6"
-   ],
-   "libkrb5-26-heimdal": [
-    "libkrb5.so.26",
-    "libkrb5.so.26.0.0"
-   ],
-   "libtinfo5": [
-    "libtic.so.5",
-    "libtic.so.5.9",
-    "libtinfo.so.5",
-    "libtinfo.so.5.9"
-   ],
-   "libperl5.26": [
-    "libperl.so.5.26",
-    "libperl.so.5.26.1"
-   ],
-   "libsmartcols1": [
-    "libsmartcols.so.1",
-    "libsmartcols.so.1.1.0"
-   ],
-   "libss2": [
-    "libss.so.2",
-    "libss.so.2.0"
-   ],
-   "libncursesw5": [
-    "libformw.so.5",
-    "libformw.so.5.9",
-    "libmenuw.so.5",
-    "libmenuw.so.5.9",
-    "libncursesw.so.5",
-    "libncursesw.so.5.9",
-    "libpanelw.so.5",
-    "libpanelw.so.5.9"
-   ],
-   "libnettle6": [
-    "libnettle.so.6",
-    "libnettle.so.6.4"
-   ],
-   "libksba8": [
-    "libksba.so.8",
-    "libksba.so.8.11.6"
-   ],
-   "libhcrypto4-heimdal": [
-    "libhcrypto.so.4",
-    "libhcrypto.so.4.1.0"
+   "libroken18-heimdal": [
+    "libroken.so.18",
+    "libroken.so.18.1.0"
    ],
    "libncurses5": [
     "libform.so.5",
@@ -2080,61 +2056,50 @@
     "libpanel.so.5",
     "libpanel.so.5.9"
    ],
-   "apt": [
-    "libapt-private.so.0.0",
-    "libapt-private.so.0.0.0"
+   "libapt-pkg5.0": [
+    "libapt-pkg.so.5.0",
+    "libapt-pkg.so.5.0.2"
+   ],
+   "libheimbase1-heimdal": [
+    "libheimbase.so.1",
+    "libheimbase.so.1.0.0"
    ],
    "libp11-kit0": [
     "libp11-kit.so.0",
     "libp11-kit.so.0.3.0"
    ],
-   "libpam0g": [
-    "libpam.so.0",
-    "libpam.so.0.83.1",
-    "libpam_misc.so.0",
-    "libpam_misc.so.0.82.0",
-    "libpamc.so.0",
-    "libpamc.so.0.82.1"
+   "libss2": [
+    "libss.so.2",
+    "libss.so.2.0"
+   ],
+   "libsasl2-modules-db": [
+    "libsasldb.so",
+    "libsasldb.so.2",
+    "libsasldb.so.2.0.25"
+   ],
+   "libhcrypto4-heimdal": [
+    "libhcrypto.so.4",
+    "libhcrypto.so.4.1.0"
    ],
    "libheimntlm0-heimdal": [
     "libheimntlm.so.0",
     "libheimntlm.so.0.1.0"
    ],
-   "libhogweed4": [
-    "libhogweed.so.4",
-    "libhogweed.so.4.4"
-   ],
-   "libhx509-5-heimdal": [
-    "libhx509.so.5",
-    "libhx509.so.5.0.0"
-   ],
-   "libapt-pkg5.0": [
-    "libapt-pkg.so.5.0",
-    "libapt-pkg.so.5.0.2"
-   ],
-   "libmysqlclient20": [
-    "libmysqlclient.so.20",
-    "libmysqlclient.so.20.3.16"
+   "libuuid1": [
+    "libuuid.so.1",
+    "libuuid.so.1.3.0"
    ],
    "libfdisk1": [
     "libfdisk.so.1",
     "libfdisk.so.1.1.0"
    ],
-   "libgssapi3-heimdal": [
-    "libgssapi.so.3",
-    "libgssapi.so.3.0.0"
+   "libsasl2-2": [
+    "libsasl2.so.2",
+    "libsasl2.so.2.0.25"
    ],
-   "libroken18-heimdal": [
-    "libroken.so.18",
-    "libroken.so.18.1.0"
-   ],
-   "libuuid1": [
-    "libuuid.so.1",
-    "libuuid.so.1.3.0"
-   ],
-   "libblkid1": [
-    "libblkid.so.1",
-    "libblkid.so.1.1.0"
+   "libmysqlclient20": [
+    "libmysqlclient.so.20",
+    "libmysqlclient.so.20.3.16"
    ],
    "libext2fs2": [
     "libe2p.so.2",
@@ -2142,9 +2107,70 @@
     "libext2fs.so.2",
     "libext2fs.so.2.4"
    ],
+   "libtinfo5": [
+    "libtic.so.5",
+    "libtic.so.5.9",
+    "libtinfo.so.5",
+    "libtinfo.so.5.9"
+   ],
    "libgnutls30": [
     "libgnutls.so.30",
     "libgnutls.so.30.14.10"
+   ],
+   "libzstd1": [
+    "libzstd.so.1",
+    "libzstd.so.1.3.3"
+   ],
+   "libksba8": [
+    "libksba.so.8",
+    "libksba.so.8.11.6"
+   ],
+   "libwind0-heimdal": [
+    "libwind.so.0",
+    "libwind.so.0.0.0"
+   ],
+   "libmount1": [
+    "libmount.so.1",
+    "libmount.so.1.1.0"
+   ],
+   "libsmartcols1": [
+    "libsmartcols.so.1",
+    "libsmartcols.so.1.1.0"
+   ],
+   "libkrb5-26-heimdal": [
+    "libkrb5.so.26",
+    "libkrb5.so.26.0.0"
+   ],
+   "libudev1": [
+    "libudev.so.1",
+    "libudev.so.1.6.9"
+   ],
+   "libsepol1": [
+    "libsepol.so.1"
+   ],
+   "libsqlite3-0": [
+    "libsqlite3.so.0",
+    "libsqlite3.so.0.8.6"
+   ],
+   "libperl5.26": [
+    "libperl.so.5.26",
+    "libperl.so.5.26.1"
+   ],
+   "libhogweed4": [
+    "libhogweed.so.4",
+    "libhogweed.so.4.4"
+   ],
+   "libcom-err2": [
+    "libcom_err.so.2",
+    "libcom_err.so.2.1"
+   ],
+   "libhx509-5-heimdal": [
+    "libhx509.so.5",
+    "libhx509.so.5.0.0"
+   ],
+   "libasn1-8-heimdal": [
+    "libasn1.so.8",
+    "libasn1.so.8.0.0"
    ],
    "libldap-2.4-2": [
     "liblber-2.4.so.2",
@@ -2153,49 +2179,43 @@
     "libldap_r-2.4.so.2",
     "libldap_r-2.4.so.2.10.8"
    ],
-   "libheimbase1-heimdal": [
-    "libheimbase.so.1",
-    "libheimbase.so.1.0.0"
+   "libnettle6": [
+    "libnettle.so.6",
+    "libnettle.so.6.4"
    ],
-   "libasn1-8-heimdal": [
-    "libasn1.so.8",
-    "libasn1.so.8.0.0"
-   ],
-   "libzstd1": [
-    "libzstd.so.1",
-    "libzstd.so.1.3.3"
-   ],
-   "libwind0-heimdal": [
-    "libwind.so.0",
-    "libwind.so.0.0.0"
-   ],
-   "libudev1": [
-    "libudev.so.1",
-    "libudev.so.1.6.9"
-   ],
-   "libsasl2-modules-db": [
-    "libsasldb.so",
-    "libsasldb.so.2",
-    "libsasldb.so.2.0.25"
+   "apt": [
+    "libapt-private.so.0.0",
+    "libapt-private.so.0.0.0"
    ],
    "libgmp10": [
     "libgmp.so.10",
     "libgmp.so.10.3.2"
    ],
-   "libcom-err2": [
-    "libcom_err.so.2",
-    "libcom_err.so.2.1"
+   "libgssapi3-heimdal": [
+    "libgssapi.so.3",
+    "libgssapi.so.3.0.0"
    ],
-   "libsepol1": [
-    "libsepol.so.1"
+   "libblkid1": [
+    "libblkid.so.1",
+    "libblkid.so.1.1.0"
    ],
-   "libsasl2-2": [
-    "libsasl2.so.2",
-    "libsasl2.so.2.0.25"
+   "libncursesw5": [
+    "libformw.so.5",
+    "libformw.so.5.9",
+    "libmenuw.so.5",
+    "libmenuw.so.5.9",
+    "libncursesw.so.5",
+    "libncursesw.so.5.9",
+    "libpanelw.so.5",
+    "libpanelw.so.5.9"
    ],
-   "libmount1": [
-    "libmount.so.1",
-    "libmount.so.1.1.0"
+   "libpam0g": [
+    "libpam.so.0",
+    "libpam.so.0.83.1",
+    "libpam_misc.so.0",
+    "libpam_misc.so.0.82.0",
+    "libpamc.so.0",
+    "libpamc.so.0.82.1"
    ]
   },
   "gatilhos": [
@@ -2871,8 +2891,36 @@
   ],
   "pacotes_interpretes": [
    "bash",
+   "bsdutils",
+   "coreutils",
+   "debianutils",
+   "findutils",
+   "grep",
+   "gzip",
+   "libaio1",
+   "libc-bin",
    "libc6",
-   "libtinfo5"
+   "libgcc1",
+   "libgcrypt20",
+   "libgpg-error0",
+   "liblz4-1",
+   "liblzma5",
+   "libncurses5",
+   "libpcre3",
+   "libreadline5",
+   "libselinux1",
+   "libssl1.1",
+   "libstdc++6",
+   "libsystemd0",
+   "libtinfo5",
+   "mariadb-client-10.4",
+   "mariadb-client-core-10.4",
+   "mariadb-server-10.4",
+   "mariadb-server-core-10.4",
+   "pwgen",
+   "sed",
+   "xz-utils",
+   "zlib1g"
   ],
   "sonames_citadas": {
    "libtinfo.so.5": [
@@ -2882,245 +2930,8 @@
  },
  "teastore-persistence-1": {
   "executaveis": {
-   "gpg-wks-server": [
-    "gpg-wks-server"
-   ],
-   "dirmngr": [
-    "dirmngr",
-    "dirmngr-client"
-   ],
-   "gpgsm": [
-    "gpgsm"
-   ],
    "tzdata": [
     "tzconfig"
-   ],
-   "tar": [
-    "rmt-tar",
-    "tar",
-    "tarcat"
-   ],
-   "wget": [
-    "wget"
-   ],
-   "gpgconf": [
-    "gpg-connect-agent",
-    "gpgconf"
-   ],
-   "dpkg": [
-    "dpkg",
-    "dpkg-deb",
-    "dpkg-divert",
-    "dpkg-maintscript-helper",
-    "dpkg-query",
-    "dpkg-split",
-    "dpkg-statoverride",
-    "dpkg-trigger",
-    "start-stop-daemon",
-    "update-alternatives"
-   ],
-   "gpg": [
-    "gpg"
-   ],
-   "perl-base": [
-    "perl",
-    "perl5.28.1"
-   ],
-   "subversion": [
-    "svn",
-    "svnadmin",
-    "svnauthz",
-    "svnauthz-validate",
-    "svnbench",
-    "svndumpfilter",
-    "svnfsfs",
-    "svnlook",
-    "svnmucc",
-    "svnrdump",
-    "svnserve",
-    "svnsync",
-    "svnversion"
-   ],
-   "bzip2": [
-    "bunzip2",
-    "bzcat",
-    "bzcmp",
-    "bzdiff",
-    "bzegrep",
-    "bzexe",
-    "bzfgrep",
-    "bzgrep",
-    "bzip2",
-    "bzip2recover",
-    "bzless",
-    "bzmore"
-   ],
-   "unzip": [
-    "funzip",
-    "unzip",
-    "unzipsfx",
-    "zipgrep",
-    "zipinfo"
-   ],
-   "fdisk": [
-    "cfdisk",
-    "fdisk",
-    "sfdisk"
-   ],
-   "xz-utils": [
-    "lzmainfo",
-    "unxz",
-    "xz",
-    "xzcat",
-    "xzcmp",
-    "xzdiff",
-    "xzegrep",
-    "xzfgrep",
-    "xzgrep",
-    "xzless",
-    "xzmore"
-   ],
-   "libpam-modules-bin": [
-    "mkhomedir_helper",
-    "pam_tally",
-    "pam_tally2",
-    "pam_timestamp_check",
-    "unix_chkpwd",
-    "unix_update"
-   ],
-   "gzip": [
-    "gunzip",
-    "gzexe",
-    "gzip",
-    "uncompress",
-    "zcat",
-    "zcmp",
-    "zdiff",
-    "zegrep",
-    "zfgrep",
-    "zforce",
-    "zgrep",
-    "zless",
-    "zmore",
-    "znew"
-   ],
-   "iproute2": [
-    "arpd",
-    "bridge",
-    "ctstat",
-    "devlink",
-    "genl",
-    "ip",
-    "lnstat",
-    "nstat",
-    "rdma",
-    "routef",
-    "routel",
-    "rtacct",
-    "rtmon",
-    "rtstat",
-    "ss",
-    "tc",
-    "tipc"
-   ],
-   "mount": [
-    "losetup",
-    "mount",
-    "swapoff",
-    "swapon",
-    "umount"
-   ],
-   "curl": [
-    "curl"
-   ],
-   "libpam-runtime": [
-    "pam-auth-update",
-    "pam_getenv"
-   ],
-   "openssl": [
-    "c_rehash",
-    "openssl"
-   ],
-   "git": [
-    "git",
-    "git-receive-pack",
-    "git-shell",
-    "git-upload-archive",
-    "git-upload-pack"
-   ],
-   "gpg-agent": [
-    "gpg-agent"
-   ],
-   "passwd": [
-    "chage",
-    "chfn",
-    "chgpasswd",
-    "chpasswd",
-    "chsh",
-    "cpgr",
-    "cppw",
-    "expiry",
-    "gpasswd",
-    "groupadd",
-    "groupdel",
-    "groupmems",
-    "groupmod",
-    "grpck",
-    "grpconv",
-    "grpunconv",
-    "newusers",
-    "passwd",
-    "pwck",
-    "pwconv",
-    "pwunconv",
-    "shadowconfig",
-    "useradd",
-    "userdel",
-    "usermod",
-    "vigr",
-    "vipw"
-   ],
-   "e2fsprogs": [
-    "badblocks",
-    "chattr",
-    "debugfs",
-    "dumpe2fs",
-    "e2freefrag",
-    "e2fsck",
-    "e2image",
-    "e2label",
-    "e2mmpstatus",
-    "e2undo",
-    "e4crypt",
-    "e4defrag",
-    "filefrag",
-    "fsck.ext2",
-    "fsck.ext3",
-    "fsck.ext4",
-    "logsave",
-    "lsattr",
-    "mke2fs",
-    "mkfs.ext2",
-    "mkfs.ext3",
-    "mkfs.ext4",
-    "mklost+found",
-    "resize2fs",
-    "tune2fs"
-   ],
-   "openssh-client": [
-    "scp",
-    "sftp",
-    "slogin",
-    "ssh",
-    "ssh-add",
-    "ssh-agent",
-    "ssh-argv0",
-    "ssh-copy-id",
-    "ssh-keygen",
-    "ssh-keyscan"
-   ],
-   "python2.7-minimal": [
-    "python2.7"
    ],
    "perl": [
     "corelist",
@@ -3153,9 +2964,29 @@
     "xsubpp",
     "zipdetails"
    ],
-   "libperl5.28": [
-    "cpan5.28-x86_64-linux-gnu",
-    "perl5.28-x86_64-linux-gnu"
+   "xz-utils": [
+    "lzmainfo",
+    "unxz",
+    "xz",
+    "xzcat",
+    "xzcmp",
+    "xzdiff",
+    "xzegrep",
+    "xzfgrep",
+    "xzgrep",
+    "xzless",
+    "xzmore"
+   ],
+   "mount": [
+    "losetup",
+    "mount",
+    "swapoff",
+    "swapon",
+    "umount"
+   ],
+   "perl-base": [
+    "perl",
+    "perl5.28.1"
    ],
    "python2.7": [
     "2to3-2.7",
@@ -3163,13 +2994,16 @@
     "pydoc2.7",
     "pygettext2.7"
    ],
-   "login": [
-    "faillog",
-    "lastlog",
-    "login",
-    "newgrp",
-    "nologin",
-    "sg"
+   "gpgsm": [
+    "gpgsm"
+   ],
+   "gpgconf": [
+    "gpg-connect-agent",
+    "gpgconf"
+   ],
+   "openssl": [
+    "c_rehash",
+    "openssl"
    ],
    "gpgv": [
     "gpgv"
@@ -3187,153 +3021,226 @@
     "migrate-pubring-from-classic-gpg",
     "symcryptrun",
     "watchgnupg"
+   ],
+   "bzip2": [
+    "bunzip2",
+    "bzcat",
+    "bzcmp",
+    "bzdiff",
+    "bzegrep",
+    "bzexe",
+    "bzfgrep",
+    "bzgrep",
+    "bzip2",
+    "bzip2recover",
+    "bzless",
+    "bzmore"
+   ],
+   "unzip": [
+    "funzip",
+    "unzip",
+    "unzipsfx",
+    "zipgrep",
+    "zipinfo"
+   ],
+   "gpg-wks-server": [
+    "gpg-wks-server"
+   ],
+   "tar": [
+    "rmt-tar",
+    "tar",
+    "tarcat"
+   ],
+   "iproute2": [
+    "arpd",
+    "bridge",
+    "ctstat",
+    "devlink",
+    "genl",
+    "ip",
+    "lnstat",
+    "nstat",
+    "rdma",
+    "routef",
+    "routel",
+    "rtacct",
+    "rtmon",
+    "rtstat",
+    "ss",
+    "tc",
+    "tipc"
+   ],
+   "python2.7-minimal": [
+    "python2.7"
+   ],
+   "openssh-client": [
+    "scp",
+    "sftp",
+    "slogin",
+    "ssh",
+    "ssh-add",
+    "ssh-agent",
+    "ssh-argv0",
+    "ssh-copy-id",
+    "ssh-keygen",
+    "ssh-keyscan"
+   ],
+   "libpam-modules-bin": [
+    "mkhomedir_helper",
+    "pam_tally",
+    "pam_tally2",
+    "pam_timestamp_check",
+    "unix_chkpwd",
+    "unix_update"
+   ],
+   "gpg-agent": [
+    "gpg-agent"
+   ],
+   "dirmngr": [
+    "dirmngr",
+    "dirmngr-client"
+   ],
+   "gzip": [
+    "gunzip",
+    "gzexe",
+    "gzip",
+    "uncompress",
+    "zcat",
+    "zcmp",
+    "zdiff",
+    "zegrep",
+    "zfgrep",
+    "zforce",
+    "zgrep",
+    "zless",
+    "zmore",
+    "znew"
+   ],
+   "gpg": [
+    "gpg"
+   ],
+   "git": [
+    "git",
+    "git-receive-pack",
+    "git-shell",
+    "git-upload-archive",
+    "git-upload-pack"
+   ],
+   "dpkg": [
+    "dpkg",
+    "dpkg-deb",
+    "dpkg-divert",
+    "dpkg-maintscript-helper",
+    "dpkg-query",
+    "dpkg-split",
+    "dpkg-statoverride",
+    "dpkg-trigger",
+    "start-stop-daemon",
+    "update-alternatives"
+   ],
+   "libpam-runtime": [
+    "pam-auth-update",
+    "pam_getenv"
+   ],
+   "e2fsprogs": [
+    "badblocks",
+    "chattr",
+    "debugfs",
+    "dumpe2fs",
+    "e2freefrag",
+    "e2fsck",
+    "e2image",
+    "e2label",
+    "e2mmpstatus",
+    "e2undo",
+    "e4crypt",
+    "e4defrag",
+    "filefrag",
+    "fsck.ext2",
+    "fsck.ext3",
+    "fsck.ext4",
+    "logsave",
+    "lsattr",
+    "mke2fs",
+    "mkfs.ext2",
+    "mkfs.ext3",
+    "mkfs.ext4",
+    "mklost+found",
+    "resize2fs",
+    "tune2fs"
+   ],
+   "fdisk": [
+    "cfdisk",
+    "fdisk",
+    "sfdisk"
+   ],
+   "subversion": [
+    "svn",
+    "svnadmin",
+    "svnauthz",
+    "svnauthz-validate",
+    "svnbench",
+    "svndumpfilter",
+    "svnfsfs",
+    "svnlook",
+    "svnmucc",
+    "svnrdump",
+    "svnserve",
+    "svnsync",
+    "svnversion"
+   ],
+   "login": [
+    "faillog",
+    "lastlog",
+    "login",
+    "newgrp",
+    "nologin",
+    "sg"
+   ],
+   "passwd": [
+    "chage",
+    "chfn",
+    "chgpasswd",
+    "chpasswd",
+    "chsh",
+    "cpgr",
+    "cppw",
+    "expiry",
+    "gpasswd",
+    "groupadd",
+    "groupdel",
+    "groupmems",
+    "groupmod",
+    "grpck",
+    "grpconv",
+    "grpunconv",
+    "newusers",
+    "passwd",
+    "pwck",
+    "pwconv",
+    "pwunconv",
+    "shadowconfig",
+    "useradd",
+    "userdel",
+    "usermod",
+    "vigr",
+    "vipw"
+   ],
+   "wget": [
+    "wget"
+   ],
+   "curl": [
+    "curl"
+   ],
+   "libperl5.28": [
+    "cpan5.28-x86_64-linux-gnu",
+    "perl5.28-x86_64-linux-gnu"
    ]
   },
   "sonames": {
-   "libsqlite3-0": [
-    "libsqlite3.so.0",
-    "libsqlite3.so.0.8.6"
-   ],
-   "libnghttp2-14": [
-    "libnghttp2.so.14",
-    "libnghttp2.so.14.17.1"
-   ],
-   "libsmartcols1": [
-    "libsmartcols.so.1",
-    "libsmartcols.so.1.1.0"
-   ],
-   "libk5crypto3": [
-    "libk5crypto.so.3",
-    "libk5crypto.so.3.1"
-   ],
-   "libss2": [
-    "libss.so.2",
-    "libss.so.2.0"
-   ],
-   "libcurl3-gnutls": [
-    "libcurl-gnutls.so.3",
-    "libcurl-gnutls.so.4",
-    "libcurl-gnutls.so.4.5.0"
-   ],
-   "libpcre2-8-0": [
-    "libpcre2-8.so.0",
-    "libpcre2-8.so.0.7.1"
-   ],
-   "libtinfo6": [
-    "libtic.so.6",
-    "libtic.so.6.1",
-    "libtinfo.so.6",
-    "libtinfo.so.6.1"
-   ],
-   "libidn2-0": [
-    "libidn2.so.0",
-    "libidn2.so.0.3.4"
-   ],
-   "libksba8": [
-    "libksba.so.8",
-    "libksba.so.8.11.6"
-   ],
-   "libncurses6": [
-    "libform.so.6",
-    "libform.so.6.1",
-    "libmenu.so.6",
-    "libmenu.so.6.1",
-    "libncurses.so.6",
-    "libncurses.so.6.1",
-    "libpanel.so.6",
-    "libpanel.so.6.1"
-   ],
-   "liblz4-1": [
-    "liblz4.so.1",
-    "liblz4.so.1.8.3"
-   ],
-   "libpam0g": [
-    "libpam.so.0",
-    "libpam.so.0.84.2",
-    "libpam_misc.so.0",
-    "libpam_misc.so.0.82.1",
-    "libpamc.so.0",
-    "libpamc.so.0.82.1"
-   ],
-   "libssh2-1": [
-    "libssh2.so.1",
-    "libssh2.so.1.0.1"
-   ],
-   "libncursesw6": [
-    "libformw.so.6",
-    "libformw.so.6.1",
-    "libmenuw.so.6",
-    "libmenuw.so.6.1",
-    "libncursesw.so.6",
-    "libncursesw.so.6.1",
-    "libpanelw.so.6",
-    "libpanelw.so.6.1"
-   ],
-   "libaprutil1": [
-    "libaprutil-1.so.0",
-    "libaprutil-1.so.0.6.1"
-   ],
-   "libtasn1-6": [
-    "libtasn1.so.6",
-    "libtasn1.so.6.5.5"
-   ],
-   "libbz2-1.0": [
-    "libbz2.so.1",
-    "libbz2.so.1.0",
-    "libbz2.so.1.0.4"
-   ],
-   "libprocps7": [
-    "libprocps.so.7",
-    "libprocps.so.7.1.0"
-   ],
-   "libfreetype6": [
-    "libfreetype.so.6",
-    "libfreetype.so.6.16.1"
-   ],
-   "liblzma5": [
-    "liblzma.so.5",
-    "liblzma.so.5.2.4"
-   ],
    "libcurl4": [
     "libcurl.so.4",
     "libcurl.so.4.5.0"
-   ],
-   "libfdisk1": [
-    "libfdisk.so.1",
-    "libfdisk.so.1.1.0"
-   ],
-   "libkrb5support0": [
-    "libkrb5support.so.0",
-    "libkrb5support.so.0.1"
-   ],
-   "libblkid1": [
-    "libblkid.so.1",
-    "libblkid.so.1.1.0"
-   ],
-   "libext2fs2": [
-    "libe2p.so.2",
-    "libe2p.so.2.3",
-    "libext2fs.so.2",
-    "libext2fs.so.2.4"
-   ],
-   "libkrb5-3": [
-    "libkrb5.so.3",
-    "libkrb5.so.3.3"
-   ],
-   "libgnutls30": [
-    "libgnutls.so.30",
-    "libgnutls.so.30.23.2"
-   ],
-   "libldap-2.4-2": [
-    "liblber-2.4.so.2",
-    "liblber-2.4.so.2.10.10",
-    "libldap-2.4.so.2",
-    "libldap_r-2.4.so.2",
-    "libldap_r-2.4.so.2.10.10"
-   ],
-   "libgcrypt20": [
-    "libgcrypt.so.20",
-    "libgcrypt.so.20.2.4"
    ],
    "libsvn1": [
     "libsvn_auth_gnome_keyring-1.so.1",
@@ -3371,54 +3278,155 @@
     "libsvn_wc-1.so.1",
     "libsvn_wc-1.so.1.0.0"
    ],
-   "libgssapi-krb5-2": [
-    "libgssapi_krb5.so.2",
-    "libgssapi_krb5.so.2.2"
-   ],
-   "libperl5.28": [
-    "libperl.so.5.28",
-    "libperl.so.5.28.1"
-   ],
-   "libudev1": [
-    "libudev.so.1",
-    "libudev.so.1.6.13"
-   ],
-   "libsystemd0": [
-    "libsystemd.so.0",
-    "libsystemd.so.0.25.0"
+   "libss2": [
+    "libss.so.2",
+    "libss.so.2.0"
    ],
    "libsasl2-modules-db": [
     "libsasldb.so",
     "libsasldb.so.2",
     "libsasldb.so.2.0.25"
    ],
-   "libgmp10": [
-    "libgmp.so.10",
-    "libgmp.so.10.3.2"
+   "liblz4-1": [
+    "liblz4.so.1",
+    "liblz4.so.1.8.3"
    ],
-   "libexpat1": [
-    "libexpat.so.1",
-    "libexpat.so.1.6.8",
-    "libexpatw.so.1",
-    "libexpatw.so.1.6.8"
+   "libaprutil1": [
+    "libaprutil-1.so.0",
+    "libaprutil-1.so.0.6.1"
    ],
-   "libcom-err2": [
-    "libcom_err.so.2",
-    "libcom_err.so.2.1"
-   ],
-   "libsepol1": [
-    "libsepol.so.1"
-   ],
-   "libelf1": [
-    "libelf-0.176.so",
-    "libelf.so.1"
+   "libfdisk1": [
+    "libfdisk.so.1",
+    "libfdisk.so.1.1.0"
    ],
    "libsasl2-2": [
     "libsasl2.so.2",
     "libsasl2.so.2.0.25"
    ],
+   "libidn2-0": [
+    "libidn2.so.0",
+    "libidn2.so.0.3.4"
+   ],
+   "libext2fs2": [
+    "libe2p.so.2",
+    "libe2p.so.2.3",
+    "libext2fs.so.2",
+    "libext2fs.so.2.4"
+   ],
+   "libfreetype6": [
+    "libfreetype.so.6",
+    "libfreetype.so.6.16.1"
+   ],
+   "libtasn1-6": [
+    "libtasn1.so.6",
+    "libtasn1.so.6.5.5"
+   ],
    "libdb5.3": [
     "libdb-5.3.so"
+   ],
+   "libgssapi-krb5-2": [
+    "libgssapi_krb5.so.2",
+    "libgssapi_krb5.so.2.2"
+   ],
+   "libgnutls30": [
+    "libgnutls.so.30",
+    "libgnutls.so.30.23.2"
+   ],
+   "libgcrypt20": [
+    "libgcrypt.so.20",
+    "libgcrypt.so.20.2.4"
+   ],
+   "libksba8": [
+    "libksba.so.8",
+    "libksba.so.8.11.6"
+   ],
+   "libmount1": [
+    "libmount.so.1",
+    "libmount.so.1.1.0"
+   ],
+   "libncurses6": [
+    "libform.so.6",
+    "libform.so.6.1",
+    "libmenu.so.6",
+    "libmenu.so.6.1",
+    "libncurses.so.6",
+    "libncurses.so.6.1",
+    "libpanel.so.6",
+    "libpanel.so.6.1"
+   ],
+   "libsmartcols1": [
+    "libsmartcols.so.1",
+    "libsmartcols.so.1.1.0"
+   ],
+   "libkrb5support0": [
+    "libkrb5support.so.0",
+    "libkrb5support.so.0.1"
+   ],
+   "libudev1": [
+    "libudev.so.1",
+    "libudev.so.1.6.13"
+   ],
+   "libsepol1": [
+    "libsepol.so.1"
+   ],
+   "libk5crypto3": [
+    "libk5crypto.so.3",
+    "libk5crypto.so.3.1"
+   ],
+   "libprocps7": [
+    "libprocps.so.7",
+    "libprocps.so.7.1.0"
+   ],
+   "libsystemd0": [
+    "libsystemd.so.0",
+    "libsystemd.so.0.25.0"
+   ],
+   "libsqlite3-0": [
+    "libsqlite3.so.0",
+    "libsqlite3.so.0.8.6"
+   ],
+   "libtinfo6": [
+    "libtic.so.6",
+    "libtic.so.6.1",
+    "libtinfo.so.6",
+    "libtinfo.so.6.1"
+   ],
+   "libssh2-1": [
+    "libssh2.so.1",
+    "libssh2.so.1.0.1"
+   ],
+   "libcurl3-gnutls": [
+    "libcurl-gnutls.so.3",
+    "libcurl-gnutls.so.4",
+    "libcurl-gnutls.so.4.5.0"
+   ],
+   "libnghttp2-14": [
+    "libnghttp2.so.14",
+    "libnghttp2.so.14.17.1"
+   ],
+   "libbz2-1.0": [
+    "libbz2.so.1",
+    "libbz2.so.1.0",
+    "libbz2.so.1.0.4"
+   ],
+   "libcom-err2": [
+    "libcom_err.so.2",
+    "libcom_err.so.2.1"
+   ],
+   "libpcre2-8-0": [
+    "libpcre2-8.so.0",
+    "libpcre2-8.so.0.7.1"
+   ],
+   "liblzma5": [
+    "liblzma.so.5",
+    "liblzma.so.5.2.4"
+   ],
+   "libldap-2.4-2": [
+    "liblber-2.4.so.2",
+    "liblber-2.4.so.2.10.10",
+    "libldap-2.4.so.2",
+    "libldap_r-2.4.so.2",
+    "libldap_r-2.4.so.2.10.10"
    ],
    "libpcre3": [
     "libpcre.so.3",
@@ -3426,9 +3434,49 @@
     "libpcreposix.so.3",
     "libpcreposix.so.3.13.3"
    ],
-   "libmount1": [
-    "libmount.so.1",
-    "libmount.so.1.1.0"
+   "libncursesw6": [
+    "libformw.so.6",
+    "libformw.so.6.1",
+    "libmenuw.so.6",
+    "libmenuw.so.6.1",
+    "libncursesw.so.6",
+    "libncursesw.so.6.1",
+    "libpanelw.so.6",
+    "libpanelw.so.6.1"
+   ],
+   "libexpat1": [
+    "libexpat.so.1",
+    "libexpat.so.1.6.8",
+    "libexpatw.so.1",
+    "libexpatw.so.1.6.8"
+   ],
+   "libgmp10": [
+    "libgmp.so.10",
+    "libgmp.so.10.3.2"
+   ],
+   "libelf1": [
+    "libelf-0.176.so",
+    "libelf.so.1"
+   ],
+   "libblkid1": [
+    "libblkid.so.1",
+    "libblkid.so.1.1.0"
+   ],
+   "libkrb5-3": [
+    "libkrb5.so.3",
+    "libkrb5.so.3.3"
+   ],
+   "libpam0g": [
+    "libpam.so.0",
+    "libpam.so.0.84.2",
+    "libpam_misc.so.0",
+    "libpam_misc.so.0.82.1",
+    "libpamc.so.0",
+    "libpamc.so.0.82.1"
+   ],
+   "libperl5.28": [
+    "libperl.so.5.28",
+    "libperl.so.5.28.1"
    ]
   },
   "gatilhos": [
@@ -4578,8 +4626,28 @@
   ],
   "pacotes_interpretes": [
    "bash",
+   "bsdutils",
+   "coreutils",
+   "debianutils",
+   "findutils",
+   "grep",
+   "libacl1",
+   "libattr1",
    "libc6",
-   "libtinfo6"
+   "libgcrypt20",
+   "libgpg-error0",
+   "liblz4-1",
+   "liblzma5",
+   "libpcre3",
+   "libprocps7",
+   "libselinux1",
+   "libsystemd0",
+   "libtinfo6",
+   "mime-support",
+   "ncurses-bin",
+   "procps",
+   "sed",
+   "util-linux"
   ],
   "sonames_citadas": {
    "libtinfo.so.6": [
@@ -4592,245 +4660,8 @@
  },
  "teastore-auth-1": {
   "executaveis": {
-   "gpg-wks-server": [
-    "gpg-wks-server"
-   ],
-   "dirmngr": [
-    "dirmngr",
-    "dirmngr-client"
-   ],
-   "gpgsm": [
-    "gpgsm"
-   ],
    "tzdata": [
     "tzconfig"
-   ],
-   "tar": [
-    "rmt-tar",
-    "tar",
-    "tarcat"
-   ],
-   "wget": [
-    "wget"
-   ],
-   "gpgconf": [
-    "gpg-connect-agent",
-    "gpgconf"
-   ],
-   "dpkg": [
-    "dpkg",
-    "dpkg-deb",
-    "dpkg-divert",
-    "dpkg-maintscript-helper",
-    "dpkg-query",
-    "dpkg-split",
-    "dpkg-statoverride",
-    "dpkg-trigger",
-    "start-stop-daemon",
-    "update-alternatives"
-   ],
-   "gpg": [
-    "gpg"
-   ],
-   "perl-base": [
-    "perl",
-    "perl5.28.1"
-   ],
-   "subversion": [
-    "svn",
-    "svnadmin",
-    "svnauthz",
-    "svnauthz-validate",
-    "svnbench",
-    "svndumpfilter",
-    "svnfsfs",
-    "svnlook",
-    "svnmucc",
-    "svnrdump",
-    "svnserve",
-    "svnsync",
-    "svnversion"
-   ],
-   "bzip2": [
-    "bunzip2",
-    "bzcat",
-    "bzcmp",
-    "bzdiff",
-    "bzegrep",
-    "bzexe",
-    "bzfgrep",
-    "bzgrep",
-    "bzip2",
-    "bzip2recover",
-    "bzless",
-    "bzmore"
-   ],
-   "unzip": [
-    "funzip",
-    "unzip",
-    "unzipsfx",
-    "zipgrep",
-    "zipinfo"
-   ],
-   "fdisk": [
-    "cfdisk",
-    "fdisk",
-    "sfdisk"
-   ],
-   "xz-utils": [
-    "lzmainfo",
-    "unxz",
-    "xz",
-    "xzcat",
-    "xzcmp",
-    "xzdiff",
-    "xzegrep",
-    "xzfgrep",
-    "xzgrep",
-    "xzless",
-    "xzmore"
-   ],
-   "libpam-modules-bin": [
-    "mkhomedir_helper",
-    "pam_tally",
-    "pam_tally2",
-    "pam_timestamp_check",
-    "unix_chkpwd",
-    "unix_update"
-   ],
-   "gzip": [
-    "gunzip",
-    "gzexe",
-    "gzip",
-    "uncompress",
-    "zcat",
-    "zcmp",
-    "zdiff",
-    "zegrep",
-    "zfgrep",
-    "zforce",
-    "zgrep",
-    "zless",
-    "zmore",
-    "znew"
-   ],
-   "iproute2": [
-    "arpd",
-    "bridge",
-    "ctstat",
-    "devlink",
-    "genl",
-    "ip",
-    "lnstat",
-    "nstat",
-    "rdma",
-    "routef",
-    "routel",
-    "rtacct",
-    "rtmon",
-    "rtstat",
-    "ss",
-    "tc",
-    "tipc"
-   ],
-   "mount": [
-    "losetup",
-    "mount",
-    "swapoff",
-    "swapon",
-    "umount"
-   ],
-   "curl": [
-    "curl"
-   ],
-   "libpam-runtime": [
-    "pam-auth-update",
-    "pam_getenv"
-   ],
-   "openssl": [
-    "c_rehash",
-    "openssl"
-   ],
-   "git": [
-    "git",
-    "git-receive-pack",
-    "git-shell",
-    "git-upload-archive",
-    "git-upload-pack"
-   ],
-   "gpg-agent": [
-    "gpg-agent"
-   ],
-   "passwd": [
-    "chage",
-    "chfn",
-    "chgpasswd",
-    "chpasswd",
-    "chsh",
-    "cpgr",
-    "cppw",
-    "expiry",
-    "gpasswd",
-    "groupadd",
-    "groupdel",
-    "groupmems",
-    "groupmod",
-    "grpck",
-    "grpconv",
-    "grpunconv",
-    "newusers",
-    "passwd",
-    "pwck",
-    "pwconv",
-    "pwunconv",
-    "shadowconfig",
-    "useradd",
-    "userdel",
-    "usermod",
-    "vigr",
-    "vipw"
-   ],
-   "e2fsprogs": [
-    "badblocks",
-    "chattr",
-    "debugfs",
-    "dumpe2fs",
-    "e2freefrag",
-    "e2fsck",
-    "e2image",
-    "e2label",
-    "e2mmpstatus",
-    "e2undo",
-    "e4crypt",
-    "e4defrag",
-    "filefrag",
-    "fsck.ext2",
-    "fsck.ext3",
-    "fsck.ext4",
-    "logsave",
-    "lsattr",
-    "mke2fs",
-    "mkfs.ext2",
-    "mkfs.ext3",
-    "mkfs.ext4",
-    "mklost+found",
-    "resize2fs",
-    "tune2fs"
-   ],
-   "openssh-client": [
-    "scp",
-    "sftp",
-    "slogin",
-    "ssh",
-    "ssh-add",
-    "ssh-agent",
-    "ssh-argv0",
-    "ssh-copy-id",
-    "ssh-keygen",
-    "ssh-keyscan"
-   ],
-   "python2.7-minimal": [
-    "python2.7"
    ],
    "perl": [
     "corelist",
@@ -4863,9 +4694,29 @@
     "xsubpp",
     "zipdetails"
    ],
-   "libperl5.28": [
-    "cpan5.28-x86_64-linux-gnu",
-    "perl5.28-x86_64-linux-gnu"
+   "xz-utils": [
+    "lzmainfo",
+    "unxz",
+    "xz",
+    "xzcat",
+    "xzcmp",
+    "xzdiff",
+    "xzegrep",
+    "xzfgrep",
+    "xzgrep",
+    "xzless",
+    "xzmore"
+   ],
+   "mount": [
+    "losetup",
+    "mount",
+    "swapoff",
+    "swapon",
+    "umount"
+   ],
+   "perl-base": [
+    "perl",
+    "perl5.28.1"
    ],
    "python2.7": [
     "2to3-2.7",
@@ -4873,13 +4724,16 @@
     "pydoc2.7",
     "pygettext2.7"
    ],
-   "login": [
-    "faillog",
-    "lastlog",
-    "login",
-    "newgrp",
-    "nologin",
-    "sg"
+   "gpgsm": [
+    "gpgsm"
+   ],
+   "gpgconf": [
+    "gpg-connect-agent",
+    "gpgconf"
+   ],
+   "openssl": [
+    "c_rehash",
+    "openssl"
    ],
    "gpgv": [
     "gpgv"
@@ -4897,153 +4751,226 @@
     "migrate-pubring-from-classic-gpg",
     "symcryptrun",
     "watchgnupg"
+   ],
+   "bzip2": [
+    "bunzip2",
+    "bzcat",
+    "bzcmp",
+    "bzdiff",
+    "bzegrep",
+    "bzexe",
+    "bzfgrep",
+    "bzgrep",
+    "bzip2",
+    "bzip2recover",
+    "bzless",
+    "bzmore"
+   ],
+   "unzip": [
+    "funzip",
+    "unzip",
+    "unzipsfx",
+    "zipgrep",
+    "zipinfo"
+   ],
+   "gpg-wks-server": [
+    "gpg-wks-server"
+   ],
+   "tar": [
+    "rmt-tar",
+    "tar",
+    "tarcat"
+   ],
+   "iproute2": [
+    "arpd",
+    "bridge",
+    "ctstat",
+    "devlink",
+    "genl",
+    "ip",
+    "lnstat",
+    "nstat",
+    "rdma",
+    "routef",
+    "routel",
+    "rtacct",
+    "rtmon",
+    "rtstat",
+    "ss",
+    "tc",
+    "tipc"
+   ],
+   "python2.7-minimal": [
+    "python2.7"
+   ],
+   "openssh-client": [
+    "scp",
+    "sftp",
+    "slogin",
+    "ssh",
+    "ssh-add",
+    "ssh-agent",
+    "ssh-argv0",
+    "ssh-copy-id",
+    "ssh-keygen",
+    "ssh-keyscan"
+   ],
+   "libpam-modules-bin": [
+    "mkhomedir_helper",
+    "pam_tally",
+    "pam_tally2",
+    "pam_timestamp_check",
+    "unix_chkpwd",
+    "unix_update"
+   ],
+   "gpg-agent": [
+    "gpg-agent"
+   ],
+   "dirmngr": [
+    "dirmngr",
+    "dirmngr-client"
+   ],
+   "gzip": [
+    "gunzip",
+    "gzexe",
+    "gzip",
+    "uncompress",
+    "zcat",
+    "zcmp",
+    "zdiff",
+    "zegrep",
+    "zfgrep",
+    "zforce",
+    "zgrep",
+    "zless",
+    "zmore",
+    "znew"
+   ],
+   "gpg": [
+    "gpg"
+   ],
+   "git": [
+    "git",
+    "git-receive-pack",
+    "git-shell",
+    "git-upload-archive",
+    "git-upload-pack"
+   ],
+   "dpkg": [
+    "dpkg",
+    "dpkg-deb",
+    "dpkg-divert",
+    "dpkg-maintscript-helper",
+    "dpkg-query",
+    "dpkg-split",
+    "dpkg-statoverride",
+    "dpkg-trigger",
+    "start-stop-daemon",
+    "update-alternatives"
+   ],
+   "libpam-runtime": [
+    "pam-auth-update",
+    "pam_getenv"
+   ],
+   "e2fsprogs": [
+    "badblocks",
+    "chattr",
+    "debugfs",
+    "dumpe2fs",
+    "e2freefrag",
+    "e2fsck",
+    "e2image",
+    "e2label",
+    "e2mmpstatus",
+    "e2undo",
+    "e4crypt",
+    "e4defrag",
+    "filefrag",
+    "fsck.ext2",
+    "fsck.ext3",
+    "fsck.ext4",
+    "logsave",
+    "lsattr",
+    "mke2fs",
+    "mkfs.ext2",
+    "mkfs.ext3",
+    "mkfs.ext4",
+    "mklost+found",
+    "resize2fs",
+    "tune2fs"
+   ],
+   "fdisk": [
+    "cfdisk",
+    "fdisk",
+    "sfdisk"
+   ],
+   "subversion": [
+    "svn",
+    "svnadmin",
+    "svnauthz",
+    "svnauthz-validate",
+    "svnbench",
+    "svndumpfilter",
+    "svnfsfs",
+    "svnlook",
+    "svnmucc",
+    "svnrdump",
+    "svnserve",
+    "svnsync",
+    "svnversion"
+   ],
+   "login": [
+    "faillog",
+    "lastlog",
+    "login",
+    "newgrp",
+    "nologin",
+    "sg"
+   ],
+   "passwd": [
+    "chage",
+    "chfn",
+    "chgpasswd",
+    "chpasswd",
+    "chsh",
+    "cpgr",
+    "cppw",
+    "expiry",
+    "gpasswd",
+    "groupadd",
+    "groupdel",
+    "groupmems",
+    "groupmod",
+    "grpck",
+    "grpconv",
+    "grpunconv",
+    "newusers",
+    "passwd",
+    "pwck",
+    "pwconv",
+    "pwunconv",
+    "shadowconfig",
+    "useradd",
+    "userdel",
+    "usermod",
+    "vigr",
+    "vipw"
+   ],
+   "wget": [
+    "wget"
+   ],
+   "curl": [
+    "curl"
+   ],
+   "libperl5.28": [
+    "cpan5.28-x86_64-linux-gnu",
+    "perl5.28-x86_64-linux-gnu"
    ]
   },
   "sonames": {
-   "libsqlite3-0": [
-    "libsqlite3.so.0",
-    "libsqlite3.so.0.8.6"
-   ],
-   "libnghttp2-14": [
-    "libnghttp2.so.14",
-    "libnghttp2.so.14.17.1"
-   ],
-   "libsmartcols1": [
-    "libsmartcols.so.1",
-    "libsmartcols.so.1.1.0"
-   ],
-   "libk5crypto3": [
-    "libk5crypto.so.3",
-    "libk5crypto.so.3.1"
-   ],
-   "libss2": [
-    "libss.so.2",
-    "libss.so.2.0"
-   ],
-   "libcurl3-gnutls": [
-    "libcurl-gnutls.so.3",
-    "libcurl-gnutls.so.4",
-    "libcurl-gnutls.so.4.5.0"
-   ],
-   "libpcre2-8-0": [
-    "libpcre2-8.so.0",
-    "libpcre2-8.so.0.7.1"
-   ],
-   "libtinfo6": [
-    "libtic.so.6",
-    "libtic.so.6.1",
-    "libtinfo.so.6",
-    "libtinfo.so.6.1"
-   ],
-   "libidn2-0": [
-    "libidn2.so.0",
-    "libidn2.so.0.3.4"
-   ],
-   "libksba8": [
-    "libksba.so.8",
-    "libksba.so.8.11.6"
-   ],
-   "libncurses6": [
-    "libform.so.6",
-    "libform.so.6.1",
-    "libmenu.so.6",
-    "libmenu.so.6.1",
-    "libncurses.so.6",
-    "libncurses.so.6.1",
-    "libpanel.so.6",
-    "libpanel.so.6.1"
-   ],
-   "liblz4-1": [
-    "liblz4.so.1",
-    "liblz4.so.1.8.3"
-   ],
-   "libpam0g": [
-    "libpam.so.0",
-    "libpam.so.0.84.2",
-    "libpam_misc.so.0",
-    "libpam_misc.so.0.82.1",
-    "libpamc.so.0",
-    "libpamc.so.0.82.1"
-   ],
-   "libssh2-1": [
-    "libssh2.so.1",
-    "libssh2.so.1.0.1"
-   ],
-   "libncursesw6": [
-    "libformw.so.6",
-    "libformw.so.6.1",
-    "libmenuw.so.6",
-    "libmenuw.so.6.1",
-    "libncursesw.so.6",
-    "libncursesw.so.6.1",
-    "libpanelw.so.6",
-    "libpanelw.so.6.1"
-   ],
-   "libaprutil1": [
-    "libaprutil-1.so.0",
-    "libaprutil-1.so.0.6.1"
-   ],
-   "libtasn1-6": [
-    "libtasn1.so.6",
-    "libtasn1.so.6.5.5"
-   ],
-   "libbz2-1.0": [
-    "libbz2.so.1",
-    "libbz2.so.1.0",
-    "libbz2.so.1.0.4"
-   ],
-   "libprocps7": [
-    "libprocps.so.7",
-    "libprocps.so.7.1.0"
-   ],
-   "libfreetype6": [
-    "libfreetype.so.6",
-    "libfreetype.so.6.16.1"
-   ],
-   "liblzma5": [
-    "liblzma.so.5",
-    "liblzma.so.5.2.4"
-   ],
    "libcurl4": [
     "libcurl.so.4",
     "libcurl.so.4.5.0"
-   ],
-   "libfdisk1": [
-    "libfdisk.so.1",
-    "libfdisk.so.1.1.0"
-   ],
-   "libkrb5support0": [
-    "libkrb5support.so.0",
-    "libkrb5support.so.0.1"
-   ],
-   "libblkid1": [
-    "libblkid.so.1",
-    "libblkid.so.1.1.0"
-   ],
-   "libext2fs2": [
-    "libe2p.so.2",
-    "libe2p.so.2.3",
-    "libext2fs.so.2",
-    "libext2fs.so.2.4"
-   ],
-   "libkrb5-3": [
-    "libkrb5.so.3",
-    "libkrb5.so.3.3"
-   ],
-   "libgnutls30": [
-    "libgnutls.so.30",
-    "libgnutls.so.30.23.2"
-   ],
-   "libldap-2.4-2": [
-    "liblber-2.4.so.2",
-    "liblber-2.4.so.2.10.10",
-    "libldap-2.4.so.2",
-    "libldap_r-2.4.so.2",
-    "libldap_r-2.4.so.2.10.10"
-   ],
-   "libgcrypt20": [
-    "libgcrypt.so.20",
-    "libgcrypt.so.20.2.4"
    ],
    "libsvn1": [
     "libsvn_auth_gnome_keyring-1.so.1",
@@ -5081,54 +5008,155 @@
     "libsvn_wc-1.so.1",
     "libsvn_wc-1.so.1.0.0"
    ],
-   "libgssapi-krb5-2": [
-    "libgssapi_krb5.so.2",
-    "libgssapi_krb5.so.2.2"
-   ],
-   "libperl5.28": [
-    "libperl.so.5.28",
-    "libperl.so.5.28.1"
-   ],
-   "libudev1": [
-    "libudev.so.1",
-    "libudev.so.1.6.13"
-   ],
-   "libsystemd0": [
-    "libsystemd.so.0",
-    "libsystemd.so.0.25.0"
+   "libss2": [
+    "libss.so.2",
+    "libss.so.2.0"
    ],
    "libsasl2-modules-db": [
     "libsasldb.so",
     "libsasldb.so.2",
     "libsasldb.so.2.0.25"
    ],
-   "libgmp10": [
-    "libgmp.so.10",
-    "libgmp.so.10.3.2"
+   "liblz4-1": [
+    "liblz4.so.1",
+    "liblz4.so.1.8.3"
    ],
-   "libexpat1": [
-    "libexpat.so.1",
-    "libexpat.so.1.6.8",
-    "libexpatw.so.1",
-    "libexpatw.so.1.6.8"
+   "libaprutil1": [
+    "libaprutil-1.so.0",
+    "libaprutil-1.so.0.6.1"
    ],
-   "libcom-err2": [
-    "libcom_err.so.2",
-    "libcom_err.so.2.1"
-   ],
-   "libsepol1": [
-    "libsepol.so.1"
-   ],
-   "libelf1": [
-    "libelf-0.176.so",
-    "libelf.so.1"
+   "libfdisk1": [
+    "libfdisk.so.1",
+    "libfdisk.so.1.1.0"
    ],
    "libsasl2-2": [
     "libsasl2.so.2",
     "libsasl2.so.2.0.25"
    ],
+   "libidn2-0": [
+    "libidn2.so.0",
+    "libidn2.so.0.3.4"
+   ],
+   "libext2fs2": [
+    "libe2p.so.2",
+    "libe2p.so.2.3",
+    "libext2fs.so.2",
+    "libext2fs.so.2.4"
+   ],
+   "libfreetype6": [
+    "libfreetype.so.6",
+    "libfreetype.so.6.16.1"
+   ],
+   "libtasn1-6": [
+    "libtasn1.so.6",
+    "libtasn1.so.6.5.5"
+   ],
    "libdb5.3": [
     "libdb-5.3.so"
+   ],
+   "libgssapi-krb5-2": [
+    "libgssapi_krb5.so.2",
+    "libgssapi_krb5.so.2.2"
+   ],
+   "libgnutls30": [
+    "libgnutls.so.30",
+    "libgnutls.so.30.23.2"
+   ],
+   "libgcrypt20": [
+    "libgcrypt.so.20",
+    "libgcrypt.so.20.2.4"
+   ],
+   "libksba8": [
+    "libksba.so.8",
+    "libksba.so.8.11.6"
+   ],
+   "libmount1": [
+    "libmount.so.1",
+    "libmount.so.1.1.0"
+   ],
+   "libncurses6": [
+    "libform.so.6",
+    "libform.so.6.1",
+    "libmenu.so.6",
+    "libmenu.so.6.1",
+    "libncurses.so.6",
+    "libncurses.so.6.1",
+    "libpanel.so.6",
+    "libpanel.so.6.1"
+   ],
+   "libsmartcols1": [
+    "libsmartcols.so.1",
+    "libsmartcols.so.1.1.0"
+   ],
+   "libkrb5support0": [
+    "libkrb5support.so.0",
+    "libkrb5support.so.0.1"
+   ],
+   "libudev1": [
+    "libudev.so.1",
+    "libudev.so.1.6.13"
+   ],
+   "libsepol1": [
+    "libsepol.so.1"
+   ],
+   "libk5crypto3": [
+    "libk5crypto.so.3",
+    "libk5crypto.so.3.1"
+   ],
+   "libprocps7": [
+    "libprocps.so.7",
+    "libprocps.so.7.1.0"
+   ],
+   "libsystemd0": [
+    "libsystemd.so.0",
+    "libsystemd.so.0.25.0"
+   ],
+   "libsqlite3-0": [
+    "libsqlite3.so.0",
+    "libsqlite3.so.0.8.6"
+   ],
+   "libtinfo6": [
+    "libtic.so.6",
+    "libtic.so.6.1",
+    "libtinfo.so.6",
+    "libtinfo.so.6.1"
+   ],
+   "libssh2-1": [
+    "libssh2.so.1",
+    "libssh2.so.1.0.1"
+   ],
+   "libcurl3-gnutls": [
+    "libcurl-gnutls.so.3",
+    "libcurl-gnutls.so.4",
+    "libcurl-gnutls.so.4.5.0"
+   ],
+   "libnghttp2-14": [
+    "libnghttp2.so.14",
+    "libnghttp2.so.14.17.1"
+   ],
+   "libbz2-1.0": [
+    "libbz2.so.1",
+    "libbz2.so.1.0",
+    "libbz2.so.1.0.4"
+   ],
+   "libcom-err2": [
+    "libcom_err.so.2",
+    "libcom_err.so.2.1"
+   ],
+   "libpcre2-8-0": [
+    "libpcre2-8.so.0",
+    "libpcre2-8.so.0.7.1"
+   ],
+   "liblzma5": [
+    "liblzma.so.5",
+    "liblzma.so.5.2.4"
+   ],
+   "libldap-2.4-2": [
+    "liblber-2.4.so.2",
+    "liblber-2.4.so.2.10.10",
+    "libldap-2.4.so.2",
+    "libldap_r-2.4.so.2",
+    "libldap_r-2.4.so.2.10.10"
    ],
    "libpcre3": [
     "libpcre.so.3",
@@ -5136,9 +5164,49 @@
     "libpcreposix.so.3",
     "libpcreposix.so.3.13.3"
    ],
-   "libmount1": [
-    "libmount.so.1",
-    "libmount.so.1.1.0"
+   "libncursesw6": [
+    "libformw.so.6",
+    "libformw.so.6.1",
+    "libmenuw.so.6",
+    "libmenuw.so.6.1",
+    "libncursesw.so.6",
+    "libncursesw.so.6.1",
+    "libpanelw.so.6",
+    "libpanelw.so.6.1"
+   ],
+   "libexpat1": [
+    "libexpat.so.1",
+    "libexpat.so.1.6.8",
+    "libexpatw.so.1",
+    "libexpatw.so.1.6.8"
+   ],
+   "libgmp10": [
+    "libgmp.so.10",
+    "libgmp.so.10.3.2"
+   ],
+   "libelf1": [
+    "libelf-0.176.so",
+    "libelf.so.1"
+   ],
+   "libblkid1": [
+    "libblkid.so.1",
+    "libblkid.so.1.1.0"
+   ],
+   "libkrb5-3": [
+    "libkrb5.so.3",
+    "libkrb5.so.3.3"
+   ],
+   "libpam0g": [
+    "libpam.so.0",
+    "libpam.so.0.84.2",
+    "libpam_misc.so.0",
+    "libpam_misc.so.0.82.1",
+    "libpamc.so.0",
+    "libpamc.so.0.82.1"
+   ],
+   "libperl5.28": [
+    "libperl.so.5.28",
+    "libperl.so.5.28.1"
    ]
   },
   "gatilhos": [
@@ -6288,8 +6356,28 @@
   ],
   "pacotes_interpretes": [
    "bash",
+   "bsdutils",
+   "coreutils",
+   "debianutils",
+   "findutils",
+   "grep",
+   "libacl1",
+   "libattr1",
    "libc6",
-   "libtinfo6"
+   "libgcrypt20",
+   "libgpg-error0",
+   "liblz4-1",
+   "liblzma5",
+   "libpcre3",
+   "libprocps7",
+   "libselinux1",
+   "libsystemd0",
+   "libtinfo6",
+   "mime-support",
+   "ncurses-bin",
+   "procps",
+   "sed",
+   "util-linux"
   ],
   "sonames_citadas": {
    "libtinfo.so.6": [
@@ -6302,245 +6390,8 @@
  },
  "teastore-image-1": {
   "executaveis": {
-   "gpg-wks-server": [
-    "gpg-wks-server"
-   ],
-   "dirmngr": [
-    "dirmngr",
-    "dirmngr-client"
-   ],
-   "gpgsm": [
-    "gpgsm"
-   ],
    "tzdata": [
     "tzconfig"
-   ],
-   "tar": [
-    "rmt-tar",
-    "tar",
-    "tarcat"
-   ],
-   "wget": [
-    "wget"
-   ],
-   "gpgconf": [
-    "gpg-connect-agent",
-    "gpgconf"
-   ],
-   "dpkg": [
-    "dpkg",
-    "dpkg-deb",
-    "dpkg-divert",
-    "dpkg-maintscript-helper",
-    "dpkg-query",
-    "dpkg-split",
-    "dpkg-statoverride",
-    "dpkg-trigger",
-    "start-stop-daemon",
-    "update-alternatives"
-   ],
-   "gpg": [
-    "gpg"
-   ],
-   "perl-base": [
-    "perl",
-    "perl5.28.1"
-   ],
-   "subversion": [
-    "svn",
-    "svnadmin",
-    "svnauthz",
-    "svnauthz-validate",
-    "svnbench",
-    "svndumpfilter",
-    "svnfsfs",
-    "svnlook",
-    "svnmucc",
-    "svnrdump",
-    "svnserve",
-    "svnsync",
-    "svnversion"
-   ],
-   "bzip2": [
-    "bunzip2",
-    "bzcat",
-    "bzcmp",
-    "bzdiff",
-    "bzegrep",
-    "bzexe",
-    "bzfgrep",
-    "bzgrep",
-    "bzip2",
-    "bzip2recover",
-    "bzless",
-    "bzmore"
-   ],
-   "unzip": [
-    "funzip",
-    "unzip",
-    "unzipsfx",
-    "zipgrep",
-    "zipinfo"
-   ],
-   "fdisk": [
-    "cfdisk",
-    "fdisk",
-    "sfdisk"
-   ],
-   "xz-utils": [
-    "lzmainfo",
-    "unxz",
-    "xz",
-    "xzcat",
-    "xzcmp",
-    "xzdiff",
-    "xzegrep",
-    "xzfgrep",
-    "xzgrep",
-    "xzless",
-    "xzmore"
-   ],
-   "libpam-modules-bin": [
-    "mkhomedir_helper",
-    "pam_tally",
-    "pam_tally2",
-    "pam_timestamp_check",
-    "unix_chkpwd",
-    "unix_update"
-   ],
-   "gzip": [
-    "gunzip",
-    "gzexe",
-    "gzip",
-    "uncompress",
-    "zcat",
-    "zcmp",
-    "zdiff",
-    "zegrep",
-    "zfgrep",
-    "zforce",
-    "zgrep",
-    "zless",
-    "zmore",
-    "znew"
-   ],
-   "iproute2": [
-    "arpd",
-    "bridge",
-    "ctstat",
-    "devlink",
-    "genl",
-    "ip",
-    "lnstat",
-    "nstat",
-    "rdma",
-    "routef",
-    "routel",
-    "rtacct",
-    "rtmon",
-    "rtstat",
-    "ss",
-    "tc",
-    "tipc"
-   ],
-   "mount": [
-    "losetup",
-    "mount",
-    "swapoff",
-    "swapon",
-    "umount"
-   ],
-   "curl": [
-    "curl"
-   ],
-   "libpam-runtime": [
-    "pam-auth-update",
-    "pam_getenv"
-   ],
-   "openssl": [
-    "c_rehash",
-    "openssl"
-   ],
-   "git": [
-    "git",
-    "git-receive-pack",
-    "git-shell",
-    "git-upload-archive",
-    "git-upload-pack"
-   ],
-   "gpg-agent": [
-    "gpg-agent"
-   ],
-   "passwd": [
-    "chage",
-    "chfn",
-    "chgpasswd",
-    "chpasswd",
-    "chsh",
-    "cpgr",
-    "cppw",
-    "expiry",
-    "gpasswd",
-    "groupadd",
-    "groupdel",
-    "groupmems",
-    "groupmod",
-    "grpck",
-    "grpconv",
-    "grpunconv",
-    "newusers",
-    "passwd",
-    "pwck",
-    "pwconv",
-    "pwunconv",
-    "shadowconfig",
-    "useradd",
-    "userdel",
-    "usermod",
-    "vigr",
-    "vipw"
-   ],
-   "e2fsprogs": [
-    "badblocks",
-    "chattr",
-    "debugfs",
-    "dumpe2fs",
-    "e2freefrag",
-    "e2fsck",
-    "e2image",
-    "e2label",
-    "e2mmpstatus",
-    "e2undo",
-    "e4crypt",
-    "e4defrag",
-    "filefrag",
-    "fsck.ext2",
-    "fsck.ext3",
-    "fsck.ext4",
-    "logsave",
-    "lsattr",
-    "mke2fs",
-    "mkfs.ext2",
-    "mkfs.ext3",
-    "mkfs.ext4",
-    "mklost+found",
-    "resize2fs",
-    "tune2fs"
-   ],
-   "openssh-client": [
-    "scp",
-    "sftp",
-    "slogin",
-    "ssh",
-    "ssh-add",
-    "ssh-agent",
-    "ssh-argv0",
-    "ssh-copy-id",
-    "ssh-keygen",
-    "ssh-keyscan"
-   ],
-   "python2.7-minimal": [
-    "python2.7"
    ],
    "perl": [
     "corelist",
@@ -6573,9 +6424,29 @@
     "xsubpp",
     "zipdetails"
    ],
-   "libperl5.28": [
-    "cpan5.28-x86_64-linux-gnu",
-    "perl5.28-x86_64-linux-gnu"
+   "xz-utils": [
+    "lzmainfo",
+    "unxz",
+    "xz",
+    "xzcat",
+    "xzcmp",
+    "xzdiff",
+    "xzegrep",
+    "xzfgrep",
+    "xzgrep",
+    "xzless",
+    "xzmore"
+   ],
+   "mount": [
+    "losetup",
+    "mount",
+    "swapoff",
+    "swapon",
+    "umount"
+   ],
+   "perl-base": [
+    "perl",
+    "perl5.28.1"
    ],
    "python2.7": [
     "2to3-2.7",
@@ -6583,13 +6454,16 @@
     "pydoc2.7",
     "pygettext2.7"
    ],
-   "login": [
-    "faillog",
-    "lastlog",
-    "login",
-    "newgrp",
-    "nologin",
-    "sg"
+   "gpgsm": [
+    "gpgsm"
+   ],
+   "gpgconf": [
+    "gpg-connect-agent",
+    "gpgconf"
+   ],
+   "openssl": [
+    "c_rehash",
+    "openssl"
    ],
    "gpgv": [
     "gpgv"
@@ -6607,149 +6481,226 @@
     "migrate-pubring-from-classic-gpg",
     "symcryptrun",
     "watchgnupg"
+   ],
+   "bzip2": [
+    "bunzip2",
+    "bzcat",
+    "bzcmp",
+    "bzdiff",
+    "bzegrep",
+    "bzexe",
+    "bzfgrep",
+    "bzgrep",
+    "bzip2",
+    "bzip2recover",
+    "bzless",
+    "bzmore"
+   ],
+   "unzip": [
+    "funzip",
+    "unzip",
+    "unzipsfx",
+    "zipgrep",
+    "zipinfo"
+   ],
+   "gpg-wks-server": [
+    "gpg-wks-server"
+   ],
+   "tar": [
+    "rmt-tar",
+    "tar",
+    "tarcat"
+   ],
+   "iproute2": [
+    "arpd",
+    "bridge",
+    "ctstat",
+    "devlink",
+    "genl",
+    "ip",
+    "lnstat",
+    "nstat",
+    "rdma",
+    "routef",
+    "routel",
+    "rtacct",
+    "rtmon",
+    "rtstat",
+    "ss",
+    "tc",
+    "tipc"
+   ],
+   "python2.7-minimal": [
+    "python2.7"
+   ],
+   "openssh-client": [
+    "scp",
+    "sftp",
+    "slogin",
+    "ssh",
+    "ssh-add",
+    "ssh-agent",
+    "ssh-argv0",
+    "ssh-copy-id",
+    "ssh-keygen",
+    "ssh-keyscan"
+   ],
+   "libpam-modules-bin": [
+    "mkhomedir_helper",
+    "pam_tally",
+    "pam_tally2",
+    "pam_timestamp_check",
+    "unix_chkpwd",
+    "unix_update"
+   ],
+   "gpg-agent": [
+    "gpg-agent"
+   ],
+   "dirmngr": [
+    "dirmngr",
+    "dirmngr-client"
+   ],
+   "gzip": [
+    "gunzip",
+    "gzexe",
+    "gzip",
+    "uncompress",
+    "zcat",
+    "zcmp",
+    "zdiff",
+    "zegrep",
+    "zfgrep",
+    "zforce",
+    "zgrep",
+    "zless",
+    "zmore",
+    "znew"
+   ],
+   "gpg": [
+    "gpg"
+   ],
+   "git": [
+    "git",
+    "git-receive-pack",
+    "git-shell",
+    "git-upload-archive",
+    "git-upload-pack"
+   ],
+   "dpkg": [
+    "dpkg",
+    "dpkg-deb",
+    "dpkg-divert",
+    "dpkg-maintscript-helper",
+    "dpkg-query",
+    "dpkg-split",
+    "dpkg-statoverride",
+    "dpkg-trigger",
+    "start-stop-daemon",
+    "update-alternatives"
+   ],
+   "libpam-runtime": [
+    "pam-auth-update",
+    "pam_getenv"
+   ],
+   "e2fsprogs": [
+    "badblocks",
+    "chattr",
+    "debugfs",
+    "dumpe2fs",
+    "e2freefrag",
+    "e2fsck",
+    "e2image",
+    "e2label",
+    "e2mmpstatus",
+    "e2undo",
+    "e4crypt",
+    "e4defrag",
+    "filefrag",
+    "fsck.ext2",
+    "fsck.ext3",
+    "fsck.ext4",
+    "logsave",
+    "lsattr",
+    "mke2fs",
+    "mkfs.ext2",
+    "mkfs.ext3",
+    "mkfs.ext4",
+    "mklost+found",
+    "resize2fs",
+    "tune2fs"
+   ],
+   "fdisk": [
+    "cfdisk",
+    "fdisk",
+    "sfdisk"
+   ],
+   "subversion": [
+    "svn",
+    "svnadmin",
+    "svnauthz",
+    "svnauthz-validate",
+    "svnbench",
+    "svndumpfilter",
+    "svnfsfs",
+    "svnlook",
+    "svnmucc",
+    "svnrdump",
+    "svnserve",
+    "svnsync",
+    "svnversion"
+   ],
+   "login": [
+    "faillog",
+    "lastlog",
+    "login",
+    "newgrp",
+    "nologin",
+    "sg"
+   ],
+   "passwd": [
+    "chage",
+    "chfn",
+    "chgpasswd",
+    "chpasswd",
+    "chsh",
+    "cpgr",
+    "cppw",
+    "expiry",
+    "gpasswd",
+    "groupadd",
+    "groupdel",
+    "groupmems",
+    "groupmod",
+    "grpck",
+    "grpconv",
+    "grpunconv",
+    "newusers",
+    "passwd",
+    "pwck",
+    "pwconv",
+    "pwunconv",
+    "shadowconfig",
+    "useradd",
+    "userdel",
+    "usermod",
+    "vigr",
+    "vipw"
+   ],
+   "wget": [
+    "wget"
+   ],
+   "curl": [
+    "curl"
+   ],
+   "libperl5.28": [
+    "cpan5.28-x86_64-linux-gnu",
+    "perl5.28-x86_64-linux-gnu"
    ]
   },
   "sonames": {
-   "libsqlite3-0": [
-    "libsqlite3.so.0",
-    "libsqlite3.so.0.8.6"
-   ],
-   "libnghttp2-14": [
-    "libnghttp2.so.14",
-    "libnghttp2.so.14.17.1"
-   ],
-   "libsmartcols1": [
-    "libsmartcols.so.1",
-    "libsmartcols.so.1.1.0"
-   ],
-   "libk5crypto3": [
-    "libk5crypto.so.3",
-    "libk5crypto.so.3.1"
-   ],
-   "libss2": [
-    "libss.so.2",
-    "libss.so.2.0"
-   ],
-   "libcurl3-gnutls": [
-    "libcurl-gnutls.so.3",
-    "libcurl-gnutls.so.4",
-    "libcurl-gnutls.so.4.5.0"
-   ],
-   "libpcre2-8-0": [
-    "libpcre2-8.so.0",
-    "libpcre2-8.so.0.7.1"
-   ],
-   "libtinfo6": [
-    "libtic.so.6",
-    "libtic.so.6.1",
-    "libtinfo.so.6",
-    "libtinfo.so.6.1"
-   ],
-   "libidn2-0": [
-    "libidn2.so.0",
-    "libidn2.so.0.3.4"
-   ],
-   "libksba8": [
-    "libksba.so.8",
-    "libksba.so.8.11.6"
-   ],
-   "libncurses6": [
-    "libform.so.6",
-    "libform.so.6.1",
-    "libmenu.so.6",
-    "libmenu.so.6.1",
-    "libncurses.so.6",
-    "libncurses.so.6.1",
-    "libpanel.so.6",
-    "libpanel.so.6.1"
-   ],
-   "liblz4-1": [
-    "liblz4.so.1",
-    "liblz4.so.1.8.3"
-   ],
-   "libpam0g": [
-    "libpam.so.0",
-    "libpam.so.0.84.2",
-    "libpam_misc.so.0",
-    "libpam_misc.so.0.82.1",
-    "libpamc.so.0",
-    "libpamc.so.0.82.1"
-   ],
-   "libssh2-1": [
-    "libssh2.so.1",
-    "libssh2.so.1.0.1"
-   ],
-   "libncursesw6": [
-    "libformw.so.6",
-    "libformw.so.6.1",
-    "libmenuw.so.6",
-    "libmenuw.so.6.1",
-    "libncursesw.so.6",
-    "libncursesw.so.6.1",
-    "libpanelw.so.6",
-    "libpanelw.so.6.1"
-   ],
-   "libaprutil1": [
-    "libaprutil-1.so.0",
-    "libaprutil-1.so.0.6.1"
-   ],
-   "libtasn1-6": [
-    "libtasn1.so.6",
-    "libtasn1.so.6.5.5"
-   ],
-   "libbz2-1.0": [
-    "libbz2.so.1",
-    "libbz2.so.1.0",
-    "libbz2.so.1.0.4"
-   ],
-   "libprocps7": [
-    "libprocps.so.7",
-    "libprocps.so.7.1.0"
-   ],
-   "liblzma5": [
-    "liblzma.so.5",
-    "liblzma.so.5.2.4"
-   ],
    "libcurl4": [
     "libcurl.so.4",
     "libcurl.so.4.5.0"
-   ],
-   "libfdisk1": [
-    "libfdisk.so.1",
-    "libfdisk.so.1.1.0"
-   ],
-   "libkrb5support0": [
-    "libkrb5support.so.0",
-    "libkrb5support.so.0.1"
-   ],
-   "libblkid1": [
-    "libblkid.so.1",
-    "libblkid.so.1.1.0"
-   ],
-   "libext2fs2": [
-    "libe2p.so.2",
-    "libe2p.so.2.3",
-    "libext2fs.so.2",
-    "libext2fs.so.2.4"
-   ],
-   "libkrb5-3": [
-    "libkrb5.so.3",
-    "libkrb5.so.3.3"
-   ],
-   "libgnutls30": [
-    "libgnutls.so.30",
-    "libgnutls.so.30.23.2"
-   ],
-   "libldap-2.4-2": [
-    "liblber-2.4.so.2",
-    "liblber-2.4.so.2.10.10",
-    "libldap-2.4.so.2",
-    "libldap_r-2.4.so.2",
-    "libldap_r-2.4.so.2.10.10"
-   ],
-   "libgcrypt20": [
-    "libgcrypt.so.20",
-    "libgcrypt.so.20.2.4"
    ],
    "libsvn1": [
     "libsvn_auth_gnome_keyring-1.so.1",
@@ -6787,54 +6738,151 @@
     "libsvn_wc-1.so.1",
     "libsvn_wc-1.so.1.0.0"
    ],
-   "libgssapi-krb5-2": [
-    "libgssapi_krb5.so.2",
-    "libgssapi_krb5.so.2.2"
-   ],
-   "libperl5.28": [
-    "libperl.so.5.28",
-    "libperl.so.5.28.1"
-   ],
-   "libudev1": [
-    "libudev.so.1",
-    "libudev.so.1.6.13"
-   ],
-   "libsystemd0": [
-    "libsystemd.so.0",
-    "libsystemd.so.0.25.0"
+   "libss2": [
+    "libss.so.2",
+    "libss.so.2.0"
    ],
    "libsasl2-modules-db": [
     "libsasldb.so",
     "libsasldb.so.2",
     "libsasldb.so.2.0.25"
    ],
-   "libgmp10": [
-    "libgmp.so.10",
-    "libgmp.so.10.3.2"
+   "liblz4-1": [
+    "liblz4.so.1",
+    "liblz4.so.1.8.3"
    ],
-   "libexpat1": [
-    "libexpat.so.1",
-    "libexpat.so.1.6.8",
-    "libexpatw.so.1",
-    "libexpatw.so.1.6.8"
+   "libaprutil1": [
+    "libaprutil-1.so.0",
+    "libaprutil-1.so.0.6.1"
    ],
-   "libcom-err2": [
-    "libcom_err.so.2",
-    "libcom_err.so.2.1"
-   ],
-   "libsepol1": [
-    "libsepol.so.1"
-   ],
-   "libelf1": [
-    "libelf-0.176.so",
-    "libelf.so.1"
+   "libfdisk1": [
+    "libfdisk.so.1",
+    "libfdisk.so.1.1.0"
    ],
    "libsasl2-2": [
     "libsasl2.so.2",
     "libsasl2.so.2.0.25"
    ],
+   "libidn2-0": [
+    "libidn2.so.0",
+    "libidn2.so.0.3.4"
+   ],
+   "libext2fs2": [
+    "libe2p.so.2",
+    "libe2p.so.2.3",
+    "libext2fs.so.2",
+    "libext2fs.so.2.4"
+   ],
+   "libtasn1-6": [
+    "libtasn1.so.6",
+    "libtasn1.so.6.5.5"
+   ],
    "libdb5.3": [
     "libdb-5.3.so"
+   ],
+   "libgssapi-krb5-2": [
+    "libgssapi_krb5.so.2",
+    "libgssapi_krb5.so.2.2"
+   ],
+   "libgnutls30": [
+    "libgnutls.so.30",
+    "libgnutls.so.30.23.2"
+   ],
+   "libgcrypt20": [
+    "libgcrypt.so.20",
+    "libgcrypt.so.20.2.4"
+   ],
+   "libksba8": [
+    "libksba.so.8",
+    "libksba.so.8.11.6"
+   ],
+   "libmount1": [
+    "libmount.so.1",
+    "libmount.so.1.1.0"
+   ],
+   "libncurses6": [
+    "libform.so.6",
+    "libform.so.6.1",
+    "libmenu.so.6",
+    "libmenu.so.6.1",
+    "libncurses.so.6",
+    "libncurses.so.6.1",
+    "libpanel.so.6",
+    "libpanel.so.6.1"
+   ],
+   "libsmartcols1": [
+    "libsmartcols.so.1",
+    "libsmartcols.so.1.1.0"
+   ],
+   "libkrb5support0": [
+    "libkrb5support.so.0",
+    "libkrb5support.so.0.1"
+   ],
+   "libudev1": [
+    "libudev.so.1",
+    "libudev.so.1.6.13"
+   ],
+   "libsepol1": [
+    "libsepol.so.1"
+   ],
+   "libk5crypto3": [
+    "libk5crypto.so.3",
+    "libk5crypto.so.3.1"
+   ],
+   "libprocps7": [
+    "libprocps.so.7",
+    "libprocps.so.7.1.0"
+   ],
+   "libsystemd0": [
+    "libsystemd.so.0",
+    "libsystemd.so.0.25.0"
+   ],
+   "libsqlite3-0": [
+    "libsqlite3.so.0",
+    "libsqlite3.so.0.8.6"
+   ],
+   "libtinfo6": [
+    "libtic.so.6",
+    "libtic.so.6.1",
+    "libtinfo.so.6",
+    "libtinfo.so.6.1"
+   ],
+   "libssh2-1": [
+    "libssh2.so.1",
+    "libssh2.so.1.0.1"
+   ],
+   "libcurl3-gnutls": [
+    "libcurl-gnutls.so.3",
+    "libcurl-gnutls.so.4",
+    "libcurl-gnutls.so.4.5.0"
+   ],
+   "libnghttp2-14": [
+    "libnghttp2.so.14",
+    "libnghttp2.so.14.17.1"
+   ],
+   "libbz2-1.0": [
+    "libbz2.so.1",
+    "libbz2.so.1.0",
+    "libbz2.so.1.0.4"
+   ],
+   "libcom-err2": [
+    "libcom_err.so.2",
+    "libcom_err.so.2.1"
+   ],
+   "libpcre2-8-0": [
+    "libpcre2-8.so.0",
+    "libpcre2-8.so.0.7.1"
+   ],
+   "liblzma5": [
+    "liblzma.so.5",
+    "liblzma.so.5.2.4"
+   ],
+   "libldap-2.4-2": [
+    "liblber-2.4.so.2",
+    "liblber-2.4.so.2.10.10",
+    "libldap-2.4.so.2",
+    "libldap_r-2.4.so.2",
+    "libldap_r-2.4.so.2.10.10"
    ],
    "libpcre3": [
     "libpcre.so.3",
@@ -6842,9 +6890,49 @@
     "libpcreposix.so.3",
     "libpcreposix.so.3.13.3"
    ],
-   "libmount1": [
-    "libmount.so.1",
-    "libmount.so.1.1.0"
+   "libncursesw6": [
+    "libformw.so.6",
+    "libformw.so.6.1",
+    "libmenuw.so.6",
+    "libmenuw.so.6.1",
+    "libncursesw.so.6",
+    "libncursesw.so.6.1",
+    "libpanelw.so.6",
+    "libpanelw.so.6.1"
+   ],
+   "libexpat1": [
+    "libexpat.so.1",
+    "libexpat.so.1.6.8",
+    "libexpatw.so.1",
+    "libexpatw.so.1.6.8"
+   ],
+   "libgmp10": [
+    "libgmp.so.10",
+    "libgmp.so.10.3.2"
+   ],
+   "libelf1": [
+    "libelf-0.176.so",
+    "libelf.so.1"
+   ],
+   "libblkid1": [
+    "libblkid.so.1",
+    "libblkid.so.1.1.0"
+   ],
+   "libkrb5-3": [
+    "libkrb5.so.3",
+    "libkrb5.so.3.3"
+   ],
+   "libpam0g": [
+    "libpam.so.0",
+    "libpam.so.0.84.2",
+    "libpam_misc.so.0",
+    "libpam_misc.so.0.82.1",
+    "libpamc.so.0",
+    "libpamc.so.0.82.1"
+   ],
+   "libperl5.28": [
+    "libperl.so.5.28",
+    "libperl.so.5.28.1"
    ]
   },
   "gatilhos": [
@@ -7994,8 +8082,28 @@
   ],
   "pacotes_interpretes": [
    "bash",
+   "bsdutils",
+   "coreutils",
+   "debianutils",
+   "findutils",
+   "grep",
+   "libacl1",
+   "libattr1",
    "libc6",
-   "libtinfo6"
+   "libgcrypt20",
+   "libgpg-error0",
+   "liblz4-1",
+   "liblzma5",
+   "libpcre3",
+   "libprocps7",
+   "libselinux1",
+   "libsystemd0",
+   "libtinfo6",
+   "mime-support",
+   "ncurses-bin",
+   "procps",
+   "sed",
+   "util-linux"
   ],
   "sonames_citadas": {
    "libtinfo.so.6": [
@@ -8008,245 +8116,8 @@
  },
  "teastore-recommender-1": {
   "executaveis": {
-   "gpg-wks-server": [
-    "gpg-wks-server"
-   ],
-   "dirmngr": [
-    "dirmngr",
-    "dirmngr-client"
-   ],
-   "gpgsm": [
-    "gpgsm"
-   ],
    "tzdata": [
     "tzconfig"
-   ],
-   "tar": [
-    "rmt-tar",
-    "tar",
-    "tarcat"
-   ],
-   "wget": [
-    "wget"
-   ],
-   "gpgconf": [
-    "gpg-connect-agent",
-    "gpgconf"
-   ],
-   "dpkg": [
-    "dpkg",
-    "dpkg-deb",
-    "dpkg-divert",
-    "dpkg-maintscript-helper",
-    "dpkg-query",
-    "dpkg-split",
-    "dpkg-statoverride",
-    "dpkg-trigger",
-    "start-stop-daemon",
-    "update-alternatives"
-   ],
-   "gpg": [
-    "gpg"
-   ],
-   "perl-base": [
-    "perl",
-    "perl5.28.1"
-   ],
-   "subversion": [
-    "svn",
-    "svnadmin",
-    "svnauthz",
-    "svnauthz-validate",
-    "svnbench",
-    "svndumpfilter",
-    "svnfsfs",
-    "svnlook",
-    "svnmucc",
-    "svnrdump",
-    "svnserve",
-    "svnsync",
-    "svnversion"
-   ],
-   "bzip2": [
-    "bunzip2",
-    "bzcat",
-    "bzcmp",
-    "bzdiff",
-    "bzegrep",
-    "bzexe",
-    "bzfgrep",
-    "bzgrep",
-    "bzip2",
-    "bzip2recover",
-    "bzless",
-    "bzmore"
-   ],
-   "unzip": [
-    "funzip",
-    "unzip",
-    "unzipsfx",
-    "zipgrep",
-    "zipinfo"
-   ],
-   "fdisk": [
-    "cfdisk",
-    "fdisk",
-    "sfdisk"
-   ],
-   "xz-utils": [
-    "lzmainfo",
-    "unxz",
-    "xz",
-    "xzcat",
-    "xzcmp",
-    "xzdiff",
-    "xzegrep",
-    "xzfgrep",
-    "xzgrep",
-    "xzless",
-    "xzmore"
-   ],
-   "libpam-modules-bin": [
-    "mkhomedir_helper",
-    "pam_tally",
-    "pam_tally2",
-    "pam_timestamp_check",
-    "unix_chkpwd",
-    "unix_update"
-   ],
-   "gzip": [
-    "gunzip",
-    "gzexe",
-    "gzip",
-    "uncompress",
-    "zcat",
-    "zcmp",
-    "zdiff",
-    "zegrep",
-    "zfgrep",
-    "zforce",
-    "zgrep",
-    "zless",
-    "zmore",
-    "znew"
-   ],
-   "iproute2": [
-    "arpd",
-    "bridge",
-    "ctstat",
-    "devlink",
-    "genl",
-    "ip",
-    "lnstat",
-    "nstat",
-    "rdma",
-    "routef",
-    "routel",
-    "rtacct",
-    "rtmon",
-    "rtstat",
-    "ss",
-    "tc",
-    "tipc"
-   ],
-   "mount": [
-    "losetup",
-    "mount",
-    "swapoff",
-    "swapon",
-    "umount"
-   ],
-   "curl": [
-    "curl"
-   ],
-   "libpam-runtime": [
-    "pam-auth-update",
-    "pam_getenv"
-   ],
-   "openssl": [
-    "c_rehash",
-    "openssl"
-   ],
-   "git": [
-    "git",
-    "git-receive-pack",
-    "git-shell",
-    "git-upload-archive",
-    "git-upload-pack"
-   ],
-   "gpg-agent": [
-    "gpg-agent"
-   ],
-   "passwd": [
-    "chage",
-    "chfn",
-    "chgpasswd",
-    "chpasswd",
-    "chsh",
-    "cpgr",
-    "cppw",
-    "expiry",
-    "gpasswd",
-    "groupadd",
-    "groupdel",
-    "groupmems",
-    "groupmod",
-    "grpck",
-    "grpconv",
-    "grpunconv",
-    "newusers",
-    "passwd",
-    "pwck",
-    "pwconv",
-    "pwunconv",
-    "shadowconfig",
-    "useradd",
-    "userdel",
-    "usermod",
-    "vigr",
-    "vipw"
-   ],
-   "e2fsprogs": [
-    "badblocks",
-    "chattr",
-    "debugfs",
-    "dumpe2fs",
-    "e2freefrag",
-    "e2fsck",
-    "e2image",
-    "e2label",
-    "e2mmpstatus",
-    "e2undo",
-    "e4crypt",
-    "e4defrag",
-    "filefrag",
-    "fsck.ext2",
-    "fsck.ext3",
-    "fsck.ext4",
-    "logsave",
-    "lsattr",
-    "mke2fs",
-    "mkfs.ext2",
-    "mkfs.ext3",
-    "mkfs.ext4",
-    "mklost+found",
-    "resize2fs",
-    "tune2fs"
-   ],
-   "openssh-client": [
-    "scp",
-    "sftp",
-    "slogin",
-    "ssh",
-    "ssh-add",
-    "ssh-agent",
-    "ssh-argv0",
-    "ssh-copy-id",
-    "ssh-keygen",
-    "ssh-keyscan"
-   ],
-   "python2.7-minimal": [
-    "python2.7"
    ],
    "perl": [
     "corelist",
@@ -8279,9 +8150,29 @@
     "xsubpp",
     "zipdetails"
    ],
-   "libperl5.28": [
-    "cpan5.28-x86_64-linux-gnu",
-    "perl5.28-x86_64-linux-gnu"
+   "xz-utils": [
+    "lzmainfo",
+    "unxz",
+    "xz",
+    "xzcat",
+    "xzcmp",
+    "xzdiff",
+    "xzegrep",
+    "xzfgrep",
+    "xzgrep",
+    "xzless",
+    "xzmore"
+   ],
+   "mount": [
+    "losetup",
+    "mount",
+    "swapoff",
+    "swapon",
+    "umount"
+   ],
+   "perl-base": [
+    "perl",
+    "perl5.28.1"
    ],
    "python2.7": [
     "2to3-2.7",
@@ -8289,13 +8180,16 @@
     "pydoc2.7",
     "pygettext2.7"
    ],
-   "login": [
-    "faillog",
-    "lastlog",
-    "login",
-    "newgrp",
-    "nologin",
-    "sg"
+   "gpgsm": [
+    "gpgsm"
+   ],
+   "gpgconf": [
+    "gpg-connect-agent",
+    "gpgconf"
+   ],
+   "openssl": [
+    "c_rehash",
+    "openssl"
    ],
    "gpgv": [
     "gpgv"
@@ -8313,153 +8207,226 @@
     "migrate-pubring-from-classic-gpg",
     "symcryptrun",
     "watchgnupg"
+   ],
+   "bzip2": [
+    "bunzip2",
+    "bzcat",
+    "bzcmp",
+    "bzdiff",
+    "bzegrep",
+    "bzexe",
+    "bzfgrep",
+    "bzgrep",
+    "bzip2",
+    "bzip2recover",
+    "bzless",
+    "bzmore"
+   ],
+   "unzip": [
+    "funzip",
+    "unzip",
+    "unzipsfx",
+    "zipgrep",
+    "zipinfo"
+   ],
+   "gpg-wks-server": [
+    "gpg-wks-server"
+   ],
+   "tar": [
+    "rmt-tar",
+    "tar",
+    "tarcat"
+   ],
+   "iproute2": [
+    "arpd",
+    "bridge",
+    "ctstat",
+    "devlink",
+    "genl",
+    "ip",
+    "lnstat",
+    "nstat",
+    "rdma",
+    "routef",
+    "routel",
+    "rtacct",
+    "rtmon",
+    "rtstat",
+    "ss",
+    "tc",
+    "tipc"
+   ],
+   "python2.7-minimal": [
+    "python2.7"
+   ],
+   "openssh-client": [
+    "scp",
+    "sftp",
+    "slogin",
+    "ssh",
+    "ssh-add",
+    "ssh-agent",
+    "ssh-argv0",
+    "ssh-copy-id",
+    "ssh-keygen",
+    "ssh-keyscan"
+   ],
+   "libpam-modules-bin": [
+    "mkhomedir_helper",
+    "pam_tally",
+    "pam_tally2",
+    "pam_timestamp_check",
+    "unix_chkpwd",
+    "unix_update"
+   ],
+   "gpg-agent": [
+    "gpg-agent"
+   ],
+   "dirmngr": [
+    "dirmngr",
+    "dirmngr-client"
+   ],
+   "gzip": [
+    "gunzip",
+    "gzexe",
+    "gzip",
+    "uncompress",
+    "zcat",
+    "zcmp",
+    "zdiff",
+    "zegrep",
+    "zfgrep",
+    "zforce",
+    "zgrep",
+    "zless",
+    "zmore",
+    "znew"
+   ],
+   "gpg": [
+    "gpg"
+   ],
+   "git": [
+    "git",
+    "git-receive-pack",
+    "git-shell",
+    "git-upload-archive",
+    "git-upload-pack"
+   ],
+   "dpkg": [
+    "dpkg",
+    "dpkg-deb",
+    "dpkg-divert",
+    "dpkg-maintscript-helper",
+    "dpkg-query",
+    "dpkg-split",
+    "dpkg-statoverride",
+    "dpkg-trigger",
+    "start-stop-daemon",
+    "update-alternatives"
+   ],
+   "libpam-runtime": [
+    "pam-auth-update",
+    "pam_getenv"
+   ],
+   "e2fsprogs": [
+    "badblocks",
+    "chattr",
+    "debugfs",
+    "dumpe2fs",
+    "e2freefrag",
+    "e2fsck",
+    "e2image",
+    "e2label",
+    "e2mmpstatus",
+    "e2undo",
+    "e4crypt",
+    "e4defrag",
+    "filefrag",
+    "fsck.ext2",
+    "fsck.ext3",
+    "fsck.ext4",
+    "logsave",
+    "lsattr",
+    "mke2fs",
+    "mkfs.ext2",
+    "mkfs.ext3",
+    "mkfs.ext4",
+    "mklost+found",
+    "resize2fs",
+    "tune2fs"
+   ],
+   "fdisk": [
+    "cfdisk",
+    "fdisk",
+    "sfdisk"
+   ],
+   "subversion": [
+    "svn",
+    "svnadmin",
+    "svnauthz",
+    "svnauthz-validate",
+    "svnbench",
+    "svndumpfilter",
+    "svnfsfs",
+    "svnlook",
+    "svnmucc",
+    "svnrdump",
+    "svnserve",
+    "svnsync",
+    "svnversion"
+   ],
+   "login": [
+    "faillog",
+    "lastlog",
+    "login",
+    "newgrp",
+    "nologin",
+    "sg"
+   ],
+   "passwd": [
+    "chage",
+    "chfn",
+    "chgpasswd",
+    "chpasswd",
+    "chsh",
+    "cpgr",
+    "cppw",
+    "expiry",
+    "gpasswd",
+    "groupadd",
+    "groupdel",
+    "groupmems",
+    "groupmod",
+    "grpck",
+    "grpconv",
+    "grpunconv",
+    "newusers",
+    "passwd",
+    "pwck",
+    "pwconv",
+    "pwunconv",
+    "shadowconfig",
+    "useradd",
+    "userdel",
+    "usermod",
+    "vigr",
+    "vipw"
+   ],
+   "wget": [
+    "wget"
+   ],
+   "curl": [
+    "curl"
+   ],
+   "libperl5.28": [
+    "cpan5.28-x86_64-linux-gnu",
+    "perl5.28-x86_64-linux-gnu"
    ]
   },
   "sonames": {
-   "libsqlite3-0": [
-    "libsqlite3.so.0",
-    "libsqlite3.so.0.8.6"
-   ],
-   "libnghttp2-14": [
-    "libnghttp2.so.14",
-    "libnghttp2.so.14.17.1"
-   ],
-   "libsmartcols1": [
-    "libsmartcols.so.1",
-    "libsmartcols.so.1.1.0"
-   ],
-   "libk5crypto3": [
-    "libk5crypto.so.3",
-    "libk5crypto.so.3.1"
-   ],
-   "libss2": [
-    "libss.so.2",
-    "libss.so.2.0"
-   ],
-   "libcurl3-gnutls": [
-    "libcurl-gnutls.so.3",
-    "libcurl-gnutls.so.4",
-    "libcurl-gnutls.so.4.5.0"
-   ],
-   "libpcre2-8-0": [
-    "libpcre2-8.so.0",
-    "libpcre2-8.so.0.7.1"
-   ],
-   "libtinfo6": [
-    "libtic.so.6",
-    "libtic.so.6.1",
-    "libtinfo.so.6",
-    "libtinfo.so.6.1"
-   ],
-   "libidn2-0": [
-    "libidn2.so.0",
-    "libidn2.so.0.3.4"
-   ],
-   "libksba8": [
-    "libksba.so.8",
-    "libksba.so.8.11.6"
-   ],
-   "libncurses6": [
-    "libform.so.6",
-    "libform.so.6.1",
-    "libmenu.so.6",
-    "libmenu.so.6.1",
-    "libncurses.so.6",
-    "libncurses.so.6.1",
-    "libpanel.so.6",
-    "libpanel.so.6.1"
-   ],
-   "liblz4-1": [
-    "liblz4.so.1",
-    "liblz4.so.1.8.3"
-   ],
-   "libpam0g": [
-    "libpam.so.0",
-    "libpam.so.0.84.2",
-    "libpam_misc.so.0",
-    "libpam_misc.so.0.82.1",
-    "libpamc.so.0",
-    "libpamc.so.0.82.1"
-   ],
-   "libssh2-1": [
-    "libssh2.so.1",
-    "libssh2.so.1.0.1"
-   ],
-   "libncursesw6": [
-    "libformw.so.6",
-    "libformw.so.6.1",
-    "libmenuw.so.6",
-    "libmenuw.so.6.1",
-    "libncursesw.so.6",
-    "libncursesw.so.6.1",
-    "libpanelw.so.6",
-    "libpanelw.so.6.1"
-   ],
-   "libaprutil1": [
-    "libaprutil-1.so.0",
-    "libaprutil-1.so.0.6.1"
-   ],
-   "libtasn1-6": [
-    "libtasn1.so.6",
-    "libtasn1.so.6.5.5"
-   ],
-   "libbz2-1.0": [
-    "libbz2.so.1",
-    "libbz2.so.1.0",
-    "libbz2.so.1.0.4"
-   ],
-   "libprocps7": [
-    "libprocps.so.7",
-    "libprocps.so.7.1.0"
-   ],
-   "libfreetype6": [
-    "libfreetype.so.6",
-    "libfreetype.so.6.16.1"
-   ],
-   "liblzma5": [
-    "liblzma.so.5",
-    "liblzma.so.5.2.4"
-   ],
    "libcurl4": [
     "libcurl.so.4",
     "libcurl.so.4.5.0"
-   ],
-   "libfdisk1": [
-    "libfdisk.so.1",
-    "libfdisk.so.1.1.0"
-   ],
-   "libkrb5support0": [
-    "libkrb5support.so.0",
-    "libkrb5support.so.0.1"
-   ],
-   "libblkid1": [
-    "libblkid.so.1",
-    "libblkid.so.1.1.0"
-   ],
-   "libext2fs2": [
-    "libe2p.so.2",
-    "libe2p.so.2.3",
-    "libext2fs.so.2",
-    "libext2fs.so.2.4"
-   ],
-   "libkrb5-3": [
-    "libkrb5.so.3",
-    "libkrb5.so.3.3"
-   ],
-   "libgnutls30": [
-    "libgnutls.so.30",
-    "libgnutls.so.30.23.2"
-   ],
-   "libldap-2.4-2": [
-    "liblber-2.4.so.2",
-    "liblber-2.4.so.2.10.10",
-    "libldap-2.4.so.2",
-    "libldap_r-2.4.so.2",
-    "libldap_r-2.4.so.2.10.10"
-   ],
-   "libgcrypt20": [
-    "libgcrypt.so.20",
-    "libgcrypt.so.20.2.4"
    ],
    "libsvn1": [
     "libsvn_auth_gnome_keyring-1.so.1",
@@ -8497,54 +8464,155 @@
     "libsvn_wc-1.so.1",
     "libsvn_wc-1.so.1.0.0"
    ],
-   "libgssapi-krb5-2": [
-    "libgssapi_krb5.so.2",
-    "libgssapi_krb5.so.2.2"
-   ],
-   "libperl5.28": [
-    "libperl.so.5.28",
-    "libperl.so.5.28.1"
-   ],
-   "libudev1": [
-    "libudev.so.1",
-    "libudev.so.1.6.13"
-   ],
-   "libsystemd0": [
-    "libsystemd.so.0",
-    "libsystemd.so.0.25.0"
+   "libss2": [
+    "libss.so.2",
+    "libss.so.2.0"
    ],
    "libsasl2-modules-db": [
     "libsasldb.so",
     "libsasldb.so.2",
     "libsasldb.so.2.0.25"
    ],
-   "libgmp10": [
-    "libgmp.so.10",
-    "libgmp.so.10.3.2"
+   "liblz4-1": [
+    "liblz4.so.1",
+    "liblz4.so.1.8.3"
    ],
-   "libexpat1": [
-    "libexpat.so.1",
-    "libexpat.so.1.6.8",
-    "libexpatw.so.1",
-    "libexpatw.so.1.6.8"
+   "libaprutil1": [
+    "libaprutil-1.so.0",
+    "libaprutil-1.so.0.6.1"
    ],
-   "libcom-err2": [
-    "libcom_err.so.2",
-    "libcom_err.so.2.1"
-   ],
-   "libsepol1": [
-    "libsepol.so.1"
-   ],
-   "libelf1": [
-    "libelf-0.176.so",
-    "libelf.so.1"
+   "libfdisk1": [
+    "libfdisk.so.1",
+    "libfdisk.so.1.1.0"
    ],
    "libsasl2-2": [
     "libsasl2.so.2",
     "libsasl2.so.2.0.25"
    ],
+   "libidn2-0": [
+    "libidn2.so.0",
+    "libidn2.so.0.3.4"
+   ],
+   "libext2fs2": [
+    "libe2p.so.2",
+    "libe2p.so.2.3",
+    "libext2fs.so.2",
+    "libext2fs.so.2.4"
+   ],
+   "libfreetype6": [
+    "libfreetype.so.6",
+    "libfreetype.so.6.16.1"
+   ],
+   "libtasn1-6": [
+    "libtasn1.so.6",
+    "libtasn1.so.6.5.5"
+   ],
    "libdb5.3": [
     "libdb-5.3.so"
+   ],
+   "libgssapi-krb5-2": [
+    "libgssapi_krb5.so.2",
+    "libgssapi_krb5.so.2.2"
+   ],
+   "libgnutls30": [
+    "libgnutls.so.30",
+    "libgnutls.so.30.23.2"
+   ],
+   "libgcrypt20": [
+    "libgcrypt.so.20",
+    "libgcrypt.so.20.2.4"
+   ],
+   "libksba8": [
+    "libksba.so.8",
+    "libksba.so.8.11.6"
+   ],
+   "libmount1": [
+    "libmount.so.1",
+    "libmount.so.1.1.0"
+   ],
+   "libncurses6": [
+    "libform.so.6",
+    "libform.so.6.1",
+    "libmenu.so.6",
+    "libmenu.so.6.1",
+    "libncurses.so.6",
+    "libncurses.so.6.1",
+    "libpanel.so.6",
+    "libpanel.so.6.1"
+   ],
+   "libsmartcols1": [
+    "libsmartcols.so.1",
+    "libsmartcols.so.1.1.0"
+   ],
+   "libkrb5support0": [
+    "libkrb5support.so.0",
+    "libkrb5support.so.0.1"
+   ],
+   "libudev1": [
+    "libudev.so.1",
+    "libudev.so.1.6.13"
+   ],
+   "libsepol1": [
+    "libsepol.so.1"
+   ],
+   "libk5crypto3": [
+    "libk5crypto.so.3",
+    "libk5crypto.so.3.1"
+   ],
+   "libprocps7": [
+    "libprocps.so.7",
+    "libprocps.so.7.1.0"
+   ],
+   "libsystemd0": [
+    "libsystemd.so.0",
+    "libsystemd.so.0.25.0"
+   ],
+   "libsqlite3-0": [
+    "libsqlite3.so.0",
+    "libsqlite3.so.0.8.6"
+   ],
+   "libtinfo6": [
+    "libtic.so.6",
+    "libtic.so.6.1",
+    "libtinfo.so.6",
+    "libtinfo.so.6.1"
+   ],
+   "libssh2-1": [
+    "libssh2.so.1",
+    "libssh2.so.1.0.1"
+   ],
+   "libcurl3-gnutls": [
+    "libcurl-gnutls.so.3",
+    "libcurl-gnutls.so.4",
+    "libcurl-gnutls.so.4.5.0"
+   ],
+   "libnghttp2-14": [
+    "libnghttp2.so.14",
+    "libnghttp2.so.14.17.1"
+   ],
+   "libbz2-1.0": [
+    "libbz2.so.1",
+    "libbz2.so.1.0",
+    "libbz2.so.1.0.4"
+   ],
+   "libcom-err2": [
+    "libcom_err.so.2",
+    "libcom_err.so.2.1"
+   ],
+   "libpcre2-8-0": [
+    "libpcre2-8.so.0",
+    "libpcre2-8.so.0.7.1"
+   ],
+   "liblzma5": [
+    "liblzma.so.5",
+    "liblzma.so.5.2.4"
+   ],
+   "libldap-2.4-2": [
+    "liblber-2.4.so.2",
+    "liblber-2.4.so.2.10.10",
+    "libldap-2.4.so.2",
+    "libldap_r-2.4.so.2",
+    "libldap_r-2.4.so.2.10.10"
    ],
    "libpcre3": [
     "libpcre.so.3",
@@ -8552,9 +8620,49 @@
     "libpcreposix.so.3",
     "libpcreposix.so.3.13.3"
    ],
-   "libmount1": [
-    "libmount.so.1",
-    "libmount.so.1.1.0"
+   "libncursesw6": [
+    "libformw.so.6",
+    "libformw.so.6.1",
+    "libmenuw.so.6",
+    "libmenuw.so.6.1",
+    "libncursesw.so.6",
+    "libncursesw.so.6.1",
+    "libpanelw.so.6",
+    "libpanelw.so.6.1"
+   ],
+   "libexpat1": [
+    "libexpat.so.1",
+    "libexpat.so.1.6.8",
+    "libexpatw.so.1",
+    "libexpatw.so.1.6.8"
+   ],
+   "libgmp10": [
+    "libgmp.so.10",
+    "libgmp.so.10.3.2"
+   ],
+   "libelf1": [
+    "libelf-0.176.so",
+    "libelf.so.1"
+   ],
+   "libblkid1": [
+    "libblkid.so.1",
+    "libblkid.so.1.1.0"
+   ],
+   "libkrb5-3": [
+    "libkrb5.so.3",
+    "libkrb5.so.3.3"
+   ],
+   "libpam0g": [
+    "libpam.so.0",
+    "libpam.so.0.84.2",
+    "libpam_misc.so.0",
+    "libpam_misc.so.0.82.1",
+    "libpamc.so.0",
+    "libpamc.so.0.82.1"
+   ],
+   "libperl5.28": [
+    "libperl.so.5.28",
+    "libperl.so.5.28.1"
    ]
   },
   "gatilhos": [
@@ -9704,8 +9812,28 @@
   ],
   "pacotes_interpretes": [
    "bash",
+   "bsdutils",
+   "coreutils",
+   "debianutils",
+   "findutils",
+   "grep",
+   "libacl1",
+   "libattr1",
    "libc6",
-   "libtinfo6"
+   "libgcrypt20",
+   "libgpg-error0",
+   "liblz4-1",
+   "liblzma5",
+   "libpcre3",
+   "libprocps7",
+   "libselinux1",
+   "libsystemd0",
+   "libtinfo6",
+   "mime-support",
+   "ncurses-bin",
+   "procps",
+   "sed",
+   "util-linux"
   ],
   "sonames_citadas": {
    "libtinfo.so.6": [
@@ -9718,245 +9846,8 @@
  },
  "teastore-webui-1": {
   "executaveis": {
-   "gpg-wks-server": [
-    "gpg-wks-server"
-   ],
-   "dirmngr": [
-    "dirmngr",
-    "dirmngr-client"
-   ],
-   "gpgsm": [
-    "gpgsm"
-   ],
    "tzdata": [
     "tzconfig"
-   ],
-   "tar": [
-    "rmt-tar",
-    "tar",
-    "tarcat"
-   ],
-   "wget": [
-    "wget"
-   ],
-   "gpgconf": [
-    "gpg-connect-agent",
-    "gpgconf"
-   ],
-   "dpkg": [
-    "dpkg",
-    "dpkg-deb",
-    "dpkg-divert",
-    "dpkg-maintscript-helper",
-    "dpkg-query",
-    "dpkg-split",
-    "dpkg-statoverride",
-    "dpkg-trigger",
-    "start-stop-daemon",
-    "update-alternatives"
-   ],
-   "gpg": [
-    "gpg"
-   ],
-   "perl-base": [
-    "perl",
-    "perl5.28.1"
-   ],
-   "subversion": [
-    "svn",
-    "svnadmin",
-    "svnauthz",
-    "svnauthz-validate",
-    "svnbench",
-    "svndumpfilter",
-    "svnfsfs",
-    "svnlook",
-    "svnmucc",
-    "svnrdump",
-    "svnserve",
-    "svnsync",
-    "svnversion"
-   ],
-   "bzip2": [
-    "bunzip2",
-    "bzcat",
-    "bzcmp",
-    "bzdiff",
-    "bzegrep",
-    "bzexe",
-    "bzfgrep",
-    "bzgrep",
-    "bzip2",
-    "bzip2recover",
-    "bzless",
-    "bzmore"
-   ],
-   "unzip": [
-    "funzip",
-    "unzip",
-    "unzipsfx",
-    "zipgrep",
-    "zipinfo"
-   ],
-   "fdisk": [
-    "cfdisk",
-    "fdisk",
-    "sfdisk"
-   ],
-   "xz-utils": [
-    "lzmainfo",
-    "unxz",
-    "xz",
-    "xzcat",
-    "xzcmp",
-    "xzdiff",
-    "xzegrep",
-    "xzfgrep",
-    "xzgrep",
-    "xzless",
-    "xzmore"
-   ],
-   "libpam-modules-bin": [
-    "mkhomedir_helper",
-    "pam_tally",
-    "pam_tally2",
-    "pam_timestamp_check",
-    "unix_chkpwd",
-    "unix_update"
-   ],
-   "gzip": [
-    "gunzip",
-    "gzexe",
-    "gzip",
-    "uncompress",
-    "zcat",
-    "zcmp",
-    "zdiff",
-    "zegrep",
-    "zfgrep",
-    "zforce",
-    "zgrep",
-    "zless",
-    "zmore",
-    "znew"
-   ],
-   "iproute2": [
-    "arpd",
-    "bridge",
-    "ctstat",
-    "devlink",
-    "genl",
-    "ip",
-    "lnstat",
-    "nstat",
-    "rdma",
-    "routef",
-    "routel",
-    "rtacct",
-    "rtmon",
-    "rtstat",
-    "ss",
-    "tc",
-    "tipc"
-   ],
-   "mount": [
-    "losetup",
-    "mount",
-    "swapoff",
-    "swapon",
-    "umount"
-   ],
-   "curl": [
-    "curl"
-   ],
-   "libpam-runtime": [
-    "pam-auth-update",
-    "pam_getenv"
-   ],
-   "openssl": [
-    "c_rehash",
-    "openssl"
-   ],
-   "git": [
-    "git",
-    "git-receive-pack",
-    "git-shell",
-    "git-upload-archive",
-    "git-upload-pack"
-   ],
-   "gpg-agent": [
-    "gpg-agent"
-   ],
-   "passwd": [
-    "chage",
-    "chfn",
-    "chgpasswd",
-    "chpasswd",
-    "chsh",
-    "cpgr",
-    "cppw",
-    "expiry",
-    "gpasswd",
-    "groupadd",
-    "groupdel",
-    "groupmems",
-    "groupmod",
-    "grpck",
-    "grpconv",
-    "grpunconv",
-    "newusers",
-    "passwd",
-    "pwck",
-    "pwconv",
-    "pwunconv",
-    "shadowconfig",
-    "useradd",
-    "userdel",
-    "usermod",
-    "vigr",
-    "vipw"
-   ],
-   "e2fsprogs": [
-    "badblocks",
-    "chattr",
-    "debugfs",
-    "dumpe2fs",
-    "e2freefrag",
-    "e2fsck",
-    "e2image",
-    "e2label",
-    "e2mmpstatus",
-    "e2undo",
-    "e4crypt",
-    "e4defrag",
-    "filefrag",
-    "fsck.ext2",
-    "fsck.ext3",
-    "fsck.ext4",
-    "logsave",
-    "lsattr",
-    "mke2fs",
-    "mkfs.ext2",
-    "mkfs.ext3",
-    "mkfs.ext4",
-    "mklost+found",
-    "resize2fs",
-    "tune2fs"
-   ],
-   "openssh-client": [
-    "scp",
-    "sftp",
-    "slogin",
-    "ssh",
-    "ssh-add",
-    "ssh-agent",
-    "ssh-argv0",
-    "ssh-copy-id",
-    "ssh-keygen",
-    "ssh-keyscan"
-   ],
-   "python2.7-minimal": [
-    "python2.7"
    ],
    "perl": [
     "corelist",
@@ -9989,9 +9880,29 @@
     "xsubpp",
     "zipdetails"
    ],
-   "libperl5.28": [
-    "cpan5.28-x86_64-linux-gnu",
-    "perl5.28-x86_64-linux-gnu"
+   "xz-utils": [
+    "lzmainfo",
+    "unxz",
+    "xz",
+    "xzcat",
+    "xzcmp",
+    "xzdiff",
+    "xzegrep",
+    "xzfgrep",
+    "xzgrep",
+    "xzless",
+    "xzmore"
+   ],
+   "mount": [
+    "losetup",
+    "mount",
+    "swapoff",
+    "swapon",
+    "umount"
+   ],
+   "perl-base": [
+    "perl",
+    "perl5.28.1"
    ],
    "python2.7": [
     "2to3-2.7",
@@ -9999,13 +9910,16 @@
     "pydoc2.7",
     "pygettext2.7"
    ],
-   "login": [
-    "faillog",
-    "lastlog",
-    "login",
-    "newgrp",
-    "nologin",
-    "sg"
+   "gpgsm": [
+    "gpgsm"
+   ],
+   "gpgconf": [
+    "gpg-connect-agent",
+    "gpgconf"
+   ],
+   "openssl": [
+    "c_rehash",
+    "openssl"
    ],
    "gpgv": [
     "gpgv"
@@ -10023,153 +9937,226 @@
     "migrate-pubring-from-classic-gpg",
     "symcryptrun",
     "watchgnupg"
+   ],
+   "bzip2": [
+    "bunzip2",
+    "bzcat",
+    "bzcmp",
+    "bzdiff",
+    "bzegrep",
+    "bzexe",
+    "bzfgrep",
+    "bzgrep",
+    "bzip2",
+    "bzip2recover",
+    "bzless",
+    "bzmore"
+   ],
+   "unzip": [
+    "funzip",
+    "unzip",
+    "unzipsfx",
+    "zipgrep",
+    "zipinfo"
+   ],
+   "gpg-wks-server": [
+    "gpg-wks-server"
+   ],
+   "tar": [
+    "rmt-tar",
+    "tar",
+    "tarcat"
+   ],
+   "iproute2": [
+    "arpd",
+    "bridge",
+    "ctstat",
+    "devlink",
+    "genl",
+    "ip",
+    "lnstat",
+    "nstat",
+    "rdma",
+    "routef",
+    "routel",
+    "rtacct",
+    "rtmon",
+    "rtstat",
+    "ss",
+    "tc",
+    "tipc"
+   ],
+   "python2.7-minimal": [
+    "python2.7"
+   ],
+   "openssh-client": [
+    "scp",
+    "sftp",
+    "slogin",
+    "ssh",
+    "ssh-add",
+    "ssh-agent",
+    "ssh-argv0",
+    "ssh-copy-id",
+    "ssh-keygen",
+    "ssh-keyscan"
+   ],
+   "libpam-modules-bin": [
+    "mkhomedir_helper",
+    "pam_tally",
+    "pam_tally2",
+    "pam_timestamp_check",
+    "unix_chkpwd",
+    "unix_update"
+   ],
+   "gpg-agent": [
+    "gpg-agent"
+   ],
+   "dirmngr": [
+    "dirmngr",
+    "dirmngr-client"
+   ],
+   "gzip": [
+    "gunzip",
+    "gzexe",
+    "gzip",
+    "uncompress",
+    "zcat",
+    "zcmp",
+    "zdiff",
+    "zegrep",
+    "zfgrep",
+    "zforce",
+    "zgrep",
+    "zless",
+    "zmore",
+    "znew"
+   ],
+   "gpg": [
+    "gpg"
+   ],
+   "git": [
+    "git",
+    "git-receive-pack",
+    "git-shell",
+    "git-upload-archive",
+    "git-upload-pack"
+   ],
+   "dpkg": [
+    "dpkg",
+    "dpkg-deb",
+    "dpkg-divert",
+    "dpkg-maintscript-helper",
+    "dpkg-query",
+    "dpkg-split",
+    "dpkg-statoverride",
+    "dpkg-trigger",
+    "start-stop-daemon",
+    "update-alternatives"
+   ],
+   "libpam-runtime": [
+    "pam-auth-update",
+    "pam_getenv"
+   ],
+   "e2fsprogs": [
+    "badblocks",
+    "chattr",
+    "debugfs",
+    "dumpe2fs",
+    "e2freefrag",
+    "e2fsck",
+    "e2image",
+    "e2label",
+    "e2mmpstatus",
+    "e2undo",
+    "e4crypt",
+    "e4defrag",
+    "filefrag",
+    "fsck.ext2",
+    "fsck.ext3",
+    "fsck.ext4",
+    "logsave",
+    "lsattr",
+    "mke2fs",
+    "mkfs.ext2",
+    "mkfs.ext3",
+    "mkfs.ext4",
+    "mklost+found",
+    "resize2fs",
+    "tune2fs"
+   ],
+   "fdisk": [
+    "cfdisk",
+    "fdisk",
+    "sfdisk"
+   ],
+   "subversion": [
+    "svn",
+    "svnadmin",
+    "svnauthz",
+    "svnauthz-validate",
+    "svnbench",
+    "svndumpfilter",
+    "svnfsfs",
+    "svnlook",
+    "svnmucc",
+    "svnrdump",
+    "svnserve",
+    "svnsync",
+    "svnversion"
+   ],
+   "login": [
+    "faillog",
+    "lastlog",
+    "login",
+    "newgrp",
+    "nologin",
+    "sg"
+   ],
+   "passwd": [
+    "chage",
+    "chfn",
+    "chgpasswd",
+    "chpasswd",
+    "chsh",
+    "cpgr",
+    "cppw",
+    "expiry",
+    "gpasswd",
+    "groupadd",
+    "groupdel",
+    "groupmems",
+    "groupmod",
+    "grpck",
+    "grpconv",
+    "grpunconv",
+    "newusers",
+    "passwd",
+    "pwck",
+    "pwconv",
+    "pwunconv",
+    "shadowconfig",
+    "useradd",
+    "userdel",
+    "usermod",
+    "vigr",
+    "vipw"
+   ],
+   "wget": [
+    "wget"
+   ],
+   "curl": [
+    "curl"
+   ],
+   "libperl5.28": [
+    "cpan5.28-x86_64-linux-gnu",
+    "perl5.28-x86_64-linux-gnu"
    ]
   },
   "sonames": {
-   "libsqlite3-0": [
-    "libsqlite3.so.0",
-    "libsqlite3.so.0.8.6"
-   ],
-   "libnghttp2-14": [
-    "libnghttp2.so.14",
-    "libnghttp2.so.14.17.1"
-   ],
-   "libsmartcols1": [
-    "libsmartcols.so.1",
-    "libsmartcols.so.1.1.0"
-   ],
-   "libk5crypto3": [
-    "libk5crypto.so.3",
-    "libk5crypto.so.3.1"
-   ],
-   "libss2": [
-    "libss.so.2",
-    "libss.so.2.0"
-   ],
-   "libcurl3-gnutls": [
-    "libcurl-gnutls.so.3",
-    "libcurl-gnutls.so.4",
-    "libcurl-gnutls.so.4.5.0"
-   ],
-   "libpcre2-8-0": [
-    "libpcre2-8.so.0",
-    "libpcre2-8.so.0.7.1"
-   ],
-   "libtinfo6": [
-    "libtic.so.6",
-    "libtic.so.6.1",
-    "libtinfo.so.6",
-    "libtinfo.so.6.1"
-   ],
-   "libidn2-0": [
-    "libidn2.so.0",
-    "libidn2.so.0.3.4"
-   ],
-   "libksba8": [
-    "libksba.so.8",
-    "libksba.so.8.11.6"
-   ],
-   "libncurses6": [
-    "libform.so.6",
-    "libform.so.6.1",
-    "libmenu.so.6",
-    "libmenu.so.6.1",
-    "libncurses.so.6",
-    "libncurses.so.6.1",
-    "libpanel.so.6",
-    "libpanel.so.6.1"
-   ],
-   "liblz4-1": [
-    "liblz4.so.1",
-    "liblz4.so.1.8.3"
-   ],
-   "libpam0g": [
-    "libpam.so.0",
-    "libpam.so.0.84.2",
-    "libpam_misc.so.0",
-    "libpam_misc.so.0.82.1",
-    "libpamc.so.0",
-    "libpamc.so.0.82.1"
-   ],
-   "libssh2-1": [
-    "libssh2.so.1",
-    "libssh2.so.1.0.1"
-   ],
-   "libncursesw6": [
-    "libformw.so.6",
-    "libformw.so.6.1",
-    "libmenuw.so.6",
-    "libmenuw.so.6.1",
-    "libncursesw.so.6",
-    "libncursesw.so.6.1",
-    "libpanelw.so.6",
-    "libpanelw.so.6.1"
-   ],
-   "libaprutil1": [
-    "libaprutil-1.so.0",
-    "libaprutil-1.so.0.6.1"
-   ],
-   "libtasn1-6": [
-    "libtasn1.so.6",
-    "libtasn1.so.6.5.5"
-   ],
-   "libbz2-1.0": [
-    "libbz2.so.1",
-    "libbz2.so.1.0",
-    "libbz2.so.1.0.4"
-   ],
-   "libprocps7": [
-    "libprocps.so.7",
-    "libprocps.so.7.1.0"
-   ],
-   "libfreetype6": [
-    "libfreetype.so.6",
-    "libfreetype.so.6.16.1"
-   ],
-   "liblzma5": [
-    "liblzma.so.5",
-    "liblzma.so.5.2.4"
-   ],
    "libcurl4": [
     "libcurl.so.4",
     "libcurl.so.4.5.0"
-   ],
-   "libfdisk1": [
-    "libfdisk.so.1",
-    "libfdisk.so.1.1.0"
-   ],
-   "libkrb5support0": [
-    "libkrb5support.so.0",
-    "libkrb5support.so.0.1"
-   ],
-   "libblkid1": [
-    "libblkid.so.1",
-    "libblkid.so.1.1.0"
-   ],
-   "libext2fs2": [
-    "libe2p.so.2",
-    "libe2p.so.2.3",
-    "libext2fs.so.2",
-    "libext2fs.so.2.4"
-   ],
-   "libkrb5-3": [
-    "libkrb5.so.3",
-    "libkrb5.so.3.3"
-   ],
-   "libgnutls30": [
-    "libgnutls.so.30",
-    "libgnutls.so.30.23.2"
-   ],
-   "libldap-2.4-2": [
-    "liblber-2.4.so.2",
-    "liblber-2.4.so.2.10.10",
-    "libldap-2.4.so.2",
-    "libldap_r-2.4.so.2",
-    "libldap_r-2.4.so.2.10.10"
-   ],
-   "libgcrypt20": [
-    "libgcrypt.so.20",
-    "libgcrypt.so.20.2.4"
    ],
    "libsvn1": [
     "libsvn_auth_gnome_keyring-1.so.1",
@@ -10207,54 +10194,155 @@
     "libsvn_wc-1.so.1",
     "libsvn_wc-1.so.1.0.0"
    ],
-   "libgssapi-krb5-2": [
-    "libgssapi_krb5.so.2",
-    "libgssapi_krb5.so.2.2"
-   ],
-   "libperl5.28": [
-    "libperl.so.5.28",
-    "libperl.so.5.28.1"
-   ],
-   "libudev1": [
-    "libudev.so.1",
-    "libudev.so.1.6.13"
-   ],
-   "libsystemd0": [
-    "libsystemd.so.0",
-    "libsystemd.so.0.25.0"
+   "libss2": [
+    "libss.so.2",
+    "libss.so.2.0"
    ],
    "libsasl2-modules-db": [
     "libsasldb.so",
     "libsasldb.so.2",
     "libsasldb.so.2.0.25"
    ],
-   "libgmp10": [
-    "libgmp.so.10",
-    "libgmp.so.10.3.2"
+   "liblz4-1": [
+    "liblz4.so.1",
+    "liblz4.so.1.8.3"
    ],
-   "libexpat1": [
-    "libexpat.so.1",
-    "libexpat.so.1.6.8",
-    "libexpatw.so.1",
-    "libexpatw.so.1.6.8"
+   "libaprutil1": [
+    "libaprutil-1.so.0",
+    "libaprutil-1.so.0.6.1"
    ],
-   "libcom-err2": [
-    "libcom_err.so.2",
-    "libcom_err.so.2.1"
-   ],
-   "libsepol1": [
-    "libsepol.so.1"
-   ],
-   "libelf1": [
-    "libelf-0.176.so",
-    "libelf.so.1"
+   "libfdisk1": [
+    "libfdisk.so.1",
+    "libfdisk.so.1.1.0"
    ],
    "libsasl2-2": [
     "libsasl2.so.2",
     "libsasl2.so.2.0.25"
    ],
+   "libidn2-0": [
+    "libidn2.so.0",
+    "libidn2.so.0.3.4"
+   ],
+   "libext2fs2": [
+    "libe2p.so.2",
+    "libe2p.so.2.3",
+    "libext2fs.so.2",
+    "libext2fs.so.2.4"
+   ],
+   "libfreetype6": [
+    "libfreetype.so.6",
+    "libfreetype.so.6.16.1"
+   ],
+   "libtasn1-6": [
+    "libtasn1.so.6",
+    "libtasn1.so.6.5.5"
+   ],
    "libdb5.3": [
     "libdb-5.3.so"
+   ],
+   "libgssapi-krb5-2": [
+    "libgssapi_krb5.so.2",
+    "libgssapi_krb5.so.2.2"
+   ],
+   "libgnutls30": [
+    "libgnutls.so.30",
+    "libgnutls.so.30.23.2"
+   ],
+   "libgcrypt20": [
+    "libgcrypt.so.20",
+    "libgcrypt.so.20.2.4"
+   ],
+   "libksba8": [
+    "libksba.so.8",
+    "libksba.so.8.11.6"
+   ],
+   "libmount1": [
+    "libmount.so.1",
+    "libmount.so.1.1.0"
+   ],
+   "libncurses6": [
+    "libform.so.6",
+    "libform.so.6.1",
+    "libmenu.so.6",
+    "libmenu.so.6.1",
+    "libncurses.so.6",
+    "libncurses.so.6.1",
+    "libpanel.so.6",
+    "libpanel.so.6.1"
+   ],
+   "libsmartcols1": [
+    "libsmartcols.so.1",
+    "libsmartcols.so.1.1.0"
+   ],
+   "libkrb5support0": [
+    "libkrb5support.so.0",
+    "libkrb5support.so.0.1"
+   ],
+   "libudev1": [
+    "libudev.so.1",
+    "libudev.so.1.6.13"
+   ],
+   "libsepol1": [
+    "libsepol.so.1"
+   ],
+   "libk5crypto3": [
+    "libk5crypto.so.3",
+    "libk5crypto.so.3.1"
+   ],
+   "libprocps7": [
+    "libprocps.so.7",
+    "libprocps.so.7.1.0"
+   ],
+   "libsystemd0": [
+    "libsystemd.so.0",
+    "libsystemd.so.0.25.0"
+   ],
+   "libsqlite3-0": [
+    "libsqlite3.so.0",
+    "libsqlite3.so.0.8.6"
+   ],
+   "libtinfo6": [
+    "libtic.so.6",
+    "libtic.so.6.1",
+    "libtinfo.so.6",
+    "libtinfo.so.6.1"
+   ],
+   "libssh2-1": [
+    "libssh2.so.1",
+    "libssh2.so.1.0.1"
+   ],
+   "libcurl3-gnutls": [
+    "libcurl-gnutls.so.3",
+    "libcurl-gnutls.so.4",
+    "libcurl-gnutls.so.4.5.0"
+   ],
+   "libnghttp2-14": [
+    "libnghttp2.so.14",
+    "libnghttp2.so.14.17.1"
+   ],
+   "libbz2-1.0": [
+    "libbz2.so.1",
+    "libbz2.so.1.0",
+    "libbz2.so.1.0.4"
+   ],
+   "libcom-err2": [
+    "libcom_err.so.2",
+    "libcom_err.so.2.1"
+   ],
+   "libpcre2-8-0": [
+    "libpcre2-8.so.0",
+    "libpcre2-8.so.0.7.1"
+   ],
+   "liblzma5": [
+    "liblzma.so.5",
+    "liblzma.so.5.2.4"
+   ],
+   "libldap-2.4-2": [
+    "liblber-2.4.so.2",
+    "liblber-2.4.so.2.10.10",
+    "libldap-2.4.so.2",
+    "libldap_r-2.4.so.2",
+    "libldap_r-2.4.so.2.10.10"
    ],
    "libpcre3": [
     "libpcre.so.3",
@@ -10262,9 +10350,49 @@
     "libpcreposix.so.3",
     "libpcreposix.so.3.13.3"
    ],
-   "libmount1": [
-    "libmount.so.1",
-    "libmount.so.1.1.0"
+   "libncursesw6": [
+    "libformw.so.6",
+    "libformw.so.6.1",
+    "libmenuw.so.6",
+    "libmenuw.so.6.1",
+    "libncursesw.so.6",
+    "libncursesw.so.6.1",
+    "libpanelw.so.6",
+    "libpanelw.so.6.1"
+   ],
+   "libexpat1": [
+    "libexpat.so.1",
+    "libexpat.so.1.6.8",
+    "libexpatw.so.1",
+    "libexpatw.so.1.6.8"
+   ],
+   "libgmp10": [
+    "libgmp.so.10",
+    "libgmp.so.10.3.2"
+   ],
+   "libelf1": [
+    "libelf-0.176.so",
+    "libelf.so.1"
+   ],
+   "libblkid1": [
+    "libblkid.so.1",
+    "libblkid.so.1.1.0"
+   ],
+   "libkrb5-3": [
+    "libkrb5.so.3",
+    "libkrb5.so.3.3"
+   ],
+   "libpam0g": [
+    "libpam.so.0",
+    "libpam.so.0.84.2",
+    "libpam_misc.so.0",
+    "libpam_misc.so.0.82.1",
+    "libpamc.so.0",
+    "libpamc.so.0.82.1"
+   ],
+   "libperl5.28": [
+    "libperl.so.5.28",
+    "libperl.so.5.28.1"
    ]
   },
   "gatilhos": [
@@ -11421,8 +11549,28 @@
   ],
   "pacotes_interpretes": [
    "bash",
+   "bsdutils",
+   "coreutils",
+   "debianutils",
+   "findutils",
+   "grep",
+   "libacl1",
+   "libattr1",
    "libc6",
-   "libtinfo6"
+   "libgcrypt20",
+   "libgpg-error0",
+   "liblz4-1",
+   "liblzma5",
+   "libpcre3",
+   "libprocps7",
+   "libselinux1",
+   "libsystemd0",
+   "libtinfo6",
+   "mime-support",
+   "ncurses-bin",
+   "procps",
+   "sed",
+   "util-linux"
   ],
   "sonames_citadas": {
    "libtinfo.so.6": [

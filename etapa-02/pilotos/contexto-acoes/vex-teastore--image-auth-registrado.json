@@ -1,6 +1,6 @@
 {
  "@context": "https://openvex.dev/ns/v0.2.0",
- "@id": "https://github.com/jldsn/sbseg2026-replicacao-devsecops/vex/teastore",
+ "@id": "https://github.com/jldsn/sbseg2026-replicacao-devsecops/vex/teastore/image-auth",
  "author": "Etapa 02 (replicação SBSeg 2026), coletor de contexto de execução",
  "timestamp": "2026-11-22T00:00:00Z",
  "version": 1,
@@ -29,141 +29,11 @@
   },
   {
    "vulnerability": {
-    "name": "CVE-2018-16860"
-   },
-   "products": [
-    {
-     "@id": "pkg:deb/ubuntu/libasn1-8-heimdal@7.5.0%2Bdfsg-1?arch=amd64&distro=ubuntu-18.04"
-    },
-    {
-     "@id": "pkg:deb/ubuntu/libgssapi3-heimdal@7.5.0%2Bdfsg-1?arch=amd64&distro=ubuntu-18.04"
-    },
-    {
-     "@id": "pkg:deb/ubuntu/libhcrypto4-heimdal@7.5.0%2Bdfsg-1?arch=amd64&distro=ubuntu-18.04"
-    },
-    {
-     "@id": "pkg:deb/ubuntu/libheimbase1-heimdal@7.5.0%2Bdfsg-1?arch=amd64&distro=ubuntu-18.04"
-    },
-    {
-     "@id": "pkg:deb/ubuntu/libheimntlm0-heimdal@7.5.0%2Bdfsg-1?arch=amd64&distro=ubuntu-18.04"
-    },
-    {
-     "@id": "pkg:deb/ubuntu/libhx509-5-heimdal@7.5.0%2Bdfsg-1?arch=amd64&distro=ubuntu-18.04"
-    },
-    {
-     "@id": "pkg:deb/ubuntu/libkrb5-26-heimdal@7.5.0%2Bdfsg-1?arch=amd64&distro=ubuntu-18.04"
-    },
-    {
-     "@id": "pkg:deb/ubuntu/libroken18-heimdal@7.5.0%2Bdfsg-1?arch=amd64&distro=ubuntu-18.04"
-    },
-    {
-     "@id": "pkg:deb/ubuntu/libwind0-heimdal@7.5.0%2Bdfsg-1?arch=amd64&distro=ubuntu-18.04"
-    }
-   ],
-   "status": "not_affected",
-   "justification": "vulnerable_code_not_in_execute_path",
-   "impact_statement": "Nenhum processo da implantação de referência carregou o pacote (S1-S3, inicialização; ver docs/p4-acoes.md). Reavaliar pelo Runtime Watch."
-  },
-  {
-   "vulnerability": {
-    "name": "CVE-2018-8740"
-   },
-   "products": [
-    {
-     "@id": "pkg:deb/ubuntu/libsqlite3-0@3.22.0-1ubuntu0.3?arch=amd64&distro=ubuntu-18.04"
-    }
-   ],
-   "status": "not_affected",
-   "justification": "vulnerable_code_not_in_execute_path",
-   "impact_statement": "Nenhum processo da implantação de referência carregou o pacote (S1-S3, inicialização; ver docs/p4-acoes.md). Reavaliar pelo Runtime Watch."
-  },
-  {
-   "vulnerability": {
-    "name": "CVE-2019-12098"
-   },
-   "products": [
-    {
-     "@id": "pkg:deb/ubuntu/libasn1-8-heimdal@7.5.0%2Bdfsg-1?arch=amd64&distro=ubuntu-18.04"
-    },
-    {
-     "@id": "pkg:deb/ubuntu/libgssapi3-heimdal@7.5.0%2Bdfsg-1?arch=amd64&distro=ubuntu-18.04"
-    },
-    {
-     "@id": "pkg:deb/ubuntu/libhcrypto4-heimdal@7.5.0%2Bdfsg-1?arch=amd64&distro=ubuntu-18.04"
-    },
-    {
-     "@id": "pkg:deb/ubuntu/libheimbase1-heimdal@7.5.0%2Bdfsg-1?arch=amd64&distro=ubuntu-18.04"
-    },
-    {
-     "@id": "pkg:deb/ubuntu/libheimntlm0-heimdal@7.5.0%2Bdfsg-1?arch=amd64&distro=ubuntu-18.04"
-    },
-    {
-     "@id": "pkg:deb/ubuntu/libhx509-5-heimdal@7.5.0%2Bdfsg-1?arch=amd64&distro=ubuntu-18.04"
-    },
-    {
-     "@id": "pkg:deb/ubuntu/libkrb5-26-heimdal@7.5.0%2Bdfsg-1?arch=amd64&distro=ubuntu-18.04"
-    },
-    {
-     "@id": "pkg:deb/ubuntu/libroken18-heimdal@7.5.0%2Bdfsg-1?arch=amd64&distro=ubuntu-18.04"
-    },
-    {
-     "@id": "pkg:deb/ubuntu/libwind0-heimdal@7.5.0%2Bdfsg-1?arch=amd64&distro=ubuntu-18.04"
-    }
-   ],
-   "status": "not_affected",
-   "justification": "vulnerable_code_not_in_execute_path",
-   "impact_statement": "Nenhum processo da implantação de referência carregou o pacote (S1-S3, inicialização; ver docs/p4-acoes.md). Reavaliar pelo Runtime Watch."
-  },
-  {
-   "vulnerability": {
     "name": "CVE-2019-12290"
    },
    "products": [
     {
      "@id": "pkg:deb/debian/libidn2-0@2.0.5-1%2Bdeb10u1?arch=amd64&distro=debian-10.10"
-    }
-   ],
-   "status": "not_affected",
-   "justification": "vulnerable_code_not_in_execute_path",
-   "impact_statement": "Nenhum processo da implantação de referência carregou o pacote (S1-S3, inicialização; ver docs/p4-acoes.md). Reavaliar pelo Runtime Watch."
-  },
-  {
-   "vulnerability": {
-    "name": "CVE-2019-13050"
-   },
-   "products": [
-    {
-     "@id": "pkg:deb/ubuntu/dirmngr@2.2.4-1ubuntu1.2?arch=amd64&distro=ubuntu-18.04"
-    },
-    {
-     "@id": "pkg:deb/ubuntu/gnupg-l10n@2.2.4-1ubuntu1.2?arch=all&distro=ubuntu-18.04"
-    },
-    {
-     "@id": "pkg:deb/ubuntu/gnupg-utils@2.2.4-1ubuntu1.2?arch=amd64&distro=ubuntu-18.04"
-    },
-    {
-     "@id": "pkg:deb/ubuntu/gnupg@2.2.4-1ubuntu1.2?arch=amd64&distro=ubuntu-18.04"
-    },
-    {
-     "@id": "pkg:deb/ubuntu/gpg-agent@2.2.4-1ubuntu1.2?arch=amd64&distro=ubuntu-18.04"
-    },
-    {
-     "@id": "pkg:deb/ubuntu/gpg-wks-client@2.2.4-1ubuntu1.2?arch=amd64&distro=ubuntu-18.04"
-    },
-    {
-     "@id": "pkg:deb/ubuntu/gpg-wks-server@2.2.4-1ubuntu1.2?arch=amd64&distro=ubuntu-18.04"
-    },
-    {
-     "@id": "pkg:deb/ubuntu/gpg@2.2.4-1ubuntu1.2?arch=amd64&distro=ubuntu-18.04"
-    },
-    {
-     "@id": "pkg:deb/ubuntu/gpgconf@2.2.4-1ubuntu1.2?arch=amd64&distro=ubuntu-18.04"
-    },
-    {
-     "@id": "pkg:deb/ubuntu/gpgsm@2.2.4-1ubuntu1.2?arch=amd64&distro=ubuntu-18.04"
-    },
-    {
-     "@id": "pkg:deb/ubuntu/gpgv@2.2.4-1ubuntu1.2?arch=amd64&distro=ubuntu-18.04"
     }
    ],
    "status": "not_affected",
@@ -236,39 +106,6 @@
     },
     {
      "@id": "pkg:deb/debian/gpgv@2.2.12-1%2Bdeb10u1?arch=amd64&distro=debian-10.10"
-    },
-    {
-     "@id": "pkg:deb/ubuntu/dirmngr@2.2.4-1ubuntu1.2?arch=amd64&distro=ubuntu-18.04"
-    },
-    {
-     "@id": "pkg:deb/ubuntu/gnupg-l10n@2.2.4-1ubuntu1.2?arch=all&distro=ubuntu-18.04"
-    },
-    {
-     "@id": "pkg:deb/ubuntu/gnupg-utils@2.2.4-1ubuntu1.2?arch=amd64&distro=ubuntu-18.04"
-    },
-    {
-     "@id": "pkg:deb/ubuntu/gnupg@2.2.4-1ubuntu1.2?arch=amd64&distro=ubuntu-18.04"
-    },
-    {
-     "@id": "pkg:deb/ubuntu/gpg-agent@2.2.4-1ubuntu1.2?arch=amd64&distro=ubuntu-18.04"
-    },
-    {
-     "@id": "pkg:deb/ubuntu/gpg-wks-client@2.2.4-1ubuntu1.2?arch=amd64&distro=ubuntu-18.04"
-    },
-    {
-     "@id": "pkg:deb/ubuntu/gpg-wks-server@2.2.4-1ubuntu1.2?arch=amd64&distro=ubuntu-18.04"
-    },
-    {
-     "@id": "pkg:deb/ubuntu/gpg@2.2.4-1ubuntu1.2?arch=amd64&distro=ubuntu-18.04"
-    },
-    {
-     "@id": "pkg:deb/ubuntu/gpgconf@2.2.4-1ubuntu1.2?arch=amd64&distro=ubuntu-18.04"
-    },
-    {
-     "@id": "pkg:deb/ubuntu/gpgsm@2.2.4-1ubuntu1.2?arch=amd64&distro=ubuntu-18.04"
-    },
-    {
-     "@id": "pkg:deb/ubuntu/gpgv@2.2.4-1ubuntu1.2?arch=amd64&distro=ubuntu-18.04"
     }
    ],
    "status": "not_affected",
@@ -396,41 +233,6 @@
   },
   {
    "vulnerability": {
-    "name": "CVE-2019-9923"
-   },
-   "products": [
-    {
-     "@id": "pkg:deb/ubuntu/tar@1.29b-2ubuntu0.1?arch=amd64&distro=ubuntu-18.04"
-    }
-   ],
-   "status": "not_affected",
-   "justification": "vulnerable_code_not_in_execute_path",
-   "impact_statement": "Nenhum processo da implantação de referência carregou o pacote (S1-S3, inicialização; ver docs/p4-acoes.md). Reavaliar pelo Runtime Watch."
-  },
-  {
-   "vulnerability": {
-    "name": "CVE-2020-10543"
-   },
-   "products": [
-    {
-     "@id": "pkg:deb/ubuntu/libperl5.26@5.26.1-6ubuntu0.3?arch=amd64&distro=ubuntu-18.04"
-    },
-    {
-     "@id": "pkg:deb/ubuntu/perl-base@5.26.1-6ubuntu0.3?arch=amd64&distro=ubuntu-18.04"
-    },
-    {
-     "@id": "pkg:deb/ubuntu/perl-modules-5.26@5.26.1-6ubuntu0.3?arch=all&distro=ubuntu-18.04"
-    },
-    {
-     "@id": "pkg:deb/ubuntu/perl@5.26.1-6ubuntu0.3?arch=amd64&distro=ubuntu-18.04"
-    }
-   ],
-   "status": "not_affected",
-   "justification": "vulnerable_code_not_in_execute_path",
-   "impact_statement": "Nenhum processo da implantação de referência carregou o pacote (S1-S3, inicialização; ver docs/p4-acoes.md). Reavaliar pelo Runtime Watch."
-  },
-  {
-   "vulnerability": {
     "name": "CVE-2020-10735"
    },
    "products": [
@@ -453,97 +255,11 @@
   },
   {
    "vulnerability": {
-    "name": "CVE-2020-10878"
-   },
-   "products": [
-    {
-     "@id": "pkg:deb/ubuntu/libperl5.26@5.26.1-6ubuntu0.3?arch=amd64&distro=ubuntu-18.04"
-    },
-    {
-     "@id": "pkg:deb/ubuntu/perl-base@5.26.1-6ubuntu0.3?arch=amd64&distro=ubuntu-18.04"
-    },
-    {
-     "@id": "pkg:deb/ubuntu/perl-modules-5.26@5.26.1-6ubuntu0.3?arch=all&distro=ubuntu-18.04"
-    },
-    {
-     "@id": "pkg:deb/ubuntu/perl@5.26.1-6ubuntu0.3?arch=amd64&distro=ubuntu-18.04"
-    }
-   ],
-   "status": "not_affected",
-   "justification": "vulnerable_code_not_in_execute_path",
-   "impact_statement": "Nenhum processo da implantação de referência carregou o pacote (S1-S3, inicialização; ver docs/p4-acoes.md). Reavaliar pelo Runtime Watch."
-  },
-  {
-   "vulnerability": {
     "name": "CVE-2020-11080"
    },
    "products": [
     {
      "@id": "pkg:deb/debian/libnghttp2-14@1.36.0-2%2Bdeb10u1?arch=amd64&distro=debian-10.10"
-    }
-   ],
-   "status": "not_affected",
-   "justification": "vulnerable_code_not_in_execute_path",
-   "impact_statement": "Nenhum processo da implantação de referência carregou o pacote (S1-S3, inicialização; ver docs/p4-acoes.md). Reavaliar pelo Runtime Watch."
-  },
-  {
-   "vulnerability": {
-    "name": "CVE-2020-12243"
-   },
-   "products": [
-    {
-     "@id": "pkg:deb/ubuntu/libldap-2.4-2@2.4.45%2Bdfsg-1ubuntu1.4?arch=amd64&distro=ubuntu-18.04"
-    },
-    {
-     "@id": "pkg:deb/ubuntu/libldap-common@2.4.45%2Bdfsg-1ubuntu1.4?arch=all&distro=ubuntu-18.04"
-    }
-   ],
-   "status": "not_affected",
-   "justification": "vulnerable_code_not_in_execute_path",
-   "impact_statement": "Nenhum processo da implantação de referência carregou o pacote (S1-S3, inicialização; ver docs/p4-acoes.md). Reavaliar pelo Runtime Watch."
-  },
-  {
-   "vulnerability": {
-    "name": "CVE-2020-12723"
-   },
-   "products": [
-    {
-     "@id": "pkg:deb/ubuntu/libperl5.26@5.26.1-6ubuntu0.3?arch=amd64&distro=ubuntu-18.04"
-    },
-    {
-     "@id": "pkg:deb/ubuntu/perl-base@5.26.1-6ubuntu0.3?arch=amd64&distro=ubuntu-18.04"
-    },
-    {
-     "@id": "pkg:deb/ubuntu/perl-modules-5.26@5.26.1-6ubuntu0.3?arch=all&distro=ubuntu-18.04"
-    },
-    {
-     "@id": "pkg:deb/ubuntu/perl@5.26.1-6ubuntu0.3?arch=amd64&distro=ubuntu-18.04"
-    }
-   ],
-   "status": "not_affected",
-   "justification": "vulnerable_code_not_in_execute_path",
-   "impact_statement": "Nenhum processo da implantação de referência carregou o pacote (S1-S3, inicialização; ver docs/p4-acoes.md). Reavaliar pelo Runtime Watch."
-  },
-  {
-   "vulnerability": {
-    "name": "CVE-2020-13630"
-   },
-   "products": [
-    {
-     "@id": "pkg:deb/ubuntu/libsqlite3-0@3.22.0-1ubuntu0.3?arch=amd64&distro=ubuntu-18.04"
-    }
-   ],
-   "status": "not_affected",
-   "justification": "vulnerable_code_not_in_execute_path",
-   "impact_statement": "Nenhum processo da implantação de referência carregou o pacote (S1-S3, inicialização; ver docs/p4-acoes.md). Reavaliar pelo Runtime Watch."
-  },
-  {
-   "vulnerability": {
-    "name": "CVE-2020-14393"
-   },
-   "products": [
-    {
-     "@id": "pkg:deb/ubuntu/libdbi-perl@1.640-1?arch=amd64&distro=ubuntu-18.04"
     }
    ],
    "status": "not_affected",
@@ -566,18 +282,6 @@
     },
     {
      "@id": "pkg:deb/debian/perl@5.28.1-6%2Bdeb10u1?arch=amd64&distro=debian-10.10"
-    },
-    {
-     "@id": "pkg:deb/ubuntu/libperl5.26@5.26.1-6ubuntu0.3?arch=amd64&distro=ubuntu-18.04"
-    },
-    {
-     "@id": "pkg:deb/ubuntu/perl-base@5.26.1-6ubuntu0.3?arch=amd64&distro=ubuntu-18.04"
-    },
-    {
-     "@id": "pkg:deb/ubuntu/perl-modules-5.26@5.26.1-6ubuntu0.3?arch=all&distro=ubuntu-18.04"
-    },
-    {
-     "@id": "pkg:deb/ubuntu/perl@5.26.1-6ubuntu0.3?arch=amd64&distro=ubuntu-18.04"
     }
    ],
    "status": "not_affected",
@@ -591,54 +295,6 @@
    "products": [
     {
      "@id": "pkg:deb/debian/libssh2-1@1.8.0-2.1?arch=amd64&distro=debian-10.10"
-    }
-   ],
-   "status": "not_affected",
-   "justification": "vulnerable_code_not_in_execute_path",
-   "impact_statement": "Nenhum processo da implantação de referência carregou o pacote (S1-S3, inicialização; ver docs/p4-acoes.md). Reavaliar pelo Runtime Watch."
-  },
-  {
-   "vulnerability": {
-    "name": "CVE-2020-25692"
-   },
-   "products": [
-    {
-     "@id": "pkg:deb/ubuntu/libldap-2.4-2@2.4.45%2Bdfsg-1ubuntu1.4?arch=amd64&distro=ubuntu-18.04"
-    },
-    {
-     "@id": "pkg:deb/ubuntu/libldap-common@2.4.45%2Bdfsg-1ubuntu1.4?arch=all&distro=ubuntu-18.04"
-    }
-   ],
-   "status": "not_affected",
-   "justification": "vulnerable_code_not_in_execute_path",
-   "impact_statement": "Nenhum processo da implantação de referência carregou o pacote (S1-S3, inicialização; ver docs/p4-acoes.md). Reavaliar pelo Runtime Watch."
-  },
-  {
-   "vulnerability": {
-    "name": "CVE-2020-25709"
-   },
-   "products": [
-    {
-     "@id": "pkg:deb/ubuntu/libldap-2.4-2@2.4.45%2Bdfsg-1ubuntu1.4?arch=amd64&distro=ubuntu-18.04"
-    },
-    {
-     "@id": "pkg:deb/ubuntu/libldap-common@2.4.45%2Bdfsg-1ubuntu1.4?arch=all&distro=ubuntu-18.04"
-    }
-   ],
-   "status": "not_affected",
-   "justification": "vulnerable_code_not_in_execute_path",
-   "impact_statement": "Nenhum processo da implantação de referência carregou o pacote (S1-S3, inicialização; ver docs/p4-acoes.md). Reavaliar pelo Runtime Watch."
-  },
-  {
-   "vulnerability": {
-    "name": "CVE-2020-25710"
-   },
-   "products": [
-    {
-     "@id": "pkg:deb/ubuntu/libldap-2.4-2@2.4.45%2Bdfsg-1ubuntu1.4?arch=amd64&distro=ubuntu-18.04"
-    },
-    {
-     "@id": "pkg:deb/ubuntu/libldap-common@2.4.45%2Bdfsg-1ubuntu1.4?arch=all&distro=ubuntu-18.04"
     }
    ],
    "status": "not_affected",
@@ -669,40 +325,11 @@
   },
   {
    "vulnerability": {
-    "name": "CVE-2020-29361"
-   },
-   "products": [
-    {
-     "@id": "pkg:deb/ubuntu/libp11-kit0@0.23.9-2?arch=amd64&distro=ubuntu-18.04"
-    }
-   ],
-   "status": "not_affected",
-   "justification": "vulnerable_code_not_in_execute_path",
-   "impact_statement": "Nenhum processo da implantação de referência carregou o pacote (S1-S3, inicialização; ver docs/p4-acoes.md). Reavaliar pelo Runtime Watch."
-  },
-  {
-   "vulnerability": {
-    "name": "CVE-2020-29363"
-   },
-   "products": [
-    {
-     "@id": "pkg:deb/ubuntu/libp11-kit0@0.23.9-2?arch=amd64&distro=ubuntu-18.04"
-    }
-   ],
-   "status": "not_affected",
-   "justification": "vulnerable_code_not_in_execute_path",
-   "impact_statement": "Nenhum processo da implantação de referência carregou o pacote (S1-S3, inicialização; ver docs/p4-acoes.md). Reavaliar pelo Runtime Watch."
-  },
-  {
-   "vulnerability": {
     "name": "CVE-2020-35525"
    },
    "products": [
     {
      "@id": "pkg:deb/debian/libsqlite3-0@3.27.2-3%2Bdeb10u1?arch=amd64&distro=debian-10.10"
-    },
-    {
-     "@id": "pkg:deb/ubuntu/libsqlite3-0@3.22.0-1ubuntu0.3?arch=amd64&distro=ubuntu-18.04"
     }
    ],
    "status": "not_affected",
@@ -716,182 +343,6 @@
    "products": [
     {
      "@id": "pkg:deb/debian/libsqlite3-0@3.27.2-3%2Bdeb10u1?arch=amd64&distro=debian-10.10"
-    }
-   ],
-   "status": "not_affected",
-   "justification": "vulnerable_code_not_in_execute_path",
-   "impact_statement": "Nenhum processo da implantação de referência carregou o pacote (S1-S3, inicialização; ver docs/p4-acoes.md). Reavaliar pelo Runtime Watch."
-  },
-  {
-   "vulnerability": {
-    "name": "CVE-2020-36221"
-   },
-   "products": [
-    {
-     "@id": "pkg:deb/ubuntu/libldap-2.4-2@2.4.45%2Bdfsg-1ubuntu1.4?arch=amd64&distro=ubuntu-18.04"
-    },
-    {
-     "@id": "pkg:deb/ubuntu/libldap-common@2.4.45%2Bdfsg-1ubuntu1.4?arch=all&distro=ubuntu-18.04"
-    }
-   ],
-   "status": "not_affected",
-   "justification": "vulnerable_code_not_in_execute_path",
-   "impact_statement": "Nenhum processo da implantação de referência carregou o pacote (S1-S3, inicialização; ver docs/p4-acoes.md). Reavaliar pelo Runtime Watch."
-  },
-  {
-   "vulnerability": {
-    "name": "CVE-2020-36222"
-   },
-   "products": [
-    {
-     "@id": "pkg:deb/ubuntu/libldap-2.4-2@2.4.45%2Bdfsg-1ubuntu1.4?arch=amd64&distro=ubuntu-18.04"
-    },
-    {
-     "@id": "pkg:deb/ubuntu/libldap-common@2.4.45%2Bdfsg-1ubuntu1.4?arch=all&distro=ubuntu-18.04"
-    }
-   ],
-   "status": "not_affected",
-   "justification": "vulnerable_code_not_in_execute_path",
-   "impact_statement": "Nenhum processo da implantação de referência carregou o pacote (S1-S3, inicialização; ver docs/p4-acoes.md). Reavaliar pelo Runtime Watch."
-  },
-  {
-   "vulnerability": {
-    "name": "CVE-2020-36223"
-   },
-   "products": [
-    {
-     "@id": "pkg:deb/ubuntu/libldap-2.4-2@2.4.45%2Bdfsg-1ubuntu1.4?arch=amd64&distro=ubuntu-18.04"
-    },
-    {
-     "@id": "pkg:deb/ubuntu/libldap-common@2.4.45%2Bdfsg-1ubuntu1.4?arch=all&distro=ubuntu-18.04"
-    }
-   ],
-   "status": "not_affected",
-   "justification": "vulnerable_code_not_in_execute_path",
-   "impact_statement": "Nenhum processo da implantação de referência carregou o pacote (S1-S3, inicialização; ver docs/p4-acoes.md). Reavaliar pelo Runtime Watch."
-  },
-  {
-   "vulnerability": {
-    "name": "CVE-2020-36224"
-   },
-   "products": [
-    {
-     "@id": "pkg:deb/ubuntu/libldap-2.4-2@2.4.45%2Bdfsg-1ubuntu1.4?arch=amd64&distro=ubuntu-18.04"
-    },
-    {
-     "@id": "pkg:deb/ubuntu/libldap-common@2.4.45%2Bdfsg-1ubuntu1.4?arch=all&distro=ubuntu-18.04"
-    }
-   ],
-   "status": "not_affected",
-   "justification": "vulnerable_code_not_in_execute_path",
-   "impact_statement": "Nenhum processo da implantação de referência carregou o pacote (S1-S3, inicialização; ver docs/p4-acoes.md). Reavaliar pelo Runtime Watch."
-  },
-  {
-   "vulnerability": {
-    "name": "CVE-2020-36225"
-   },
-   "products": [
-    {
-     "@id": "pkg:deb/ubuntu/libldap-2.4-2@2.4.45%2Bdfsg-1ubuntu1.4?arch=amd64&distro=ubuntu-18.04"
-    },
-    {
-     "@id": "pkg:deb/ubuntu/libldap-common@2.4.45%2Bdfsg-1ubuntu1.4?arch=all&distro=ubuntu-18.04"
-    }
-   ],
-   "status": "not_affected",
-   "justification": "vulnerable_code_not_in_execute_path",
-   "impact_statement": "Nenhum processo da implantação de referência carregou o pacote (S1-S3, inicialização; ver docs/p4-acoes.md). Reavaliar pelo Runtime Watch."
-  },
-  {
-   "vulnerability": {
-    "name": "CVE-2020-36226"
-   },
-   "products": [
-    {
-     "@id": "pkg:deb/ubuntu/libldap-2.4-2@2.4.45%2Bdfsg-1ubuntu1.4?arch=amd64&distro=ubuntu-18.04"
-    },
-    {
-     "@id": "pkg:deb/ubuntu/libldap-common@2.4.45%2Bdfsg-1ubuntu1.4?arch=all&distro=ubuntu-18.04"
-    }
-   ],
-   "status": "not_affected",
-   "justification": "vulnerable_code_not_in_execute_path",
-   "impact_statement": "Nenhum processo da implantação de referência carregou o pacote (S1-S3, inicialização; ver docs/p4-acoes.md). Reavaliar pelo Runtime Watch."
-  },
-  {
-   "vulnerability": {
-    "name": "CVE-2020-36227"
-   },
-   "products": [
-    {
-     "@id": "pkg:deb/ubuntu/libldap-2.4-2@2.4.45%2Bdfsg-1ubuntu1.4?arch=amd64&distro=ubuntu-18.04"
-    },
-    {
-     "@id": "pkg:deb/ubuntu/libldap-common@2.4.45%2Bdfsg-1ubuntu1.4?arch=all&distro=ubuntu-18.04"
-    }
-   ],
-   "status": "not_affected",
-   "justification": "vulnerable_code_not_in_execute_path",
-   "impact_statement": "Nenhum processo da implantação de referência carregou o pacote (S1-S3, inicialização; ver docs/p4-acoes.md). Reavaliar pelo Runtime Watch."
-  },
-  {
-   "vulnerability": {
-    "name": "CVE-2020-36228"
-   },
-   "products": [
-    {
-     "@id": "pkg:deb/ubuntu/libldap-2.4-2@2.4.45%2Bdfsg-1ubuntu1.4?arch=amd64&distro=ubuntu-18.04"
-    },
-    {
-     "@id": "pkg:deb/ubuntu/libldap-common@2.4.45%2Bdfsg-1ubuntu1.4?arch=all&distro=ubuntu-18.04"
-    }
-   ],
-   "status": "not_affected",
-   "justification": "vulnerable_code_not_in_execute_path",
-   "impact_statement": "Nenhum processo da implantação de referência carregou o pacote (S1-S3, inicialização; ver docs/p4-acoes.md). Reavaliar pelo Runtime Watch."
-  },
-  {
-   "vulnerability": {
-    "name": "CVE-2020-36229"
-   },
-   "products": [
-    {
-     "@id": "pkg:deb/ubuntu/libldap-2.4-2@2.4.45%2Bdfsg-1ubuntu1.4?arch=amd64&distro=ubuntu-18.04"
-    },
-    {
-     "@id": "pkg:deb/ubuntu/libldap-common@2.4.45%2Bdfsg-1ubuntu1.4?arch=all&distro=ubuntu-18.04"
-    }
-   ],
-   "status": "not_affected",
-   "justification": "vulnerable_code_not_in_execute_path",
-   "impact_statement": "Nenhum processo da implantação de referência carregou o pacote (S1-S3, inicialização; ver docs/p4-acoes.md). Reavaliar pelo Runtime Watch."
-  },
-  {
-   "vulnerability": {
-    "name": "CVE-2020-36230"
-   },
-   "products": [
-    {
-     "@id": "pkg:deb/ubuntu/libldap-2.4-2@2.4.45%2Bdfsg-1ubuntu1.4?arch=amd64&distro=ubuntu-18.04"
-    },
-    {
-     "@id": "pkg:deb/ubuntu/libldap-common@2.4.45%2Bdfsg-1ubuntu1.4?arch=all&distro=ubuntu-18.04"
-    }
-   ],
-   "status": "not_affected",
-   "justification": "vulnerable_code_not_in_execute_path",
-   "impact_statement": "Nenhum processo da implantação de referência carregou o pacote (S1-S3, inicialização; ver docs/p4-acoes.md). Reavaliar pelo Runtime Watch."
-  },
-  {
-   "vulnerability": {
-    "name": "CVE-2021-20305"
-   },
-   "products": [
-    {
-     "@id": "pkg:deb/ubuntu/libhogweed4@3.4-1?arch=amd64&distro=ubuntu-18.04"
-    },
-    {
-     "@id": "pkg:deb/ubuntu/libnettle6@3.4-1?arch=amd64&distro=ubuntu-18.04"
     }
    ],
    "status": "not_affected",
@@ -916,19 +367,6 @@
   },
   {
    "vulnerability": {
-    "name": "CVE-2021-2144"
-   },
-   "products": [
-    {
-     "@id": "pkg:deb/ubuntu/libmysqlclient20@5.7.29-0ubuntu0.18.04.1?arch=amd64&distro=ubuntu-18.04"
-    }
-   ],
-   "status": "not_affected",
-   "justification": "vulnerable_code_not_in_execute_path",
-   "impact_statement": "Nenhum processo da implantação de referência carregou o pacote (S1-S3, inicialização; ver docs/p4-acoes.md). Reavaliar pelo Runtime Watch."
-  },
-  {
-   "vulnerability": {
     "name": "CVE-2021-22946"
    },
    "products": [
@@ -940,22 +378,6 @@
     },
     {
      "@id": "pkg:deb/debian/libcurl4@7.64.0-4%2Bdeb10u2?arch=amd64&distro=debian-10.10"
-    }
-   ],
-   "status": "not_affected",
-   "justification": "vulnerable_code_not_in_execute_path",
-   "impact_statement": "Nenhum processo da implantação de referência carregou o pacote (S1-S3, inicialização; ver docs/p4-acoes.md). Reavaliar pelo Runtime Watch."
-  },
-  {
-   "vulnerability": {
-    "name": "CVE-2021-27212"
-   },
-   "products": [
-    {
-     "@id": "pkg:deb/ubuntu/libldap-2.4-2@2.4.45%2Bdfsg-1ubuntu1.4?arch=amd64&distro=ubuntu-18.04"
-    },
-    {
-     "@id": "pkg:deb/ubuntu/libldap-common@2.4.45%2Bdfsg-1ubuntu1.4?arch=all&distro=ubuntu-18.04"
     }
    ],
    "status": "not_affected",
@@ -999,22 +421,6 @@
   },
   {
    "vulnerability": {
-    "name": "CVE-2021-3580"
-   },
-   "products": [
-    {
-     "@id": "pkg:deb/ubuntu/libhogweed4@3.4-1?arch=amd64&distro=ubuntu-18.04"
-    },
-    {
-     "@id": "pkg:deb/ubuntu/libnettle6@3.4-1?arch=amd64&distro=ubuntu-18.04"
-    }
-   ],
-   "status": "not_affected",
-   "justification": "vulnerable_code_not_in_execute_path",
-   "impact_statement": "Nenhum processo da implantação de referência carregou o pacote (S1-S3, inicialização; ver docs/p4-acoes.md). Reavaliar pelo Runtime Watch."
-  },
-  {
-   "vulnerability": {
     "name": "CVE-2021-36222"
    },
    "products": [
@@ -1037,19 +443,6 @@
   },
   {
    "vulnerability": {
-    "name": "CVE-2021-36690"
-   },
-   "products": [
-    {
-     "@id": "pkg:deb/ubuntu/libsqlite3-0@3.22.0-1ubuntu0.3?arch=amd64&distro=ubuntu-18.04"
-    }
-   ],
-   "status": "not_affected",
-   "justification": "vulnerable_code_not_in_execute_path",
-   "impact_statement": "Nenhum processo da implantação de referência carregou o pacote (S1-S3, inicialização; ver docs/p4-acoes.md). Reavaliar pelo Runtime Watch."
-  },
-  {
-   "vulnerability": {
     "name": "CVE-2021-3737"
    },
    "products": [
@@ -1064,31 +457,6 @@
     },
     {
      "@id": "pkg:deb/debian/python2.7@2.7.16-2%2Bdeb10u1?arch=amd64&distro=debian-10.10"
-    }
-   ],
-   "status": "not_affected",
-   "justification": "vulnerable_code_not_in_execute_path",
-   "impact_statement": "Nenhum processo da implantação de referência carregou o pacote (S1-S3, inicialização; ver docs/p4-acoes.md). Reavaliar pelo Runtime Watch."
-  },
-  {
-   "vulnerability": {
-    "name": "CVE-2021-39537"
-   },
-   "products": [
-    {
-     "@id": "pkg:deb/ubuntu/libncurses5@6.1-1ubuntu1.18.04?arch=amd64&distro=ubuntu-18.04"
-    },
-    {
-     "@id": "pkg:deb/ubuntu/libncursesw5@6.1-1ubuntu1.18.04?arch=amd64&distro=ubuntu-18.04"
-    },
-    {
-     "@id": "pkg:deb/ubuntu/libtinfo5@6.1-1ubuntu1.18.04?arch=amd64&distro=ubuntu-18.04"
-    },
-    {
-     "@id": "pkg:deb/ubuntu/ncurses-base@6.1-1ubuntu1.18.04?arch=all&distro=ubuntu-18.04"
-    },
-    {
-     "@id": "pkg:deb/ubuntu/ncurses-bin@6.1-1ubuntu1.18.04?arch=amd64&distro=ubuntu-18.04"
     }
    ],
    "status": "not_affected",
@@ -1131,46 +499,6 @@
    "products": [
     {
      "@id": "pkg:deb/debian/libgmp10@6.1.2%2Bdfsg-4?arch=amd64&distro=debian-10.10&epoch=2"
-    },
-    {
-     "@id": "pkg:deb/ubuntu/libgmp10@6.1.2%2Bdfsg-2?arch=amd64&distro=ubuntu-18.04&epoch=2"
-    }
-   ],
-   "status": "not_affected",
-   "justification": "vulnerable_code_not_in_execute_path",
-   "impact_statement": "Nenhum processo da implantação de referência carregou o pacote (S1-S3, inicialização; ver docs/p4-acoes.md). Reavaliar pelo Runtime Watch."
-  },
-  {
-   "vulnerability": {
-    "name": "CVE-2021-44758"
-   },
-   "products": [
-    {
-     "@id": "pkg:deb/ubuntu/libasn1-8-heimdal@7.5.0%2Bdfsg-1?arch=amd64&distro=ubuntu-18.04"
-    },
-    {
-     "@id": "pkg:deb/ubuntu/libgssapi3-heimdal@7.5.0%2Bdfsg-1?arch=amd64&distro=ubuntu-18.04"
-    },
-    {
-     "@id": "pkg:deb/ubuntu/libhcrypto4-heimdal@7.5.0%2Bdfsg-1?arch=amd64&distro=ubuntu-18.04"
-    },
-    {
-     "@id": "pkg:deb/ubuntu/libheimbase1-heimdal@7.5.0%2Bdfsg-1?arch=amd64&distro=ubuntu-18.04"
-    },
-    {
-     "@id": "pkg:deb/ubuntu/libheimntlm0-heimdal@7.5.0%2Bdfsg-1?arch=amd64&distro=ubuntu-18.04"
-    },
-    {
-     "@id": "pkg:deb/ubuntu/libhx509-5-heimdal@7.5.0%2Bdfsg-1?arch=amd64&distro=ubuntu-18.04"
-    },
-    {
-     "@id": "pkg:deb/ubuntu/libkrb5-26-heimdal@7.5.0%2Bdfsg-1?arch=amd64&distro=ubuntu-18.04"
-    },
-    {
-     "@id": "pkg:deb/ubuntu/libroken18-heimdal@7.5.0%2Bdfsg-1?arch=amd64&distro=ubuntu-18.04"
-    },
-    {
-     "@id": "pkg:deb/ubuntu/libwind0-heimdal@7.5.0%2Bdfsg-1?arch=amd64&distro=ubuntu-18.04"
     }
    ],
    "status": "not_affected",
@@ -1273,18 +601,6 @@
     },
     {
      "@id": "pkg:deb/debian/libss2@1.44.5-1%2Bdeb10u3?arch=amd64&distro=debian-10.10"
-    },
-    {
-     "@id": "pkg:deb/ubuntu/e2fsprogs@1.44.1-1ubuntu1.3?arch=amd64&distro=ubuntu-18.04"
-    },
-    {
-     "@id": "pkg:deb/ubuntu/libcom-err2@1.44.1-1ubuntu1.3?arch=amd64&distro=ubuntu-18.04"
-    },
-    {
-     "@id": "pkg:deb/ubuntu/libext2fs2@1.44.1-1ubuntu1.3?arch=amd64&distro=ubuntu-18.04"
-    },
-    {
-     "@id": "pkg:deb/ubuntu/libss2@1.44.1-1ubuntu1.3?arch=amd64&distro=ubuntu-18.04"
     }
    ],
    "status": "not_affected",
@@ -1324,9 +640,6 @@
    "products": [
     {
      "@id": "pkg:deb/debian/dpkg@1.19.7?arch=amd64&distro=debian-10.10"
-    },
-    {
-     "@id": "pkg:deb/ubuntu/dpkg@1.19.0.5ubuntu2.3?arch=amd64&distro=ubuntu-18.04"
     }
    ],
    "status": "not_affected",
@@ -1498,12 +811,6 @@
     },
     {
      "@id": "pkg:deb/debian/libsasl2-modules-db@2.1.27%2Bdfsg-1%2Bdeb10u1?arch=amd64&distro=debian-10.10"
-    },
-    {
-     "@id": "pkg:deb/ubuntu/libsasl2-2@2.1.27~101-g0780600%2Bdfsg-3ubuntu2.1?arch=amd64&distro=ubuntu-18.04"
-    },
-    {
-     "@id": "pkg:deb/ubuntu/libsasl2-modules-db@2.1.27~101-g0780600%2Bdfsg-3ubuntu2.1?arch=amd64&distro=ubuntu-18.04"
     }
    ],
    "status": "not_affected",
@@ -1533,9 +840,6 @@
    "products": [
     {
      "@id": "pkg:deb/debian/libgnutls30@3.6.7-4%2Bdeb10u7?arch=amd64&distro=debian-10.10"
-    },
-    {
-     "@id": "pkg:deb/ubuntu/libgnutls30@3.5.18-1ubuntu1.3?arch=amd64&distro=ubuntu-18.04"
     }
    ],
    "status": "not_affected",
@@ -1596,6 +900,45 @@
   },
   {
    "vulnerability": {
+    "name": "CVE-2022-27404"
+   },
+   "products": [
+    {
+     "@id": "pkg:deb/debian/libfreetype6@2.9.1-3%2Bdeb10u2?arch=amd64&distro=debian-10.10"
+    }
+   ],
+   "status": "not_affected",
+   "justification": "vulnerable_code_not_in_execute_path",
+   "impact_statement": "Nenhum processo da implantação de referência carregou o pacote (S1-S3, inicialização; ver docs/p4-acoes.md). Reavaliar pelo Runtime Watch."
+  },
+  {
+   "vulnerability": {
+    "name": "CVE-2022-27405"
+   },
+   "products": [
+    {
+     "@id": "pkg:deb/debian/libfreetype6@2.9.1-3%2Bdeb10u2?arch=amd64&distro=debian-10.10"
+    }
+   ],
+   "status": "not_affected",
+   "justification": "vulnerable_code_not_in_execute_path",
+   "impact_statement": "Nenhum processo da implantação de referência carregou o pacote (S1-S3, inicialização; ver docs/p4-acoes.md). Reavaliar pelo Runtime Watch."
+  },
+  {
+   "vulnerability": {
+    "name": "CVE-2022-27406"
+   },
+   "products": [
+    {
+     "@id": "pkg:deb/debian/libfreetype6@2.9.1-3%2Bdeb10u2?arch=amd64&distro=debian-10.10"
+    }
+   ],
+   "status": "not_affected",
+   "justification": "vulnerable_code_not_in_execute_path",
+   "impact_statement": "Nenhum processo da implantação de referência carregou o pacote (S1-S3, inicialização; ver docs/p4-acoes.md). Reavaliar pelo Runtime Watch."
+  },
+  {
+   "vulnerability": {
     "name": "CVE-2022-27781"
    },
    "products": [
@@ -1634,41 +977,6 @@
   },
   {
    "vulnerability": {
-    "name": "CVE-2022-28321"
-   },
-   "products": [
-    {
-     "@id": "pkg:deb/ubuntu/libpam-modules-bin@1.1.8-3.6ubuntu2.18.04.1?arch=amd64&distro=ubuntu-18.04"
-    },
-    {
-     "@id": "pkg:deb/ubuntu/libpam-modules@1.1.8-3.6ubuntu2.18.04.1?arch=amd64&distro=ubuntu-18.04"
-    },
-    {
-     "@id": "pkg:deb/ubuntu/libpam-runtime@1.1.8-3.6ubuntu2.18.04.1?arch=all&distro=ubuntu-18.04"
-    },
-    {
-     "@id": "pkg:deb/ubuntu/libpam0g@1.1.8-3.6ubuntu2.18.04.1?arch=amd64&distro=ubuntu-18.04"
-    }
-   ],
-   "status": "not_affected",
-   "justification": "vulnerable_code_not_in_execute_path",
-   "impact_statement": "Nenhum processo da implantação de referência carregou o pacote (S1-S3, inicialização; ver docs/p4-acoes.md). Reavaliar pelo Runtime Watch."
-  },
-  {
-   "vulnerability": {
-    "name": "CVE-2022-29154"
-   },
-   "products": [
-    {
-     "@id": "pkg:deb/ubuntu/rsync@3.1.2-2.1ubuntu1.1?arch=amd64&distro=ubuntu-18.04"
-    }
-   ],
-   "status": "not_affected",
-   "justification": "vulnerable_code_not_in_execute_path",
-   "impact_statement": "Nenhum processo da implantação de referência carregou o pacote (S1-S3, inicialização; ver docs/p4-acoes.md). Reavaliar pelo Runtime Watch."
-  },
-  {
-   "vulnerability": {
     "name": "CVE-2022-29155"
    },
    "products": [
@@ -1677,12 +985,6 @@
     },
     {
      "@id": "pkg:deb/debian/libldap-common@2.4.47%2Bdfsg-3%2Bdeb10u6?arch=all&distro=debian-10.10"
-    },
-    {
-     "@id": "pkg:deb/ubuntu/libldap-2.4-2@2.4.45%2Bdfsg-1ubuntu1.4?arch=amd64&distro=ubuntu-18.04"
-    },
-    {
-     "@id": "pkg:deb/ubuntu/libldap-common@2.4.45%2Bdfsg-1ubuntu1.4?arch=all&distro=ubuntu-18.04"
     }
    ],
    "status": "not_affected",
@@ -1699,68 +1001,6 @@
     },
     {
      "@id": "pkg:deb/debian/git@2.20.1-2%2Bdeb10u3?arch=amd64&distro=debian-10.10&epoch=1"
-    }
-   ],
-   "status": "not_affected",
-   "justification": "vulnerable_code_not_in_execute_path",
-   "impact_statement": "Nenhum processo da implantação de referência carregou o pacote (S1-S3, inicialização; ver docs/p4-acoes.md). Reavaliar pelo Runtime Watch."
-  },
-  {
-   "vulnerability": {
-    "name": "CVE-2022-29458"
-   },
-   "products": [
-    {
-     "@id": "pkg:deb/ubuntu/libncurses5@6.1-1ubuntu1.18.04?arch=amd64&distro=ubuntu-18.04"
-    },
-    {
-     "@id": "pkg:deb/ubuntu/libncursesw5@6.1-1ubuntu1.18.04?arch=amd64&distro=ubuntu-18.04"
-    },
-    {
-     "@id": "pkg:deb/ubuntu/libtinfo5@6.1-1ubuntu1.18.04?arch=amd64&distro=ubuntu-18.04"
-    },
-    {
-     "@id": "pkg:deb/ubuntu/ncurses-base@6.1-1ubuntu1.18.04?arch=all&distro=ubuntu-18.04"
-    },
-    {
-     "@id": "pkg:deb/ubuntu/ncurses-bin@6.1-1ubuntu1.18.04?arch=amd64&distro=ubuntu-18.04"
-    }
-   ],
-   "status": "not_affected",
-   "justification": "vulnerable_code_not_in_execute_path",
-   "impact_statement": "Nenhum processo da implantação de referência carregou o pacote (S1-S3, inicialização; ver docs/p4-acoes.md). Reavaliar pelo Runtime Watch."
-  },
-  {
-   "vulnerability": {
-    "name": "CVE-2022-3116"
-   },
-   "products": [
-    {
-     "@id": "pkg:deb/ubuntu/libasn1-8-heimdal@7.5.0%2Bdfsg-1?arch=amd64&distro=ubuntu-18.04"
-    },
-    {
-     "@id": "pkg:deb/ubuntu/libgssapi3-heimdal@7.5.0%2Bdfsg-1?arch=amd64&distro=ubuntu-18.04"
-    },
-    {
-     "@id": "pkg:deb/ubuntu/libhcrypto4-heimdal@7.5.0%2Bdfsg-1?arch=amd64&distro=ubuntu-18.04"
-    },
-    {
-     "@id": "pkg:deb/ubuntu/libheimbase1-heimdal@7.5.0%2Bdfsg-1?arch=amd64&distro=ubuntu-18.04"
-    },
-    {
-     "@id": "pkg:deb/ubuntu/libheimntlm0-heimdal@7.5.0%2Bdfsg-1?arch=amd64&distro=ubuntu-18.04"
-    },
-    {
-     "@id": "pkg:deb/ubuntu/libhx509-5-heimdal@7.5.0%2Bdfsg-1?arch=amd64&distro=ubuntu-18.04"
-    },
-    {
-     "@id": "pkg:deb/ubuntu/libkrb5-26-heimdal@7.5.0%2Bdfsg-1?arch=amd64&distro=ubuntu-18.04"
-    },
-    {
-     "@id": "pkg:deb/ubuntu/libroken18-heimdal@7.5.0%2Bdfsg-1?arch=amd64&distro=ubuntu-18.04"
-    },
-    {
-     "@id": "pkg:deb/ubuntu/libwind0-heimdal@7.5.0%2Bdfsg-1?arch=amd64&distro=ubuntu-18.04"
     }
    ],
    "status": "not_affected",
@@ -1793,22 +1033,6 @@
    "products": [
     {
      "@id": "pkg:deb/debian/libksba8@1.3.5-2?arch=amd64&distro=debian-10.10"
-    },
-    {
-     "@id": "pkg:deb/ubuntu/libksba8@1.3.5-2?arch=amd64&distro=ubuntu-18.04"
-    }
-   ],
-   "status": "not_affected",
-   "justification": "vulnerable_code_not_in_execute_path",
-   "impact_statement": "Nenhum processo da implantação de referência carregou o pacote (S1-S3, inicialização; ver docs/p4-acoes.md). Reavaliar pelo Runtime Watch."
-  },
-  {
-   "vulnerability": {
-    "name": "CVE-2022-35737"
-   },
-   "products": [
-    {
-     "@id": "pkg:deb/ubuntu/libsqlite3-0@3.22.0-1ubuntu0.3?arch=amd64&distro=ubuntu-18.04"
     }
    ],
    "status": "not_affected",
@@ -1862,43 +1086,6 @@
   },
   {
    "vulnerability": {
-    "name": "CVE-2022-41916"
-   },
-   "products": [
-    {
-     "@id": "pkg:deb/ubuntu/libasn1-8-heimdal@7.5.0%2Bdfsg-1?arch=amd64&distro=ubuntu-18.04"
-    },
-    {
-     "@id": "pkg:deb/ubuntu/libgssapi3-heimdal@7.5.0%2Bdfsg-1?arch=amd64&distro=ubuntu-18.04"
-    },
-    {
-     "@id": "pkg:deb/ubuntu/libhcrypto4-heimdal@7.5.0%2Bdfsg-1?arch=amd64&distro=ubuntu-18.04"
-    },
-    {
-     "@id": "pkg:deb/ubuntu/libheimbase1-heimdal@7.5.0%2Bdfsg-1?arch=amd64&distro=ubuntu-18.04"
-    },
-    {
-     "@id": "pkg:deb/ubuntu/libheimntlm0-heimdal@7.5.0%2Bdfsg-1?arch=amd64&distro=ubuntu-18.04"
-    },
-    {
-     "@id": "pkg:deb/ubuntu/libhx509-5-heimdal@7.5.0%2Bdfsg-1?arch=amd64&distro=ubuntu-18.04"
-    },
-    {
-     "@id": "pkg:deb/ubuntu/libkrb5-26-heimdal@7.5.0%2Bdfsg-1?arch=amd64&distro=ubuntu-18.04"
-    },
-    {
-     "@id": "pkg:deb/ubuntu/libroken18-heimdal@7.5.0%2Bdfsg-1?arch=amd64&distro=ubuntu-18.04"
-    },
-    {
-     "@id": "pkg:deb/ubuntu/libwind0-heimdal@7.5.0%2Bdfsg-1?arch=amd64&distro=ubuntu-18.04"
-    }
-   ],
-   "status": "not_affected",
-   "justification": "vulnerable_code_not_in_execute_path",
-   "impact_statement": "Nenhum processo da implantação de referência carregou o pacote (S1-S3, inicialização; ver docs/p4-acoes.md). Reavaliar pelo Runtime Watch."
-  },
-  {
-   "vulnerability": {
     "name": "CVE-2022-42898"
    },
    "products": [
@@ -1913,33 +1100,6 @@
     },
     {
      "@id": "pkg:deb/debian/libkrb5support0@1.17-3%2Bdeb10u1?arch=amd64&distro=debian-10.10"
-    },
-    {
-     "@id": "pkg:deb/ubuntu/libasn1-8-heimdal@7.5.0%2Bdfsg-1?arch=amd64&distro=ubuntu-18.04"
-    },
-    {
-     "@id": "pkg:deb/ubuntu/libgssapi3-heimdal@7.5.0%2Bdfsg-1?arch=amd64&distro=ubuntu-18.04"
-    },
-    {
-     "@id": "pkg:deb/ubuntu/libhcrypto4-heimdal@7.5.0%2Bdfsg-1?arch=amd64&distro=ubuntu-18.04"
-    },
-    {
-     "@id": "pkg:deb/ubuntu/libheimbase1-heimdal@7.5.0%2Bdfsg-1?arch=amd64&distro=ubuntu-18.04"
-    },
-    {
-     "@id": "pkg:deb/ubuntu/libheimntlm0-heimdal@7.5.0%2Bdfsg-1?arch=amd64&distro=ubuntu-18.04"
-    },
-    {
-     "@id": "pkg:deb/ubuntu/libhx509-5-heimdal@7.5.0%2Bdfsg-1?arch=amd64&distro=ubuntu-18.04"
-    },
-    {
-     "@id": "pkg:deb/ubuntu/libkrb5-26-heimdal@7.5.0%2Bdfsg-1?arch=amd64&distro=ubuntu-18.04"
-    },
-    {
-     "@id": "pkg:deb/ubuntu/libroken18-heimdal@7.5.0%2Bdfsg-1?arch=amd64&distro=ubuntu-18.04"
-    },
-    {
-     "@id": "pkg:deb/ubuntu/libwind0-heimdal@7.5.0%2Bdfsg-1?arch=amd64&distro=ubuntu-18.04"
     }
    ],
    "status": "not_affected",
@@ -1953,43 +1113,6 @@
    "products": [
     {
      "@id": "pkg:deb/debian/libexpat1@2.2.6-2%2Bdeb10u1?arch=amd64&distro=debian-10.10"
-    }
-   ],
-   "status": "not_affected",
-   "justification": "vulnerable_code_not_in_execute_path",
-   "impact_statement": "Nenhum processo da implantação de referência carregou o pacote (S1-S3, inicialização; ver docs/p4-acoes.md). Reavaliar pelo Runtime Watch."
-  },
-  {
-   "vulnerability": {
-    "name": "CVE-2022-44640"
-   },
-   "products": [
-    {
-     "@id": "pkg:deb/ubuntu/libasn1-8-heimdal@7.5.0%2Bdfsg-1?arch=amd64&distro=ubuntu-18.04"
-    },
-    {
-     "@id": "pkg:deb/ubuntu/libgssapi3-heimdal@7.5.0%2Bdfsg-1?arch=amd64&distro=ubuntu-18.04"
-    },
-    {
-     "@id": "pkg:deb/ubuntu/libhcrypto4-heimdal@7.5.0%2Bdfsg-1?arch=amd64&distro=ubuntu-18.04"
-    },
-    {
-     "@id": "pkg:deb/ubuntu/libheimbase1-heimdal@7.5.0%2Bdfsg-1?arch=amd64&distro=ubuntu-18.04"
-    },
-    {
-     "@id": "pkg:deb/ubuntu/libheimntlm0-heimdal@7.5.0%2Bdfsg-1?arch=amd64&distro=ubuntu-18.04"
-    },
-    {
-     "@id": "pkg:deb/ubuntu/libhx509-5-heimdal@7.5.0%2Bdfsg-1?arch=amd64&distro=ubuntu-18.04"
-    },
-    {
-     "@id": "pkg:deb/ubuntu/libkrb5-26-heimdal@7.5.0%2Bdfsg-1?arch=amd64&distro=ubuntu-18.04"
-    },
-    {
-     "@id": "pkg:deb/ubuntu/libroken18-heimdal@7.5.0%2Bdfsg-1?arch=amd64&distro=ubuntu-18.04"
-    },
-    {
-     "@id": "pkg:deb/ubuntu/libwind0-heimdal@7.5.0%2Bdfsg-1?arch=amd64&distro=ubuntu-18.04"
     }
    ],
    "status": "not_affected",
@@ -2020,51 +1143,11 @@
   },
   {
    "vulnerability": {
-    "name": "CVE-2022-45142"
-   },
-   "products": [
-    {
-     "@id": "pkg:deb/ubuntu/libasn1-8-heimdal@7.5.0%2Bdfsg-1?arch=amd64&distro=ubuntu-18.04"
-    },
-    {
-     "@id": "pkg:deb/ubuntu/libgssapi3-heimdal@7.5.0%2Bdfsg-1?arch=amd64&distro=ubuntu-18.04"
-    },
-    {
-     "@id": "pkg:deb/ubuntu/libhcrypto4-heimdal@7.5.0%2Bdfsg-1?arch=amd64&distro=ubuntu-18.04"
-    },
-    {
-     "@id": "pkg:deb/ubuntu/libheimbase1-heimdal@7.5.0%2Bdfsg-1?arch=amd64&distro=ubuntu-18.04"
-    },
-    {
-     "@id": "pkg:deb/ubuntu/libheimntlm0-heimdal@7.5.0%2Bdfsg-1?arch=amd64&distro=ubuntu-18.04"
-    },
-    {
-     "@id": "pkg:deb/ubuntu/libhx509-5-heimdal@7.5.0%2Bdfsg-1?arch=amd64&distro=ubuntu-18.04"
-    },
-    {
-     "@id": "pkg:deb/ubuntu/libkrb5-26-heimdal@7.5.0%2Bdfsg-1?arch=amd64&distro=ubuntu-18.04"
-    },
-    {
-     "@id": "pkg:deb/ubuntu/libroken18-heimdal@7.5.0%2Bdfsg-1?arch=amd64&distro=ubuntu-18.04"
-    },
-    {
-     "@id": "pkg:deb/ubuntu/libwind0-heimdal@7.5.0%2Bdfsg-1?arch=amd64&distro=ubuntu-18.04"
-    }
-   ],
-   "status": "not_affected",
-   "justification": "vulnerable_code_not_in_execute_path",
-   "impact_statement": "Nenhum processo da implantação de referência carregou o pacote (S1-S3, inicialização; ver docs/p4-acoes.md). Reavaliar pelo Runtime Watch."
-  },
-  {
-   "vulnerability": {
     "name": "CVE-2022-47629"
    },
    "products": [
     {
      "@id": "pkg:deb/debian/libksba8@1.3.5-2?arch=amd64&distro=debian-10.10"
-    },
-    {
-     "@id": "pkg:deb/ubuntu/libksba8@1.3.5-2?arch=amd64&distro=ubuntu-18.04"
     }
    ],
    "status": "not_affected",
@@ -2122,32 +1205,6 @@
    "products": [
     {
      "@id": "pkg:deb/debian/libgnutls30@3.6.7-4%2Bdeb10u7?arch=amd64&distro=debian-10.10"
-    }
-   ],
-   "status": "not_affected",
-   "justification": "vulnerable_code_not_in_execute_path",
-   "impact_statement": "Nenhum processo da implantação de referência carregou o pacote (S1-S3, inicialização; ver docs/p4-acoes.md). Reavaliar pelo Runtime Watch."
-  },
-  {
-   "vulnerability": {
-    "name": "CVE-2023-21912"
-   },
-   "products": [
-    {
-     "@id": "pkg:deb/ubuntu/libmysqlclient20@5.7.29-0ubuntu0.18.04.1?arch=amd64&distro=ubuntu-18.04"
-    }
-   ],
-   "status": "not_affected",
-   "justification": "vulnerable_code_not_in_execute_path",
-   "impact_statement": "Nenhum processo da implantação de referência carregou o pacote (S1-S3, inicialização; ver docs/p4-acoes.md). Reavaliar pelo Runtime Watch."
-  },
-  {
-   "vulnerability": {
-    "name": "CVE-2023-21980"
-   },
-   "products": [
-    {
-     "@id": "pkg:deb/ubuntu/libmysqlclient20@5.7.29-0ubuntu0.18.04.1?arch=amd64&distro=ubuntu-18.04"
     }
    ],
    "status": "not_affected",
@@ -2280,31 +1337,6 @@
   },
   {
    "vulnerability": {
-    "name": "CVE-2023-29491"
-   },
-   "products": [
-    {
-     "@id": "pkg:deb/ubuntu/libncurses5@6.1-1ubuntu1.18.04?arch=amd64&distro=ubuntu-18.04"
-    },
-    {
-     "@id": "pkg:deb/ubuntu/libncursesw5@6.1-1ubuntu1.18.04?arch=amd64&distro=ubuntu-18.04"
-    },
-    {
-     "@id": "pkg:deb/ubuntu/libtinfo5@6.1-1ubuntu1.18.04?arch=amd64&distro=ubuntu-18.04"
-    },
-    {
-     "@id": "pkg:deb/ubuntu/ncurses-base@6.1-1ubuntu1.18.04?arch=all&distro=ubuntu-18.04"
-    },
-    {
-     "@id": "pkg:deb/ubuntu/ncurses-bin@6.1-1ubuntu1.18.04?arch=amd64&distro=ubuntu-18.04"
-    }
-   ],
-   "status": "not_affected",
-   "justification": "vulnerable_code_not_in_execute_path",
-   "impact_statement": "Nenhum processo da implantação de referência carregou o pacote (S1-S3, inicialização; ver docs/p4-acoes.md). Reavaliar pelo Runtime Watch."
-  },
-  {
-   "vulnerability": {
     "name": "CVE-2023-2953"
    },
    "products": [
@@ -2335,18 +1367,6 @@
     },
     {
      "@id": "pkg:deb/debian/perl@5.28.1-6%2Bdeb10u1?arch=amd64&distro=debian-10.10"
-    },
-    {
-     "@id": "pkg:deb/ubuntu/libperl5.26@5.26.1-6ubuntu0.3?arch=amd64&distro=ubuntu-18.04"
-    },
-    {
-     "@id": "pkg:deb/ubuntu/perl-base@5.26.1-6ubuntu0.3?arch=amd64&distro=ubuntu-18.04"
-    },
-    {
-     "@id": "pkg:deb/ubuntu/perl-modules-5.26@5.26.1-6ubuntu0.3?arch=all&distro=ubuntu-18.04"
-    },
-    {
-     "@id": "pkg:deb/ubuntu/perl@5.26.1-6ubuntu0.3?arch=amd64&distro=ubuntu-18.04"
     }
    ],
    "status": "not_affected",

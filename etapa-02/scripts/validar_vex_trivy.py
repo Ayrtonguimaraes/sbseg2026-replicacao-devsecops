@@ -12,8 +12,8 @@ from pathlib import Path
 
 ETAPA = Path(__file__).resolve().parent.parent
 SAIDA = Path.home() / ".cache/trivy-p4/out"
-CASOS = (("webui", "teastore", "descartesresearch/teastore-webui:1.4.2"),
-         ("juice", "juice-shop", "bkimminich/juice-shop@sha256:547bd3fe..."))
+CASOS = (("webui", "teastore--image-webui", "descartesresearch/teastore-webui:1.4.2"),
+         ("juice", "juice-shop--juice-shop-image", "bkimminich/juice-shop@sha256:547bd3fe..."))
 
 
 def pares(arquivo):

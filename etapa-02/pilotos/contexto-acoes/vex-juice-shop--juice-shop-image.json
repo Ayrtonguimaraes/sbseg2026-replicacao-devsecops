@@ -1,6 +1,6 @@
 {
  "@context": "https://openvex.dev/ns/v0.2.0",
- "@id": "https://github.com/jldsn/sbseg2026-replicacao-devsecops/vex/juice-shop",
+ "@id": "https://github.com/jldsn/sbseg2026-replicacao-devsecops/vex/juice-shop/juice-shop-image",
  "author": "Etapa 02 (replicação SBSeg 2026), coletor de contexto de execução",
  "timestamp": "2026-11-22T00:00:00Z",
  "version": 1,
@@ -64,28 +64,6 @@
    "products": [
     {
      "@id": "pkg:deb/debian/libssl3@3.0.17-1~deb12u2?arch=amd64&distro=debian-12.11"
-    }
-   ],
-   "status": "not_affected",
-   "justification": "vulnerable_code_not_in_execute_path",
-   "impact_statement": "Nenhum processo da implantação de referência carregou o pacote (S1-S3, inicialização; ver docs/p4-acoes.md). Reavaliar pelo Runtime Watch."
-  },
-  {
-   "vulnerability": {
-    "name": "CVE-2026-102010"
-   },
-   "products": [
-    {
-     "@id": "pkg:deb/debian/gcc-12-base@12.2.0-14%2Bdeb12u1?arch=amd64&distro=debian-12.11"
-    },
-    {
-     "@id": "pkg:deb/debian/libgcc-s1@12.2.0-14%2Bdeb12u1?arch=amd64&distro=debian-12.11"
-    },
-    {
-     "@id": "pkg:deb/debian/libgomp1@12.2.0-14%2Bdeb12u1?arch=amd64&distro=debian-12.11"
-    },
-    {
-     "@id": "pkg:deb/debian/libstdc%2B%2B6@12.2.0-14%2Bdeb12u1?arch=amd64&distro=debian-12.11"
     }
    ],
    "status": "not_affected",
@@ -395,28 +373,6 @@
    "products": [
     {
      "@id": "pkg:deb/debian/libssl3@3.0.17-1~deb12u2?arch=amd64&distro=debian-12.11"
-    }
-   ],
-   "status": "not_affected",
-   "justification": "vulnerable_code_not_in_execute_path",
-   "impact_statement": "Nenhum processo da implantação de referência carregou o pacote (S1-S3, inicialização; ver docs/p4-acoes.md). Reavaliar pelo Runtime Watch."
-  },
-  {
-   "vulnerability": {
-    "name": "CVE-2026-95619"
-   },
-   "products": [
-    {
-     "@id": "pkg:deb/debian/gcc-12-base@12.2.0-14%2Bdeb12u1?arch=amd64&distro=debian-12.11"
-    },
-    {
-     "@id": "pkg:deb/debian/libgcc-s1@12.2.0-14%2Bdeb12u1?arch=amd64&distro=debian-12.11"
-    },
-    {
-     "@id": "pkg:deb/debian/libgomp1@12.2.0-14%2Bdeb12u1?arch=amd64&distro=debian-12.11"
-    },
-    {
-     "@id": "pkg:deb/debian/libstdc%2B%2B6@12.2.0-14%2Bdeb12u1?arch=amd64&distro=debian-12.11"
     }
    ],
    "status": "not_affected",

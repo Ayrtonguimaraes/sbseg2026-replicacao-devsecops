@@ -224,8 +224,8 @@
 /mnt/lima-rosetta/rosetta /usr/sbin/apache2 -k start
 /mnt/lima-rosetta/rosetta /usr/sbin/apache2 -k start
 /mnt/lima-rosetta/rosetta /usr/sbin/apache2 -k start
-sh -c
 /mnt/lima-rosetta/rosetta /usr/bin/tail -f /var/log/apache2/access.log /var/log/apache2/error.log /var/log/apache2/other_vhosts_access.log
 /mnt/lima-rosetta/rosetta /bin/bash /usr/bin/mysqld_safe
 /mnt/lima-rosetta/rosetta /usr/sbin/apache2 -k start
+sh -c
 # modulos

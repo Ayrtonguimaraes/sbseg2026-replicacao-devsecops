@@ -81,18 +81,32 @@ def observar(container):
 
 
 def dpkg(container):
-    """Mapa arquivo -> pacote a partir das listas do dpkg do próprio contêiner."""
+    """Mapa arquivo -> pacote a partir das listas do dpkg do próprio contêiner.
+
+    Imagens distroless não têm /var/lib/dpkg/info; a lista de arquivos de cada pacote fica em
+    /var/lib/dpkg/status.d/<pacote>.md5sums ("hash  caminho"). Sem ler esse formato, nenhum
+    pacote de SO do Juice Shop aparecia carregado (bug achado na revisão de 22/11/2026)."""
+    mapa = {}
     tar = subprocess.run(["docker", "cp", f"{container}:/var/lib/dpkg/info", "-"],
                          capture_output=True)
-    mapa = {}
-    if tar.returncode != 0:
-        return mapa
-    with tarfile.open(fileobj=io.BytesIO(tar.stdout)) as t:
-        for m in t.getmembers():
-            if m.isfile() and m.name.endswith(".list"):
-                pacote = PurePosixPath(m.name).stem.split(":")[0]
-                for linha in t.extractfile(m).read().decode("utf-8", "replace").splitlines():
-                    mapa.setdefault(linha.strip(), set()).add(pacote)
+    if tar.returncode == 0:
+        with tarfile.open(fileobj=io.BytesIO(tar.stdout)) as t:
+            for m in t.getmembers():
+                if m.isfile() and m.name.endswith(".list"):
+                    pacote = PurePosixPath(m.name).stem.split(":")[0]
+                    for linha in t.extractfile(m).read().decode("utf-8", "replace").splitlines():
+                        mapa.setdefault(linha.strip(), set()).add(pacote)
+    tar = subprocess.run(["docker", "cp", f"{container}:/var/lib/dpkg/status.d", "-"],
+                         capture_output=True)
+    if tar.returncode == 0:
+        with tarfile.open(fileobj=io.BytesIO(tar.stdout)) as t:
+            for m in t.getmembers():
+                if m.isfile() and m.name.endswith(".md5sums"):
+                    pacote = PurePosixPath(m.name).name.removesuffix(".md5sums").split(":")[0]
+                    for linha in t.extractfile(m).read().decode("utf-8", "replace").splitlines():
+                        partes = linha.split(None, 1)
+                        if len(partes) == 2:
+                            mapa.setdefault("/" + partes[1].strip().lstrip("/"), set()).add(pacote)
     return mapa
 
 
@@ -275,15 +289,18 @@ def ler_relatorio(caminho, autores):
 
 
 def fontes_dpkg(container):
-    """Pacote binário -> pacote fonte, do /var/lib/dpkg/status do contêiner."""
-    tar = subprocess.run(["docker", "cp", f"{container}:/var/lib/dpkg/status", "-"],
-                         capture_output=True)
+    """Pacote binário -> pacote fonte, do banco do dpkg (status ou status.d, distroless)."""
+    textos = []
+    for caminho in ("/var/lib/dpkg/status", "/var/lib/dpkg/status.d"):
+        tar = subprocess.run(["docker", "cp", f"{container}:{caminho}", "-"], capture_output=True)
+        if tar.returncode != 0:
+            continue
+        with tarfile.open(fileobj=io.BytesIO(tar.stdout)) as t:
+            for m in t.getmembers():
+                if m.isfile() and not m.name.endswith(".md5sums"):
+                    textos.append(t.extractfile(m).read().decode("utf-8", "replace"))
     fontes = {}
-    if tar.returncode != 0:
-        return fontes
-    with tarfile.open(fileobj=io.BytesIO(tar.stdout)) as t:
-        texto = t.extractfile(t.getmembers()[0]).read().decode("utf-8", "replace")
-    for bloco in texto.split("\n\n"):
+    for bloco in "\n\n".join(textos).split("\n\n"):
         campos = dict(l.split(": ", 1) for l in bloco.splitlines() if ": " in l and l[0] != " ")
         if "Package" in campos:
             fontes[campos["Package"]] = campos.get("Source", campos["Package"]).split(" ")[0]
@@ -318,10 +335,11 @@ def gatilhos_extras(container):
     return set((texto + "\n" + r.stdout).replace(";", " ").split())
 
 
-def pacotes_da_inicializacao(container, mapa):
+def pacotes_da_inicializacao(container, mapa, tokens):
     """Pós-registro (falso negativo achado pela verificação S5): o interpretador dos scripts de
-    inicialização (linha #!) roda e carrega bibliotecas antes do processo principal. Devolve os
-    pacotes do interpretador e das bibliotecas que ele carrega (ldd dentro do contêiner)."""
+    inicialização (linha #!) e os executáveis citados nesses scripts rodam e carregam
+    bibliotecas antes do processo principal. Devolve os pacotes desses executáveis e das
+    bibliotecas que eles carregam (ldd dentro do contêiner)."""
     cfg = json.loads(subprocess.run(
         ["docker", "inspect", "--format", "{{json .Config}}", container],
         capture_output=True, text=True, check=True).stdout)
@@ -337,16 +355,45 @@ def pacotes_da_inicializacao(container, mapa):
             partes = linha[2:].split()
             interpretes.add(partes[1] if PurePosixPath(partes[0]).name == "env" and len(partes) > 1
                             else PurePosixPath(partes[0]).name)
+    executaveis = {c for c in mapa if PurePosixPath(c).parent.name in ("bin", "sbin")
+                   and PurePosixPath(c).name in tokens}
     caminhos = set()
     for nome in interpretes:
-        r = subprocess.run(["docker", "exec", container, "sh", "-c",
-                            f'p=$(command -v {nome}) && echo "$p" && ldd "$p"'],
+        r = subprocess.run(["docker", "exec", container, "sh", "-c", f"command -v {nome}"],
                            capture_output=True, text=True)
+        executaveis |= {x.strip() for x in r.stdout.splitlines() if x.startswith("/")}
+    if executaveis:
+        r = subprocess.run(["docker", "exec", container, "sh", "-c",
+                            'for p in "$@"; do [ -f "$p" ] && echo "$p" && ldd "$p"; done; true',
+                            "_", *sorted(executaveis)], capture_output=True, text=True)
         for linha in r.stdout.splitlines():
             for t in linha.split():
                 if t.startswith("/"):
                     caminhos.add(t)
     return pacotes_carregados({"caminhos": caminhos}, mapa), sorted(interpretes)
+
+
+def requires_npm(container, raiz, pacotes):
+    """Arquivos .js/.ts fora da pasta do próprio pacote que importam cada pacote npm por nome
+    (require("x"), require('x'), from "x", from 'x'). Indício de carregamento tardio (S5)."""
+    if not pacotes:
+        return {}
+    formas = ("require({q}{p}{q})", "from {q}{p}{q}", "import({q}{p}{q})")
+    padroes = {f.format(q=q, p=p): p for p in pacotes for q in ('"', "'") for f in formas}
+    r = subprocess.run(["docker", "run", "--rm", "-i", f"--pid=container:{container}",
+                        "--cap-add", "SYS_PTRACE", AUXILIAR, "sh", "-c",
+                        f"cat > /tmp/p; find /proc/1/root/{raiz} \\( -name '*.js' -o -name '*.ts' "
+                        "-o -name '*.cjs' -o -name '*.mjs' \\) -type f "
+                        "-exec grep -oHF -f /tmp/p {} + 2>/dev/null; true"],
+                       input="\n".join(sorted(padroes)) + "\n", capture_output=True, text=True)
+    achados = {}
+    for linha in r.stdout.splitlines():
+        arquivo, _, s = linha.partition(":")
+        nome = padroes.get(s)
+        arquivo = arquivo.removeprefix("/proc/1/root")
+        if nome in pacotes and f"/node_modules/{nome}/" not in arquivo:
+            achados.setdefault(nome, set()).add(arquivo)
+    return achados
 
 
 def sonames_citadas(container, caminhos, sonames):
@@ -376,7 +423,7 @@ def coletar_imagem(app, autores, saida_bruta, spider, s4):
     pac = [{c: pacotes_carregados(s[c], mapas[c]) for c in cfg["containers"]} for s in (s1, s2, s3)]
     fontes = {c: fontes_dpkg(c) for c in cfg["containers"]}
     extras = {c: gatilhos_extras(c) for c in cfg["containers"]}
-    init_pac = {c: pacotes_da_inicializacao(c, mapas[c]) for c in cfg["containers"]}
+    init_pac = {c: pacotes_da_inicializacao(c, mapas[c], init[c]) for c in cfg["containers"]}
     linhas = []
     for caminho in RELATORIOS_IMAGEM[app]:
         dados = ler_relatorio(caminho, autores)
@@ -429,6 +476,17 @@ def coletar_imagem(app, autores, saida_bruta, spider, s4):
                  "interpretes_inicializacao": init_pac[c][1],
                  "pacotes_interpretes": sorted(init_pac[c][0]),
                  "sonames_citadas": {s: sorted(v) for s, v in citadas.items()}}
+        npm = [l for l in linhas if c in l["containers"].split("|")
+               and l["tipo_pacote"] == "node-pkg"]
+        if npm:
+            nl_npm = {l["pacote"] for l in npm} - {l["pacote"] for l in npm
+                                                   if l["carregado_registrado"]}
+            raiz = ALVOS[app].get("raiz_node", "juice-shop")
+            modulos = s1[c]["modulos"] | s2[c]["modulos"] | s3[c]["modulos"]
+            s5[c]["requires_npm"] = {
+                pk: [{"arquivo": a, "arquivo_carregado": int(a in modulos)} for a in sorted(v)]
+                for pk, v in requires_npm(c, raiz, nl_npm).items()}
+            s5[c]["npm_nao_carregados"] = sorted(nl_npm)
     (saida_bruta / f"{app}--s5.json").write_text(json.dumps(s5, indent=1, ensure_ascii=False),
                                                  encoding="utf-8")
     return linhas

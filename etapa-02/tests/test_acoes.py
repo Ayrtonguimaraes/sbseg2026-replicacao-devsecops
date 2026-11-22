@@ -42,18 +42,17 @@ class TesteAcoes(unittest.TestCase):
     def test_vex_e_exatamente_o_que_sai_do_bloqueio(self):
         for app in APPS:
             alvo = self.alvos[app]
-            vex = json.loads((ETAPA / f"pilotos/contexto-acoes/vex-{app}.json").read_text("utf-8"))
-            declarados = {(s["vulnerability"]["name"], p["@id"])
-                          for s in vex["statements"] for p in s["products"]}
             bloqueia = self.res[app]["P4"][2]
-            altos = [r for r in alvo.registros if nota(r["score"]) >= LIMIAR and r["purl"]]
-            em_algum = {(r["cve"], r["purl"]) for r in altos
-                        if (r["relatorio"], r["cve"]) in bloqueia}
-            for r in altos:
-                fora = (r["relatorio"], r["cve"]) not in bloqueia
-                par = (r["cve"], r["purl"])
-                # Declarado só se sai do bloqueio e não bloqueia em nenhuma outra imagem.
-                self.assertEqual(par in declarados, fora and par not in em_algum, (app, r["ref"]))
+            for rel in {r["relatorio"] for r in alvo.registros}:
+                arq = ETAPA / f"pilotos/contexto-acoes/vex-{app}--{Path(rel).stem}.json"
+                vex = json.loads(arq.read_text("utf-8"))
+                declarados = {(s["vulnerability"]["name"], p["@id"])
+                              for s in vex["statements"] for p in s["products"]}
+                for r in alvo.registros:
+                    if r["relatorio"] != rel or nota(r["score"]) < LIMIAR or not r["purl"]:
+                        continue
+                    fora = (r["relatorio"], r["cve"]) not in bloqueia
+                    self.assertEqual((r["cve"], r["purl"]) in declarados, fora, (app, r["ref"]))
 
     def test_carregado_inclui_a_definicao_registrada(self):
         for app in APPS:

@@ -1,6 +1,6 @@
 {
  "@context": "https://openvex.dev/ns/v0.2.0",
- "@id": "https://github.com/jldsn/sbseg2026-replicacao-devsecops/vex/dvwa",
+ "@id": "https://github.com/jldsn/sbseg2026-replicacao-devsecops/vex/dvwa/reports-0a8e877_trivy-report",
  "author": "Etapa 02 (replicação SBSeg 2026), coletor de contexto de execução",
  "timestamp": "2026-11-22T00:00:00Z",
  "version": 1,

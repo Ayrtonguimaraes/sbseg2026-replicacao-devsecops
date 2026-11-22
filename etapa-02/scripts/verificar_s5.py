@@ -41,14 +41,43 @@ JULGAMENTOS = {
         "string 'libgmp.so' citada é da libgmp. O Apache usa libssl1.1."),
 }
 
+# Pacotes npm não carregados com require estático em algum arquivo: (pacote) -> julgamento.
+JULGAMENTOS_NPM = {
+    "diff": ("ferramenta_de_desenvolvimento",
+             "Só rsn/rsnUtil (script npm 'rsn' via ts-node, verificação de snippets do projeto) e "
+             "ts-node/repl; o servidor (build/server.js, routes, lib) não importa rsn."),
+    "ip-address": ("ferramenta_de_instalacao",
+                   "Só socks (agentes de proxy usados pelo npm na instalação); nenhum arquivo "
+                   "de socks foi carregado em S1-S4."),
+    "tar": ("ferramenta_de_instalacao",
+            "Só node-gyp, node-pre-gyp e sqlite3/deps/extract.js, usados para compilar ou "
+            "baixar módulos nativos na instalação."),
+    "tar-fs": ("ferramenta_de_instalacao", "Só prebuild-install/download.js (instalação)."),
+    "lodash.set": ("ferramenta_de_build", "Só grunt-replace-json (tarefa do Grunt, no build)."),
+    "picomatch": ("ferramenta_de_desenvolvimento",
+                  "Só anymatch, readdirp, micromatch do grunt e tinyglobby (watchers e globs de "
+                  "build); nenhum desses arquivos foi carregado em S1-S4."),
+}
+
+
+def vex_pacotes(app, vex_cves):
+    """Nomes de pacote npm presentes no VEX registrado (pelo PURL pkg:npm/<nome>@...)."""
+    nomes = set()
+    for _, purl in vex_cves[app]:
+        if purl.startswith("pkg:npm/"):
+            nomes.add(purl.split("/", 1)[1].rsplit("@", 1)[0].replace("%40", "@"))
+    return nomes
+
 
 def main():
     ctx = list(csv.DictReader((ETAPA / "results/contexto_imagem.csv").open(encoding="utf-8")))
     vex_cves = {}
     for app in APPS:
-        v = json.loads((ETAPA / f"pilotos/contexto-acoes/vex-{app}-registrado.json").read_text("utf-8"))
-        vex_cves[app] = {(s["vulnerability"]["name"], p["@id"])
-                         for s in v["statements"] for p in s["products"]}
+        vex_cves[app] = set()
+        for arq in (ETAPA / "pilotos/contexto-acoes").glob(f"vex-{app}--*-registrado.json"):
+            v = json.loads(arq.read_text("utf-8"))
+            vex_cves[app] |= {(s["vulnerability"]["name"], p["@id"])
+                              for s in v["statements"] for p in s["products"]}
     linhas = []
     for app in APPS:
         dados = json.loads((ETAPA / f"pilotos/contexto-acoes/{app}--s5.json").read_text("utf-8"))
@@ -75,6 +104,18 @@ def main():
                                # O VEX da definição registrada declarava CVE deste pacote?
                                "afetava_vex_registrado": int(pk in no_vex),
                                "carregado_apos_correcao": int(pk not in nl),
+                               "julgamento": julg, "evidencia": evid})
+        for c, x in dados.items():
+            for pk, arquivos in sorted((x.get("requires_npm") or {}).items()):
+                julg, evid = JULGAMENTOS_NPM.get(pk, ("a_examinar", ""))
+                carregados = [a["arquivo"] for a in arquivos if a["arquivo_carregado"]]
+                if carregados:
+                    julg, evid = "a_examinar", "arquivo que importa o pacote foi carregado"
+                linhas.append({"aplicacao": app, "container": c, "pacote": pk,
+                               "indicio": "require_estatico", "chave": pk,
+                               "citado_em": "|".join(a["arquivo"] for a in arquivos[:6]),
+                               "afetava_vex_registrado": int(pk in vex_pacotes(app, vex_cves)),
+                               "carregado_apos_correcao": 0,
                                "julgamento": julg, "evidencia": evid})
     destino = ETAPA / "results/p4_s5.csv"
     with destino.open("w", encoding="utf-8", newline="") as f:

@@ -16,8 +16,8 @@ run() {
 WEBUI=descartesresearch/teastore-webui:1.4.2
 JUICE=bkimminich/juice-shop@sha256:547bd3fef4a6d7e25e131da68f454e6dc4a59d281f8793df6853e6796c9bbf58
 run -o /out/webui-sem.json "$WEBUI"
-run --skip-db-update --skip-java-db-update --show-suppressed --vex /vex/vex-teastore.json \
+run --skip-db-update --skip-java-db-update --show-suppressed --vex /vex/vex-teastore--image-webui.json \
   -o /out/webui-com.json "$WEBUI"
 run --skip-db-update --skip-java-db-update -o /out/juice-sem.json "$JUICE"
-run --skip-db-update --skip-java-db-update --show-suppressed --vex /vex/vex-juice-shop.json \
+run --skip-db-update --skip-java-db-update --show-suppressed --vex /vex/vex-juice-shop--juice-shop-image.json \
   -o /out/juice-com.json "$JUICE"

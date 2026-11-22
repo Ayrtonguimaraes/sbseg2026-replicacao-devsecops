@@ -135,119 +135,155 @@ listados. Se S4 falhar, a P4 fica como simulação, não como integração.
 *Preenchido depois do cálculo. Fontes: `results/contexto_imagem.csv` (um registro do Trivy de
 imagem por linha: 1.575 na DVWA, 3.858 no TeaStore, 448 no Juice Shop), `results/p4_acoes.csv`
 (cada ação, por política), `results/p4_acoes_resumo.csv`, `results/p4_vex_trivy.csv`,
-`results/p4_s5.csv`, observações brutas e VEX em `pilotos/contexto-acoes/`. Scripts:
-`contexto_execucao.py --imagem`, `politica_acoes.py`, `trivy_vex.sh`, `validar_vex_trivy.py`,
-`verificar_s5.py`. Testes: `tests/test_acoes.py`.*
+`results/p4_s5.csv`, observações brutas e VEX (um arquivo por imagem) em `pilotos/contexto-acoes/`.
+Scripts: `contexto_execucao.py --imagem`, `politica_acoes.py`, `trivy_vex.sh`,
+`validar_vex_trivy.py`, `verificar_s5.py`. Testes: `tests/test_acoes.py` (a DVWA exige a variável
+`SBSEG_AUTORES` com o clone do artefato dos autores; sem ela, os testes da DVWA são pulados).*
 
-**Reprodutibilidade da coleta.** A coleta foi feita três vezes seguidas, com os mesmos
-contêineres. As 266 unidades indiretas da versão anterior (coletada em outra sessão, com
-contêineres novos) têm a mesma classificação na coleta final, nas duas definições, e a P4 com a
-definição registrada deu 74, 36 e 40 ações nas três coletas.
+### Resumo honesto, antes dos números
+
+1. **Dois critérios registrados falharam.** O S1 (magnitude por CVE) passou só no TeaStore, e o
+   S5 (falso negativo) achou um erro real do coletor. Uma revisão posterior achou mais dois
+   problemas, que o S5 não detectaria (seção "Correções pós-registro").
+2. **A redução de trabalho fica quase toda dentro de uma migração que a própria lista exige.** DVWA
+   e TeaStore rodam sobre SO em fim de suporte, e a P4 mantém "migrar a imagem base" como ação
+   obrigatória. Atualizar pacotes de SO numa base que vai ser trocada não é trabalho separado.
+   Descontando essas ações absorvidas, **o coletor não muda o trabalho na DVWA nem no TeaStore**
+   (35 → 35 e 17 → 17). A redução de trabalho medida fica num alvo só, o Juice Shop (47 → 41).
+3. **O que o coletor entrega de fato é triagem com evidência**, consumida por um scanner real: de
+   18% a 44% dos CVEs de imagem com nota ≥ 7 saem do bloqueio com declaração VEX, e o Trivy oficial
+   suprime exatamente esses.
+4. **Achado exploratório, fora da P4:** medida em ações de correção, a P3 do artigo exige o mesmo
+   trabalho que a P2.
 
 ### Ações para liberar o deploy
 
 | Política | DVWA | TeaStore | Juice Shop |
 |---|---|---|---|
-| P2 | 87 ações · 11/13 | 81 · 7/14 | 49 · 7/14 |
-| P3 | 87 · 8/13 | 81 · 4/14 | 49 · 3/14 |
-| P3\* | 89 · 10/13 | 82 · 5/14 | 50 · 4/14 |
-| A2 (P3 + indiretos ≥ 9) | 87 · 8/13 | 81 · 6/14 | 49 · 4/14 |
-| Escopo sem coletor (ablação) | 89 · 11/13 | 82 · 7/14 | 50 · 7/14 |
-| P4 com a definição registrada | 74 · 11/13 | 36 · 7/14 | 40 · 7/14 |
-| **P4** | **74 · 11/13** | **37 · 7/14** | **40 · 7/14** |
+| P2 | 87 ações (33 não absorvidas) · 11/13 | 81 (16) · 7/14 | 46 (46) · 7/14 |
+| P3 | 87 (33) · 8/13 | 81 (16) · 4/14 | 46 (46) · 3/14 |
+| P3\* | 89 (35) · 10/13 | 82 (17) · 5/14 | 47 (47) · 4/14 |
+| A2 (P3 + indiretos ≥ 9) | 87 (33) · 8/13 | 81 (16) · 6/14 | 46 (46) · 4/14 |
+| Escopo sem coletor (ablação) | 89 (35) · 11/13 | 82 (17) · 7/14 | 47 (47) · 7/14 |
+| P4 com a definição registrada | 74 (35) · 11/13 | 36 (17) · 7/14 | 41 (41) · 7/14 |
+| **P4** | **74 (35) · 11/13** | **42 (17) · 7/14** | **41 (41) · 7/14** |
 | *Unidades bloqueadas (artigo): P2 → P3* | *80 → 56* | *262 → 139* | *28 → 9* |
 
-Composição das ações da P4: DVWA = 1 migração de SO, 39 pacotes de SO, 30 correções Semgrep e
-4 outras; TeaStore = 2 migrações de SO (Debian 10 e Ubuntu 18.04), 20 pacotes de SO, 12
-dependências Maven/Go, 2 correções Semgrep e 1 confirmação; Juice Shop = 1 pacote de SO, 31
-dependências npm, 6 correções Semgrep e 2 outras.
+"Não absorvidas" = ações que sobram quando se desconta a atualização de pacotes de SO numa imagem
+base que a mesma lista manda migrar. O Juice Shop roda sobre Debian 12, ainda com suporte, então
+nada é absorvido.
 
-### Achado 1 — medida em trabalho, a P3 do artigo não reduz nada
-
-Em ações, **P2, P3 e A2 exigem exatamente o mesmo trabalho nos três alvos** (87, 81 e 49). A
-redução de 30% a 68% que a P3 mostra em unidades vem da forma de contar. A P3 deixa de bloquear
-as unidades indiretas, mas os mesmos CVEs continuam dentro do agregado de "pacotes com correção"
-de cada imagem, que bloqueia pelo máximo. Para tirar o agregado do bloqueio, o time precisa
-corrigir todos os seus membros com nota ≥ 7, inclusive os indiretos. Sobra só a diferença dos
-indiretos sem correção, que no total é de 1 CVE (DVWA) e nenhuma ação. No TeaStore, 100 das 139
-unidades da P3 viram **uma** ação (`detected-bcrypt-hash` em `setupData.sql`).
-
-Esse achado vale para o modelo do próprio artigo e não depende da P4.
-
-### Achado 2 — o coletor tira trabalho, com evidência
+### O que o coletor muda (ablação → P4)
 
 | | DVWA | TeaStore | Juice Shop |
 |---|---|---|---|
-| Ações totais: ablação → P4 | 89 → 74 (−17%) | 82 → 37 (**−55%**) | 50 → 40 (−20%) |
-| Ações de pacote e dependência de imagem | 54 → 39 | 77 → 32 | 42 → 32 |
-| CVEs de imagem distintos com nota ≥ 7 | 250 → 203 (−18,8%) | 287 → 155 (**−46,0%**) | 144 → 116 (−19,4%) |
-| Pares (CVE, pacote) declarados no VEX | 78 | 371 | 46 |
+| CVEs de imagem distintos com nota ≥ 7 fora do bloqueio | 250 → 203 (−18,8%) | 287 → 161 (**−43,9%**) | 144 → 118 (−18,1%) |
+| Ações de pacote e dependência de imagem (critério S2) | 54 → 39 | 77 → 37 | 39 → 33 |
+| Ações totais | 89 → 74 | 82 → 42 | 47 → 41 |
+| **Ações não absorvidas pela migração de SO** | **35 → 35** | **17 → 17** | **47 → 41 (−13%)** |
+| Pares (CVE, pacote) declarados no VEX, somando as imagens | 78 | 1.273 | 38 |
 
-**Comparada com as políticas do artigo**, a P4 pede menos trabalho e cobre mais casos da matriz
-que a P3\* nos três alvos: 74 contra 89 ações e 11/13 contra 10/13 na DVWA; 37 contra 82 e 7/14
-contra 5/14 no TeaStore; 40 contra 50 e 7/14 contra 4/14 no Juice Shop. A A2 também é dominada
-nas duas medidas. *Ressalva que continua valendo:* a cobertura a mais vem dos indiretos e,
-portanto, de coincidência de CWE. O que a P4 sustenta com evidência é a redução de trabalho, e
-não a cobertura.
+**Leitura.** O número que mede trabalho poupado é a última linha de ações. Na DVWA e no TeaStore,
+todas as ações que o coletor remove são atualizações de pacotes de SO numa base em fim de suporte.
+Depois da migração, os CVEs mudam e a classificação precisa ser refeita. Nesses dois alvos, o valor
+do coletor é de **triagem**: dizer, com evidência, quais dos alertas graves de hoje não estão no
+caminho de execução (no TeaStore, 44% dos CVEs distintos), o que importa enquanto a migração não
+sai. No Juice Shop, as 6 ações a menos são reais: 5 dependências npm (`diff`, `ip-address`,
+`lodash.set`, `tar`, `tar-fs`) e o `openssl` do SO. O Node traz o OpenSSL embutido e não carrega a
+`libssl3` do Debian.
 
-**Lista concreta, TeaStore.** Para liberar o deploy pela P4, o time precisa migrar as duas
-imagens base fora de suporte, atualizar 12 dependências da aplicação (por exemplo
-`jackson-databind`, `libthrift`, `amqp-client`, `tomcat-coyote`, `log4j`), atualizar 20 pacotes
-fonte de SO que os serviços de fato carregam (`openssl`, `glibc`, `ncurses`, `zlib` e outros),
-remover a chave privada versionada e o dump com hashes bcrypt, e corrigir o reset do banco sem
-autenticação. Saem da lista, com declaração VEX, `curl`, `perl`, `gnupg`, `expat`, Heimdal e as
-demais ferramentas que nenhum processo executa. **No Juice Shop**, as 43 ocorrências do `vm2`
-viram uma ação só, "substituir o componente", porque o pacote não tem correção.
+**Comparada com as políticas do artigo**, a P4 não pede mais trabalho não absorvido que a P3\* em
+nenhum alvo (35 contra 35, 17 contra 17, 41 contra 47) e cobre mais casos da matriz nos três (11
+contra 10, 7 contra 5, 7 contra 4). *Ressalva que continua valendo:* a cobertura a mais vem dos
+indiretos e, portanto, de coincidência de CWE. Ela é contexto, não evidência.
+
+**Lista concreta, TeaStore.** Para liberar o deploy pela P4, o time precisa migrar as duas imagens
+base fora de suporte (Debian 10 e Ubuntu 18.04), atualizar 12 dependências da aplicação (por
+exemplo `jackson-databind`, `libthrift`, `amqp-client`, `tomcat-coyote`, `log4j`), remover a chave
+privada versionada e o dump com hashes bcrypt, e corrigir o reset do banco sem autenticação.
+Enquanto a migração não acontece, 25 pacotes fonte de SO carregados ficam na lista. `curl`,
+`perl`, `gnupg`, `expat`, Heimdal e as demais ferramentas que nenhum processo executa saem dela,
+com declaração VEX. **No Juice Shop**, as 43 ocorrências do `vm2` viram uma ação só, "substituir o
+componente", porque o pacote não tem correção.
+
+### Achado exploratório — em ações, a P3 do artigo não reduz trabalho
+
+*Não estava entre as perguntas registradas e depende da definição de ação da seção 4. Fica como
+exploratório.* Em ações, **P2, P3 e A2 exigem o mesmo trabalho nos três alvos** (87, 81 e 46). A P3
+deixa de bloquear as unidades indiretas, mas os mesmos CVEs continuam dentro do agregado de
+"pacotes com correção" de cada imagem, que bloqueia pelo máximo. Para tirar o agregado do bloqueio,
+é preciso corrigir todos os seus membros com nota ≥ 7, inclusive os indiretos. No TeaStore, 100 das
+139 unidades da P3 viram **uma** ação (`detected-bcrypt-hash` em `setupData.sql`).
+
+O alcance do achado é limitado. Ele mostra que a redução de 30% a 68% da P3 é de **alertas
+bloqueantes a triar**, que é o que o artigo conta, e não de **trabalho de correção**. A redução de
+alertas pode ter valor próprio (menos ruído para quem triagem), e o artigo não afirma redução de
+trabalho.
 
 ### Critérios registrados
 
 | Critério | Resultado |
 |---|---|
-| S1: ≥ 20% dos CVEs de imagem distintos fora do bloqueio em ≥ 2 de 3 alvos | **Falha.** Só o TeaStore passa (46,0%); DVWA 18,8% e Juice Shop 19,4% ficam logo abaixo |
-| S2: menos ações de pacote de imagem que a ablação em ≥ 2 de 3 alvos | **Passa** nos 3 (54 → 39, 77 → 32, 42 → 32) |
+| S1: ≥ 20% dos CVEs de imagem distintos fora do bloqueio em ≥ 2 de 3 alvos | **Falha.** Só o TeaStore passa (43,9%); DVWA 18,8% e Juice Shop 18,1% |
+| S2: menos ações de pacote de imagem que a ablação em ≥ 2 de 3 alvos | **Passa como registrado** nos 3 (54 → 39, 77 → 37, 39 → 33). Descontada a migração de SO (desconto definido depois do registro), só o Juice Shop reduz |
 | S3: nenhum caso da P3\* perdido | **Passa** nos 3 |
-| S4: o Trivy oficial suprime exatamente o que o VEX declara | **Passa.** Trivy 0.69.3 (imagem fixada por digest), com e sem VEX na mesma execução: TeaStore webui, 193 de 550 achados suprimidos, todos declarados; Juice Shop, 46 de 363; nenhum suprimido a mais ou a menos |
-| S5: zero falsos negativos confirmados | **Falha** na definição registrada (detalhe abaixo); corrigido depois do registro |
+| S4: o Trivy oficial suprime exatamente o que o VEX declara | **Passa.** Trivy 0.69.3 (imagem fixada por digest), com e sem VEX na mesma execução: TeaStore webui, 181 de 550 achados suprimidos, todos declarados e nenhum a mais; Juice Shop, 38 de 363 |
+| S5: zero falsos negativos confirmados | **Falha** na definição registrada (abaixo) |
 
-**S5 — o falso negativo encontrado.** O contêiner de banco do TeaStore inicia pelo
-`docker-entrypoint.sh` (`#!/bin/bash`), e o bash linka `libtinfo.so.5`. O bash roda na
-inicialização e faz `exec` do `mysqld`, então o snapshot nunca o vê. A regra de inicialização
-registrada só procurava executáveis de cada pacote citados nos scripts, e não as bibliotecas do
-interpretador. Com isso, o VEX da definição registrada declarava como fora do caminho de execução
-3 CVEs do ncurses (CVE-2021-39537, CVE-2022-29458, CVE-2023-29491; 15 pares com PURL). Nos
-serviços Java, o mesmo acontece com `catalina.sh` e `libtinfo.so.6`, sem efeito na decisão porque
-outro pacote do ncurses já estava carregado. **Correção pós-registro:** o interpretador dos
-scripts de inicialização e as bibliotecas que ele carrega (`ldd` dentro do contêiner) contam como
-carregados. O efeito na P4 é +1 ação no TeaStore (36 → 37). Os outros indícios
-(`libidn2` citado pela glibc, `libsepol` pela libselinux, uma coincidência de nome com
-`libgmp.so`) foram examinados e julgados improváveis ou não-indícios, com a justificativa em
-`results/p4_s5.csv` (avaliador único). A checagem detecta o que foi desenhada para detectar, e foi
-ela que achou o erro.
+### Correções pós-registro (todas reportadas; a P4-reg mostra o efeito)
 
-**Leitura dos critérios, como registrado.** O S1 falhou por pouco em dois alvos: na DVWA e no
-Juice Shop, o coletor tira menos de um quinto dos CVEs. A redução de trabalho (S2) passa nos três
-alvos, e só ela é atribuída ao coletor. A mudança de unidade é que explica a diferença entre
-unidades e ações das políticas do artigo (Achado 1), e não entra na conta da P4.
+1. **Interpretador e executáveis da inicialização (achado pelo S5).** O contêiner de banco do
+   TeaStore inicia pelo `docker-entrypoint.sh` (`#!/bin/bash`), e o bash linka `libtinfo.so.5`. O
+   bash roda na inicialização e faz `exec` do `mysqld`, então o snapshot não o vê. A regra
+   registrada só procurava executáveis citados nos scripts, e não as bibliotecas que eles carregam.
+   Com isso, o VEX registrado declarava 3 CVEs do ncurses como fora do caminho de execução. A
+   correção conta como carregados o interpretador (linha `#!`), os executáveis citados nos scripts
+   de inicialização e as bibliotecas que eles carregam (`ldd` dentro do contêiner). Efeito: TeaStore
+   36 → 42 ações (todas absorvíveis pela migração de SO) e 155 → 161 CVEs. Essa correção cobre a
+   classe "executável de inicialização", e não só o caso achado.
+2. **Imagem distroless (achado na revisão, não pelo S5).** O Juice Shop é distroless, e o dpkg dessa
+   imagem guarda a lista de arquivos em `status.d/*.md5sums`, e não em `info/*.list`. O coletor não
+   lia esse formato, então nenhum pacote de SO do Juice Shop aparecia carregado, nem `libstdc++6` e
+   `libgcc-s1`, que o Node mapeia em memória. Isso é um erro de implementação da regra registrada,
+   não uma mudança de definição, e foi corrigido nas duas variantes. Efeito no Juice Shop: na versão
+   com o erro (commit `dfa0319`), 40 ações e 116 CVEs; corrigido, 41 e 118. **O S5 não detectaria
+   esse erro**, porque depende do mesmo mapa arquivo → pacote.
+3. **Um VEX por imagem.** A primeira versão declarava por PURL para o alvo inteiro, mas o mesmo
+   pacote pode estar carregado num serviço e não em outro. Agora há uma declaração por imagem, e a
+   simulação e o VEX coincidem par a par (teste `test_vex_e_exatamente_o_que_sai_do_bloqueio`).
+
+**Verificação S5, resultado final** (`results/p4_s5.csv`, avaliador único): 21 indícios
+examinados. Os 7 de `libtinfo` (1 no banco, 6 nos serviços Java) são falsos negativos confirmados,
+resolvidos pela correção 1. Os outros 14 foram julgados improváveis ou não-indícios, com a
+justificativa em cada linha: `libidn2`, citado pela glibc (só por `dlopen` para nomes
+internacionalizados); `libsepol`, pela libselinux; uma coincidência de nome com `libgmp.so`; e, no
+Juice Shop, `require` estático dos 6 módulos npm não carregados, todos de ferramentas de
+instalação, build ou desenvolvimento (`node-gyp`, `prebuild-install`, `grunt`, o script `rsn`, os
+agentes de proxy `socks`), sem nenhum arquivo importador carregado.
+
+**Reprodutibilidade.** A coleta foi repetida quatro vezes com os mesmos contêineres. A P4 com a
+definição registrada deu as mesmas 74 e 36 ações na DVWA e no TeaStore em todas as coletas. As 266
+unidades indiretas da versão anterior, coletadas em outra sessão com contêineres novos, têm a mesma
+classificação.
 
 ### O que não muda
 
-- **O veredito de deploy continua "bloqueado" nos três alvos**, em todas as políticas. A P4 muda o
-  tamanho e a composição da lista de trabalho, não o veredito.
-- Carregado não é explorável. O lado carregado continua com ruído: na auditoria anterior, 8 de 10
-  pares carregados não eram aplicáveis.
+- **O veredito de deploy continua "bloqueado" nos três alvos**, em todas as políticas.
+- Carregado não é explorável. Na auditoria anterior, 8 de 10 pares carregados não eram aplicáveis.
 - O coletor observa sem login na DVWA e no TeaStore, e o Trivy FS fica fora do filtro.
 
 ### Conclusão
 
-A P4 desta versão responde **o que o time precisa fazer para liberar o deploy**, com uma lista de
-ações que funciona num scanner real (VEX consumido pelo Trivy). Ela traz dois resultados
-mensuráveis:
+O que esta versão sustenta com evidência:
 
-1. **A redução da P3 do artigo é um efeito da contagem.** Em trabalho, P2 e P3 são iguais nos três
-   alvos.
-2. **O coletor de contexto reduz o trabalho em 17% a 55%** em relação à mesma regra sem coletor,
-   sem perder nenhum caso que a P3\* cobre, e a P4 fica com menos trabalho e mais cobertura que a
-   P3\* nos três alvos.
+1. **Triagem de imagem verificável.** O coletor tira do bloqueio, com declaração VEX, de 18% a 44%
+   dos CVEs de imagem com nota ≥ 7, e o Trivy oficial consome essas declarações sem diferença. É a
+   parte implantável da proposta: não depende da matriz e se integra ao scanner que o pipeline já
+   usa.
+2. **Redução de trabalho num alvo só.** No Juice Shop, que roda sobre SO com suporte, são 6 ações a
+   menos (−13%). Na DVWA e no TeaStore, a migração obrigatória do SO absorve toda a redução.
+3. **Achado exploratório sobre o artigo.** Em ações de correção, P2 e P3 são iguais nos três alvos.
 
-O critério de magnitude por CVE (S1) falhou em dois alvos, e a verificação de falso negativo (S5)
-achou um erro real, corrigido depois do registro e reportado com as duas definições.
+O que não se sustenta: uma "redução de 17% a 55% do trabalho" (a versão anterior deste texto)
+conta como trabalho separado atualizações que a migração de SO absorve, e o critério de magnitude
+(S1) falhou em dois alvos.

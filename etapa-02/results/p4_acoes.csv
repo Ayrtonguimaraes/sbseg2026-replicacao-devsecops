@@ -1047,9 +1047,14 @@ teastore,P4,migrar_so,ubuntu 18.04,,1,0,0,
 teastore,P4,pacote_so,debian 10.10,freetype,3,3,0,2.9.1-3+deb10u3
 teastore,P4,pacote_so,debian 10.10,gcc-8,36,2,1,
 teastore,P4,pacote_so,debian 10.10,glibc,132,11,1,2.28-10+deb10u2|2.28-10+deb10u3|2.28-10+deb10u4
+teastore,P4,pacote_so,debian 10.10,gzip,6,1,0,1.9-3+deb10u1
+teastore,P4,pacote_so,debian 10.10,libgcrypt20,6,1,1,
+teastore,P4,pacote_so,debian 10.10,lz4,6,1,1,
 teastore,P4,pacote_so,debian 10.10,ncurses,90,3,0,6.1+20181013-2+deb10u3|6.1+20181013-2+deb10u5
 teastore,P4,pacote_so,debian 10.10,nghttp2,6,1,0,1.36.0-2+deb10u2
 teastore,P4,pacote_so,debian 10.10,openssl,108,9,0,1.1.1d-0+deb10u7|1.1.1d-0+deb10u8|1.1.1n-0+deb10u2|1.1.1n-0+deb10u3|1.1.1n-0+deb10u4|1.1.1n-0+deb10u5
+teastore,P4,pacote_so,debian 10.10,systemd,60,5,1,241-7~deb10u9
+teastore,P4,pacote_so,debian 10.10,xz-utils,12,1,0,5.2.4-1+deb10u1
 teastore,P4,pacote_so,debian 10.10,zlib,18,3,1,1:1.2.11.dfsg-1+deb10u1|1:1.2.11.dfsg-1+deb10u2
 teastore,P4,pacote_so,ubuntu 18.04,bash,1,1,0,4.4.18-2ubuntu1.3
 teastore,P4,pacote_so,ubuntu 18.04,glibc,24,12,0,2.27-3ubuntu1.2|2.27-3ubuntu1.5
@@ -1102,12 +1107,9 @@ juice-shop,P2,dependencia,npm,uuid,2,1,0,"11.1.1, 12.0.1, 13.0.1"
 juice-shop,P2,dependencia,npm,validator,2,1,0,13.15.22
 juice-shop,P2,dependencia,npm,vm2,85,43,1,3.10.0|3.10.2|3.10.5|3.11.0|3.11.1|3.11.2|3.11.3|3.11.4|3.11.6|3.11.7|3.11.8|3.12.1|3.12.2|3.9.18
 juice-shop,P2,dependencia,npm,ws,6,2,0,"5.2.5, 6.2.4, 7.5.11, 8.21.0|8.20.1"
-juice-shop,P2,pacote_so,debian 12.11,gcc-12-base,2,2,1,
-juice-shop,P2,pacote_so,debian 12.11,libc6,11,9,1,2.36-9+deb12u11|2.36-9+deb12u14
-juice-shop,P2,pacote_so,debian 12.11,libgcc-s1,2,2,1,
-juice-shop,P2,pacote_so,debian 12.11,libgomp1,2,2,1,
-juice-shop,P2,pacote_so,debian 12.11,libssl3,32,16,0,3.0.18-1~deb12u2|3.0.19-1~deb12u2|3.0.20-1~deb12u2|3.0.22-1~deb12u1|3.0.22-1~deb12u2
-juice-shop,P2,pacote_so,debian 12.11,libstdc++6,2,2,1,
+juice-shop,P2,pacote_so,debian 12.11,gcc-12,8,2,1,
+juice-shop,P2,pacote_so,debian 12.11,glibc,11,9,1,2.36-9+deb12u11|2.36-9+deb12u14
+juice-shop,P2,pacote_so,debian 12.11,openssl,32,16,0,3.0.18-1~deb12u2|3.0.19-1~deb12u2|3.0.20-1~deb12u2|3.0.22-1~deb12u1|3.0.22-1~deb12u2
 juice-shop,P2,semgrep,code-string-concat,routes/userProfile.ts,1,0,0,
 juice-shop,P2,semgrep,detected-google-oauth-url,frontend/src/app/login/login.component.ts,1,0,0,
 juice-shop,P2,semgrep,express-sequelize-injection,routes/login.ts,1,0,0,
@@ -1151,12 +1153,9 @@ juice-shop,P3,dependencia,npm,uuid,2,1,0,"11.1.1, 12.0.1, 13.0.1"
 juice-shop,P3,dependencia,npm,validator,2,1,0,13.15.22
 juice-shop,P3,dependencia,npm,vm2,74,43,1,3.10.0|3.10.2|3.10.5|3.11.0|3.11.1|3.11.2|3.11.3|3.11.4|3.11.6|3.11.7|3.11.8|3.12.1|3.12.2|3.9.18
 juice-shop,P3,dependencia,npm,ws,6,2,0,"5.2.5, 6.2.4, 7.5.11, 8.21.0|8.20.1"
-juice-shop,P3,pacote_so,debian 12.11,gcc-12-base,2,2,1,
-juice-shop,P3,pacote_so,debian 12.11,libc6,11,9,1,2.36-9+deb12u11|2.36-9+deb12u14
-juice-shop,P3,pacote_so,debian 12.11,libgcc-s1,2,2,1,
-juice-shop,P3,pacote_so,debian 12.11,libgomp1,2,2,1,
-juice-shop,P3,pacote_so,debian 12.11,libssl3,32,16,0,3.0.18-1~deb12u2|3.0.19-1~deb12u2|3.0.20-1~deb12u2|3.0.22-1~deb12u1|3.0.22-1~deb12u2
-juice-shop,P3,pacote_so,debian 12.11,libstdc++6,2,2,1,
+juice-shop,P3,pacote_so,debian 12.11,gcc-12,8,2,1,
+juice-shop,P3,pacote_so,debian 12.11,glibc,11,9,1,2.36-9+deb12u11|2.36-9+deb12u14
+juice-shop,P3,pacote_so,debian 12.11,openssl,32,16,0,3.0.18-1~deb12u2|3.0.19-1~deb12u2|3.0.20-1~deb12u2|3.0.22-1~deb12u1|3.0.22-1~deb12u2
 juice-shop,P3,semgrep,code-string-concat,routes/userProfile.ts,1,0,0,
 juice-shop,P3,semgrep,detected-google-oauth-url,frontend/src/app/login/login.component.ts,1,0,0,
 juice-shop,P3,semgrep,express-sequelize-injection,routes/login.ts,1,0,0,
@@ -1201,12 +1200,9 @@ juice-shop,P3*,dependencia,npm,uuid,2,1,0,"11.1.1, 12.0.1, 13.0.1"
 juice-shop,P3*,dependencia,npm,validator,2,1,0,13.15.22
 juice-shop,P3*,dependencia,npm,vm2,74,43,1,3.10.0|3.10.2|3.10.5|3.11.0|3.11.1|3.11.2|3.11.3|3.11.4|3.11.6|3.11.7|3.11.8|3.12.1|3.12.2|3.9.18
 juice-shop,P3*,dependencia,npm,ws,6,2,0,"5.2.5, 6.2.4, 7.5.11, 8.21.0|8.20.1"
-juice-shop,P3*,pacote_so,debian 12.11,gcc-12-base,2,2,1,
-juice-shop,P3*,pacote_so,debian 12.11,libc6,11,9,1,2.36-9+deb12u11|2.36-9+deb12u14
-juice-shop,P3*,pacote_so,debian 12.11,libgcc-s1,2,2,1,
-juice-shop,P3*,pacote_so,debian 12.11,libgomp1,2,2,1,
-juice-shop,P3*,pacote_so,debian 12.11,libssl3,32,16,0,3.0.18-1~deb12u2|3.0.19-1~deb12u2|3.0.20-1~deb12u2|3.0.22-1~deb12u1|3.0.22-1~deb12u2
-juice-shop,P3*,pacote_so,debian 12.11,libstdc++6,2,2,1,
+juice-shop,P3*,pacote_so,debian 12.11,gcc-12,8,2,1,
+juice-shop,P3*,pacote_so,debian 12.11,glibc,11,9,1,2.36-9+deb12u11|2.36-9+deb12u14
+juice-shop,P3*,pacote_so,debian 12.11,openssl,32,16,0,3.0.18-1~deb12u2|3.0.19-1~deb12u2|3.0.20-1~deb12u2|3.0.22-1~deb12u1|3.0.22-1~deb12u2
 juice-shop,P3*,semgrep,code-string-concat,routes/userProfile.ts,1,0,0,
 juice-shop,P3*,semgrep,detected-google-oauth-url,frontend/src/app/login/login.component.ts,1,0,0,
 juice-shop,P3*,semgrep,express-sequelize-injection,routes/login.ts,1,0,0,
@@ -1250,12 +1246,9 @@ juice-shop,A2,dependencia,npm,uuid,2,1,0,"11.1.1, 12.0.1, 13.0.1"
 juice-shop,A2,dependencia,npm,validator,2,1,0,13.15.22
 juice-shop,A2,dependencia,npm,vm2,82,43,1,3.10.0|3.10.2|3.10.5|3.11.0|3.11.1|3.11.2|3.11.3|3.11.4|3.11.6|3.11.7|3.11.8|3.12.1|3.12.2|3.9.18
 juice-shop,A2,dependencia,npm,ws,6,2,0,"5.2.5, 6.2.4, 7.5.11, 8.21.0|8.20.1"
-juice-shop,A2,pacote_so,debian 12.11,gcc-12-base,2,2,1,
-juice-shop,A2,pacote_so,debian 12.11,libc6,11,9,1,2.36-9+deb12u11|2.36-9+deb12u14
-juice-shop,A2,pacote_so,debian 12.11,libgcc-s1,2,2,1,
-juice-shop,A2,pacote_so,debian 12.11,libgomp1,2,2,1,
-juice-shop,A2,pacote_so,debian 12.11,libssl3,32,16,0,3.0.18-1~deb12u2|3.0.19-1~deb12u2|3.0.20-1~deb12u2|3.0.22-1~deb12u1|3.0.22-1~deb12u2
-juice-shop,A2,pacote_so,debian 12.11,libstdc++6,2,2,1,
+juice-shop,A2,pacote_so,debian 12.11,gcc-12,8,2,1,
+juice-shop,A2,pacote_so,debian 12.11,glibc,11,9,1,2.36-9+deb12u11|2.36-9+deb12u14
+juice-shop,A2,pacote_so,debian 12.11,openssl,32,16,0,3.0.18-1~deb12u2|3.0.19-1~deb12u2|3.0.20-1~deb12u2|3.0.22-1~deb12u1|3.0.22-1~deb12u2
 juice-shop,A2,semgrep,code-string-concat,routes/userProfile.ts,1,0,0,
 juice-shop,A2,semgrep,detected-google-oauth-url,frontend/src/app/login/login.component.ts,1,0,0,
 juice-shop,A2,semgrep,express-sequelize-injection,routes/login.ts,1,0,0,
@@ -1300,12 +1293,9 @@ juice-shop,ESCOPO,dependencia,npm,uuid,1,1,0,"11.1.1, 12.0.1, 13.0.1"
 juice-shop,ESCOPO,dependencia,npm,validator,1,1,0,13.15.22
 juice-shop,ESCOPO,dependencia,npm,vm2,43,43,1,3.10.0|3.10.2|3.10.5|3.11.0|3.11.1|3.11.2|3.11.3|3.11.4|3.11.6|3.11.7|3.11.8|3.12.1|3.12.2|3.9.18
 juice-shop,ESCOPO,dependencia,npm,ws,3,2,0,"5.2.5, 6.2.4, 7.5.11, 8.21.0|8.20.1"
-juice-shop,ESCOPO,pacote_so,debian 12.11,gcc-12-base,2,2,1,
-juice-shop,ESCOPO,pacote_so,debian 12.11,libc6,9,9,1,2.36-9+deb12u11|2.36-9+deb12u14
-juice-shop,ESCOPO,pacote_so,debian 12.11,libgcc-s1,2,2,1,
-juice-shop,ESCOPO,pacote_so,debian 12.11,libgomp1,2,2,1,
-juice-shop,ESCOPO,pacote_so,debian 12.11,libssl3,16,16,0,3.0.18-1~deb12u2|3.0.19-1~deb12u2|3.0.20-1~deb12u2|3.0.22-1~deb12u1|3.0.22-1~deb12u2
-juice-shop,ESCOPO,pacote_so,debian 12.11,libstdc++6,2,2,1,
+juice-shop,ESCOPO,pacote_so,debian 12.11,gcc-12,8,2,1,
+juice-shop,ESCOPO,pacote_so,debian 12.11,glibc,9,9,1,2.36-9+deb12u11|2.36-9+deb12u14
+juice-shop,ESCOPO,pacote_so,debian 12.11,openssl,16,16,0,3.0.18-1~deb12u2|3.0.19-1~deb12u2|3.0.20-1~deb12u2|3.0.22-1~deb12u1|3.0.22-1~deb12u2
 juice-shop,ESCOPO,semgrep,code-string-concat,routes/userProfile.ts,1,0,0,
 juice-shop,ESCOPO,semgrep,detected-google-oauth-url,frontend/src/app/login/login.component.ts,1,0,0,
 juice-shop,ESCOPO,semgrep,express-sequelize-injection,routes/login.ts,1,0,0,
@@ -1345,7 +1335,8 @@ juice-shop,P4-reg,dependencia,npm,uuid,1,1,0,"11.1.1, 12.0.1, 13.0.1"
 juice-shop,P4-reg,dependencia,npm,validator,1,1,0,13.15.22
 juice-shop,P4-reg,dependencia,npm,vm2,43,43,1,3.10.0|3.10.2|3.10.5|3.11.0|3.11.1|3.11.2|3.11.3|3.11.4|3.11.6|3.11.7|3.11.8|3.12.1|3.12.2|3.9.18
 juice-shop,P4-reg,dependencia,npm,ws,3,2,0,"5.2.5, 6.2.4, 7.5.11, 8.21.0|8.20.1"
-juice-shop,P4-reg,pacote_so,debian 12.11,libc6,9,9,1,2.36-9+deb12u11|2.36-9+deb12u14
+juice-shop,P4-reg,pacote_so,debian 12.11,gcc-12,8,2,1,
+juice-shop,P4-reg,pacote_so,debian 12.11,glibc,9,9,1,2.36-9+deb12u11|2.36-9+deb12u14
 juice-shop,P4-reg,semgrep,code-string-concat,routes/userProfile.ts,1,0,0,
 juice-shop,P4-reg,semgrep,detected-google-oauth-url,frontend/src/app/login/login.component.ts,1,0,0,
 juice-shop,P4-reg,semgrep,express-sequelize-injection,routes/login.ts,1,0,0,
@@ -1385,7 +1376,8 @@ juice-shop,P4,dependencia,npm,uuid,1,1,0,"11.1.1, 12.0.1, 13.0.1"
 juice-shop,P4,dependencia,npm,validator,1,1,0,13.15.22
 juice-shop,P4,dependencia,npm,vm2,43,43,1,3.10.0|3.10.2|3.10.5|3.11.0|3.11.1|3.11.2|3.11.3|3.11.4|3.11.6|3.11.7|3.11.8|3.12.1|3.12.2|3.9.18
 juice-shop,P4,dependencia,npm,ws,3,2,0,"5.2.5, 6.2.4, 7.5.11, 8.21.0|8.20.1"
-juice-shop,P4,pacote_so,debian 12.11,libc6,9,9,1,2.36-9+deb12u11|2.36-9+deb12u14
+juice-shop,P4,pacote_so,debian 12.11,gcc-12,8,2,1,
+juice-shop,P4,pacote_so,debian 12.11,glibc,9,9,1,2.36-9+deb12u11|2.36-9+deb12u14
 juice-shop,P4,semgrep,code-string-concat,routes/userProfile.ts,1,0,0,
 juice-shop,P4,semgrep,detected-google-oauth-url,frontend/src/app/login/login.component.ts,1,0,0,
 juice-shop,P4,semgrep,express-sequelize-injection,routes/login.ts,1,0,0,
