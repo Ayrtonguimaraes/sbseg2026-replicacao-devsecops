@@ -1,4 +1,32 @@
 ﻿aplicacao,politica,tipo,contexto,alvo_da_acao,itens,cves,sem_correcao,versoes_corrigidas
+dvwa,P1,migrar_so,debian 9.5,,1,0,0,
+dvwa,P1,pacote_so,debian 9.5,apache2,64,8,0,2.4.25-3+deb9u10|2.4.25-3+deb9u11|2.4.25-3+deb9u12|2.4.25-3+deb9u13|2.4.25-3+deb9u8
+dvwa,P1,pacote_so,debian 9.5,bzip2,2,1,1,
+dvwa,P1,pacote_so,debian 9.5,db5.3,1,1,1,
+dvwa,P1,pacote_so,debian 9.5,dpkg,2,1,0,1.18.26
+dvwa,P1,pacote_so,debian 9.5,elfutils,2,1,0,0.168-1+deb9u1
+dvwa,P1,pacote_so,debian 9.5,expat,14,7,0,2.2.0-2+deb9u4|2.2.0-2+deb9u5
+dvwa,P1,pacote_so,debian 9.5,freetype,3,2,1,2.6.3-3.2+deb9u2
+dvwa,P1,pacote_so,debian 9.5,glibc,24,4,0,2.24-11+deb9u4
+dvwa,P1,pacote_so,debian 9.5,inetutils,2,1,0,2:1.9.4-2+deb9u1
+dvwa,P1,pacote_so,debian 9.5,krb5,5,1,1,
+dvwa,P1,pacote_so,debian 9.5,libbsd,2,1,0,0.8.3-1+deb9u1
+dvwa,P1,pacote_so,debian 9.5,libdbd-mysql-perl,1,1,1,
+dvwa,P1,pacote_so,debian 9.5,libgd2,2,1,0,2.2.4-2+deb9u4
+dvwa,P1,pacote_so,debian 9.5,libidn,2,1,0,1.33-1+deb9u1
+dvwa,P1,pacote_so,debian 9.5,libpng1.6,1,1,1,
+dvwa,P1,pacote_so,debian 9.5,libwebp,20,10,0,0.5.2-1+deb9u1
+dvwa,P1,pacote_so,debian 9.5,libx11,12,3,0,2:1.6.4-3+deb9u1|2:1.6.4-3+deb9u4
+dvwa,P1,pacote_so,debian 9.5,libxml2,2,1,0,2.9.4+dfsg1-2.2+deb9u3
+dvwa,P1,pacote_so,debian 9.5,libxslt,2,1,0,1.1.29-2.1+deb9u1
+dvwa,P1,pacote_so,debian 9.5,lz4,2,1,0,0.0~r131-2+deb9u1
+dvwa,P1,pacote_so,debian 9.5,mariadb-10.1,14,1,0,10.1.47-0+deb9u1
+dvwa,P1,pacote_so,debian 9.5,openldap,4,1,0,2.4.44+dfsg-5+deb9u9
+dvwa,P1,pacote_so,debian 9.5,perl,32,4,0,5.24.1-3+deb9u5
+dvwa,P1,pacote_so,debian 9.5,php7.0,297,14,1,7.0.33-0+deb9u2|7.0.33-0+deb9u3|7.0.33-0+deb9u5|7.0.33-0+deb9u6|7.0.33-0+deb9u7
+dvwa,P1,pacote_so,debian 9.5,rsync,4,2,0,3.1.2-1+deb9u2
+dvwa,P1,pacote_so,debian 9.5,shadow,4,1,0,1:4.4-4.1+deb9u1
+dvwa,P1,pacote_so,debian 9.5,sqlite3,1,1,1,
 dvwa,P2,migrar_so,debian 9.5,,1,0,0,
 dvwa,P2,pacote_so,debian 9.5,apache2,172,23,1,2.4.25-3+deb9u10|2.4.25-3+deb9u11|2.4.25-3+deb9u12|2.4.25-3+deb9u13|2.4.25-3+deb9u6|2.4.25-3+deb9u7|2.4.25-3+deb9u8
 dvwa,P2,pacote_so,debian 9.5,apr,2,1,0,1.5.2-5+deb9u1
@@ -586,6 +614,39 @@ dvwa,P4,semgrep,php.lang.security.tainted-exec.tainted-exec,Instrumentos/Codigos
 dvwa,P4,semgrep,php.lang.security.tainted-exec.tainted-exec,Instrumentos/Codigos/DevSecOps/dvwa/src/vulnerabilities/exec/source/medium.php,2,0,0,
 dvwa,P4,unidade,Brute Force,dvwa-174,1,0,0,
 dvwa,P4,unidade,Brute Force,dvwa-175,1,0,0,
+teastore,P1,dependencia,go,stdlib,10,5,0,"1.16.14, 1.17.7|1.19.8, 1.20.3|1.19.9, 1.20.4|1.21.11, 1.22.4|1.24.13, 1.25.7, 1.26.0-rc.3"
+teastore,P1,dependencia,maven,log4j:log4j,2,0,0,
+teastore,P1,dependencia,maven,org.hsqldb:hsqldb,4,1,0,2.7.1
+teastore,P1,migrar_so,debian 10.10,,6,0,0,
+teastore,P1,migrar_so,ubuntu 18.04,,1,0,0,
+teastore,P1,pacote_so,debian 10.10,curl,36,1,0,7.64.0-4+deb10u4
+teastore,P1,pacote_so,debian 10.10,db5.3,6,1,1,
+teastore,P1,pacote_so,debian 10.10,dpkg,12,1,0,1.19.8
+teastore,P1,pacote_so,debian 10.10,expat,84,7,0,2.2.6-2+deb10u2|2.2.6-2+deb10u3
+teastore,P1,pacote_so,debian 10.10,freetype,12,1,0,2.9.1-3+deb10u3
+teastore,P1,pacote_so,debian 10.10,git,72,3,0,1:2.20.1-2+deb10u7|1:2.20.1-2+deb10u9
+teastore,P1,pacote_so,debian 10.10,glibc,96,4,0,2.28-10+deb10u2
+teastore,P1,pacote_so,debian 10.10,libksba,24,2,0,1.3.5-2+deb10u1|1.3.5-2+deb10u2
+teastore,P1,pacote_so,debian 10.10,libtasn1-6,12,1,0,4.13-3+deb10u1
+teastore,P1,pacote_so,debian 10.10,openldap,24,1,0,2.4.47+dfsg-3+deb10u7
+teastore,P1,pacote_so,debian 10.10,openssh,12,1,0,1:7.9p1-10+deb10u3
+teastore,P1,pacote_so,debian 10.10,openssl,24,1,0,1.1.1d-0+deb10u7
+teastore,P1,pacote_so,debian 10.10,pcre2,24,2,0,10.32-5+deb10u1
+teastore,P1,pacote_so,debian 10.10,python2.7,96,2,0,2.7.16-2+deb10u2|2.7.16-2+deb10u3
+teastore,P1,pacote_so,debian 10.10,sqlite3,12,1,0,3.27.2-3+deb10u2
+teastore,P1,pacote_so,debian 10.10,wget,6,1,1,
+teastore,P1,pacote_so,debian 10.10,zlib,18,2,1,1:1.2.11.dfsg-1+deb10u2
+teastore,P1,pacote_so,ubuntu 18.04,dpkg,2,1,0,1.19.0.5ubuntu2.4
+teastore,P1,pacote_so,ubuntu 18.04,glibc,20,5,0,2.27-3ubuntu1.2|2.27-3ubuntu1.5
+teastore,P1,pacote_so,ubuntu 18.04,heimdal,18,1,0,7.5.0+dfsg-1ubuntu0.3
+teastore,P1,pacote_so,ubuntu 18.04,libksba,4,2,0,1.3.5-2ubuntu0.18.04.1|1.3.5-2ubuntu0.18.04.2
+teastore,P1,pacote_so,ubuntu 18.04,lz4,2,1,0,0.0~r131-2ubuntu3.1
+teastore,P1,pacote_so,ubuntu 18.04,openldap,4,1,0,2.4.45+dfsg-1ubuntu1.11
+teastore,P1,pacote_so,ubuntu 18.04,openssl,2,1,0,1.1.1-1ubuntu2.1~18.04.13
+teastore,P1,pacote_so,ubuntu 18.04,pam,8,1,0,1.1.8-3.6ubuntu2.18.04.4
+teastore,P1,pacote_so,ubuntu 18.04,rsync,2,1,0,3.1.2-2.1ubuntu1.5
+teastore,P1,pacote_so,ubuntu 18.04,systemd,4,1,0,237-3ubuntu10.54
+teastore,P1,pacote_so,ubuntu 18.04,zlib,2,1,0,1:1.2.11.dfsg-0ubuntu2.2
 teastore,P2,dependencia,go,stdlib,160,80,0,"1.13.15, 1.14.7|1.15.13, 1.16.5|1.15.9, 1.16.1|1.16.10, 1.17.3|1.16.12, 1.17.5|1.16.14, 1.17.7|1.16.15, 1.17.8|1.16.8, 1.17.1|1.17.11, 1.18.3|1.17.12, 1.18.4|1.17.13, 1.18.5|1.17.9, 1.18.1|1.18.6, 1.19.1|1.18.7, 1.19.2|1.18.8, 1.19.3|1.18.9, 1.19.4|1.19.10, 1.20.5|1.19.6, 1.20.1|1.19.8, 1.20.3|1.19."
 teastore,P2,dependencia,maven,com.fasterxml.jackson.core:jackson-core,36,3,0,"2.15.0|2.18.8, 2.21.4|2.21.7, 2.22.3, 2.18.11"
 teastore,P2,dependencia,maven,com.fasterxml.jackson.core:jackson-databind,108,9,0,"2.12.6, 2.13.1|2.12.7.1, 2.13.4|2.12.7.1, 2.13.4.2|2.13.2.1, 2.12.6.1|2.14.0|2.18.11, 2.21.7, 2.22.3|2.18.8, 2.21.4, 3.1.4|2.18.8, 3.1.4, 2.21.4|2.21.7, 2.18.11, 2.22.3"
@@ -1071,6 +1132,16 @@ teastore,P4,pacote_so,ubuntu 18.04,xz-utils,2,1,0,5.2.2-1.3ubuntu0.1
 teastore,P4,pacote_so,ubuntu 18.04,zlib,2,2,0,1:1.2.11.dfsg-0ubuntu2.1|1:1.2.11.dfsg-0ubuntu2.2
 teastore,P4,semgrep,detected-bcrypt-hash,utilities/tools.descartes.teastore.database/setupData.sql,100,0,0,
 teastore,P4,semgrep,detected-private-key,utilities/tools.descartes.teastore.dockerbase/ssl/key.pem,1,0,0,
+juice-shop,P1,dependencia,npm,crypto-js,4,2,0,4.0.0|4.2.0
+juice-shop,P1,dependencia,npm,dottie,2,1,0,2.0.7
+juice-shop,P1,dependencia,npm,express-jwt,2,1,0,6.0.0
+juice-shop,P1,dependencia,npm,handlebars,2,1,0,4.7.9
+juice-shop,P1,dependencia,npm,ip,1,1,1,
+juice-shop,P1,dependencia,npm,jsonwebtoken,4,1,0,4.2.2
+juice-shop,P1,dependencia,npm,lodash,4,2,0,4.17.12|4.18.0
+juice-shop,P1,dependencia,npm,vm2,49,25,1,3.10.0|3.10.2|3.10.5|3.11.0|3.11.1|3.11.2|3.11.3|3.11.6|3.11.7|3.11.8|3.12.1|3.12.2|3.9.18
+juice-shop,P1,pacote_so,debian 12.11,glibc,1,1,1,
+juice-shop,P1,pacote_so,debian 12.11,openssl,6,3,0,3.0.18-1~deb12u2|3.0.19-1~deb12u2|3.0.20-1~deb12u2
 juice-shop,P2,dependencia,npm,body-parser,2,1,0,"2.4.0, 1.20.9"
 juice-shop,P2,dependencia,npm,brace-expansion,120,5,0,"1.1.18, 2.1.4, 3.0.6, 5.0.9|5.0.10, 3.0.7, 2.1.5, 1.1.19|5.0.5, 3.0.2, 2.0.3, 1.1.13|5.0.7, 1.1.16, 2.1.2|5.0.8, 3.0.3, 2.1.3, 1.1.17"
 juice-shop,P2,dependencia,npm,braces,2,1,0,3.0.3

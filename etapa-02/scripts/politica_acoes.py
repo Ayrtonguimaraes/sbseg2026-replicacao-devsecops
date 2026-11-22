@@ -26,7 +26,7 @@ LIMIAR = 7.0
 IMAGEM = {"Trivy Image", "Trivy Container"}
 ECOSSISTEMA = {"jar": "maven", "pom": "maven", "node-pkg": "npm", "npm": "npm",
                "gobinary": "go", "gomod": "go"}
-POLITICAS = ("P2", "P3", "P3*", "A2", "ESCOPO", "P4-reg", "P4")
+POLITICAS = ("P1", "P2", "P3", "P3*", "A2", "ESCOPO", "P4-reg", "P4")
 TIMESTAMP_VEX = "2026-11-22T00:00:00Z"
 
 
@@ -138,20 +138,22 @@ class Alvo:
         imagem_ind = [u for u in self.unidades if u["ferramenta"] in IMAGEM
                       and not u["granularidade"].startswith("aggregate_")]
         itens = []  # (tipo, objeto, vinculos)
+        # P1 (artigo): limiar 9 em todas as classes; as demais usam o limiar 7.
+        LIMIAR = 9.0 if politica == "P1" else globals()["LIMIAR"]
         base_p3 = [u for u in nao_imagem if nota(u["score"]) >= LIMIAR and u["classe"] != "indireta"]
-        if politica == "P2":
+        if politica in ("P1", "P2"):
             app_units = [u for u in nao_imagem if nota(u["score"]) >= LIMIAR]
         else:
             app_units = base_p3
         itens += [("unidade", u, u["vinculos"]) for u in app_units]
         if politica in ("P3*", "ESCOPO", "P4-reg", "P4"):
             itens += [("confirmacao", vid, {vid: "direta"}) for vid in sorted(self.confirmados)]
-        if politica in ("P2", "P3", "P3*", "A2"):
+        if politica in ("P1", "P2", "P3", "P3*", "A2"):
             # Modelo do artigo: unidades individuais (indiretas) e agregados por máximo.
             for u in imagem_ind:
                 if nota(u["score"]) < LIMIAR:
                     continue
-                if politica == "P2" or (politica == "A2" and nota(u["score"]) >= 9):
+                if politica in ("P1", "P2") or (politica == "A2" and nota(u["score"]) >= 9):
                     itens.append(("registro_unidade", u, u["vinculos"]))
             for u in self.agregados:
                 if nota(u["score"]) >= LIMIAR:
