@@ -23,6 +23,7 @@ from dataclasses import asdict
 from pathlib import Path
 
 from analise_dvwa import LIMIARES, ORIGINAIS, Unidade, avaliar, classe_global, gravar_csv, ler_json
+from politica_p4 import Validacao, bloqueia_confirmacao, ler_validacoes
 from resumir_pilotos import cwes_de_semgrep, score_trivy
 
 ETAPA = Path(__file__).resolve().parent.parent
@@ -39,8 +40,10 @@ ALVOS = {
         "semgrep": "coletas/teastore/semgrep.json",
         "checkov": "coletas/teastore/checkov.json",
         "trivy_fs": "coletas/teastore/trivy/fs.json",
-        # Harness Cypress de testes e2e, fora das imagens implantadas.
-        "fs_excluir": ("e2e-tests/",),
+        # Regra única de escopo: só o que a implantação de referência
+        # (examples/kubernetes/teastore-clusterip.yaml) executa. Ficam fora o harness e2e
+        # e os utilitários Kieker, usados apenas no compose de monitoramento.
+        "excluir": ("e2e-tests/", "kieker"),
         "imagens": sorted(f"coletas/teastore/trivy/{p.name}"
                           for p in (ETAPA / "coletas/teastore/trivy").glob("image-*.json")),
         "zap_passivo": None, "zap_ativo": None,
@@ -49,7 +52,9 @@ ALVOS = {
         "versao": "19.0.0", "commit": "36870cbbdfe7864698e1adf644c7bf772f67ebb7",
         "semgrep": "coletas/juice-shop/semgrep.json",
         "checkov": "pilotos/checkov/juice-shop.json",
-        "trivy_fs": "pilotos/trivy/juice-shop-fs.json", "fs_excluir": (),
+        "trivy_fs": "pilotos/trivy/juice-shop-fs.json",
+        # Mesma regra: testes unitários e biblioteca de terceiros copiada em assets.
+        "excluir": (".spec.ts", "frontend/src/assets/private/"),
         "imagens": ["pilotos/trivy/juice-shop-image.json"],
         "zap_passivo": "pilotos/zap/juice-shop-passivo.json",
         "zap_ativo": "pilotos/zap/juice-shop-ativo.json",
@@ -57,11 +62,17 @@ ALVOS = {
 }
 
 
-def ler_matriz(app):
+def fora_do_escopo(caminho, cfg):
+    return any(p in caminho for p in cfg["excluir"])
+
+
+def ler_matriz(app, somente_primario=False):
+    """somente_primario usa só o primeiro CWE de cada caso (teste de robustez)."""
     with (ETAPA / "data/ground_truth" / f"{app}.csv").open(encoding="utf-8-sig") as f:
         linhas = list(csv.DictReader(f))
     for v in linhas:
-        v["cwes"] = set(v["cwe"].split("|"))
+        cwes = v["cwe"].split("|")
+        v["cwes"] = set(cwes[:1] if somente_primario else cwes)
         v["arquivos"] = [a for a in v["arquivos_sast"].split("|") if a]
         v["checks"] = set(filter(None, v["checkov_ids"].split("|")))
     return linhas
@@ -96,6 +107,9 @@ def normalizar(app, cfg, matriz):
     bruto = Counter()
     # SAST
     for i, f in enumerate(ler_json(ETAPA / cfg["semgrep"])["results"]):
+        if fora_do_escopo(f["path"], cfg):
+            bruto["fora_do_escopo"] += 1
+            continue
         bruto["Semgrep"] += 1
         cwes = cwes_de_semgrep(f)
         sev = f["extra"]["severity"]
@@ -106,7 +120,8 @@ def normalizar(app, cfg, matriz):
     # SCA
     fs = ler_json(ETAPA / cfg["trivy_fs"]).get("Results") or []
     for i, r in enumerate(fs):
-        if r["Target"].startswith(cfg["fs_excluir"]):
+        if fora_do_escopo(r["Target"], cfg):
+            bruto["fora_do_escopo"] += len(r.get("Vulnerabilities") or [])
             continue
         for j, v in enumerate(r.get("Vulnerabilities") or []):
             bruto["Trivy FS (SCA)"] += 1
@@ -290,13 +305,14 @@ def agregacoes(app, us, n, composicao):
     return linhas
 
 
-def fila_p4(app, us, matriz):
+def fila_p4(app, us, matriz, laudos=None):
     n = len(matriz)
     r2 = avaliar(us, "P2", LIMIAR, universo=n)
     p2 = ids(r2)
     p3 = avaliar(us, "P3", LIMIAR, universo=n)
     bloq = ids(p3)
     fila = []
+    candidatos_dict = {}
     for v in matriz:
         vid = v["vulnerability_id"]
         if vid in bloq:
@@ -305,16 +321,52 @@ def fila_p4(app, us, matriz):
         dire = [u.id for u in us if u.vinculos.get(vid) == "direta"]
         motivo = ("apenas_indireta" if ind and not dire else "perda_p2_p3" if vid in p2
                   else "abaixo_do_limiar" if dire else "nao_detectada")
+        entra = motivo in ("apenas_indireta", "perda_p2_p3")
+        if entra:
+            candidatos_dict[vid] = (v["nome"], ind, dire, motivo)
         fila.append({"aplicacao": app, "vulnerability_id": vid, "nome": v["nome"],
-                     "motivo": motivo, "entra_na_fila_p4": int(motivo in ("apenas_indireta", "perda_p2_p3")),
+                     "motivo": motivo, "entra_na_fila_p4": int(entra),
                      "sinais_indiretos": len(ind), "sinais_diretos": len(dire),
-                     "rota_dast": v["rota_dast"], "status": "nao_executada"})
-    candidatos = [f["vulnerability_id"] for f in fila if f["entra_na_fila_p4"]]
+                     "rota_dast": v["rota_dast"]})
+    validacoes = ler_validacoes(laudos, candidatos_dict) if laudos and laudos.exists() else {}
+    novas_a, novas_b, novas_b_alt = set(), set(), set()
+    for linha in fila:
+        if not linha["entra_na_fila_p4"]:
+            linha.update(status="nao_aplicavel", evidencia="", score_confirmacao="",
+                         adiciona_bloqueio_p4_a=0, adiciona_bloqueio_p4_b=0,
+                         adiciona_bloqueio_p4_b_alt=0)
+            continue
+        v = validacoes.get(linha["vulnerability_id"], Validacao())
+        a = bloqueia_confirmacao(v, "P4-A")
+        b = bloqueia_confirmacao(v, "P4-B")
+        b_alt = bloqueia_confirmacao(v, "P4-B-alt")
+        linha.update(status=v.status, evidencia=v.evidencia,
+                     score_confirmacao=v.score_confirmacao,
+                     adiciona_bloqueio_p4_a=int(a), adiciona_bloqueio_p4_b=int(b),
+                     adiciona_bloqueio_p4_b_alt=int(b_alt))
+        if a:
+            novas_a.add(linha["vulnerability_id"])
+        if b:
+            novas_b.add(linha["vulnerability_id"])
+        if b_alt:
+            novas_b_alt.add(linha["vulnerability_id"])
+    resultados = []
+    for p, novas in [("P3", set()), ("P4-A", novas_a), ("P4-B", novas_b), ("P4-B-alt", novas_b_alt)]:
+        resultados.append({"aplicacao": app, "politica": p, "base_bloqueios": p3["bloqueios"],
+                           "bloqueios_adicionais_no_deploy": len(novas),
+                           "decisoes_simuladas": p3["bloqueios"] + len(novas),
+                           "cobertura_bloqueante": len(bloq | novas), "vulnerabilidades_matriz": n,
+                           "novos_ids_bloqueados": "|".join(sorted(novas)),
+                           "referencia_p2_bloqueios": r2["bloqueios"],
+                           "referencia_p2_cobertura": len(p2),
+                           "fonte_validacoes": "nao_aplicavel" if p == "P3"
+                           else "evidencias_informadas" if laudos else "sem_laudos"})
+    candidatos = list(candidatos_dict)
     cond = [{"aplicacao": app, "confirmacoes": k, "decisoes_simuladas": p3["bloqueios"] + k,
              "cobertura_bloqueante": len(bloq) + k, "vulnerabilidades_matriz": n,
              "referencia_p2_bloqueios": r2["bloqueios"], "referencia_p2_cobertura": len(p2)}
             for k in range(len(candidatos) + 1)]
-    return fila, cond
+    return fila, resultados, cond
 
 
 def executar(destino, amostras, semente):
@@ -331,7 +383,8 @@ def executar(destino, amostras, semente):
         tabelas["alvos_composicao"].append({
             "aplicacao": app, "versao": cfg["versao"], "ocorrencias_brutas": sum(bruto.values()),
             **{f"bruto_{k}": bruto[k] for k in ("Semgrep", "Trivy FS (SCA)", "Checkov",
-                                                 "Trivy Image", "ZAP passivo", "ZAP ativo")},
+                                                 "Trivy Image", "ZAP passivo", "ZAP ativo",
+                                                 "fora_do_escopo")},
             "unidades": len(us),
             "diretas": classes["direta"], "indiretas": classes["indireta"],
             "sem_matriz": classes["sem_matriz"], "casos_matriz": n,
@@ -345,12 +398,21 @@ def executar(destino, amostras, semente):
             for p in ("uniforme", "progressiva"):
                 tabelas["alvos_limiares"].append({"aplicacao": app, **avaliar(us, p, l, universo=n)})
         tabelas["alvos_cobertura"] += cobertura_por_caso(app, us, matriz)
+        # Robustez: as listas de CWE de alguns casos foram fixadas depois de ver as coletas.
+        prim = ler_matriz(app, somente_primario=True)
+        us_prim, _, _ = normalizar(app, cfg, prim)
+        for p, l in ORIGINAIS:
+            tabelas["alvos_robustez_cwe_primario"].append(
+                {"aplicacao": app, "variante": "somente_cwe_primario",
+                 **avaliar(us_prim, p, l, universo=n)})
         tornado, resumo = sensibilidade(app, us, n, amostras, semente)
         tabelas["alvos_sensibilidade_tornado"] += tornado
         tabelas["alvos_sensibilidade_monte_carlo"] += resumo
         tabelas["alvos_trivy_agregacao"] += agregacoes(app, us, n, composicao)
-        fila, cond = fila_p4(app, us, matriz)
+        laudos = ETAPA / "pilotos" / f"p4-{app}" / "validacoes.csv"
+        fila, resultados_p4, cond = fila_p4(app, us, matriz, laudos if laudos.exists() else None)
         tabelas["alvos_p4_fila"] += fila
+        tabelas["alvos_p4_resultados"] += resultados_p4
         tabelas["alvos_p4_condicionais"] += cond
     for nome, linhas in tabelas.items():
         gravar_csv(destino / f"{nome}.csv", linhas)

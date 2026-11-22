@@ -133,3 +133,25 @@ python3 etapa-02/scripts/validar_dvwa_http.py --base http://127.0.0.1:18080 \
   --out nova-coleta/dvwa-http.json
 docker stop dvwa-etapa02-lab
 ~~~
+
+## TeaStore e Juice Shop P4 · evidência dirigida
+
+O TeaStore 1.4.2 e o Juice Shop 19.0.0 passaram pela análise completa de P1–P3, sensibilidade e fila da P4 (`scripts/analise_alvos.py`, ver `docs/protocolo.md`). A confirmação dirigida (etapa equivalente ao `validar_dvwa_http.py`) só foi executada no Juice Shop nesta máquina, porque o TeaStore exige subir 7 microsserviços via Docker/Kubernetes.
+
+**Juice Shop, instância local descartável.** Baixado o release oficial `juice-shop-19.0.0_node24_darwin_x64.zip` (hash conferido contra o `.md5` publicado no GitHub), executado com Node.js 24.22.1 **arm64** — os módulos nativos do pacote (`sqlite3`, `libxmljs2`, `iltorb`) são compilados para arm64 apesar do nome `_x64` do arquivo, então o Node x64 sob Rosetta falha ao carregá-los. O servidor foi restrito a `127.0.0.1:18080` por um módulo de pré-carregamento (`NODE_OPTIONS=--require loopback.js`) que força todo `net.Server.listen` a vincular em loopback, confirmado com `lsof`.
+
+`scripts/validar_juice_shop.py` testa só o caso `js-exposed-metrics`: uma requisição GET em `/metrics`, sem autenticação, cujo sucesso é conferido tanto pela resposta (formato Prometheus, HTTP 200) quanto por um oráculo independente — o placar oficial de desafios da própria aplicação (`/api/Challenges?key=exposedMetricsChallenge`), que muda de não resolvido para resolvido só quando a rota é de fato exercitada. O laudo fica em `pilotos/p4-juice-shop/juice-http.json`, com hash conferido em `pilotos/p4-juice-shop/validacoes.csv`.
+
+**Por que `js-rce-b2b` não foi testado.** A fila da P4 também inclui a execução de código no endpoint `/b2b/v2/orders` (desafio oficial `rceChallenge`). O teste que os próprios mantenedores do Juice Shop usam para esse desafio é enviar um payload que produz um laço não controlado dentro do avaliador da rota, de propósito, até estourar o tempo limite — ou seja, confirmar esse caso significa reproduzir um ataque de negação de serviço contra o processo-alvo, mesmo numa instância local descartável. O grupo decidiu não automatizar esse teste; o caso fica como `nao_executada` em `validacoes.csv`, apoiado só na evidência estática (Semgrep sinalizando `routes/b2bOrder.ts` com `unsafe-dynamic-method`) e na evidência indireta do Trivy. Os dois casos de XSS (`js-dom-xss`, `js-reflected-xss`) exigem um navegador real e ficam como verificação manual pendente.
+
+~~~bash
+# Instância local (Node arm64 — ver nota acima sobre a arquitetura dos módulos nativos)
+unzip juice-shop-19.0.0_node24_darwin_x64.zip -d app
+PORT=18080 NODE_OPTIONS="--require loopback.js" node app/juice-shop_19.0.0/build/app.js &
+
+python3 etapa-02/scripts/validar_juice_shop.py --base http://127.0.0.1:18080 \
+  --configuracao 'Juice Shop 19.0.0, release oficial, Node 24.22.1 arm64, loopback' \
+  --out etapa-02/pilotos/p4-juice-shop/juice-http.json
+~~~
+
+**Pendências do TeaStore.** `ts-db-reset-unauth` e os casos de `perda_p2_p3` (`ts-output-encoding`, `ts-tls-trust-all`) exigem o ambiente no ar (`examples/docker/docker-compose_default.yaml` ou o manifesto Kubernetes) para um teste HTTP equivalente; nenhum foi executado nesta máquina.

@@ -4,7 +4,7 @@ teastore,ts-db-reset-unauth,Regeneração do banco sem autenticação via GET,CW
 teastore,ts-csrf,Formulários e ações sem token anti-CSRF,CWE-352,APP,revisao_codigo,0,0,nao detectada,,0,0,0
 teastore,ts-cookie-flags,Cookie de sessão sem HttpOnly e Secure,CWE-1004|CWE-614,APP,revisao_codigo,10,0,direta,Semgrep,0,0,0
 teastore,ts-output-encoding,Saída sem escape nas páginas JSP,CWE-116|CWE-79,APP,revisao_codigo,171,16,direta,Semgrep|Trivy Image,1,1,0
-teastore,ts-tls-trust-all,Cliente REST aceita qualquer certificado TLS,CWE-295,APP,revisao_codigo,2,155,direta,Semgrep|Trivy FS (SCA)|Trivy Image,1,1,0
+teastore,ts-tls-trust-all,Cliente REST aceita qualquer certificado TLS,CWE-295,APP,revisao_codigo,2,153,direta,Semgrep|Trivy FS (SCA)|Trivy Image,1,1,0
 teastore,ts-private-key,Chave privada TLS versionada e embarcada na imagem,CWE-798|CWE-321,APP,revisao_codigo,1,0,direta,Semgrep,0,1,1
 teastore,ts-default-credentials,Usuários gerados com senha padrão conhecida,CWE-798,APP,revisao_codigo,100,0,direta,Semgrep,0,1,1
 teastore,ts-weak-bcrypt-cost,BCrypt com custo 6,CWE-916,APP,revisao_codigo,0,0,nao detectada,,0,0,0
