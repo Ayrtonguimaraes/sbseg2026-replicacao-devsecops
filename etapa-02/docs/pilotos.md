@@ -154,4 +154,18 @@ python3 etapa-02/scripts/validar_juice_shop.py --base http://127.0.0.1:18080 \
   --out etapa-02/pilotos/p4-juice-shop/juice-http.json
 ~~~
 
-**Pendências do TeaStore.** `ts-db-reset-unauth` e os casos de `perda_p2_p3` (`ts-output-encoding`, `ts-tls-trust-all`) exigem o ambiente no ar (`examples/docker/docker-compose_default.yaml` ou o manifesto Kubernetes) para um teste HTTP equivalente; nenhum foi executado nesta máquina.
+**TeaStore 1.4.2, Deploy Gate local (2026-11-22).** Os 7 serviços e o ZAP 2.17.0 rodam em Docker (colima, aarch64) pelo `ambientes/teastore/docker-compose.yaml`: o compose de referência do projeto com as imagens fixadas por digest, o webui publicado só em `127.0.0.1:18081`, o banco sem porta publicada e o ZAP em modo daemon na mesma rede (`127.0.0.1:18090`). `scripts/zap_passivo_docker.py` repete a parte passiva do piloto do Juice Shop (spider + fila passiva, sem escaneamento ativo) e grava `pilotos/zap/teastore-passivo.json` (29 URLs, 532 alertas) e `teastore-resumo.json` (com SHA-256).
+
+**`ts-db-reset-unauth` confirmado pelo spider.** O spider, sem cabeçalho `Cookie`, submeteu o formulário público de `/database` (`categories=5&products=100&users=100&orders=5&confirm=Confirm`, valores padrão) para `/dataBaseAction`. A resposta foi `302 Location: /status`, que só ocorre no ramo que chama `persistence/generatedb`, e o log do webui registrou `DB is re-generating` (`pilotos/p4-teastore/webui-log-dataBaseAction.txt`). Laudo em `pilotos/p4-teastore/teastore-http.json`, hash em `validacoes.csv`. O ZAP não emitiu alerta para esse caso: a confirmação vem do efeito observado, não de uma regra do scanner.
+
+~~~bash
+docker compose -f etapa-02/ambientes/teastore/docker-compose.yaml -p teastore up -d
+# aguarde /tools.descartes.teastore.webui/status mostrar todos os serviços
+python3 etapa-02/scripts/zap_passivo_docker.py teastore \
+  --alvo http://webui:8080/tools.descartes.teastore.webui/ --base http://webui:8080 \
+  --out etapa-02/pilotos/zap --spider-min 2
+python3 etapa-02/scripts/analise_alvos.py
+docker compose -p teastore down
+~~~
+
+**Pendências do TeaStore.** `ts-output-encoding` (XSS armazenado) exige enviar um payload de script pelo checkout e abrir `/profile` no navegador: fica para verificação manual. `ts-tls-trust-all` só roda com `USE_HTTPS=true`, ausente da implantação de referência, e fica `nao_executada`.

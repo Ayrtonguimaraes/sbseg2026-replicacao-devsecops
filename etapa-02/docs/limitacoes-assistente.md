@@ -7,6 +7,9 @@ protocolo para seguir sem novas interrupções. Baseado nas páginas oficiais da
 
 ## 1. O que aconteceu (diagnóstico)
 
+*Revisado em 22/11/2026: citações conferidas nas páginas oficiais, CVP incluído, regra 3 do
+protocolo corrigida e seção 8 (impacto) adicionada.*
+
 Em duas ocasiões a resposta do assistente foi **interrompida por um classificador de
 segurança automático**, não por erro de ferramenta e **não por decisão do professor ou da
 disciplina**:
@@ -32,8 +35,18 @@ descobrir/explorar vulnerabilidades, acesso não autorizado, malware e negação
 **sem autorização** — mas traz uma ressalva:
 
 > "This section does not prohibit security research, testing, or tool development conducted
-> on systems you own or operate, within the scope of an authorized bug bounty program or
-> vulnerability disclosure policy..."
+> on systems you own or operate, with the authorization of the system owner, or within the
+> scope of an authorized bug bounty program or vulnerability disclosure policy, provided the
+> activity complies with applicable law."
+
+(Citação conferida na página oficial em 22/11/2026. A versão anterior deste documento
+omitia os trechos "with the authorization of the system owner" e "provided the activity
+complies with applicable law". Nenhum dos dois muda a conclusão: as máquinas e contêineres
+são do próprio usuário.)
+
+A mesma seção lista **negação de serviço** como proibida ("Conduct denial-of-service
+attacks, or develop tools for denial-of-service attacks…"). Isso é o que fundamenta a
+faixa vermelha (seção 5).
 
 Este projeto se encaixa na ressalva: são **aplicações de treino propositalmente vulneráveis
 (DVWA, TeaStore, Juice Shop) rodando em contêineres locais e descartáveis, na própria
@@ -49,21 +62,47 @@ Sobre os modelos mais capazes, a Anthropic roda **salvaguardas automáticas em t
 que detectam e bloqueiam conteúdo que *se parece* com atividade proibida (ex.: criação de
 malware, exfiltração em massa, **ataques de negação de serviço**). Esse classificador:
 
-- é **mais conservador** que a Política de Uso;
-- avalia o **texto que está sendo gerado**, sem "ver" com a mesma força o contexto legítimo
-  (meu alvo é local, é um artigo acadêmico, o professor pediu);
-- por isso corta mesmo trabalho **permitido**, quando o texto, isolado, se parece com um
-  exploit ativo.
+- é **mais conservador** que a Política de Uso: a própria Anthropic diz que pode haver
+  "model refusals and classifier blocks for allowed security work" (página do Cyber
+  Verification Program);
+- no post sobre as salvaguardas do Fable 5, a Anthropic classifica "Hacking, penetration
+  testing, red teaming, and bug bounties" como **uso dual de alto risco**, categoria que
+  é bloqueada por padrão até haver controle de acesso para usuários verificados;
+- **inferência do grupo (não declarada pela Anthropic):** pelo que observamos nos dois
+  cortes, o classificador reage à forma do que está sendo gerado (montar e disparar um
+  payload) mais do que ao contexto declarado (alvo local, trabalho acadêmico). Nenhuma
+  página oficial descreve como o classificador pesa o contexto.
 
 **É a Camada B que nos interrompe, não a Camada A.** A conclusão prática: não adianta
 "explicar melhor que é acadêmico" — o jeito de não ser cortado é **não fazer o modelo gerar
 o passo que parece um ataque ativo**, e passar esse passo específico para execução manual.
 
+### Caminho oficial que a versão anterior não mencionava: Cyber Verification Program
+
+A Política de Uso aponta para o **Cyber Verification Program (CVP)**, para trabalho
+coberto pelas salvaguardas cibernéticas em tempo real. Segundo a página de suporte (lida em
+22/11/2026; a página diz "Updated October 6, 2026"):
+
+| Ponto | O que a página diz | Efeito para nós |
+|---|---|---|
+| O que muda | Menos interrupções das salvaguardas cibernéticas; a Política de Uso continua valendo integralmente | Reduziria cortes na faixa amarela |
+| Modelos | Mythos, Opus e Sonnet a partir de Mythos 5.1/5.2, Opus 5.5 e Sonnet 5.5 | Inclui o modelo desta sessão (Opus 5.5) |
+| Pessoa física | Só **Defense Access**, que inclui "vulnerability triage and validation" | Pode cobrir a confirmação de XSS da fila da P4 |
+| Pentest e exploits | **Red Team Access**, que é só para organizações (Enterprise/API) | Fora do alcance de um aluno individual |
+| Negação de serviço | Proibida em **todos** os níveis | `js-rce-b2b` continua vermelho mesmo com CVP |
+| Requisitos | Plano pago (não vale no Free), verificação com documento oficial com foto, MFA, retenção de dados obrigatória | Decisão pessoal do usuário |
+| Estudantes | **Não mencionados** na página | Elegibilidade incerta; a página cita "a university" só na verificação de empresas |
+| Prazo | Meta de dois dias para Defense Access | Cabe no cronograma, se o grupo quiser |
+
+Inscrever-se é **decisão do usuário**; o assistente não faz isso. Sem CVP, o protocolo
+abaixo continua sendo a forma de trabalhar.
+
 ## 3. O que o assistente PODE fazer (verde — sem risco de corte)
 
 - Ler e analisar código-fonte, inclusive localizar e explicar vulnerabilidades (SAST manual).
 - Rodar scanners: Semgrep, Checkov, Trivy (FS e Image), ZAP **passivo/baseline**.
-- Subir os ambientes em Docker/Kubernetes local (TeaStore, DVWA, Juice Shop).
+- Subir os ambientes em Docker/Kubernetes local (TeaStore, DVWA, Juice Shop). Feito para
+  o TeaStore em 22/11/2026 sem nenhum corte (`ambientes/teastore/docker-compose.yaml`).
 - Fazer **requisições benignas** que só exercitam uma rota sem payload de ataque — ex.:
   `GET /metrics` do Juice Shop (confirmado assim, sem problema), um healthcheck, um
   `GET /dataBaseAction` que só dispara a rota.
@@ -98,9 +137,13 @@ Para esses casos, a evidência fica **estática** (Semgrep/Trivy) ou a confirma�
    scanner estático já basta para a análise direto/indireto do artigo. Isso cobre quase tudo.
 2. **Dinâmico só quando benigno.** O assistente só dispara HTTP quando é um acesso sem
    payload de ataque (GET de rota, healthcheck, métrica exposta).
-3. **Exploit ativo → vira comando manual.** Quando confirmar exige disparar um payload
-   (XSS, SQLi, RCE), o assistente **não executa**: escreve o passo a passo e o comando exato
-   em `pilotos.md` para o usuário rodar, e marca o caso `nao_executada` ou `inconclusiva`.
+3. **Exploit ativo → vira procedimento manual.** Quando confirmar exige disparar um payload
+   (XSS, SQLi, RCE), o assistente **não executa nem escreve o payload**: descreve o
+   procedimento (rota, campo, o que observar como evidência, onde salvar o laudo) e aponta
+   a documentação oficial do alvo (no Juice Shop, o guia oficial de soluções dos desafios).
+   *Correção em relação à versão anterior, que mandava escrever "o comando exato": escrever
+   o payload é a mesma geração que dispara o classificador, então essa regra contradizia a
+   seção 2.* O caso fica `nao_executada` até o usuário registrar o laudo.
 4. **Nada de DoS, nunca.** Independe de contexto.
 5. **Sempre com rede de segurança.** Trabalho em branch dedicado; tag + bundle de
    recuperação antes de mudanças grandes; `git status`/`stash -u` antes de operação
@@ -119,10 +162,43 @@ Portanto, os números centrais do projeto (composição, cobertura, P1–P3, sen
 dependem** do que o classificador bloqueia. Os poucos casos afetados ficam documentados como
 confirmação manual pendente, o que é uma limitação metodológica honesta e comum na área.
 
+## 8. Impacto no projeto do que não pode ser feito (estado em 22/11/2026)
+
+Tabela por caso. "Teto" é o que a P4 alcançaria se **todos** os casos restantes da fila
+fossem confirmados (`results/alvos_p4_condicionais.csv`, P4-A). Nenhum item desta tabela
+altera P1, P2, P3, a composição direto/indireto ou a análise de sensibilidade, que são os
+números centrais da reprodução.
+
+| Item | Por que não é feito pelo assistente | Camada | O que fica faltando no resultado |
+|---|---|---|---|
+| TeaStore `ts-output-encoding` (XSS armazenado) | Confirmar exige enviar payload de script | Classificador (amarelo) | P4 do TeaStore: 1 confirmação a menos. Evidência por código já existe (`CartActionServlet.java:131` → `profile.jsp`) |
+| TeaStore `ts-tls-trust-all` | Código só roda com `USE_HTTPS=true`, ausente da implantação de referência | **Nenhuma** (limite técnico do alvo) | Fica fora do alcance da P4 na configuração de referência |
+| TeaStore: ZAP ativo | Escaneamento ativo dispara payloads de ataque | Classificador (amarelo) | Assimetria com o Juice Shop (que teve 2 regras ativas). Efeito desconhecido; no Juice Shop o ativo gerou 1 indicador de SQL Injection com confiança Low |
+| Juice Shop `js-dom-xss`, `js-reflected-xss` | Confirmar exige payload de XSS no navegador | Classificador (amarelo) | P4 do Juice Shop: até 2 confirmações a menos |
+| Juice Shop `js-rce-b2b` | O teste oficial tem efeito de negação de serviço | **Política de Uso + todos os níveis do CVP** (vermelho) | 1 confirmação que nunca será automatizada; caso apoiado só em evidência estática e indireta |
+| Push para o GitHub do grupo | `git push` dá 403: a conta não tem escrita no repositório | Permissão do GitHub (não é política da Anthropic) | Nada desta etapa chega ao repositório do grupo até o dono dar acesso ou o grupo aceitar fork + PR |
+| Decisões do grupo (vetores CVSS, regra de escopo, circularidade) | São escolhas metodológicas do grupo | Papel, não política | P4-B depende do vetor ratificado; o vetor alternativo do `ts-db-reset-unauth` (6,5) já não bloqueia |
+
+**Efeito numérico na P4 (P4-A, limiar 7):**
+
+| Alvo | Confirmado hoje | Restantes na fila | Hoje | Teto se todos confirmados | Teto sem os casos vermelhos e sem os não exercitáveis |
+|---|---|---|---|---|---|
+| TeaStore | `ts-db-reset-unauth` | `ts-output-encoding`, `ts-tls-trust-all` | 140 decisões, 5/14 | 142, 7/14 | 141, 6/14 (só com o XSS manual) |
+| Juice Shop | `js-exposed-metrics` | `js-dom-xss`, `js-reflected-xss`, `js-rce-b2b` | 10 decisões, 4/14 | 13, 7/14 | 12, 6/14 (com os dois XSS manuais) |
+
+Leitura: o que o assistente não pode fazer custa **no máximo 1 a 2 pontos de cobertura da
+P4 por alvo**, sempre dentro da faixa já publicada em `alvos_p4_condicionais.csv`, e só se o
+grupo não fizer as confirmações manuais. A conclusão qualitativa (P4 recupera parte do que a
+P3 perde, de forma controlada por confirmação) já se sustenta com uma confirmação em cada
+alvo.
+
 ## Fontes
 
-- [Política de Uso da Anthropic (Usage Policy / AUP)](https://www.anthropic.com/legal/aup) — vigente 12/11/2026.
-- [Anúncio da atualização da Política de Uso](https://www.anthropic.com/news/usage-policy-update) — ago/2025, seção de cibersegurança.
-- [Fable 5's cyber safeguards and our jailbreak framework](https://www.anthropic.com/news/fable-safeguards-jailbreak-framework) — pentest/red team como uso dual de alto risco.
-- [Mapping AI-enabled cyber threats](https://www.anthropic.com/research/attack-navigator) — salvaguardas em tempo real e Cyber Verification Program.
-- [Claude Sonnet 4.5 System Card](https://www.anthropic.com/claude-sonnet-4-5-system-card) — avaliação de descoberta/correção de vulnerabilidades.
+Todas conferidas em 22/11/2026.
+
+- [Política de Uso da Anthropic (Usage Policy / AUP)](https://www.anthropic.com/legal/aup) — "Effective Nov 12, 2026"; ressalva de pesquisa, DoS proibido, salvaguardas em tempo real, menção ao CVP e "encountering a block does not by itself indicate a violation".
+- [Anúncio da atualização da Política de Uso](https://www.anthropic.com/news/usage-policy-update) — 15/08/2025 (vigência 15/09/2025); criou a seção de cibersegurança. Não fala de classificadores nem do CVP.
+- [Fable 5's cyber safeguards and our jailbreak framework](https://www.anthropic.com/news/fable-safeguards-jailbreak-framework) — 02/07/2026; quatro categorias (proibido, dual de alto risco, dual de baixo risco, benigno); pentest/red team como dual de alto risco.
+- [Mapping AI-enabled cyber threats](https://www.anthropic.com/research/attack-navigator) — 03/06/2026; salvaguardas em tempo real nos modelos mais capazes e encaminhamento de uso dual ao CVP.
+- [Cyber Verification Program (central de suporte)](https://support.claude.com/en/articles/14604842-real-time-cyber-safeguards-on-claude-opus-and-sonnet) — o endereço fala em "real-time cyber safeguards", mas a página exibida é a do CVP; o corpo diz "Updated October 6, 2026" e o cabeçalho "Updated yesterday" (datas inconsistentes na própria página).
+- *Removida:* a referência ao System Card do Claude Sonnet 4.5, que não foi lida e não sustentava nenhuma afirmação deste documento.
