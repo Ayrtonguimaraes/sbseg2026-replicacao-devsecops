@@ -17,7 +17,7 @@ disciplina**:
 1. **Sessão anterior:** ao planejar automatizar a confirmação do caso `js-rce-b2b` do Juice
    Shop — o teste oficial envia um payload que força um laço não controlado até estourar o
    tempo limite, ou seja, tem **efeito de negação de serviço** sobre o processo-alvo.
-2. **Esta sessão:** ao enumerar pontos de injeção de XSS no código do TeaStore e logo em
+2. **Sessão de 22/11/2026 (manhã):** ao enumerar pontos de injeção de XSS no código do TeaStore e logo em
    seguida preparar o ambiente para **confirmar o XSS enviando payloads via HTTP**.
 
 Em ambos os casos o gatilho foi a **trajetória "localizar vulnerabilidade → confirmar
@@ -44,9 +44,13 @@ omitia os trechos "with the authorization of the system owner" e "provided the a
 complies with applicable law". Nenhum dos dois muda a conclusão: as máquinas e contêineres
 são do próprio usuário.)
 
-A mesma seção lista **negação de serviço** como proibida ("Conduct denial-of-service
-attacks, or develop tools for denial-of-service attacks…"). Isso é o que fundamenta a
-faixa vermelha (seção 5).
+A mesma seção lista **negação de serviço** entre as atividades proibidas ("Conduct
+denial-of-service attacks…"), mas a ressalva acima vale para a seção inteira, inclusive
+esse item: um teste com efeito de DoS no próprio contêiner não viola a AUP por si. A faixa
+vermelha (seção 5) se apoia em outra coisa: a página do Cyber Verification Program diz que
+"Denial-of-service attacks" ficam fora de **todos** os níveis de acesso ajustado, e o
+primeiro corte observado foi exatamente nesse tipo de teste. Ou seja, é uma linha que as
+salvaguardas não liberam nem com verificação, e que o grupo decidiu não cruzar.
 
 Este projeto se encaixa na ressalva: são **aplicações de treino propositalmente vulneráveis
 (DVWA, TeaStore, Juice Shop) rodando em contêineres locais e descartáveis, na própria
@@ -67,7 +71,8 @@ malware, exfiltração em massa, **ataques de negação de serviço**). Esse cla
   Verification Program);
 - no post sobre as salvaguardas do Fable 5, a Anthropic classifica "Hacking, penetration
   testing, red teaming, and bug bounties" como **uso dual de alto risco**, categoria que
-  é bloqueada por padrão até haver controle de acesso para usuários verificados;
+  bloqueada por padrão **no Fable 5** até haver controle de acesso para usuários
+  verificados (o post não diz que a mesma regra vale para Opus/Sonnet);
 - **inferência do grupo (não declarada pela Anthropic):** pelo que observamos nos dois
   cortes, o classificador reage à forma do que está sendo gerado (montar e disparar um
   payload) mais do que ao contexto declarado (alvo local, trabalho acadêmico). Nenhuma
@@ -165,17 +170,17 @@ confirmação manual pendente, o que é uma limitação metodológica honesta e 
 ## 8. Impacto no projeto do que não pode ser feito (estado em 22/11/2026)
 
 Tabela por caso. "Teto" é o que a P4 alcançaria se **todos** os casos restantes da fila
-fossem confirmados (`results/alvos_p4_condicionais.csv`, P4-A). Nenhum item desta tabela
-altera P1, P2, P3, a composição direto/indireto ou a análise de sensibilidade, que são os
-números centrais da reprodução.
+fossem confirmados (`results/alvos_p4_condicionais.csv`, P4-A). Com **uma exceção** (o ZAP
+ativo do TeaStore, ver a linha), nenhum item desta tabela altera P1, P2, P3, a composição
+direto/indireto ou a análise de sensibilidade, que são os números centrais da reprodução.
 
 | Item | Por que não é feito pelo assistente | Camada | O que fica faltando no resultado |
 |---|---|---|---|
 | TeaStore `ts-output-encoding` (XSS armazenado) | Confirmar exige enviar payload de script | Classificador (amarelo) | P4 do TeaStore: 1 confirmação a menos. Evidência por código já existe (`CartActionServlet.java:131` → `profile.jsp`) |
 | TeaStore `ts-tls-trust-all` | Código só roda com `USE_HTTPS=true`, ausente da implantação de referência | **Nenhuma** (limite técnico do alvo) | Fica fora do alcance da P4 na configuração de referência |
-| TeaStore: ZAP ativo | Escaneamento ativo dispara payloads de ataque | Classificador (amarelo) | Assimetria com o Juice Shop (que teve 2 regras ativas). Efeito desconhecido; no Juice Shop o ativo gerou 1 indicador de SQL Injection com confiança Low |
+| TeaStore: ZAP ativo | Escaneamento ativo dispara payloads de ataque | Classificador (amarelo) | **Única pendência que pode mexer em P1–P3.** Um alerta ativo High recebe nota proxy 7,5, acima do limiar; o tornado já mostra P2 266 / P3 143 se o ZAP chegar a 7,0, e um alerta direto em `/profile` poderia devolver `ts-output-encoding` à P3. Hoje há assimetria com o Juice Shop (2 regras ativas, 1 indicador de SQL Injection com confiança Low) |
 | Juice Shop `js-dom-xss`, `js-reflected-xss` | Confirmar exige payload de XSS no navegador | Classificador (amarelo) | P4 do Juice Shop: até 2 confirmações a menos |
-| Juice Shop `js-rce-b2b` | O teste oficial tem efeito de negação de serviço | **Política de Uso + todos os níveis do CVP** (vermelho) | 1 confirmação que nunca será automatizada; caso apoiado só em evidência estática e indireta |
+| Juice Shop `js-rce-b2b` | O teste oficial tem efeito de negação de serviço | Salvaguardas: DoS fora de **todos** os níveis do CVP; 1º corte observado (vermelho, decisão do grupo) | 1 confirmação que nunca será automatizada; caso apoiado só em evidência estática e indireta |
 | Push para o GitHub do grupo | `git push` dá 403: a conta não tem escrita no repositório | Permissão do GitHub (não é política da Anthropic) | Nada desta etapa chega ao repositório do grupo até o dono dar acesso ou o grupo aceitar fork + PR |
 | Decisões do grupo (vetores CVSS, regra de escopo, circularidade) | São escolhas metodológicas do grupo | Papel, não política | P4-B depende do vetor ratificado; o vetor alternativo do `ts-db-reset-unauth` (6,5) já não bloqueia |
 
@@ -186,9 +191,12 @@ números centrais da reprodução.
 | TeaStore | `ts-db-reset-unauth` | `ts-output-encoding`, `ts-tls-trust-all` | 140 decisões, 5/14 | 142, 7/14 | 141, 6/14 (só com o XSS manual) |
 | Juice Shop | `js-exposed-metrics` | `js-dom-xss`, `js-reflected-xss`, `js-rce-b2b` | 10 decisões, 4/14 | 13, 7/14 | 12, 6/14 (com os dois XSS manuais) |
 
-Leitura: o que o assistente não pode fazer custa **no máximo 1 a 2 pontos de cobertura da
-P4 por alvo**, sempre dentro da faixa já publicada em `alvos_p4_condicionais.csv`, e só se o
-grupo não fizer as confirmações manuais. A conclusão qualitativa (P4 recupera parte do que a
+Leitura: na P4, o que fica sem confirmação custa **até 2 casos de cobertura no TeaStore**
+(um deles, `ts-tls-trust-all`, é limite técnico do alvo, não de política) e **até 3 no
+Juice Shop** (um deles, `js-rce-b2b`, nunca será automatizado), sempre dentro da faixa já
+publicada em `alvos_p4_condicionais.csv`. As confirmações manuais de XSS recuperam 1 caso no
+TeaStore e 2 no Juice Shop. P4-B depende ainda dos vetores CVSS, pendentes de ratificação
+pelo grupo. A conclusão qualitativa (P4 recupera parte do que a
 P3 perde, de forma controlada por confirmação) já se sustenta com uma confirmação em cada
 alvo.
 
