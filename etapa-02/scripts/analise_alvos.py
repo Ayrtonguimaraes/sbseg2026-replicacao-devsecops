@@ -46,7 +46,7 @@ ALVOS = {
         "excluir": ("e2e-tests/", "kieker"),
         "imagens": sorted(f"coletas/teastore/trivy/{p.name}"
                           for p in (ETAPA / "coletas/teastore/trivy").glob("image-*.json")),
-        "zap_passivo": None, "zap_ativo": None,
+        "zap_passivo": "pilotos/zap/teastore-passivo.json", "zap_ativo": None,
     },
     "juice-shop": {
         "versao": "19.0.0", "commit": "36870cbbdfe7864698e1adf644c7bf772f67ebb7",

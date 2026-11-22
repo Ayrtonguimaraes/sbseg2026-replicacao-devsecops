@@ -1,0 +1,4 @@
+vulnerability_id,status,evidencia,sha256_evidencia,score_confirmacao,configuracao,vetor_cvss_confirmacao,vetor_cvss_alternativo
+ts-db-reset-unauth,confirmada,teastore-http.json,2ef02ec7db632a4741d4d8173b4e8794a3c77142e34358cec77c9ce2dc32977b,,"TeaStore 1.4.2 em Docker local, portas só em 127.0.0.1, requisição do spider ZAP sem autenticação",CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:H,CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:L
+ts-output-encoding,nao_executada,,,,,,
+ts-tls-trust-all,nao_executada,,,,,,

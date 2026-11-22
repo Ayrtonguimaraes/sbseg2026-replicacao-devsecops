@@ -1,9 +1,9 @@
 ﻿aplicacao,vulnerability_id,nome,motivo,entra_na_fila_p4,sinais_indiretos,sinais_diretos,rota_dast,status,evidencia,score_confirmacao,adiciona_bloqueio_p4_a,adiciona_bloqueio_p4_b,adiciona_bloqueio_p4_b_alt
 teastore,ts-session-key,Sessão em cookie assinada com chave fixa,nao_detectada,0,0,0,,nao_aplicavel,,,0,0,0
-teastore,ts-db-reset-unauth,Regeneração do banco sem autenticação via GET,apenas_indireta,1,18,0,/dataBaseAction,nao_executada,,,0,0,0
+teastore,ts-db-reset-unauth,Regeneração do banco sem autenticação via GET,apenas_indireta,1,18,0,/dataBaseAction,confirmada,teastore-http.json,9.1,1,1,0
 teastore,ts-csrf,Formulários e ações sem token anti-CSRF,nao_detectada,0,0,0,/loginAction,nao_aplicavel,,,0,0,0
-teastore,ts-cookie-flags,Cookie de sessão sem HttpOnly e Secure,abaixo_do_limiar,0,0,10,,nao_aplicavel,,,0,0,0
-teastore,ts-output-encoding,Saída sem escape nas páginas JSP,perda_p2_p3,1,16,171,,nao_executada,,,0,0,0
+teastore,ts-cookie-flags,Cookie de sessão sem HttpOnly e Secure,abaixo_do_limiar,0,0,11,/loginAction,nao_aplicavel,,,0,0,0
+teastore,ts-output-encoding,Saída sem escape nas páginas JSP,perda_p2_p3,1,16,171,/profile,nao_executada,,,0,0,0
 teastore,ts-tls-trust-all,Cliente REST aceita qualquer certificado TLS,perda_p2_p3,1,153,2,,nao_executada,,,0,0,0
 teastore,ts-weak-bcrypt-cost,BCrypt com custo 6,nao_detectada,0,0,0,,nao_aplicavel,,,0,0,0
 teastore,ts-db-root-password,Senha root do MySQL fixa no Dockerfile,nao_detectada,0,0,0,,nao_aplicavel,,,0,0,0

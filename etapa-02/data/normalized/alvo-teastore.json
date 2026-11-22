@@ -12871,6 +12871,206 @@
       "vinculos": {},
       "referencia": "coletas/teastore/trivy/image-webui.json",
       "granularidade": "aggregate_outras"
+    },
+    {
+      "id": "teastore-0718",
+      "ferramenta": "OWASP ZAP (passivo)",
+      "camada": "APP",
+      "estagio": "deploy",
+      "classe": "sem_matriz",
+      "score": 5.0,
+      "origem_score": "proxy_zap_baseline",
+      "severidade_original": "Medium",
+      "identificador_scanner": "10020",
+      "cwes": [
+        "CWE-1021"
+      ],
+      "vinculos": {},
+      "referencia": "pilotos/zap/teastore-passivo.json#/alerts/0",
+      "granularidade": "individual"
+    },
+    {
+      "id": "teastore-0719",
+      "ferramenta": "OWASP ZAP (passivo)",
+      "camada": "APP",
+      "estagio": "deploy",
+      "classe": "sem_matriz",
+      "score": 5.0,
+      "origem_score": "proxy_zap_baseline",
+      "severidade_original": "Medium",
+      "identificador_scanner": "10038",
+      "cwes": [
+        "CWE-693"
+      ],
+      "vinculos": {},
+      "referencia": "pilotos/zap/teastore-passivo.json#/alerts/1",
+      "granularidade": "individual"
+    },
+    {
+      "id": "teastore-0720",
+      "ferramenta": "OWASP ZAP (passivo)",
+      "camada": "APP",
+      "estagio": "deploy",
+      "classe": "sem_matriz",
+      "score": 3.0,
+      "origem_score": "proxy_zap_baseline",
+      "severidade_original": "Low",
+      "identificador_scanner": "10021",
+      "cwes": [
+        "CWE-693"
+      ],
+      "vinculos": {},
+      "referencia": "pilotos/zap/teastore-passivo.json#/alerts/4",
+      "granularidade": "individual"
+    },
+    {
+      "id": "teastore-0721",
+      "ferramenta": "OWASP ZAP (passivo)",
+      "camada": "APP",
+      "estagio": "deploy",
+      "classe": "sem_matriz",
+      "score": 5.0,
+      "origem_score": "proxy_zap_baseline",
+      "severidade_original": "Medium",
+      "identificador_scanner": "10202",
+      "cwes": [
+        "CWE-352"
+      ],
+      "vinculos": {},
+      "referencia": "pilotos/zap/teastore-passivo.json#/alerts/11",
+      "granularidade": "individual"
+    },
+    {
+      "id": "teastore-0722",
+      "ferramenta": "OWASP ZAP (passivo)",
+      "camada": "APP",
+      "estagio": "deploy",
+      "classe": "sem_matriz",
+      "score": 0.0,
+      "origem_score": "proxy_zap_baseline",
+      "severidade_original": "Informational",
+      "identificador_scanner": "10109",
+      "cwes": [],
+      "vinculos": {},
+      "referencia": "pilotos/zap/teastore-passivo.json#/alerts/13",
+      "granularidade": "individual"
+    },
+    {
+      "id": "teastore-0723",
+      "ferramenta": "OWASP ZAP (passivo)",
+      "camada": "APP",
+      "estagio": "deploy",
+      "classe": "sem_matriz",
+      "score": 5.0,
+      "origem_score": "proxy_zap_baseline",
+      "severidade_original": "Medium",
+      "identificador_scanner": "10003",
+      "cwes": [
+        "CWE-1395"
+      ],
+      "vinculos": {},
+      "referencia": "pilotos/zap/teastore-passivo.json#/alerts/18",
+      "granularidade": "individual"
+    },
+    {
+      "id": "teastore-0724",
+      "ferramenta": "OWASP ZAP (passivo)",
+      "camada": "APP",
+      "estagio": "deploy",
+      "classe": "sem_matriz",
+      "score": 0.0,
+      "origem_score": "proxy_zap_baseline",
+      "severidade_original": "Informational",
+      "identificador_scanner": "10112",
+      "cwes": [],
+      "vinculos": {},
+      "referencia": "pilotos/zap/teastore-passivo.json#/alerts/54",
+      "granularidade": "individual"
+    },
+    {
+      "id": "teastore-0725",
+      "ferramenta": "OWASP ZAP (passivo)",
+      "camada": "APP",
+      "estagio": "deploy",
+      "classe": "direta",
+      "score": 3.0,
+      "origem_score": "proxy_zap_baseline",
+      "severidade_original": "Low",
+      "identificador_scanner": "10010",
+      "cwes": [
+        "CWE-1004"
+      ],
+      "vinculos": {
+        "ts-cookie-flags": "direta"
+      },
+      "referencia": "pilotos/zap/teastore-passivo.json#/alerts/56",
+      "granularidade": "individual"
+    },
+    {
+      "id": "teastore-0726",
+      "ferramenta": "OWASP ZAP (passivo)",
+      "camada": "APP",
+      "estagio": "deploy",
+      "classe": "sem_matriz",
+      "score": 3.0,
+      "origem_score": "proxy_zap_baseline",
+      "severidade_original": "Low",
+      "identificador_scanner": "10054",
+      "cwes": [
+        "CWE-1275"
+      ],
+      "vinculos": {},
+      "referencia": "pilotos/zap/teastore-passivo.json#/alerts/58",
+      "granularidade": "individual"
+    },
+    {
+      "id": "teastore-0727",
+      "ferramenta": "OWASP ZAP (passivo)",
+      "camada": "APP",
+      "estagio": "deploy",
+      "classe": "sem_matriz",
+      "score": 0.0,
+      "origem_score": "proxy_zap_baseline",
+      "severidade_original": "Informational",
+      "identificador_scanner": "10111",
+      "cwes": [],
+      "vinculos": {},
+      "referencia": "pilotos/zap/teastore-passivo.json#/alerts/65",
+      "granularidade": "individual"
+    },
+    {
+      "id": "teastore-0728",
+      "ferramenta": "OWASP ZAP (passivo)",
+      "camada": "APP",
+      "estagio": "deploy",
+      "classe": "sem_matriz",
+      "score": 0.0,
+      "origem_score": "proxy_zap_baseline",
+      "severidade_original": "Informational",
+      "identificador_scanner": "10031",
+      "cwes": [
+        "CWE-20"
+      ],
+      "vinculos": {},
+      "referencia": "pilotos/zap/teastore-passivo.json#/alerts/78",
+      "granularidade": "individual"
+    },
+    {
+      "id": "teastore-0729",
+      "ferramenta": "OWASP ZAP (passivo)",
+      "camada": "APP",
+      "estagio": "deploy",
+      "classe": "sem_matriz",
+      "score": 0.0,
+      "origem_score": "proxy_zap_baseline",
+      "severidade_original": "Informational",
+      "identificador_scanner": "10029",
+      "cwes": [
+        "CWE-565"
+      ],
+      "vinculos": {},
+      "referencia": "pilotos/zap/teastore-passivo.json#/alerts/189",
+      "granularidade": "individual"
     }
   ]
 }
