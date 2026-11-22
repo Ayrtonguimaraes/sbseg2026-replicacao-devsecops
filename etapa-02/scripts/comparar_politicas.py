@@ -24,11 +24,12 @@ ALVOS = {
     "juice-shop": {"unidades": "data/normalized/alvo-juice-shop.json", "universo": 14,
                    "fila": "results/alvos_p4_fila.csv", "originais": (12, 28, 9)},
 }
-ORDEM = ("P2", "P3", "A1", "A2", "A3", "A4", "P4", "P4-teto")
+ORDEM = ("P2", "P3", "A1", "A2", "A3", "A4", "A4c", "P4", "P4-teto")
 DESCRICAO = {
     "P2": "Nota >= 7, todas as classes", "P3": "Nota >= 7, sem indiretos",
     "A1": "P3 com limiar 6", "A2": "P3 + indiretos com nota >= 9",
     "A3": "P2 com limiar 8", "A4": "P3 + indiretos dos casos da fila, sem teste",
+    "A4c": "P3 + indiretos só dos casos que a P4 confirmou, sem teste (pós-registro)",
     "P4": "P3 + casos da fila confirmados", "P4-teto": "P3 + todos os casos da fila",
 }
 ALTERNATIVAS = ("A1", "A2", "A3", "A4")
@@ -77,8 +78,10 @@ def politicas(us, fila, confirmados, universo):
     ids_p3 = {u.id for u in p3}
     fila_set = set(fila)
     a2 = p3 + [u for u in us if u.classe == "indireta" and nota(u) >= 9 and u.id not in ids_p3]
-    a4 = p3 + [u for u in us if u.id not in ids_p3
-               and any(c == "indireta" and vid in fila_set for vid, c in u.vinculos.items())]
+    def sem_teste(alvo):
+        return p3 + [u for u in us if u.id not in ids_p3
+                     and any(c == "indireta" and vid in alvo for vid, c in u.vinculos.items())]
+    a4, a4c = sem_teste(fila_set), sem_teste(set(confirmados))
     return {
         "P2": metricas(uniforme(us, 7), set(), universo),
         "P3": metricas(p3, set(), universo),
@@ -86,6 +89,8 @@ def politicas(us, fila, confirmados, universo):
         "A2": metricas(a2, set(), universo),
         "A3": metricas(uniforme(us, 8), set(), universo),
         "A4": metricas(a4, set(), universo),
+        # Fora da lista registrada: compara casos iguais aos da P4 (ver p4-avaliacao.md).
+        "A4c": metricas(a4c, set(), universo),
         "P4": metricas(p3, set(confirmados), universo),
         "P4-teto": metricas(p3, fila_set, universo),
     }

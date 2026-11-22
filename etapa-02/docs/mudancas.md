@@ -41,7 +41,9 @@ Isto é o que garante que a reprodução original continua de pé:
 | `38e6b56` | Protocolo de avaliação da P4 registrado **antes** de calcular (`docs/p4-avaliacao.md`) |
 | `0f47772` | P4 comparada com alternativas simples (`scripts/comparar_politicas.py`) |
 | `848ce2f` | Catálogo de testes benignos com controles negativos (`scripts/p4_catalogo.py`) |
-| (este) | P4-A vira a P4 proposta; P4-B passa a análise de sensibilidade; resultados propagados para docs e slides |
+| `deeda78` | P4-A vira a P4 proposta; P4-B passa a análise de sensibilidade; resultados propagados para os docs |
+| `fbd6e9a` | README da raiz com a avaliação da P4 |
+| (último) | Revisão da avaliação: ablação comparável (A4c), laudo do TeaStore congelado, conclusão reescrita |
 
 ## 3. Mudanças em código já existente (atenção na revisão)
 
@@ -67,7 +69,7 @@ ratificados pelo grupo (ver `protocolo.md`, "Decisões para o grupo").
 
 ### 3.3 `tests/test_analise.py`
 
-Eram 6 testes; agora são 9. O teste da fila foi atualizado para o novo formato (inclui
+Eram 6 testes; agora são 12 (9 em `test_analise.py` e 3 em `test_comparacao.py`). O teste da fila foi atualizado para o novo formato (inclui
 `dvwa-exposed-mysql` e o motivo). Os três testes novos cobrem o cálculo do CVSS 3.1 com
 vetores de referência, a P4-B-alt e os grupos de notas proxy e o tornado. Para rodar,
 use Python 3.10 ou superior (o código usa `float | None`):
@@ -125,6 +127,9 @@ que o ZAP alerta em `/login`.
 
 ### 4.4 Evidência dinâmica (P4)
 
+Novos também: `pilotos/p4-catalogo/` (saída do catálogo, regravada a cada execução), `pilotos/p4-teastore/catalogo-teastore.json` (cópia congelada usada como laudo), `tests/test_comparacao.py` (3 testes; o total passou de 9 para 12) e `results/p4_comparacao.csv`, `p4_dominancia.csv` e `p4_funil.csv`.
+
+
 | Arquivo | Conteúdo |
 |---|---|
 | `pilotos/p4-juice-shop/` | Laudo de `js-exposed-metrics` (confirmado) e `validacoes.csv`; `js-rce-b2b`, `js-dom-xss` e `js-reflected-xss` ficam `nao_executada` |
@@ -150,18 +155,19 @@ com só o CWE primário), `results/sensibilidade_*.csv` da DVWA e
 | `docs/avancos.md` (novo) | Painel do que está pronto e do que falta |
 | `docs/limitacoes-assistente.md` (novo) | O que o assistente pode ou não automatizar, com fontes oficiais e o impacto de cada pendência |
 | `docs/mudancas.md` (novo) | Este documento |
+| `docs/p4-avaliacao.md` (novo) | Protocolo da avaliação da P4, registrado antes de calcular, e resultados |
 
 ## 5. Números que mudaram
 
 | Resultado | Antes (`fa32bd1`) | Agora |
 |---|---|---|
 | DVWA P1/P2/P3 | 5 / 80 / 56 | **igual** |
-| DVWA P4-A | 58, 10/13 | **igual** |
-| DVWA P4-B | 56, 8/13 | 57, 9/13 (nota calculada do vetor) |
+| DVWA P4 (antes P4-A) | 58, 10/13 | **igual** |
+| DVWA P4-B (agora só sensibilidade) | 56, 8/13 | 57, 9/13 (nota calculada do vetor) |
 | DVWA P4-B-alt | não existia | 57, 9/13 |
 | Pilotos | Juice Shop e WebGoat com 3 casos | WebGoat continua como apêndice; Juice Shop passou a ter 14 casos |
-| TeaStore | não existia | 729 unidades; P2 262, 7/14; P3 139, 4/14; P4-A 140, 5/14 |
-| Juice Shop (14 casos) | não existia | 83 unidades; P2 28, 7/14; P3 9, 3/14; P4-A 10, 4/14 |
+| TeaStore | não existia | 729 unidades; P2 262, 7/14; P3 139, 4/14; P4 140, 5/14 |
+| Juice Shop (14 casos) | não existia | 83 unidades; P2 28, 7/14; P3 9, 3/14; P4 10, 4/14 |
 
 ## 6. O que fica para o grupo decidir antes do merge
 
