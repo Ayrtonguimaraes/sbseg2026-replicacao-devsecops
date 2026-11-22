@@ -1,0 +1,3 @@
+imagem,achados_sem_vex,achados_com_vex,suprimidos,declarados_presentes,declarados_ausentes_no_scan,listados_show_suppressed,s4_passa,sha256_sem,sha256_com
+descartesresearch/teastore-webui:1.4.2,550,357,193,193,178,193,1,816643ab6a56298343d5a774e1a6e9795b038387716e5b0e7782afa1785143fc,6d4c4b76565168bf3f6da5930f044e1ee897a243cff82a4c53c869a3003fb82a
+bkimminich/juice-shop@sha256:547bd3fe...,363,317,46,46,0,46,1,c4bcedb3945de5f1d77592b40ea068a6bbcf9dcb848b307b0200d1d8a1073d3f,5045a68be31cec6e0087e5f685dcf7dab1d42e533bcfb896ba479535ad0dadff

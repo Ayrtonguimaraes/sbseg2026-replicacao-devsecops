@@ -210,7 +210,8 @@ def em_uso(resultado, vuln, containers, obs, pacotes):
     raise ValueError(f"Tipo de pacote sem regra: {tipo}")
 
 
-def coletar(app, autores, saida_bruta, spider):
+def observar_alvo(app, saida_bruta, spider):
+    """S1, tráfego benigno, S2, spider passivo, S3; grava as observações brutas."""
     cfg = ALVOS[app]
     mapas = {c: dpkg(c) for c in cfg["containers"]}
     init = {c: scripts_de_inicializacao(c) for c in cfg["containers"]}
@@ -227,6 +228,12 @@ def coletar(app, autores, saida_bruta, spider):
             (saida_bruta / f"{app}--{c}--{rotulo}.txt").write_text(
                 "\n".join(sorted(obs["caminhos"]) + ["# comandos"] + obs["comandos"]
                           + ["# modulos"] + sorted(obs["modulos"])) + "\n", encoding="utf-8")
+    return mapas, init, s1, s2, s3
+
+
+def coletar(app, autores, saida_bruta, spider):
+    cfg = ALVOS[app]
+    mapas, init, s1, s2, s3 = observar_alvo(app, saida_bruta, spider)
     pac1 = {c: pacotes_carregados(s1[c], mapas[c]) for c in cfg["containers"]}
     pac2 = {c: pacotes_carregados(s2[c], mapas[c]) for c in cfg["containers"]}
     pac3 = {c: pacotes_carregados(s3[c], mapas[c]) for c in cfg["containers"]}
@@ -253,8 +260,203 @@ def coletar(app, autores, saida_bruta, spider):
     return linhas
 
 
+# --- P4 orientada a ações (docs/p4-acoes.md): todos os registros do Trivy de imagem ---------
+
+RELATORIOS_IMAGEM = {
+    "dvwa": ["reports-0a8e877_trivy-report.json"],  # no artefato dos autores
+    "teastore": sorted(f"coletas/teastore/trivy/image-{s}.json" for s in TEASTORE),
+    "juice-shop": ["pilotos/trivy/juice-shop-image.json"],
+}
+
+
+def ler_relatorio(caminho, autores):
+    base = autores / "data/raw" / caminho if caminho.startswith("reports-") else ETAPA / caminho
+    return json.loads(base.read_text(encoding="utf-8"))
+
+
+def fontes_dpkg(container):
+    """Pacote binário -> pacote fonte, do /var/lib/dpkg/status do contêiner."""
+    tar = subprocess.run(["docker", "cp", f"{container}:/var/lib/dpkg/status", "-"],
+                         capture_output=True)
+    fontes = {}
+    if tar.returncode != 0:
+        return fontes
+    with tarfile.open(fileobj=io.BytesIO(tar.stdout)) as t:
+        texto = t.extractfile(t.getmembers()[0]).read().decode("utf-8", "replace")
+    for bloco in texto.split("\n\n"):
+        campos = dict(l.split(": ", 1) for l in bloco.splitlines() if ": " in l and l[0] != " ")
+        if "Package" in campos:
+            fontes[campos["Package"]] = campos.get("Source", campos["Package"]).split(" ")[0]
+    return fontes
+
+
+def arquivos_por_pacote(mapa):
+    """Do mapa arquivo -> pacotes, os executáveis e as sonames de cada pacote."""
+    exe, so = {}, {}
+    for caminho, pacotes in mapa.items():
+        p = PurePosixPath(caminho)
+        for pk in pacotes:
+            if p.parent.name in ("bin", "sbin"):
+                exe.setdefault(pk, set()).add(p.name)
+            if p.name.startswith("lib") and ".so" in p.name:
+                so.setdefault(pk, set()).add(p.name)
+    return exe, so
+
+
+def gatilhos_extras(container):
+    """Healthcheck da imagem e arquivos de cron: lugares onde um executável roda sem estar
+    em execução no momento da observação (verificação S5)."""
+    cfg = json.loads(subprocess.run(
+        ["docker", "inspect", "--format", "{{json .Config}}", container],
+        capture_output=True, text=True, check=True).stdout)
+    texto = " ".join((cfg.get("Healthcheck") or {}).get("Test") or [])
+    r = subprocess.run(["docker", "run", "--rm", f"--pid=container:{container}", "--cap-add",
+                        "SYS_PTRACE", AUXILIAR, "sh", "-c",
+                        "cat /proc/1/root/etc/crontab /proc/1/root/etc/cron.d/* "
+                        "/proc/1/root/var/spool/cron/crontabs/* 2>/dev/null"],
+                       capture_output=True, text=True)
+    return set((texto + "\n" + r.stdout).replace(";", " ").split())
+
+
+def pacotes_da_inicializacao(container, mapa):
+    """Pós-registro (falso negativo achado pela verificação S5): o interpretador dos scripts de
+    inicialização (linha #!) roda e carrega bibliotecas antes do processo principal. Devolve os
+    pacotes do interpretador e das bibliotecas que ele carrega (ldd dentro do contêiner)."""
+    cfg = json.loads(subprocess.run(
+        ["docker", "inspect", "--format", "{{json .Config}}", container],
+        capture_output=True, text=True, check=True).stdout)
+    texto = " ".join((cfg.get("Entrypoint") or []) + (cfg.get("Cmd") or []))
+    scripts = {t.strip(";&'\"") for t in texto.split() if t.endswith(".sh")}
+    interpretes = set()
+    for s in scripts:
+        caminho = s if s.startswith("/") else f"/usr/local/bin/{s}"
+        r = subprocess.run(["docker", "exec", container, "head", "-1", caminho],
+                           capture_output=True, text=True)
+        linha = r.stdout.strip()
+        if linha.startswith("#!"):
+            partes = linha[2:].split()
+            interpretes.add(partes[1] if PurePosixPath(partes[0]).name == "env" and len(partes) > 1
+                            else PurePosixPath(partes[0]).name)
+    caminhos = set()
+    for nome in interpretes:
+        r = subprocess.run(["docker", "exec", container, "sh", "-c",
+                            f'p=$(command -v {nome}) && echo "$p" && ldd "$p"'],
+                           capture_output=True, text=True)
+        for linha in r.stdout.splitlines():
+            for t in linha.split():
+                if t.startswith("/"):
+                    caminhos.add(t)
+    return pacotes_carregados({"caminhos": caminhos}, mapa), sorted(interpretes)
+
+
+def sonames_citadas(container, caminhos, sonames):
+    """Quais sonames aparecem como texto dentro de arquivos carregados (indício de dlopen)."""
+    if not sonames or not caminhos:
+        return {}
+    alvos = [f"/proc/1/root{c}" for c in sorted(caminhos)
+             if ".so" in c or "/bin/" in c or "/sbin/" in c]
+    r = subprocess.run(["docker", "run", "--rm", "-i", f"--pid=container:{container}",
+                        "--cap-add", "SYS_PTRACE", AUXILIAR, "sh", "-c",
+                        'cat > /tmp/p; grep -aoHF -f /tmp/p "$@" 2>/dev/null; true', "_", *alvos],
+                       input="\n".join(sorted(sonames)) + "\n", capture_output=True, text=True)
+    achados = {}
+    for linha in r.stdout.splitlines():
+        arquivo, _, s = linha.rpartition(":")
+        arquivo = arquivo.removeprefix("/proc/1/root")
+        if s in sonames and PurePosixPath(arquivo).name != s:
+            achados.setdefault(s, set()).add(arquivo)
+    return achados
+
+
+def coletar_imagem(app, autores, saida_bruta, spider, s4):
+    """Classifica todos os registros do Trivy de imagem do alvo e grava o que for preciso para
+    refazer a classificação e a verificação S5 sem os contêineres."""
+    cfg = ALVOS[app]
+    mapas, init, s1, s2, s3 = observar_alvo(app, saida_bruta, spider)
+    pac = [{c: pacotes_carregados(s[c], mapas[c]) for c in cfg["containers"]} for s in (s1, s2, s3)]
+    fontes = {c: fontes_dpkg(c) for c in cfg["containers"]}
+    extras = {c: gatilhos_extras(c) for c in cfg["containers"]}
+    init_pac = {c: pacotes_da_inicializacao(c, mapas[c]) for c in cfg["containers"]}
+    linhas = []
+    for caminho in RELATORIOS_IMAGEM[app]:
+        dados = ler_relatorio(caminho, autores)
+        so = (dados.get("Metadata", {}).get("OS") or {})
+        base = f"{so.get('Family', '?')} {so.get('Name', '?')}"
+        cs = container_do_relatorio(app, caminho)
+        for i, resultado in enumerate(dados.get("Results") or []):
+            for j, vuln in enumerate(resultado.get("Vulnerabilities") or []):
+                obs = [em_uso(resultado, vuln, cs, s, p) for s, p in zip((s1, s2, s3), pac)]
+                ini = executado_na_inicializacao(resultado, vuln, cs, init, mapas)
+                tipo, nome = resultado.get("Type"), vuln["PkgName"]
+                autenticado = (tipo == "node-pkg" and "/" + str(PurePosixPath(
+                    vuln.get("PkgPath", "")).parent) + "/" in s4)
+                fonte = next((fontes[c][nome] for c in cs if nome in fontes[c]), nome) \
+                    if tipo in ("debian", "ubuntu") else nome
+                linhas.append({
+                    "aplicacao": app, "relatorio": caminho, "imagem_base": base,
+                    "eosl": int(bool(so.get("EOSL"))), "resultado": i, "indice": j,
+                    "tipo_pacote": tipo, "pacote": nome, "pacote_fonte": fonte,
+                    "versao": vuln.get("InstalledVersion"),
+                    "versao_corrigida": vuln.get("FixedVersion") or "",
+                    "cve": vuln["VulnerabilityID"],
+                    "purl": (vuln.get("PkgIdentifier") or {}).get("PURL", ""),
+                    "containers": "|".join(cs),
+                    "s1": int(obs[0]), "s2": int(obs[1]), "s3": int(obs[2]),
+                    "inicializacao": int(ini), "s4_autenticado": int(autenticado),
+                    # Definição registrada em docs/p4-acoes.md.
+                    "carregado_registrado": int(any(obs) or ini or autenticado)})
+                # Pós-registro: interpretador da inicialização e as bibliotecas que ele carrega.
+                interp = tipo in ("debian", "ubuntu") and any(nome in init_pac[c][0] for c in cs)
+                linhas[-1]["interprete_inicializacao"] = int(interp)
+                linhas[-1]["carregado"] = int(linhas[-1]["carregado_registrado"] or interp)
+    # Dados para a verificação S5 (falso negativo) feita depois, sem os contêineres.
+    s5 = {}
+    for c in cfg["containers"]:
+        # Por contêiner: um pacote carregado num serviço pode não estar carregado em outro.
+        do_c = [l for l in linhas if c in l["containers"].split("|")
+                and l["tipo_pacote"] in ("debian", "ubuntu")]
+        # Definição registrada: assim a verificação S5 continua vendo os falsos negativos que
+        # a correção pós-registro resolveu.
+        nao_carregados = ({l["pacote"] for l in do_c}
+                          - {l["pacote"] for l in do_c if l["carregado_registrado"]})
+        exe, sonames = arquivos_por_pacote(mapas[c])
+        alvo_so = {s for pk in nao_carregados for s in sonames.get(pk, ())}
+        caminhos = s1[c]["caminhos"] | s2[c]["caminhos"] | s3[c]["caminhos"]
+        citadas = sonames_citadas(c, caminhos, alvo_so)
+        s5[c] = {"executaveis": {pk: sorted(exe[pk]) for pk in nao_carregados if pk in exe},
+                 "sonames": {pk: sorted(sonames[pk]) for pk in nao_carregados if pk in sonames},
+                 "gatilhos": sorted(init[c] | extras[c]),
+                 "interpretes_inicializacao": init_pac[c][1],
+                 "pacotes_interpretes": sorted(init_pac[c][0]),
+                 "sonames_citadas": {s: sorted(v) for s, v in citadas.items()}}
+    (saida_bruta / f"{app}--s5.json").write_text(json.dumps(s5, indent=1, ensure_ascii=False),
+                                                 encoding="utf-8")
+    return linhas
+
+
+def main_imagem(a, spider):
+    bruto = ETAPA / "pilotos/contexto-acoes"
+    bruto.mkdir(parents=True, exist_ok=True)
+    s4_arq = ETAPA / "pilotos/contexto/juice-shop--juice-r--s4-autenticado.txt"
+    s4 = s4_arq.read_text(encoding="utf-8") if s4_arq.exists() else ""
+    linhas = []
+    for app in a.apps:
+        linhas += coletar_imagem(app, a.autores, bruto, spider, s4 if app == "juice-shop" else "")
+    destino = ETAPA / "results/contexto_imagem.csv"
+    with destino.open("w", encoding="utf-8", newline="") as f:
+        w = csv.DictWriter(f, fieldnames=list(linhas[0]))
+        w.writeheader()
+        w.writerows(linhas)
+    for app in a.apps:
+        ls = [x for x in linhas if x["aplicacao"] == app]
+        print(f"{app}: {len(ls)} registros, carregados {sum(x['carregado'] for x in ls)}")
+
+
 def main():
     p = argparse.ArgumentParser(description=__doc__)
+    p.add_argument("--imagem", action="store_true",
+                   help="P4 orientada a ações: classifica todos os registros do Trivy de imagem "
+                        "(results/contexto_imagem.csv, observações em pilotos/contexto-acoes/)")
     p.add_argument("--autores", type=Path, required=True,
                    help="Clone do artefato dos autores (para o relatório Trivy da DVWA)")
     p.add_argument("--apps", nargs="+", default=list(ALVOS))
@@ -263,10 +465,12 @@ def main():
         p.add_argument("--spider-" + app, nargs="*",
                        help="URLs iniciais do spider do ZAP, vistas de dentro da rede Docker")
     a = p.parse_args()
-    bruto = ETAPA / "pilotos/contexto"
-    bruto.mkdir(parents=True, exist_ok=True)
     spider = {app: [u.strip() for u in getattr(a, "spider_" + app.replace("-", "_")) or []]
               for app in ALVOS}
+    if a.imagem:
+        return main_imagem(a, spider)
+    bruto = ETAPA / "pilotos/contexto"
+    bruto.mkdir(parents=True, exist_ok=True)
     linhas = []
     for app in a.apps:
         linhas += coletar(app, a.autores, bruto, spider)
