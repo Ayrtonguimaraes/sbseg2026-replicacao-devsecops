@@ -1,0 +1,10 @@
+﻿aplicacao,confirmacoes,decisoes_simuladas,cobertura_bloqueante,vulnerabilidades_matriz,referencia_p2_bloqueios,referencia_p2_cobertura
+teastore,0,154,4,14,277,7
+teastore,1,155,5,14,277,7
+teastore,2,156,6,14,277,7
+teastore,3,157,7,14,277,7
+juice-shop,0,14,3,14,33,7
+juice-shop,1,15,4,14,33,7
+juice-shop,2,16,5,14,33,7
+juice-shop,3,17,6,14,33,7
+juice-shop,4,18,7,14,33,7

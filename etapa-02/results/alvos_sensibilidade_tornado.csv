@@ -1,0 +1,11 @@
+﻿aplicacao,grupo,unidades,reducao_base,nota_baixa,p2_baixa,p3_baixa,p2_cob_baixa,p3_cob_baixa,reducao_baixa,nota_alta,p2_alta,p3_alta,p2_cob_alta,p3_cob_alta,reducao_alta
+teastore,proxy_checkov=5.0,184,0.444,3.0,277,154,7,4,0.444,7.0,461,338,9,6,0.2668
+teastore,semgrep_error=7.5,101,0.444,5.5,176,53,5,2,0.6989,9.5,277,154,7,4,0.444
+teastore,semgrep_warning=5.0,203,0.444,3.0,277,154,7,4,0.444,7.0,480,357,8,7,0.2562
+juice-shop,proxy_checkov=5.0,2,0.5758,3.0,33,14,7,3,0.5758,7.0,35,16,7,3,0.5429
+juice-shop,proxy_zap_active=7.5,1,0.5758,5.5,32,13,7,3,0.5938,9.5,33,14,7,3,0.5758
+juice-shop,proxy_zap_baseline=3.0,2,0.5758,1.0,33,14,7,3,0.5758,5.0,33,14,7,3,0.5758
+juice-shop,proxy_zap_baseline=5.0,2,0.5758,3.0,33,14,7,3,0.5758,7.0,35,16,7,3,0.5429
+juice-shop,semgrep_error=7.5,11,0.5758,5.5,22,3,7,2,0.8636,9.5,33,14,7,3,0.5758
+juice-shop,semgrep_info=3.0,1,0.5758,1.0,33,14,7,3,0.5758,5.0,33,14,7,3,0.5758
+juice-shop,semgrep_warning=5.0,49,0.5758,3.0,33,14,7,3,0.5758,7.0,82,63,12,9,0.2317
