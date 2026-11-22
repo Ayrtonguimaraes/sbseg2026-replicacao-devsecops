@@ -1,5 +1,8 @@
 # Avaliação da P4 como melhoria: protocolo registrado antes da execução
 
+> **Proposta atual: [`p4-acoes.md`](p4-acoes.md)** (P4 orientada a ações). Este documento foi
+> substituído primeiro por [`p4-contexto.md`](p4-contexto.md), também superado.
+>
 > **Substituído em 22/11/2026 por [`p4-contexto.md`](p4-contexto.md).** Uma análise posterior
 > mostrou que esta P4 de "confirmação dirigida" não é uma política nova: o Deploy Gate do artigo
 > já bloqueia achados confirmados por testes customizados; o sinal indireto que abria a fila
