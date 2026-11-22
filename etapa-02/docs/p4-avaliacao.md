@@ -105,4 +105,79 @@ referência, que um pipeline real não tem. Num pipeline, a rota viria do própr
 
 ## Resultados
 
-*(preenchido em commit posterior)*
+*Preenchido depois da execução (commits `0f47772` e `848ce2f`). Fontes:
+`results/p4_comparacao.csv`, `results/p4_dominancia.csv` e `results/p4_funil.csv`.*
+
+**Verificação do avaliador:** o script reproduziu DVWA 5/80/56, TeaStore 32/262/139,
+Juice Shop 12/28/9 e todas as linhas de `alvos_limiares.csv` (teste
+`tests/test_comparacao.py`).
+
+### Tabela principal (bloqueios · cobertura bruta · cobertura sustentada)
+
+| Política | DVWA (13) | TeaStore (14) | Juice Shop (14) |
+|---|---|---|---|
+| P2 | 80 · 11 · 8 | 262 · 7 · 4 | 28 · 7 · 3 |
+| P3 | 56 · 8 · 8 | 139 · 4 · 4 | 9 · 3 · 3 |
+| A1 · P3 limiar 6 | 56 · 8 · 8 | 140 · 4 · 4 | 9 · 3 · 3 |
+| A2 · P3 + indiretos ≥ 9 | 58 · 8 · 8 | 146 · 6 · 4 | 19 · 4 · 3 |
+| A3 · P2 limiar 8 | 12 · 4 · 2 | 82 · 5 · 2 | 18 · 5 · 1 |
+| A4 · fila sem teste | 79 · 12 · 8 | 326 · 7 · 4 | 41 · 7 · 3 |
+| **P4** | **58 · 10 · 10** | **140 · 5 · 5** | **10 · 4 · 4** |
+| P4-teto | 60 · 12 · 12 | 142 · 7 · 7 | 13 · 7 · 7 |
+
+### O que os números mostram
+
+1. **A regra registrada se cumpre.** Em nenhum dos três alvos uma alternativa domina a P4 em
+   cobertura sustentada. Pelo critério combinado antes, a P4 se sustenta como melhoria.
+2. **A P2 não tem mais cobertura sustentada que a P3 em nenhum alvo.** Toda a cobertura que a
+   P3 "perde" era sustentada só por achados indiretos. A P4 é a única política que aumenta a
+   cobertura sustentada: +2 na DVWA, +1 no TeaStore e +1 no Juice Shop.
+   *Ressalva:* em parte isso é por construção, porque a confirmação conta como evidência por
+   definição. O teste justo é a A1 (achados diretos entre 6 e 7), e ela não acrescentou nenhum
+   caso.
+3. **O passo de confirmação é o que torna a P4 barata.** Bloquear os mesmos casos da fila sem
+   testar (A4) custa +23, +187 e +32 bloqueios sobre a P3. A P4 custa +2, +1 e +1: de 91% a
+   99% menos bloqueios extras.
+4. **Recuperação frente à P2 (cobertura bruta):** a P4 recupera 67% da cobertura perdida na
+   DVWA com 8% do custo em bloqueios da P2; 33% no TeaStore com 0,8%; 25% no Juice Shop com
+   5%. No agregado: 4 dos 10 casos perdidos, com 4 dos 166 bloqueios extras da P2 (2,4%).
+5. **Em cobertura bruta, a P4 não vence em todo lugar.** No TeaStore, a A3 (P2 com limiar 8)
+   a domina: 82 bloqueios e 5/14, contra 140 e 5/14. A A3 chega lá trocando casos sustentados
+   por indiretos: perde `ts-default-credentials` e `ts-private-key` e ganha casos cobertos só
+   por achados indiretos (cobertura sustentada cai de 4 para 2). A A2 alcança 6/14 no TeaStore,
+   mais que a P4, mas com 6 bloqueios a mais, então não a domina.
+6. **A previsão registrada errou o mecanismo.** Previmos que a A2 dominaria a P4 em cobertura
+   bruta no TeaStore; quem dominou foi a A3. A A2 ganha em cobertura, mas não em bloqueios.
+
+### Funil da automação (catálogo benigno)
+
+| Etapa | Casos | Detalhe |
+|---|---:|---|
+| Na fila da P4 | 11 | DVWA 4, TeaStore 3, Juice Shop 4 |
+| Com modelo dinâmico benigno | 6 | CSRF, IDs previsíveis, redirecionamento, porta do banco, função crítica sem autenticação, acesso sem autenticação |
+| Executável na configuração local | 5 | Exposed MySQL exige o manifesto Kubernetes dos autores |
+| **Confirmados** | **4** | 1 inconclusivo (redirecionamento: rotas 404 na imagem) |
+
+Os controles negativos reprovaram nos dois modelos executados agora (TeaStore: a mesma rota sem
+confirmação não executa e `/profile` exige sessão; Juice Shop: `/api/Users` responde 401).
+Ficaram fora: 3 XSS (manual, exige navegador), 1 RCE (efeito de DoS) e 1 caso só de
+configuração (TLS). **Taxa de automação: 4 de 11 casos da fila (36%), ou 4 de 5 entre os que
+têm modelo benigno executável (80%).**
+
+### Desvios do protocolo
+
+- A "recuperação" da métrica 4 ficou indefinida para a cobertura sustentada, porque a P2 e a
+  P3 têm o mesmo valor nos três alvos (divisão por zero). No lugar, reporta-se o ganho absoluto
+  (`ganho_sustentado`).
+- No TeaStore, o laudo da P4 passou a apontar para a execução do catálogo
+  (`pilotos/p4-catalogo/teastore.json`, com requisição bruta, log e controle negativo). A
+  evidência anterior, do spider do ZAP, continua em `pilotos/p4-teastore/teastore-http.json`.
+
+### Conclusão
+
+A P4 é uma melhoria concreta no sentido registrado. É a única das políticas comparadas que
+acrescenta cobertura sustentada por evidência, e custa entre 0,8% e 8% dos bloqueios extras
+que a P2 exigiria. O limite também é concreto: hoje só 36% da fila é confirmável por testes
+benignos automáticos, e os XSS dependem de uma etapa de DAST com navegador. A P4-B continua
+no código como análise de sensibilidade: mostra que exigir CVSS ≥ 7 com vetores escolhidos à
+mão muda qual caso é bloqueado.

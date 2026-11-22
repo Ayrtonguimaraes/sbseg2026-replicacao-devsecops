@@ -24,7 +24,7 @@ de alguns casos (XSS ativo, RCE) e o push para o GitHub do grupo — detalhado a
 
 | Melhoria | Estado | Resultado |
 |---|---|---|
-| (1) Política P4 nova | ✅ Concluída | DVWA: P4-A 58 bloqueios e 10/13; P4-B 57 e 9/13. Vetor CVSS escolhido decide qual lacuna fecha. |
+| (1) Política P4 nova | ✅ Concluída e testada contra alternativas | P4 (= P4-A): DVWA 58 e 10/13, TeaStore 140 e 5/14, Juice Shop 10 e 4/14. Nenhuma alternativa de limiar a domina em cobertura sustentada (protocolo registrado antes, `p4-avaliacao.md`). Catálogo benigno confirma 4 de 11 casos da fila. P4-B virou análise de sensibilidade. |
 | (2) Mais aplicações | ✅ Análise completa, com Deploy Gate (ZAP passivo) nos dois alvos | TeaStore 1.4.2 e Juice Shop 19.0.0, matriz de 14 casos cada. |
 | (3) Sensibilidade das notas arbitrárias | ✅ Concluída | Redução de P3 vs P2 vai de 13% a 89% conforme as notas (Monte Carlo, 10.000 amostras). O resultado qualitativo resiste em todas as amostras. |
 

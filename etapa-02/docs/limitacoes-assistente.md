@@ -170,7 +170,7 @@ confirmação manual pendente, o que é uma limitação metodológica honesta e 
 ## 8. Impacto no projeto do que não pode ser feito (estado em 22/11/2026)
 
 Tabela por caso. "Teto" é o que a P4 alcançaria se **todos** os casos restantes da fila
-fossem confirmados (`results/alvos_p4_condicionais.csv`, P4-A). Com **uma exceção** (o ZAP
+fossem confirmados (`results/alvos_p4_condicionais.csv`, P4 proposta, antes chamada P4-A). Com **uma exceção** (o ZAP
 ativo do TeaStore, ver a linha), nenhum item desta tabela altera P1, P2, P3, a composição
 direto/indireto ou a análise de sensibilidade, que são os números centrais da reprodução.
 
@@ -184,7 +184,7 @@ direto/indireto ou a análise de sensibilidade, que são os números centrais da
 | Push para o GitHub do grupo | `git push` dá 403: a conta não tem escrita no repositório | Permissão do GitHub (não é política da Anthropic) | Nada desta etapa chega ao repositório do grupo até o dono dar acesso ou o grupo aceitar fork + PR |
 | Decisões do grupo (vetores CVSS, regra de escopo, circularidade) | São escolhas metodológicas do grupo | Papel, não política | P4-B depende do vetor ratificado; o vetor alternativo do `ts-db-reset-unauth` (6,5) já não bloqueia |
 
-**Efeito numérico na P4 (P4-A, limiar 7):**
+**Efeito numérico na P4 (limiar 7):**
 
 | Alvo | Confirmado hoje | Restantes na fila | Hoje | Teto se todos confirmados | Teto sem os casos vermelhos e sem os não exercitáveis |
 |---|---|---|---|---|---|
@@ -195,7 +195,7 @@ Leitura: na P4, o que fica sem confirmação custa **até 2 casos de cobertura n
 (um deles, `ts-tls-trust-all`, é limite técnico do alvo, não de política) e **até 3 no
 Juice Shop** (um deles, `js-rce-b2b`, nunca será automatizado), sempre dentro da faixa já
 publicada em `alvos_p4_condicionais.csv`. As confirmações manuais de XSS recuperam 1 caso no
-TeaStore e 2 no Juice Shop. P4-B depende ainda dos vetores CVSS, pendentes de ratificação
+TeaStore e 2 no Juice Shop. O catálogo de testes benignos (`scripts/p4_catalogo.py`, `results/p4_funil.csv`) confirma automaticamente 4 dos 11 casos da fila; os que ficam de fora são exatamente os desta tabela. A P4-B (análise de sensibilidade) depende ainda dos vetores CVSS, pendentes de ratificação
 pelo grupo. A conclusão qualitativa (P4 recupera parte do que a
 P3 perde, de forma controlada por confirmação) já se sustenta com uma confirmação em cada
 alvo.

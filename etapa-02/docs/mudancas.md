@@ -37,6 +37,11 @@ Isto é o que garante que a reprodução original continua de pé:
 | `6a1ba50` | Deploy Gate do TeaStore (ZAP passivo em Docker) e confirmação de `ts-db-reset-unauth` |
 | `5cd289c` | Política de uso revalidada nas fontes oficiais; registro de impacto do que não é automatizável |
 | `62a8e0b` | Ajustes no registro de impacto; vetor CVSS da P4-B marcado como pendente de ratificação |
+| `b6b0c50` | Este documento (`mudancas.md`) |
+| `38e6b56` | Protocolo de avaliação da P4 registrado **antes** de calcular (`docs/p4-avaliacao.md`) |
+| `0f47772` | P4 comparada com alternativas simples (`scripts/comparar_politicas.py`) |
+| `848ce2f` | Catálogo de testes benignos com controles negativos (`scripts/p4_catalogo.py`) |
+| (este) | P4-A vira a P4 proposta; P4-B passa a análise de sensibilidade; resultados propagados para docs e slides |
 
 ## 3. Mudanças em código já existente (atenção na revisão)
 
@@ -92,6 +97,8 @@ motivos da seção 3.1. `evidence/p4_execucao.log` registra a nova execução.
 | `scripts/sensibilidade_proxies.py` | Varia cada nota proxy arbitrária da DVWA (Semgrep ERROR/WARNING, Checkov, ZAP Baseline, teste de credenciais), isoladamente (tornado) e em conjunto (Monte Carlo, 10.000 amostras) |
 | `scripts/analise_alvos.py` | Aplica o modelo direto/indireto, P1–P3, limiares, sensibilidade, agregação do Trivy e fila da P4 ao TeaStore e ao Juice Shop |
 | `scripts/validar_juice_shop.py` | Teste **passivo** do Juice Shop: um GET em `/metrics`, conferido pelo placar oficial de desafios da aplicação |
+| `scripts/comparar_politicas.py` | Compara a P4 com P3 limiar 6, P3 + indiretos ≥ 9, P2 limiar 8 e a fila bloqueada sem teste; métricas de cobertura bruta e sustentada; confere antes que reproduz os números publicados |
+| `scripts/p4_catalogo.py` | Catálogo de testes benignos da P4, escolhidos pelo CWE, com controle negativo por modelo |
 | `scripts/zap_passivo_docker.py` | ZAP **só passivo** (spider + regras passivas) contra um alvo em Docker; roda em macOS, ao contrário de `piloto_dast.py`, que exige `unshare` do Linux |
 
 ### 4.2 Ambiente
