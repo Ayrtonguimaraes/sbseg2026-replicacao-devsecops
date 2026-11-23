@@ -151,10 +151,10 @@ Scripts: `contexto_execucao.py --imagem`, `politica_acoes.py`, `trivy_vex.sh`,
    Descontando essas ações absorvidas, **o coletor não muda o trabalho na DVWA nem no TeaStore**
    (35 → 35 e 17 → 17). A redução de trabalho medida fica num alvo só, o Juice Shop (47 → 41).
 3. **O que o coletor entrega de fato é triagem com evidência**, consumida por um scanner real: de
-   18% a 44% dos CVEs de imagem com nota ≥ 7 saem do bloqueio com declaração VEX, e o Trivy oficial
-   suprime exatamente esses.
-4. **Achado exploratório, fora da P4:** medida em ações de correção, a P3 do artigo exige o mesmo
-   trabalho que a P2.
+   18% a 44% dos CVEs de imagem com nota ≥ 7 saem do bloqueio com declaração VEX. Nas 2 imagens em
+   que testamos (de 9), o Trivy oficial suprime exatamente esses.
+4. **Achado exploratório, fora da P4:** medida em ações de correção e com o agregado do Trivy pelo
+   máximo, como no artigo, a P3 exige o mesmo trabalho que a P2. Com a média, isso deixa de valer.
 
 ### Ações para liberar o deploy
 
@@ -192,10 +192,14 @@ sai. No Juice Shop, as 6 ações a menos são reais: 5 dependências npm (`diff`
 `lodash.set`, `tar`, `tar-fs`) e o `openssl` do SO. O Node traz o OpenSSL embutido e não carrega a
 `libssl3` do Debian.
 
-**Comparada com as políticas do artigo**, a P4 não pede mais trabalho não absorvido que a P3\* em
-nenhum alvo (35 contra 35, 17 contra 17, 41 contra 47) e cobre mais casos da matriz nos três (11
-contra 10, 7 contra 5, 7 contra 4). *Ressalva que continua valendo:* a cobertura a mais vem dos
-indiretos e, portanto, de coincidência de CWE. Ela é contexto, não evidência.
+**Comparada com a P3\*** (o artigo com os testes do Deploy executados), a P4 não pede mais
+trabalho não absorvido em nenhum alvo (35 contra 35, 17 contra 17, 41 contra 47). **Comparada com
+a P2 e a P3 do artigo**, pede 2 e 1 ações não absorvidas a mais na DVWA e no TeaStore (35 contra 33,
+17 contra 16): são as confirmações dos testes, herdadas da P3\*, que também trazem casos a mais.
+
+**A cobertura não é mérito do coletor.** A P4 cobre 11, 7 e 7 casos, os mesmos da ablação. A
+cobertura vem do escopo (todos os CVEs de imagem, inclusive os que o artigo chama de indiretos), e
+não do filtro. A parte que vem dos indiretos é coincidência de CWE: contexto, não evidência.
 
 **Lista concreta, TeaStore.** Para liberar o deploy pela P4, o time precisa migrar as duas imagens
 base fora de suporte (Debian 10 e Ubuntu 18.04), atualizar 12 dependências da aplicação (por
@@ -203,8 +207,10 @@ exemplo `jackson-databind`, `libthrift`, `amqp-client`, `tomcat-coyote`, `log4j`
 privada versionada e o dump com hashes bcrypt, e corrigir o reset do banco sem autenticação.
 Enquanto a migração não acontece, 25 pacotes fonte de SO carregados ficam na lista. `curl`,
 `perl`, `gnupg`, `expat`, Heimdal e as demais ferramentas que nenhum processo executa saem dela,
-com declaração VEX. **No Juice Shop**, as 43 ocorrências do `vm2` viram uma ação só, "substituir o
-componente", porque o pacote não tem correção.
+com declaração VEX. **No Juice Shop**, as 43 ocorrências do `vm2` com nota ≥ 7 viram uma ação só,
+atualizar o `vm2`. O Trivy lista versões corrigidas para quase todos os CVEs (até a 3.12.2); só um
+não tem correção listada, e por isso a ação aparece marcada como "sem correção" em
+`results/p4_acoes.csv`.
 
 ### Achado exploratório — em ações, a P3 do artigo não reduz trabalho
 
@@ -220,6 +226,13 @@ bloqueantes a triar**, que é o que o artigo conta, e não de **trabalho de corr
 alertas pode ter valor próprio (menos ruído para quem triagem), e o artigo não afirma redução de
 trabalho.
 
+**O achado depende da agregação do Trivy.** Ele vale com o agregado pelo máximo, que é a regra do
+artigo. Com a média (variação já calculada em `results/alvos_trivy_agregacao.csv` e
+`results/sensibilidade_trivy_agregacao.csv`), os agregados de imagem deixam de bloquear na P3 nos três
+alvos (o Build da P3 cai de 3, 21 e 2 bloqueios para 0), enquanto a P2 continua bloqueando os
+indiretos individuais. Aí a P2 passa a exigir mais ações que a P3. Por isso o achado não entra nas
+conclusões principais.
+
 ### Critérios registrados
 
 | Critério | Resultado |
@@ -227,7 +240,7 @@ trabalho.
 | S1: ≥ 20% dos CVEs de imagem distintos fora do bloqueio em ≥ 2 de 3 alvos | **Falha.** Só o TeaStore passa (43,9%); DVWA 18,8% e Juice Shop 18,1% |
 | S2: menos ações de pacote de imagem que a ablação em ≥ 2 de 3 alvos | **Passa como registrado** nos 3 (54 → 39, 77 → 37, 39 → 33). Descontada a migração de SO (desconto definido depois do registro), só o Juice Shop reduz |
 | S3: nenhum caso da P3\* perdido | **Passa** nos 3 |
-| S4: o Trivy oficial suprime exatamente o que o VEX declara | **Passa.** Trivy 0.69.3 (imagem fixada por digest), com e sem VEX na mesma execução: TeaStore webui, 181 de 550 achados suprimidos, todos declarados e nenhum a mais; Juice Shop, 38 de 363 |
+| S4: o Trivy oficial suprime exatamente o que o VEX declara | **Passa.** Trivy 0.69.3 (imagem fixada por digest), com e sem VEX na mesma execução: TeaStore webui, 181 de 550 achados suprimidos, todos declarados e nenhum a mais; Juice Shop, 38 de 363. Testado em 2 das 9 imagens; as outras 6 do TeaStore e a da DVWA não passaram pelo Trivy com VEX |
 | S5: zero falsos negativos confirmados | **Falha** na definição registrada (abaixo) |
 
 ### Correções pós-registro (todas reportadas; a P4-reg mostra o efeito)
@@ -261,10 +274,23 @@ Juice Shop, `require` estático dos 6 módulos npm não carregados, todos de fer
 instalação, build ou desenvolvimento (`node-gyp`, `prebuild-install`, `grunt`, o script `rsn`, os
 agentes de proxy `socks`), sem nenhum arquivo importador carregado.
 
-**Reprodutibilidade.** A coleta foi repetida quatro vezes com os mesmos contêineres. A P4 com a
-definição registrada deu as mesmas 74 e 36 ações na DVWA e no TeaStore em todas as coletas. As 266
-unidades indiretas da versão anterior, coletadas em outra sessão com contêineres novos, têm a mesma
-classificação.
+**Reprodutibilidade** (`scripts/comparar_coletas.py`, `results/p4_reprodutibilidade.csv`). Os
+registros são pareados pela referência exata ao relatório (aplicação, relatório, resultado, índice),
+e não por (pacote, CVE), que é ambíguo quando o mesmo par aparece em várias imagens.
+
+- **Contêineres novos.** Depois da revisão, todos os contêineres foram recriados e a coleta foi
+  refeita (`results/contexto_imagem_coleta2.csv`, observações em `pilotos/contexto-acoes-coleta2/`).
+  A classificação final é **idêntica nos 5.881 registros**, nas duas definições (registrada e
+  corrigida). Os instantâneos individuais variam: no TeaStore, 35 ou 36 registros de até 11 bibliotecas
+  Java (`libthrift`, `jackson-databind` e outras) mudam entre S1, S2 e S3. O Java abre e fecha os
+  `.jar` sob demanda: no serviço `auth`, a `libthrift` só apareceu depois do tráfego; no
+  `persistence`, só antes dele. A união S1 a S3, que é o que a P4 usa, não mudou. Um instantâneo só
+  não seria estável.
+- **Versão anterior.** O arquivo da versão anterior (`results/contexto_execucao.csv`, outra sessão,
+  outros contêineres) tem 268 unidades indiretas; 2 são do Trivy FS, fora do escopo da P4 atual. As
+  outras 266 (DVWA 48, TeaStore 185, Juice Shop 33) têm a mesma classificação.
+- Antes disso, a coleta tinha sido repetida quatro vezes com os mesmos contêineres, e a P4 com a
+  definição registrada deu as mesmas 74 e 36 ações na DVWA e no TeaStore em todas.
 
 ### O que não muda
 
@@ -277,12 +303,15 @@ classificação.
 O que esta versão sustenta com evidência:
 
 1. **Triagem de imagem verificável.** O coletor tira do bloqueio, com declaração VEX, de 18% a 44%
-   dos CVEs de imagem com nota ≥ 7, e o Trivy oficial consome essas declarações sem diferença. É a
-   parte implantável da proposta: não depende da matriz e se integra ao scanner que o pipeline já
-   usa.
+   dos CVEs de imagem com nota ≥ 7. Nas 2 imagens testadas, o Trivy oficial consome essas
+   declarações sem diferença. É a parte implantável da proposta: não depende da matriz e se integra
+   ao scanner que o pipeline já usa.
 2. **Redução de trabalho num alvo só.** No Juice Shop, que roda sobre SO com suporte, são 6 ações a
    menos (−13%). Na DVWA e no TeaStore, a migração obrigatória do SO absorve toda a redução.
-3. **Achado exploratório sobre o artigo.** Em ações de correção, P2 e P3 são iguais nos três alvos.
+3. **Achado exploratório sobre o artigo.** Em ações de correção e com o agregado do Trivy pelo
+   máximo, P2 e P3 são iguais nos três alvos. Com a média, não.
+
+A cobertura igual à da P2 não está nessa lista: ela vem do escopo, e a ablação sem coletor já a tem.
 
 O que não se sustenta: uma "redução de 17% a 55% do trabalho" (a versão anterior deste texto)
 conta como trabalho separado atualizações que a migração de SO absorve, e o critério de magnitude

@@ -187,6 +187,9 @@ python3 scripts/politica_acoes.py --autores "$AUTORES"
 bash scripts/trivy_vex.sh            # Trivy 0.69.3 com e sem VEX (saída em ~/.cache/trivy-p4)
 python3 scripts/validar_vex_trivy.py
 python3 scripts/verificar_s5.py
+# reprodutibilidade: repita a coleta com contêineres novos, copie o CSV para
+# results/contexto_imagem_coleta2.csv e compare
+python3 scripts/comparar_coletas.py
 SBSEG_AUTORES="$AUTORES" python3 -m unittest discover -s tests
 ~~~
 

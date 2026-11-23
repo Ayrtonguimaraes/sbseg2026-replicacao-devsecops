@@ -169,7 +169,7 @@ confirmação manual pendente, o que é uma limitação metodológica honesta e 
 
 ## 8. Impacto no projeto do que não pode ser feito (estado em 22/11/2026)
 
-Tabela por caso. Esta seção trata dos testes customizados do Deploy Gate (**P3\***, antes chamada P4; a P4 atual é a de contexto de execução, que não depende desses testes, ver `p4-contexto.md`). "Teto" é o que a P3\* alcançaria se **todos** os casos restantes da fila
+Tabela por caso. Esta seção trata dos testes customizados do Deploy Gate (**P3\***, antes chamada P4; a P4 atual é a orientada a ações, ver `p4-acoes.md`, que usa a P3\* como base e não depende de novos testes). "Teto" é o que a P3\* alcançaria se **todos** os casos restantes da fila
 fossem confirmados (`results/alvos_p4_condicionais.csv`). Com **uma exceção** (o ZAP
 ativo do TeaStore, ver a linha), nenhum item desta tabela altera P1, P2, P3, a composição
 direto/indireto ou a análise de sensibilidade, que são os números centrais da reprodução.

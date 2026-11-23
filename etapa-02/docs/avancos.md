@@ -42,7 +42,7 @@ diretamente a maior ameaça à validade externa do artigo original.
 
 ### Verificação automatizada
 
-- 15 testes passam: `uv run --no-project --python 3.12 python -m unittest discover -s etapa-02/tests`.
+- 20 testes passam: `SBSEG_AUTORES=<clone do artefato dos autores> uv run --no-project --python 3.12 python -m unittest discover -s etapa-02/tests`. Sem `SBSEG_AUTORES`, os testes da DVWA em `test_acoes.py` são pulados.
 - **Atenção:** o Python do sistema (3.9) é velho demais; usar 3.10+.
 
 ## Avanços desta sessão (2026-11-22)
@@ -72,7 +72,7 @@ automatizar do que precisa ser feito manualmente — a razão está em
 | **TeaStore `ts-tls-trust-all`** | Ninguém (limite do alvo) | Só existe com `USE_HTTPS=true`, fora da implantação de referência. |
 | **Juice Shop `js-rce-b2b`** | Usuário (ou ficar estático) | Decisão do grupo: **não automatizar**. O teste oficial tem efeito de negação de serviço. Apoiado só em evidência estática (Semgrep) + indireta (Trivy). |
 | **Decisões do grupo** | Grupo | Ratificar a P4 orientada a ações (`p4-acoes.md`), a regra de escopo e a ressalva de circularidade da matriz (ver `protocolo.md`, "Decisões para o grupo"). |
-| **Slides da Etapa 02** | Grupo | Deck novo pronto (artefato Slides, 14 slides, cerca de 15 minutos); exportar para PowerPoint pelo menu Share › Export. Os PDFs antigos da raiz ficam como histórico. |
+| **Slides da Etapa 02** | Grupo | Deck pronto (artefato Slides, 17 slides mais o glossário como apêndice, cerca de 15 minutos); exportar para PowerPoint pelo menu Share › Export. Os PDFs antigos da raiz ficam como histórico. |
 
 Impacto numérico de cada pendência: `limitacoes-assistente.md`, seção 8.
 
